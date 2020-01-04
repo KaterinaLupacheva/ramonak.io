@@ -1,18 +1,18 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://ramonak.io',
   pathPrefix: '/',
-  title: 'Blog by John Doe',
-  subtitle: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
-  copyright: '© All rights reserved.',
+  title: 'Personal site and blog by Katsiaryna (Kate) Lupachova',
+  subtitle: 'freelancer, full-stack web developer from Belarus.',
+  copyright: '2019 - 2020  © All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: 'UA-145833602-1',
   useKatex: false,
   menu: [
     {
-      label: 'Articles',
+      label: 'Blog',
       path: '/'
     },
     {
@@ -25,18 +25,18 @@ module.exports = {
     }
   ],
   author: {
-    name: 'John Doe',
-    photo: '/photo.jpg',
-    bio: 'Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu.',
+    name: 'Katsiaryna (Kate) Lupachova',
+    photo: '/my-photo.png',
+    bio: 'Full-stack web developer, freelancer based in Belarus (Europe)',
     contacts: {
-      email: '',
+      email: 'contact@ramonak.io',
       facebook: '#',
       telegram: '#',
-      twitter: '#',
-      github: '#',
+      twitter: 'IoRamonak',
+      github: 'KaterinaLupacheva',
       rss: '',
       vkontakte: '',
-      linkedin: '#',
+      linkedin: 'katsiaryna-lupachova',
       instagram: '#',
       line: '',
       gitlab: '',
