@@ -1,6 +1,7 @@
 // @flow strict
 import React from 'react';
 import Helmet from 'react-helmet';
+import Header from '../Header/header';
 import { withPrefix } from 'gatsby';
 import type { Node as ReactNode } from 'react';
 import { useSiteMetadata } from '../../hooks';
@@ -36,6 +37,7 @@ const Layout = ({
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={metaImageUrl} />
       </Helmet>
+      <Header />
       {children}
     </div>
   );

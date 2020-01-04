@@ -1,0 +1,8 @@
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
+
+.header-container{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

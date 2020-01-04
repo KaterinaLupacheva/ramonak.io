@@ -3,7 +3,7 @@
 module.exports = {
   url: 'https://ramonak.io',
   pathPrefix: '/',
-  title: 'ramonak.io',
+  title: 'Ramonak.io',
   subtitle: 'Personal site and blog by Katsiaryna (Kate) Lupachova: freelancer, full-stack web developer from Belarus.',
   copyright: '2019 - 2020  © All rights reserved.',
   disqusShortname: '',
