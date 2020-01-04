@@ -1,24 +1,25 @@
 ---
+template: post
 title: Humane Typography in the Digital Age
-date: "2017-08-19T22:40:32.169Z"
-template: "post"
+slug: humane-typography-in-the-digital-age
 draft: false
-slug: "humane-typography-in-the-digital-age"
-category: "Typography"
+date: 2019-08-19T22:40:00.000Z
+description: >-
+  An Essay on Typography by Eric Gill takes the reader back to the year 1930.
+  The year when a conflict between two worlds came to its term. The machines of
+  the industrial world finally took over the handicrafts.
+category: Typography
 tags:
-  - "Design"
-  - "Typography"
-  - "Web Development"
-description: "An Essay on Typography by Eric Gill takes the reader back to the year 1930. The year when a conflict between two worlds came to its term. The machines of the industrial world finally took over the handicrafts."
-socialImage: "/media/42-line-bible.jpg"
+  - Design
+  - Typography
+  - Web Development
 ---
+* [The first transition](#the-first-transition)
+* [The digital age](#the-digital-age)
+* [Loss of humanity through transitions](#loss-of-humanity-through-transitions)
+* [Chasing perfection](#chasing-perfection)
 
-- [The first transition](#the-first-transition)
-- [The digital age](#the-digital-age)
-- [Loss of humanity through transitions](#loss-of-humanity-through-transitions)
-- [Chasing perfection](#chasing-perfection)
-
-An Essay on Typography by Eric Gill takes the reader back to the year 1930. The year when a conflict between two worlds came to its term. The machines of the industrial world finally took over the handicrafts.
+Test on Typography by Eric Gill takes the reader back to the year 1930. The year when a conflict between two worlds came to its term. The machines of the industrial world finally took over the handicrafts.
 
 The typography of this industrial age was no longer handcrafted. Mass production and profit became more important. Quantity mattered more than the quality. The books and printed works in general lost a part of its humanity. The typefaces were not produced by craftsmen anymore. It was the machines printing and tying the books together now. The craftsmen had to let go of their craft and became a cog in the process. An extension of the industrial machine.
 
@@ -42,7 +43,7 @@ The first transition took away a large part of humanity from written communicati
 
 > In the new computer age the proliferation of typefaces and type manipulations represents a new level of visual pollution threatening our culture. Out of thousands of typefaces, all we need are a few basic ones, and trash the rest.
 >
-— Massimo Vignelli
+> — Massimo Vignelli
 
 Typography is not about typefaces. It’s not about what looks best, it’s about what feels right. What communicates the message best. Typography, in its essence, is about the message. “Typographical design should perform optically what the speaker creates through voice and gesture of his thoughts.”, as El Lissitzky, a famous Russian typographer, put it.
 
