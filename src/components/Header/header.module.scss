@@ -4,5 +4,19 @@
 .header-container{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    
+    .border{
+        width: 80%;
+        margin-top: auto;
+        border-bottom: 0.5px solid var(--color-gray-border);
+    }
+    .logo{
+        padding: 10px 10px 10px 30px;
+    }
+
+    .theme-toggler{
+        padding: 10px 30px 10px 10px;
+    }
 }
