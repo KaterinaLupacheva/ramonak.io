@@ -1,7 +1,8 @@
 // @flow strict
-import React from 'react';
+import React, { useState } from 'react';
 import { withPrefix, Link } from 'gatsby';
-import styles from './Author.module.scss';
+import map from '../../../../static/media/map.png';
+import styles from './Author.module.scss'; 
 
 type Props = {
   author: {
@@ -12,7 +13,10 @@ type Props = {
   isIndex: ?boolean
 };
 
-const Author = ({ author, isIndex }: Props) => (
+const Author = ({ author, isIndex }: Props) => {
+  const [isVisible, toggleIsVisible ] = useState(false);
+  const container = 'mapContainer';
+  return (
   <div className={styles['author']}>
     <Link to="/">
       <img
@@ -23,7 +27,6 @@ const Author = ({ author, isIndex }: Props) => (
         alt={author.name}
       />
     </Link>
-
     { isIndex === true ? (
       <h1 className={styles['author__title']}>
         <Link className={styles['author__title-link']} to="/">{author.name}</Link>
@@ -33,8 +36,13 @@ const Author = ({ author, isIndex }: Props) => (
         <Link className={styles['author__title-link']} to="/">{author.name}</Link>
       </h2>
     )}
-    <p className={styles['author__subtitle']}>{author.bio}</p>
+
+    <p className={styles['author__subtitle']}>Full-stack web developer, freelancer based in 
+      <span className={styles['belarus']} onClick={() => toggleIsVisible(!isVisible)}> Belarus</span> (Europe).</p>
+      <div className={styles[`${isVisible ? 'visible' : ''}mapContainer`]}>
+        <img className={styles.map} src={map} alt='Europe Map' />
+      </div>
   </div>
-);
+)};
 
 export default Author;
