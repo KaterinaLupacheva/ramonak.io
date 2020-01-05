@@ -16,7 +16,9 @@ const Header = () => {
             <Link to='/'>
                 <img src={logo} alt='Logo' className={styles['logo']} width={70}/>
             </Link>
-            <div className={styles['border']}></div>
+            <div className={styles['border']}>
+                BEAUTY IN SIMPLE
+            </div>
             <ThemeToggler>
                 {({ theme, toggleTheme }) => (                  
                 <label>

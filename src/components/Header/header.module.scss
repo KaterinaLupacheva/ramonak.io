@@ -1,5 +1,6 @@
 @import '../../assets/scss/variables';
 @import '../../assets/scss/mixins';
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
 
 .header-container{
     width: 100%;
@@ -11,6 +12,10 @@
         width: 80%;
         margin-top: auto;
         border-bottom: 0.5px solid var(--color-gray-border);
+        text-align: center;
+        font-family: 'Special Elite', cursive;
+        font-size: large;
+
     }
     .logo{
         padding: 10px 10px 10px 30px;

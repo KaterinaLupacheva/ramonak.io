@@ -1,5 +1,5 @@
 ---
-title: TOP 5 BENEFITS OF HAVING A WEBSITE
+title: Top 5 Benefits of Having a Website
 date: "2019-09-12"
 template: "post"
 draft: false
