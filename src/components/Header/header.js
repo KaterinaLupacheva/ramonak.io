@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "gatsby";
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import moon from '../../../static/media/moon.png';
 import sun from '../../../static/media/sun.png';
@@ -12,7 +13,9 @@ const Header = () => {
 
     return (
         <div className={styles['header-container']}>
-            <img src={logo} alt='Logo' className={styles['logo']} width={70}/>
+            <Link to='/'>
+                <img src={logo} alt='Logo' className={styles['logo']} width={70}/>
+            </Link>
             <div className={styles['border']}></div>
             <ThemeToggler>
                 {({ theme, toggleTheme }) => (                  
