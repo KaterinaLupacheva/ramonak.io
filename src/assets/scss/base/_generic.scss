@@ -81,13 +81,13 @@ hr {
   margin-top: 52px;
   margin-bottom: 52px;
   border: 0;
-  color: $color-base;
+  color: var(--color-base);
   display: block;
   height: 26px;
   margin-right: auto;
   margin-left: auto;
   background-size: 100% 26px;
-  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, $color-base 11px, $color-base 15px, transparent 15px, transparent 26px);
+  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, var(--color-base) 11px, var(--color-base) 15px, transparent 15px, transparent 26px);
   width: 100px;
 }
 
@@ -139,7 +139,7 @@ figure {
 figcaption {
   @include line-height(.75);
   @include margin-top(.25);
-  color: $color-base;
+  color: var(--color-base);
   font-size: $typographic-small-font-size;
   font-style: italic;
   margin-bottom: 0;

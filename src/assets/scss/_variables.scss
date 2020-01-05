@@ -5,20 +5,22 @@
 // Colors
 body.light{
     margin-left: 0;
-
+    --textNormal: #222;
     --color-base: #222;
     --color-primary: #5D93FF;
     --color-secondary: #F7A046;
+    --color-gray: grey;
+    --color-gray-border: #D2D2D2;
+    --color-gray-bg: grey;
 }
-$color-base: #222;
-$color-primary: #5D93FF;
-$color-secondary: #F7A046;
-// #D91F5C;
+// $color-base: #222;
+// $color-primary: #5D93FF;
+// $color-secondary: #F7A046;
 
 $color-white: #FFF;
-$color-gray: lighten($color-base, 40%);
-$color-gray-border: lighten($color-base, 77%);
-$color-gray-bg: lighten($color-base, 79%);
+// $color-gray: lighten(var(--color-base), 40%);
+// $color-gray-border: lighten(var(--color-base), 77%);
+// $color-gray-bg: lighten(var(--color-base), 79%);
 
 body.dark{
     margin-left: 0;
@@ -26,8 +28,12 @@ body.dark{
     --bg: #282c35;
     --textNormal: rgba(255, 255, 255, 0.88);
     --color-base: #D91F5C;
-    --color-primary: #5D93FF;
+    --color-primary: var(--color-secondary);
     --color-secondary: #F7A046;
+
+    --color-gray: grey;
+    --color-gray-border: #D2D2D2;
+    --color-gray-bg: #D91F5C;
 }
 
 // Typographic
@@ -40,8 +46,8 @@ $typographic-small-font-size: 14px;
 $typographic-base-line-height: 1.625;
 
 $typographic-base-font-color: var(--color-base);
-$typographic-link-p-font-color: $color-primary;
-$typographic-link-s-font-color: $color-secondary;
+$typographic-link-p-font-color: var(--color-primary);
+$typographic-link-s-font-color: var(--color-secondary);
 
 $typographic-leading: round(16 * ($typographic-root-font-size / 100) * $typographic-base-line-height);
 

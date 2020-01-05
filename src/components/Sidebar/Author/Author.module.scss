@@ -28,7 +28,7 @@
   }
 
   &__subtitle {
-    color: $color-gray;
+    color: var(--color-gray);
     @include line-height(1);
     @include margin-bottom(1)
   }
