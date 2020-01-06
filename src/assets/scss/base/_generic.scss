@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
 /** 
  * Generic
  */
@@ -7,7 +9,8 @@ html {
 
 body {
   margin: 0 0 0 calc(100vw - 100%);
-  font-family: $typographic-font-family;
+  // font-family: $typographic-font-family;
+  font-family: 'Montserrat', sans-serif;
   color: $typographic-base-font-color;
   line-height: $typographic-base-line-height;
   font-size: $typographic-base-font-size;
