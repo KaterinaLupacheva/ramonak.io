@@ -44,6 +44,13 @@ module.exports = {
       }
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'blogImages',
+        path: `${__dirname}/content/posts`
+      }
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `

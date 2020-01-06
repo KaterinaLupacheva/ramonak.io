@@ -37,8 +37,8 @@ const Author = ({ author, isIndex }: Props) => {
       </h2>
     )}
 
-    <p className={styles['author__subtitle']}>Full-stack web developer, freelancer based in 
-      <span className={styles['belarus']} onClick={() => toggleIsVisible(!isVisible)}> Belarus</span> (Europe).</p>
+    <p className={styles['author__subtitle']}>Full-stack web developer, freelancer based in {' '} 
+      <span className={styles['belarus']} onClick={() => toggleIsVisible(!isVisible)}>Belarus</span> (Europe).</p>
       <div className={styles[`${isVisible ? 'visible' : ''}mapContainer`]}>
         <img className={styles.map} src={map} alt='Europe Map' />
       </div>
