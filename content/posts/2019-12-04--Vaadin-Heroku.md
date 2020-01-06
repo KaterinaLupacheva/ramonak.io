@@ -8,8 +8,9 @@ category: "Tutorial"
 tags:
   - "Vaadin"
   - "Heroku"
+  - "Java"
   - "Web Development"
-description: "Blog post about how to deplay Vaadin 14 application to Heroku Cloud."
+description: "Blog post about how to deploy Vaadin 14 application to Heroku Cloud."
 socialImage: "/blogPosts/Vaadin-Heroku/vaadin-heroku.png"
 ---
 ![vaadin-heroku](/blogPosts/Vaadin-Heroku/vaadin-heroku.png)
