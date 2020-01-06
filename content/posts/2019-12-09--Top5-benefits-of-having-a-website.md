@@ -54,5 +54,3 @@ Your website is often your customers’ **first impression** of your brand. That
 Getting started with a professional website for your business doesn’t have to be hard. If you are serious about launching a professional website, then your better option is to work with a **professional web developer**.
 
 If **you need help** designing an attractive website that’s optimized for the search engines, has a modern look and feel, it’s time **to call in the experts**. I would love to help brands like yours to reach new audiences online. 
-
-To find out more about our web design services or to learn more about the importance of a website, contact me today.
