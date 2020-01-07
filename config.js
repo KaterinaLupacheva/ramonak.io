@@ -7,7 +7,7 @@ module.exports = {
   subtitle: 'Personal site and blog by Katsiaryna (Kate) Lupachova: freelancer, full-stack web developer from Belarus.',
   copyright: '2019 - 2020  © All rights reserved.',
   disqusShortname: '',
-  postsPerPage: 4,
+  postsPerPage: 5,
   googleAnalyticsId: 'UA-145833602-1',
   useKatex: false,
   menu: [

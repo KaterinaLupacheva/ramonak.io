@@ -77,4 +77,4 @@ So we successfully booted Keycloak and created Realm for our apps!
 
 In the next part, we’ll continue to configure Keycloak server.
 
-Next: [Keycloak: adding roles and users]()
+Next: [Keycloak: adding roles and users](/posts/keycloak-adding-roles-and-users)

@@ -32,7 +32,7 @@ In this blog post series, I’ll go through the process of developing a basic ap
 
 * [Keycloak server installation and Realm creation](/posts/keycloak-server-installation-and-realm-creation)
 
-* [Keycloak: adding roles and users]()
+* [Keycloak: adding roles and users](/posts/keycloak-adding-roles-and-users)
 
 * [Keycloak: clients configuration]()
 
