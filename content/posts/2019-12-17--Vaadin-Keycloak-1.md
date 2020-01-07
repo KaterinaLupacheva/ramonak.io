@@ -36,7 +36,7 @@ In this blog post series, I’ll go through the process of developing a basic ap
 
 * [Keycloak: clients configuration](/posts/keycloak-clients-configuration)
 
-* [Spring Boot backend app – Keycloak – Spring Security integration]()
+* [Spring Boot backend app – Keycloak – Spring Security integration](/posts/spring-boot–keycloak-spring-security-integration)
 
 * [Vaadin frontend app – Keycloak – Spring Security integration]() 
 

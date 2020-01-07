@@ -40,4 +40,4 @@ And that’s it with KeyCloak configuration!!!
 
 Now we have to “befriend” two of our apps with Keycloak.
 
-Next: [Spring Boot – Keycloak – Spring Security integration]()
+Next: [Spring Boot – Keycloak – Spring Security integration](/posts/spring-boot–keycloak-spring-security-integration)
