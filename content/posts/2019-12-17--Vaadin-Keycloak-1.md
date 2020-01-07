@@ -30,7 +30,7 @@ In this blog post series, I’ll go through the process of developing a basic ap
 
 * [Setting up Vaadin Spring Boot frontend app with two UI views](/posts/setting-up-vaadin-spring-boot-frontend-app)
 
-* [Keycloak server installation and Realm creation]()
+* [Keycloak server installation and Realm creation](/posts/keycloak-server-installation-and-realm-creation)
 
 * [Keycloak: adding roles and users]()
 

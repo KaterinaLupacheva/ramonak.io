@@ -100,4 +100,4 @@ Yep! It’s working!!! Both apps perfectly communicate with each other.
 
 But it was an easy part. Now let’s add authentication and authorization service to our apps.
 
-Next: [Keycloak server installation and Realm creation]()
+Next: [Keycloak server installation and Realm creation](/posts/keycloak-server-installation-and-realm-creation)
