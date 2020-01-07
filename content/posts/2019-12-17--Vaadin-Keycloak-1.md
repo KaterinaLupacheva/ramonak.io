@@ -1,6 +1,6 @@
 ---
 title: Spring Boot – Vaadin – Keycloak – Spring Security Integration
-date: "2019-12-17"
+date: "2019-12-17T10:00:32.169Z"
 template: "post"
 draft: false
 slug: "springboot–vaadin-keycloak–springsecurity-integration"
@@ -28,7 +28,7 @@ In this blog post series, I’ll go through the process of developing a basic ap
 
 * [Developing Spring Boot backend app with REST endpoints](#part-1)
 
-* [Setting up Vaadin Spring Boot frontend app with two UI views]()
+* [Setting up Vaadin Spring Boot frontend app with two UI views](/posts/setting-up-vaadin-spring-boot-frontend-app)
 
 * [Keycloak server installation and Realm creation]()
 
@@ -98,4 +98,4 @@ Test the second endpoint:  localhost:9999/admin
 
 The backend application is ready, but it’s not protected. Yet!
 
-Next: [Setting up Vaadin Spring Boot Frontend App]()
+Next: [Setting up Vaadin Spring Boot Frontend App](/posts/setting-up-vaadin-spring-boot-frontend-app)

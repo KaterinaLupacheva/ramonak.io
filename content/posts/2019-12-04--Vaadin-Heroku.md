@@ -115,7 +115,8 @@ Next we need to update pom.xml to be able to deploy Vaadin project to Heroku.
 
 * In production profile for vaadin-maven-plugin add execution goal prepare-frontend
 
-```<profiles>
+```
+<profiles>
    <profile>
        <id>production</id>
        <properties>
