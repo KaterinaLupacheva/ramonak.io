@@ -1,5 +1,5 @@
 ---
-title: Keycloak - adding roles and users
+title: "Keycloak: adding roles and users"
 date: "2019-12-17T13:00:32.169Z"
 template: "post"
 draft: false
@@ -54,4 +54,4 @@ And we’ve finished creating roles and users.
 
 In the next part, we’ll add applications that should be managed by Keycloak.
 
-Next: [Keycloak: clients configuration]()
+Next: [Keycloak: clients configuration](/posts/keycloak-clients-configuration)

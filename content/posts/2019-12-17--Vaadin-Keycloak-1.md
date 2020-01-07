@@ -34,7 +34,7 @@ In this blog post series, I’ll go through the process of developing a basic ap
 
 * [Keycloak: adding roles and users](/posts/keycloak-adding-roles-and-users)
 
-* [Keycloak: clients configuration]()
+* [Keycloak: clients configuration](/posts/keycloak-clients-configuration)
 
 * [Spring Boot backend app – Keycloak – Spring Security integration]()
 
