@@ -10,6 +10,7 @@ tags:
   - "Heroku"
   - "Java"
   - "Web Development"
+  - "PWA"
 description: "Blog post about how to deploy Vaadin 14 application to Heroku Cloud."
 socialImage: "/blogPosts/Vaadin-Heroku/vaadin-heroku.png"
 ---
@@ -45,7 +46,7 @@ Once the build is finished and the application is running, navigate in browser t
 
 ![vaadin-base-app](/blogPosts/Vaadin-Heroku/browser1.jpg)
 
-The bar at the bottom of the page indicates that it is a PWA. You can read about it in [this blog post](https://ramonak.io/posts/what-is-progressive-web-app).
+The bar at the bottom of the page indicates that it is a PWA. You can read about it in [this blog post](/posts/what-is-progressive-web-app).
 
 ## 2. Create a Heroku app
 

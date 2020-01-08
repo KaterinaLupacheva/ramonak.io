@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from "gatsby";
 import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 import moon from '../../../static/media/moon.png';
@@ -8,8 +8,13 @@ import logo_light from '../../../static/media/logo_light.png';
 import styles from './header.module.scss';
 
 const Header = () => {
-    const [icon, toggleIcon ] = useState(localStorage.theme === 'dark' ? sun : moon);
-    const [logo, toggleLogo ] = useState(localStorage.theme === 'dark' ? logo_light : logo_dark);
+    const [icon, toggleIcon ] = useState(undefined);
+    const [logo, toggleLogo ] = useState(undefined);
+
+    useEffect(() => {
+        toggleIcon(localStorage.theme === 'dark' ? sun : moon);
+        toggleLogo(localStorage.theme === 'dark' ? logo_light : logo_dark)
+    }, []); 
 
     return (
         <div className={styles['header-container']}>
