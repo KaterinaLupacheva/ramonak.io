@@ -9,6 +9,7 @@ tags:
   - "Spring Boot"
   - "Spring Security"
   - "Keycloak"
+  - "Java"
 description: "The sixth part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
 socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
 ---
@@ -225,4 +226,4 @@ Works too, as our admin user is authorized for both of our endpoints.
 
 Well, the only thing we’ve left to implement is to integrate the Vaadin frontend app with Keycloak system. Let’s do it in the next part.
 
-Next: [Vaadin – Keycloak – Spring Security integration]()
+Next: [Vaadin – Keycloak – Spring Security integration](/posts/vaadin–keycloak–spring-security-integration)

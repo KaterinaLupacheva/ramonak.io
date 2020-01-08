@@ -38,7 +38,7 @@ In this blog post series, I’ll go through the process of developing a basic ap
 
 * [Spring Boot backend app – Keycloak – Spring Security integration](/posts/spring-boot–keycloak-spring-security-integration)
 
-* [Vaadin frontend app – Keycloak – Spring Security integration]() 
+* [Vaadin frontend app – Keycloak – Spring Security integration](/posts/vaadin–keycloak–spring-security-integration) 
 
 The source code of the complete project is available in [this GitHub repository](https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo).
 
