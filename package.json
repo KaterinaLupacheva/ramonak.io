@@ -59,6 +59,7 @@
     "gatsby-plugin-sitemap": "^2.2.24",
     "gatsby-remark-autolink-headers": "^2.1.21",
     "gatsby-remark-copy-linked-files": "^2.1.33",
+    "gatsby-remark-emojis": "^0.4.2",
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-images": "^3.1.39",
     "gatsby-remark-katex": "^3.1.20",
