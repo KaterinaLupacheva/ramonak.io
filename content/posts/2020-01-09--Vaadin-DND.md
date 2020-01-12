@@ -8,7 +8,7 @@ category: "Trying New Staff"
 tags:
   - "Vaadin"
   - "Java"
-description: "In Vaadin 14.1 generic drag and drop feature was introduced. This blog post is about developing an app using this feature of Vaadin framework"
+description: "In Vaadin 14.1 generic drag and drop feature was introduced. This blog post is a review of this feature based on the example of developing a simple football coach app."
 socialImage: "/blogImages/vaadin-dnd/Vaadin-dnd.png"
 ---
 
@@ -61,7 +61,7 @@ First of all, let's create the Player class:
     }
 ```
 
-Lombok's annotations @Data and @AllArgsConstructor will take care for all the getters/setters and the constructor. Position is enum class with possible values of player's position:
+Lombok's annotations @Data and @AllArgsConstructor will take care of all the getters/setters and the constructor. Position is enum class with possible values of player's position:
 
 ```java
 public enum Position {
@@ -99,7 +99,7 @@ The full version of the class will be available in the [GitHub repository](https
 
 ## Developing UI Components
 
-It's time to create some UI. For that I'll create some custom components. The first one is a Player Card component:
+It's time to create some UI. For that, I'll create some custom components. The first one is a Player Card component:
 
 ```java
 @CssImport("./styles/player-card.css")
@@ -118,7 +118,7 @@ public class PlayerCard extends HorizontalLayout {
 }
 ```
 
-This class extends HorizontalLayout, which means that all children components will be added horizontally, one by one. 
+This class extends HorizontalLayout, which means that all children's components will be added horizontally, one by one. 
 PlayerCard component consists of 3 Divs: name, number and position. Constructor takes Player as a parameter and initializes Divs with text values of the player's name, number and position. 
 
 According to [Vaadin docs](https://vaadin.com/docs/v14/flow/importing-dependencies/tutorial-ways-of-importing.html), Style Sheet file we should place into ```frontend/styles``` folder and then use @CssImport annotation with the path to css file to add some styling to the component. There is a basic styling in player-card.css:
@@ -150,7 +150,7 @@ Run the app in IDE or using command:
 mvn spring-boot:run
 ```
 
-Go to localhost:9999 (or 8080, or whatever port you use) in browser. 
+Go to localhost:9999 (or 8080, or whatever port you use) in a browser. 
 
 ![players-list](/blogImages/vaadin-dnd/players-list-border.jpg)
 
@@ -192,7 +192,7 @@ public class FieldPosition extends Div {
 ```
 
 And respective css files:
-- *footbal-field.css*
+- *football-field.css*
 
 ```
 .football-field{
@@ -229,7 +229,7 @@ And respective css files:
 }
 ```
 
-By default, the MainView class extends Vertical Layout, which means that all the components will be added vertically. But we need to place "football field" to the right from players list. To do so some changes are needed in MainView class:
+By default, the MainView class extends Vertical Layout, which means that all the components will be added vertically. But we need to place the "football field" to the right from players list. To do so some changes are needed in MainView class:
 * replace *extends VerticalLayout* on *extends HorizontalLayout*
 * move all PlayerCards into new Vertical Layout
 * add FootballField component 
@@ -254,7 +254,7 @@ public class MainView extends HorizontalLayout {
 }
 ```
 
-Standard Vaadin's Vertical Layout component (where we added Player Cards) has a width of 100%. To change this behaviour we should use setSizeUndefined() method on playersList component and add minimal styling:
+Standard Vaadin's Vertical Layout component (where we added Player Cards) has a width of 100%. To change this behavior we should use setSizeUndefined() method on playersList component and add minimal styling:
 
 ```
 .players-list{
@@ -293,7 +293,7 @@ public class PlayerCard extends HorizontalLayout implements DragSource<PlayerCar
 }
 ```
 
-Now, if we restart the app, open the dev tools in browser to inspect the player card element, we'll see that the draggable attribute is assigned to every player card. 
+Now, if we restart the app, open the dev tools in the browser to inspect the player card element, we'll see that the draggable attribute is assigned to every player card. 
 
 ![player-card-draggable](/blogImages/vaadin-dnd/player-card-draggable.png)
 
@@ -351,7 +351,7 @@ And when we'll try to drag the player card, the background color changes and ```
   <source src="/vaadin-dnd/dnd2.mp4" type="video/mp4">
 </video>
 
-Also we can change styling of the drop target components - Field Positions. Let's highlight possible drop targets when drag event starts. To do so we have come work to be done:
+Also, we can change the styling of the drop target components - Field Positions. Let's highlight possible drop targets when the drag event starts. To do so we have come work to be done:
 - add styles to field-position.css to highlight drop targets. For that I'm gonna use yellow border:
 
 ```
@@ -360,7 +360,7 @@ Also we can change styling of the drop target components - Field Positions. Let'
 }
 ```
 
-- then we need to add this class to every free Field Position when drag event starts and then remove this class after drop event. For that we have to keep track of all Field Positions on Football Field and also flag if Field Position is empty or not. Let's add Collection of positions as a field to FootballField class with @Getter Lombok annotation (1) and gather all positions when creating rows (2):
+- then we need to add this class to every free Field Position when drag event starts and then remove this class after drop event. For that, we have to keep track of all Field Positions on Football Field and also flag if Field Position is empty or not. Let's add Collection of positions as a field to FootballField class with @Getter Lombok annotation (1) and gather all positions when creating rows (2):
 
 ```java
 @Getter // (1)
@@ -400,7 +400,7 @@ public class FieldPosition extends Div implements DropTarget<Div> {
 ...
 ```
 
-- add Drag Start Listener to every Player Card in MainView.class, which will be listening to drag start event and change styling of empty field postitions when event fired:
+- add Drag Start Listener to every Player Card in MainView.class, which will be listening to drag start event and change styling of empty field positions when event fired:
 
 ```java
 //MainView.class
@@ -445,7 +445,7 @@ Let's see how it all works in a browser:
 
 Works fine!
 
-One me thing I'd like to add is to change styles of Drop Target element when the Player Card is over the Field Position. Vaadin adds ```v-drag-over-target``` class name automatically while the dragged object stays on top of the drop target. Assume, I want to change the background color of Field Position circle to "deep pink" when the Player Card is over it. Then in field-position.css file add:
+One more thing I'd like to add is to change styles of Drop Target element when the Player Card is over the Field Position. Vaadin adds ```v-drag-over-target``` class name automatically while the dragged object stays on top of the drop target. Assume, I want to change the background color of the Field Position circle to "deep pink" when the Player Card is over it. Then in field-position.css file add:
 
 ```
 .v-drag-over-target.field-position{
@@ -453,7 +453,7 @@ One me thing I'd like to add is to change styles of Drop Target element when the
 }
 ```
 
-And also we need to set DropEffect to Drop Target and matching EffectAllowed to Drag Source. Honestly, there is a bit confusing description in Vaadin doc's when and why we should use Effect Allowed and Drop Effect:confused:. Experimental way I determined that ```v-drag-over-target``` class name only added when matchin Effect Allowed and Drop Effect are set on PlayerCard and FieldPosition respectively. That is:
+And also we need to set DropEffect to Drop Target and matching EffectAllowed to Drag Source. Honestly, there is a bit confusing description in Vaadin doc's when and why we should use Effect Allowed and Drop Effect:confused:. Experimental way I determined that ```v-drag-over-target``` class name only added when matching Effect Allowed and Drop Effect are set on PlayerCard and FieldPosition respectively. That is:
 
 ```java
 //PlayerCard.class constructor
@@ -478,3 +478,7 @@ Now if we restart the app and navigate in browser to localhost:9999:
 All the additional styling works as expected!
 
 ## Conclusion
+
+Well, Vaadin's drag and drop feature definitely works! And it's implementation "out of the box" is the way more convenient to use than using 3rd party addon. Automatically added class names for styling is also easy to use.
+
+And as you see, it is possible to develop with Vaadin not only strict business apps, but a funny football app too:wink:. 
