@@ -445,3 +445,36 @@ Let's see how it all works in a browser:
 
 Works fine!
 
+One me thing I'd like to add is to change styles of Drop Target element when the Player Card is over the Field Position. Vaadin adds ```v-drag-over-target``` class name automatically while the dragged object stays on top of the drop target. Assume, I want to change the background color of Field Position circle to "deep pink" when the Player Card is over it. Then in field-position.css file add:
+
+```
+.v-drag-over-target.field-position{
+    background-color: deeppink;
+}
+```
+
+And also we need to set DropEffect to Drop Target and matching EffectAllowed to Drag Source. Honestly, there is a bit confusing description in Vaadin doc's when and why we should use Effect Allowed and Drop Effect:confused:. Experimental way I determined that ```v-drag-over-target``` class name only added when matchin Effect Allowed and Drop Effect are set on PlayerCard and FieldPosition respectively. That is:
+
+```java
+//PlayerCard.class constructor
+...
+setEffectAllowed(EffectAllowed.MOVE);
+...
+```
+
+```java
+//FieldPosition.class constructor
+...
+setDropEffect(DropEffect.MOVE);
+...
+```
+
+Now if we restart the app and navigate in browser to localhost:9999:
+
+<video autoplay loop controls>
+  <source src="/vaadin-dnd/dnd4.mp4" type="video/mp4">
+</video>
+
+All the additional styling works as expected!
+
+## Conclusion
