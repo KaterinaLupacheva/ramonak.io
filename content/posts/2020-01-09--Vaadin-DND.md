@@ -243,11 +243,13 @@ public class MainView extends HorizontalLayout {
         playersList.setSizeUndefined();
         playersList.addClassName("players-list");
 
+        FootballField footballField = new FootballField();
+
         JuventusData data = new JuventusData();
         data.getPlayers().forEach(player -> {
             playersList.add(new PlayerCard(player));
         });
-        add(playersList, new FootballField());
+        add(playersList, footballField);
     }
 }
 ```
@@ -348,3 +350,98 @@ And when we'll try to drag the player card, the background color changes and ```
 <video autoplay loop controls>
   <source src="/vaadin-dnd/dnd2.mp4" type="video/mp4">
 </video>
+
+Also we can change styling of the drop target components - Field Positions. Let's highlight possible drop targets when drag event starts. To do so we have come work to be done:
+- add styles to field-position.css to highlight drop targets. For that I'm gonna use yellow border:
+
+```
+.drop-target {
+    border: 2px solid yellow;
+}
+```
+
+- then we need to add this class to every free Field Position when drag event starts and then remove this class after drop event. For that we have to keep track of all Field Positions on Football Field and also flag if Field Position is empty or not. Let's add Collection of positions as a field to FootballField class with @Getter Lombok annotation (1) and gather all positions when creating rows (2):
+
+```java
+@Getter // (1)
+@CssImport("./styles/football-field.css")
+public class FootballField extends Div {
+
+    private final List<FieldPosition> positions = new ArrayList<>(); //(1)
+
+    public FootballField() {
+        addClassName("football-field");
+        add(createRow(2), createRow(4),
+                createRow(4), createRow(1));
+    }
+
+    private Div createRow(int numOfPlayers) {
+        Div row = new Div();
+        for (int i=0; i<numOfPlayers; i++) {
+            FieldPosition fieldPosition = new FieldPosition(this);
+            row.add(fieldPosition);
+            positions.add(fieldPosition); //(2)
+        }
+        row.addClassName("row");
+        return row;
+    }
+}
+```
+
+and then add boolean field isEmpty initialized to true by default to FieldPosition class (getter and setter we'll be handled by @Data Lombok annotation):
+
+```java
+@Data 
+@CssImport("./styles/field-position.css")
+public class FieldPosition extends Div implements DropTarget<Div> {
+
+    private boolean isEmpty = true;
+
+...
+```
+
+- add Drag Start Listener to every Player Card in MainView.class, which will be listening to drag start event and change styling of empty field postitions when event fired:
+
+```java
+//MainView.class
+...
+data.getPlayers().forEach(player -> {
+    PlayerCard playerCard = new PlayerCard(player);
+    playerCard.addDragStartListener(event ->
+        footballField.getPositions().forEach(position -> {
+            if (position.isEmpty()) {
+                position.addClassName("drop-target");
+            }
+        }));
+    playersList.add(playerCard);
+});
+...
+```
+
+- and then we should remove ```drop-target``` class from all Field Positions after Drop Event. To achieve this we could use DragEndEvent combined with isSuccessfull() method in PlayerCard class, but it'll work only in Chrome and Firefox browsers, as Edge, Safari and IE11 do not report whether the drop occurred successfully or not in the Drag End Event. That's why Vaadin's team recommends to put logic for successfull drop into Drop Target, which in our case is a Field Position:
+
+```java
+//FieldPosition.class
+
+...
+addDropListener(event -> {
+    event.getDragSourceComponent().ifPresent(component -> {
+        add(component);
+        setEmpty(false);
+        field.getPositions().forEach(position ->
+            position.removeClassName("drop-target"));
+    });
+    event.getDragData().ifPresent(data -> setText(data.toString()));
+});
+...
+
+```
+
+Let's see how it all works in a browser:
+
+<video autoplay loop controls>
+  <source src="/vaadin-dnd/dnd3.mp4" type="video/mp4">
+</video>
+
+Works fine!
+
