@@ -55,6 +55,13 @@
       max-width: 100%;
     }
 
+    & video {
+      border: 0;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
   }
 
 }
