@@ -4,15 +4,15 @@ date: "2020-01-13"
 template: "post"
 draft: false
 slug: "vaadin-drag-and-drop"
-category: "Trying New Staff"
+category: "Review"
 tags:
   - "Vaadin"
   - "Java"
 description: "In Vaadin 14.1 generic drag and drop feature was introduced. This blog post is a review of this feature based on the example of developing a simple football coach app."
-socialImage: "/blogImages/vaadin-dnd/Vaadin-dnd.png"
+socialImage: "/posts/vaadin-dnd/Vaadin-dnd.png"
 ---
 
-![vaadin-drag-and-drop](/blogImages/vaadin-dnd/Vaadin-dnd.png)
+![vaadin-drag-and-drop](/posts/vaadin-dnd/Vaadin-dnd.png)
 
 ## Introduction
 
@@ -30,7 +30,7 @@ Let's get started!
 
 As always, the most convenient way to start Vaadin project is to use [Vaadin Starter](https://vaadin.com/start/latest). 
 
-![vaadin-starter](/blogImages/vaadin-dnd/vaadin-starter.jpg)
+![vaadin-starter](/posts/vaadin-dnd/vaadin-starter.jpg)
 
 Download, unzip and open the project in IDE (I use [Intellij Idea](https://www.jetbrains.com/idea/)).
 
@@ -152,7 +152,7 @@ mvn spring-boot:run
 
 Go to localhost:9999 (or 8080, or whatever port you use) in a browser. 
 
-![players-list](/blogImages/vaadin-dnd/players-list-border.jpg)
+![players-list](/posts/vaadin-dnd/players-list-border.jpg)
 
 Well, looks OK.
 
@@ -264,7 +264,7 @@ Standard Vaadin's Vertical Layout component (where we added Player Cards) has a 
 
 Restart the app and check the view in browser:
 
-![players-field](/blogImages/vaadin-dnd/players-field.jpg)
+![players-field](/posts/vaadin-dnd/players-field.jpg)
 *Image of a soccer field by <a href="https://pixabay.com/users/OpenClipart-Vectors-30363/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=145794">OpenClipart-Vectors</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=145794">Pixabay</a>*
 
 ## Adding Drag and Drop Functionality
@@ -295,7 +295,7 @@ public class PlayerCard extends HorizontalLayout implements DragSource<PlayerCar
 
 Now, if we restart the app, open the dev tools in the browser to inspect the player card element, we'll see that the draggable attribute is assigned to every player card. 
 
-![player-card-draggable](/blogImages/vaadin-dnd/player-card-draggable.png)
+![player-card-draggable](/posts/vaadin-dnd/player-card-draggable.png)
 
  Assume, we want just the player's number to be shown on the football field schema. How can we achieve this? We can assign server side data, which we'll be provided to the valid Drop Target on the DropEvent. So, for that, we should add the following code to PlayerCard constructor: 
 
@@ -481,4 +481,6 @@ All the additional styling works as expected!
 
 Well, Vaadin's drag and drop feature definitely works! And it's implementation "out of the box" is the way more convenient to use than using 3rd party addon. Automatically added class names for styling is also easy to use.
 
-And as you see, it is possible to develop with Vaadin not only strict business apps, but a funny football app too:wink:. 
+And as you see, it is possible to develop with Vaadin not only strict business apps, but a funny football app too:wink:.
+
+The source code of the complete project is available in [this GitHub repository](https://github.com/KaterinaLupacheva/vaadin-drag-and-drop-demo).

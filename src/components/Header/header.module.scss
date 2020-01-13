@@ -18,14 +18,34 @@
 
     }
     .logo{
-        padding: 10px 10px 10px 30px;
+        padding: 0;
     }
 
     .theme-toggler{
-        padding: 10px 30px 10px 10px;
+        padding: 0;
 
         &:hover{
             cursor: pointer;
         }
     }
 }
+
+@include breakpoint-sm {
+    .header-container {
+    
+        .logo{
+            padding: 10px 10px 10px 30px;
+        }
+
+        .theme-toggler{
+            padding: 10px 30px 10px 10px;
+        }
+    }
+}
+
+// .header-container {
+//     background-color: red;
+//     .logo {
+//         padding: 0;
+//     }
+// }
