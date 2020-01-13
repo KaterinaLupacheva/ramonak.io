@@ -9,7 +9,7 @@ tags:
   - "Vaadin"
   - "Java"
 description: "In Vaadin 14.1 generic drag and drop feature was introduced. This blog post is a review of this feature based on the example of developing a simple football coach app."
-socialImage: "/posts/vaadin-dnd/Vaadin-dnd.png"
+socialImage: "/media/Vaadin-dnd.png"
 ---
 
 ![vaadin-drag-and-drop](/posts/vaadin-dnd/Vaadin-dnd.png)
