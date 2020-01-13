@@ -11,10 +11,10 @@ tags:
   - "Java"
   - "Keycloak"
 description: "The first part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration"
-socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
+socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
-![spring-vaadin-keycloak](/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png)
+![spring-vaadin-keycloak](/media/spring-vaadin-keycloak.png)
 
 Recently on one of my Java projects, I was faced with the challenge to implement the following architecture:
 
@@ -48,7 +48,7 @@ For the backend part, we use Spring Boot app.
 
 Go to [Spring Initializr](https://start.spring.io/) (BTW, they’ve updated design recently!) and chose the following configuration:
 
-![spring-initializr](/blogPosts/Vaadin-KeyCloak/Initializr.JPG)
+![spring-initializr](/posts/Vaadin-KeyCloak/Initializr.JPG)
 
 I’m gonna keep it simple for the sake of this tutorial. So we need just one dependency – Web – for making REST endpoints.
 
@@ -56,7 +56,7 @@ Press “Generate” button to download zip file with the project, unzip the fol
 
 The project has the following structure:
 
-![backend-structure](/blogPosts/Vaadin-KeyCloak/Backend-structure.JPG)
+![backend-structure](/posts/Vaadin-KeyCloak/Backend-structure.JPG)
 
 Now let’s create Controller class and add two REST endpoints: the first one will return the names of winter months, the second will be admin page.
 
@@ -90,11 +90,11 @@ mvn spring-boot:run
 
 Navigate in your browser to localhost:9999/months. We see JSON object with winter months:
 
-![months-list](/blogPosts/Vaadin-KeyCloak/months.JPG)
+![months-list](/posts/Vaadin-KeyCloak/months.JPG)
 
 Test the second endpoint:  localhost:9999/admin
 
-![admin-page](/blogPosts/Vaadin-KeyCloak/admin.JPG)
+![admin-page](/posts/Vaadin-KeyCloak/admin.JPG)
 
 The backend application is ready, but it’s not protected. Yet!
 

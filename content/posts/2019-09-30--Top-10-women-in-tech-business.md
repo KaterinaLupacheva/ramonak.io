@@ -8,9 +8,9 @@ category: "Info"
 tags:
   - "Women In Tech"
 description: "The list of TOP 10 the most powerful and inspirational women in tech industry in USA."
-socialImage: "/blogImages/2019-09-30--Women-in-tech/women-in-tech.png"
+socialImage: "/media/women-in-tech.png"
 ---
-![women-in-tech.png](/blogImages/2019-09-30--Women-in-tech/women-in-tech.png)
+![women-in-tech.png](/posts/2019-09-30--Women-in-tech/women-in-tech.png)
 
 According to American Express’ [report](https://about.americanexpress.com/files/doc_library/file/2019-state-of-women-owned-businesses-report.pdf), as of 2019, the number of **women-owned businesses** is a total of nearly **13 million**. Its share in all US businesses increased from 37% in 2014 to **42%** in 2019. These firms generate $3.2 trillion of revenue.
 

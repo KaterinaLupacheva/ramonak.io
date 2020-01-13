@@ -11,7 +11,7 @@ tags:
   - "Java"
   - "Keycloak"
 description: "The second part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
-socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
+socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a second part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
@@ -22,13 +22,13 @@ socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
 
 The most simple and convenient way to start building Vaadin application is to use Vaadin Starter Project. For that, we go to https://vaadin.com/start, chose the latest Vaadin version (which is 14 as of December 2019), Spring Boot tech stack, enter Maven Group ID and the Project Name. Press the download button.
 
-![vaadin-start](/blogPosts/Vaadin-KeyCloak/vaadin-start.JPG)
+![vaadin-start](/posts/Vaadin-KeyCloak/vaadin-start.JPG)
 
 Once again, after the project downloaded, unzip the folder and open the project in your favorite IDE.
 
 Vaadin base project has the following structure:
 
-![vaadin-structure](/blogPosts/Vaadin-KeyCloak/vaadin-structure.JPG)
+![vaadin-structure](/posts/Vaadin-KeyCloak/vaadin-structure.JPG)
 
 Due to the architecture of the whole (backend + frontend) app, the Vaadin app (frontend) should consume REST API of the backend. For that, we need to add a REST client layer, which will send GET request to the backend. We’ll use Spring’s convenient template class [RestTemplate](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html).
 
@@ -90,11 +90,11 @@ URL for this view is /admin. Again we use ClientService and it’s getAdminPage(
 
 Now let’s look at what we’ve developed so far. Run the Vaadin app as a standard Spring Boot App. Navigate in browser to localhost:9998/months and see months’ data:
 
-![months-view](/blogPosts/Vaadin-KeyCloak/months-view.JPG)
+![months-view](/posts/Vaadin-KeyCloak/months-view.JPG)
 By the way, when using Vaadin starter app, it is PWA by default. The bar at the bottom of the page indicates that. You can read about the basics of PWA in [this blog post](/posts/what-is-progressive-web-app).
 
 Check the second view at localhost:9998/months:
-![admin-page](/blogPosts/Vaadin-KeyCloak/admin-page.JPG)
+![admin-page](/posts/Vaadin-KeyCloak/admin-page.JPG)
 
 Yep! It’s working!!! Both apps perfectly communicate with each other. 
 

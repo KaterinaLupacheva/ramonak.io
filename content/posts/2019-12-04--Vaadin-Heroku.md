@@ -12,9 +12,9 @@ tags:
   - "Web Development"
   - "PWA"
 description: "Blog post about how to deploy Vaadin 14 application to Heroku Cloud."
-socialImage: "/blogPosts/Vaadin-Heroku/vaadin-heroku.png"
+socialImage: "/media/vaadin-heroku.png"
 ---
-![vaadin-heroku](/blogPosts/Vaadin-Heroku/vaadin-heroku.png)
+![vaadin-heroku](/media/vaadin-heroku.png)
 
 In this tutorial, we’ll go through the process of building a simple Vaadin 14 application and deploying it to Heroku cloud using heroku-maven-plugin.
 
@@ -28,13 +28,13 @@ Since Vaadin 14 [npm](https://www.npmjs.com/) is used as the front-end package m
 
 The most simple and convenient way to start building Vaadin application is to use Vaadin Starter Project. For that, we go to https://vaadin.com/start, chose the latest Vaadin version (which is 14 as of December 2019), Spring Boot tech stack, enter Maven Group ID and the Project Name. Press download button.
 
-![vaadin-start](/blogPosts/Vaadin-Heroku/vaadin-start.png)
+![vaadin-start](/posts/Vaadin-Heroku/vaadin-start.png)
 
 Once you have the project downloaded, unzip the folder and open the project in your favorite IDE.
 
 The project folder has a few files and folders.
 
-![project-structure](/blogPosts/Vaadin-Heroku/project-structure.jpg)
+![project-structure](/posts/Vaadin-Heroku/project-structure.jpg)
 
 It is a fully functioning web application. To run it we enter command in terminal:
 
@@ -44,7 +44,7 @@ It is a fully functioning web application. To run it we enter command in termina
 
 Once the build is finished and the application is running, navigate in browser to localhost:8080 and you should see basic Vaadin application.
 
-![vaadin-base-app](/blogPosts/Vaadin-Heroku/browser1.jpg)
+![vaadin-base-app](/posts/Vaadin-Heroku/browser1.jpg)
 
 The bar at the bottom of the page indicates that it is a PWA. You can read about it in [this blog post](/posts/what-is-progressive-web-app).
 

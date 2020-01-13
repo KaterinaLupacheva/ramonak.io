@@ -8,7 +8,7 @@ category: "Tutorial"
 tags:
   - "Keycloak"
 description: "The fifth part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
-socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
+socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a fifth part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
@@ -18,11 +18,11 @@ Now we need to define which applications (or Clients in Keycloak terms) are mapp
 
 In the Keycloak’s Administration console Click on Clients link on the left menu and then Create.
 
-![create-clients](/blogPosts/Vaadin-KeyCloak/create-clients.jpg)
+![create-clients](/posts/Vaadin-KeyCloak/create-clients.jpg)
 
 Add our Spring Boot backend app:
 
-![client-backend](/blogPosts/Vaadin-KeyCloak/client-backend.JPG)
+![client-backend](/posts/Vaadin-KeyCloak/client-backend.JPG)
 
 Enter Client ID (spring-boot-backend, for example) and Root URL of the app (http://localhost:9999/ in our case). Press Save button.
 
@@ -32,7 +32,7 @@ To speed up the following configuration process of our apps, click on Installati
 
 Finally, add the second Client – Vaadin frontend app. Repeat the same steps as with adding the backend app: Clients -> Create. Then enter data about the app and click Save.
 
-![vaadin-client](/blogPosts/Vaadin-KeyCloak/vaadin-client.JPG)
+![vaadin-client](/posts/Vaadin-KeyCloak/vaadin-client.JPG)
 
 Then save generate and save properties from the Installation tab (optionally).
 

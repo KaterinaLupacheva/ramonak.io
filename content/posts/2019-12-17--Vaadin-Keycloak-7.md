@@ -12,7 +12,7 @@ tags:
   - "Keycloak"
   - "Java"
 description: "The seventh (last) part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
-socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
+socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a seventh part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
@@ -167,7 +167,7 @@ mvn spring-boot:run
 
 And also don’t forget to run the backend app (in case it’s stopped). Navigate to localhost:9998/months, again you’ll be redirected to Keycloak’s login page, enter credentials of the user (it’s kate in my case) and here it is:
 
-![months-view](/blogPosts/Vaadin-KeyCloak/months-view.JPG)
+![months-view](/posts/Vaadin-KeyCloak/months-view.JPG)
 Go to localhost:9998/admin. And we get an error, which is totally fine, as our user doesn’t have access to the Admin page.
 
 To log in as an admin, first, we have to logout as a user. Now let’s implement it in the Vaadin app UI.
@@ -259,15 +259,15 @@ localhost:9998/months
 
 You’ll be redirected to Keycloak’s login page. Enter admin’s credentials and we have a month’s list with our new features: currently logged in user’s name (admin) and logout link:
 
-![vaadin-months-logout](/blogPosts/Vaadin-KeyCloak/vaadin-months-logout.JPG)
+![vaadin-months-logout](/posts/Vaadin-KeyCloak/vaadin-months-logout.JPG)
 
 Test access to admin page (localhost:9998/admin):
 
-![adminpage-logout](/blogPosts/Vaadin-KeyCloak/adminpage-logout.jpg)
+![adminpage-logout](/posts/Vaadin-KeyCloak/adminpage-logout.jpg)
 
 And the logout link is only left to test. Press Logout:
 
-![logout-no-user](/blogPosts/Vaadin-KeyCloak/logout-no-user.JPG)
+![logout-no-user](/posts/Vaadin-KeyCloak/logout-no-user.JPG)
 
 We are logged out from all the clients (apps) that are united in the Keycloak’s Realm!
 

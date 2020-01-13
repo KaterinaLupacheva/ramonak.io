@@ -8,9 +8,9 @@ category: "PWA"
 tags:
   - "Web Development"
 description: "Progressive Web Application (PWA) is an application software, that combines regular web pages and native mobile apps. It gives users a native-like experience by making a web application function like a desktop or mobile app."
-socialImage: "/blogPosts/2019-10-22--PWA/PWA.jpg"
+socialImage: "/media/PWA.jpg"
 ---
-![PWA](/blogPosts/2019-10-22--PWA/PWA.jpg)
+![PWA](/media/PWA.jpg)
 
 **Progressive Web Application (PWA)** is an application software, that **combines** regular **web pages** and **native mobile apps**. It gives users a native-like experience by making a web application function like a desktop or mobile app. 
 

@@ -11,7 +11,7 @@ tags:
   - "Keycloak"
   - "Java"
 description: "The sixth part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
-socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
+socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a sixth part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
@@ -172,17 +172,17 @@ Well, at least it’s started! Now navigate to localhost:9999/months.
 
 And we are being redirected to default Keycloak login page.
 
-![login-user](/blogPosts/Vaadin-KeyCloak/login-user.JPG)
+![login-user](/posts/Vaadin-KeyCloak/login-user.JPG)
 
 Great! Enter the credentials of the earlier created user with User role. In my case, it will be user Kate. Press Log In or Enter key, and…
 
-![months-for-user](/blogPosts/Vaadin-KeyCloak/months-for-user.JPG)
+![months-for-user](/posts/Vaadin-KeyCloak/months-for-user.JPG)
 
 we have access to months page!
 
 Now let’s try to navigate to /admin page.
 
-![error-page](/blogPosts/Vaadin-KeyCloak/error-page.JPG)
+![error-page](/posts/Vaadin-KeyCloak/error-page.JPG)
 
 And we get an error page… Which means that it’s working as it’s supposed to be! User must have Admin authority to get access to admin page.
 
@@ -196,11 +196,11 @@ localhost:9991/auth/admin
 
 Then press Users link on the left -> View all users button -> press on ID of currently logged in user (kate in my case)
 
-![logout-kate](/blogPosts/Vaadin-KeyCloak/logout-kate.jpg)
+![logout-kate](/posts/Vaadin-KeyCloak/logout-kate.jpg)
 
 In opened view navigate to Sessions tab and press Logout action
 
-![kate-sessions-logout](/blogPosts/Vaadin-KeyCloak/kate-sessions-logout.jpg)
+![kate-sessions-logout](/posts/Vaadin-KeyCloak/kate-sessions-logout.jpg)
 
 Now we’ll try to access the admin page.
 
@@ -210,17 +210,17 @@ localhost:9999/admin
 
 And once again we are prompted to Keycloak’s default login page.
 
-![login-user](/blogPosts/Vaadin-KeyCloak/login-user.JPG)
+![login-user](/posts/Vaadin-KeyCloak/login-user.JPG)
 
 But this time let’s log in under the admin’s credentials.
 
 And yep, we have access to the admin page!
 
-![admin-page](/blogPosts/Vaadin-KeyCloak/admin.JPG)
+![admin-page](/posts/Vaadin-KeyCloak/admin.JPG)
 
 Test the access to /months page (localhost:9999/months).
 
-![months-for-user](/blogPosts/Vaadin-KeyCloak/months-for-user.JPG)
+![months-for-user](/posts/Vaadin-KeyCloak/months-for-user.JPG)
 
 Works too, as our admin user is authorized for both of our endpoints.
 

@@ -8,7 +8,7 @@ category: "Tutorial"
 tags:
   - "Keycloak"
 description: "The third part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
-socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
+socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a third part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
@@ -18,7 +18,7 @@ socialImage: "/blogPosts/Vaadin-KeyCloak/spring-vaadin-keycloak.png"
 
 To start using Keycloak we need to download it’s latest server version from [here](https://www.keycloak.org/downloads.html).
 
-![keycloak-download](/blogPosts/Vaadin-KeyCloak/keycloak-download.JPG)
+![keycloak-download](/posts/Vaadin-KeyCloak/keycloak-download.JPG)
 
 Unzip downloaded folder.
 
@@ -49,11 +49,11 @@ localhost:<keycloak_port>/auth
 
 that in my case is localhost:9991/auth, and we are at the main Keycloak page.
 
-![keycloak-welcome](/blogPosts/Vaadin-KeyCloak/Keycloak-welcome.JPG)
+![keycloak-welcome](/posts/Vaadin-KeyCloak/Keycloak-welcome.JPG)
 
 Enter a username, password and password confirmation at the Administration Console to create an initial admin user. Press Create button.
 
-![admin-created](/blogPosts/Vaadin-KeyCloak/admin-created.JPG)
+![admin-created](/posts/Vaadin-KeyCloak/admin-created.JPG)
 
 Press Administration Console link or enter in browser’s nav bar 
 ```
@@ -61,17 +61,17 @@ localhost:<keycloak_port>/auth/admin
 ```
 enter credentials of just created admin user and finally, we are at the “operational center” of Keycloak server.
 
-![keycloak-main](/blogPosts/Vaadin-KeyCloak/keycloak-main.JPG)
+![keycloak-main](/posts/Vaadin-KeyCloak/keycloak-main.JPG)
 
 Now we need to create Realm – it’s a Keycloak terminology for a group of apps that should be able to communicate with each other.
 
 Hover over Master drop-down menu and click Add Realm. 
 
-![create-realm](/blogPosts/Vaadin-KeyCloak/create-realm.JPG)
+![create-realm](/posts/Vaadin-KeyCloak/create-realm.JPG)
 
 Enter Realm name (for example, Demo) and click on Create.
 
-![realm-name](/blogPosts/Vaadin-KeyCloak/realm-name.JPG)
+![realm-name](/posts/Vaadin-KeyCloak/realm-name.JPG)
 
 So we successfully booted Keycloak and created Realm for our apps!
 
