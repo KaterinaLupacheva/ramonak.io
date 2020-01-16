@@ -13,16 +13,20 @@ I'm a self-taught developer. And I'm continue to learn constantly :pencil:.
 Currently for the full-stack development I prefer to use:
 
 :small_blue_diamond: **Java Stack** :
+
 * Spring Boot for backend
-* Vaadin Framework for frontend
+
+* Vaadin Framework for frontend (<a href="/media/vaadin-certificate.pdf" target="_blank">Certified Vaadin 14 Developer</a>)
 
 AND / OR
 
 :small_blue_diamond: **JavaScript Stack**:
+
 * Node.js / Express.js for backend
 * React.js for frontend
 
 Other tools and technologies, that I use, include:
+
 * Backend: Spring Framework (Data, Security, etc), Hibernate
 * Databases: PostgreSQL, MySQL, MongoDB
 * Frontend: HTML, (S)CSS, JavaScript
