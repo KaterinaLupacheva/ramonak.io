@@ -42,7 +42,8 @@ module.exports = {
       gitlab: '',
       weibo: '',
       codepen: '',
-      youtube: ''
+      youtube: '',
+      bitbucket: 'EkaterinaLupacheva'
     }
   }
 };

@@ -16,6 +16,7 @@ const useSiteMetadata = () => {
                 github
                 twitter
                 email
+                bitbucket
               }
             }
             menu {
