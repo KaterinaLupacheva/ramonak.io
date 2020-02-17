@@ -1,8 +1,8 @@
 import React from 'react';
-import './tech.module.scss';
+import styles from './tech.module.scss';
 
 const Tech = ({ tech }) => (
-    <div className='tech'>
+    <div className={styles['tech']} >
         {tech}
     </div>
 );

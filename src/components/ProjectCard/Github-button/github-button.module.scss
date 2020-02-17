@@ -1,0 +1,17 @@
+@import '../../../assets/scss/variables';
+
+.github-button{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid var(--color-base);
+
+    a{
+        color: var(--color-base);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
