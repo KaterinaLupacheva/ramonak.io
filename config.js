@@ -19,10 +19,10 @@ module.exports = {
       label: 'About me',
       path: '/pages/about'
     },
-    // {
-    //   label: 'Contact me',
-    //   path: '/pages/contacts'
-    // }
+    {
+      label: 'My projects',
+      path: '/pages/projects'
+    }
   ],
   author: {
     name: 'Katsiaryna (Kate) Lupachova',

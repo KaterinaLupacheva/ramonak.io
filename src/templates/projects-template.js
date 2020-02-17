@@ -1,12 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/Layout';
+import Sidebar from '../components/Sidebar';
 import { useSiteMetadata } from '../hooks';
 
 const ProjectTemplate = ({ data }) => {
     const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
     return(
         <Layout title={siteTitle} description={siteSubtitle}>
+            <Sidebar />
             <div>
                 <h1>TEST</h1>
             </div>
