@@ -12,9 +12,11 @@ const ProjectCard = ({ project }) => {
             <div className={styles['project-container']}>
                 <div className={styles['first-column']}>
                     <div className={styles['image-container']}>
-                        <img className={styles['project-image']}
-                            src={project.image}
-                        />
+                        <a href={project.link} target='_blank'>
+                            <img className={styles['project-image']}
+                                src={project.image}
+                            />
+                        </a>
                     </div>
                     <GihubButton href={project.sourceCode} />
                 </div>
