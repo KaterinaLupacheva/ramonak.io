@@ -27,7 +27,7 @@ module.exports = {
   projects: [
     {
       title: 'Tabata - Fitness App',
-      image: '/projects/tabata.JPG'
+      image: '/media/projects/tabata2.JPG'
     }
   ],
   author: {

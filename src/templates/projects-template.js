@@ -5,11 +5,11 @@ import ProjectCard from '../components/ProjectCard/project-card';
 import { useSiteMetadata } from '../hooks';
 
 const ProjectTemplate = () => {
-    const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
+    const { title: siteTitle, subtitle: siteSubtitle, projects } = useSiteMetadata();
     return(
         <Layout title={siteTitle} description={siteSubtitle}>
             <Sidebar />
-            <ProjectCard />
+            {projects.map(project => <ProjectCard project={project} />)}
         </Layout>
     )
 };
