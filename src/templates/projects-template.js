@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Sidebar from '../components/Sidebar';
+import Page from '../components/Page';
 import ProjectCard from '../components/ProjectCard/project-card';
 import { useSiteMetadata } from '../hooks';
 
@@ -9,7 +10,9 @@ const ProjectTemplate = () => {
     return(
         <Layout title={siteTitle} description={siteSubtitle}>
             <Sidebar />
-            {projects.map(project => <ProjectCard project={project} />)}
+            <Page>
+                {projects.map(project => <ProjectCard project={project} />)}
+            </Page>
         </Layout>
     )
 };

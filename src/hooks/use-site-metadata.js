@@ -26,6 +26,9 @@ const useSiteMetadata = () => {
             projects {
               title
               image
+              description
+              link
+              techs
             }
             url
             title

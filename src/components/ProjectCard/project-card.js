@@ -7,10 +7,16 @@ const ProjectCard = ({ project }) => {
             <h2 className={styles['project-name']}>
                 {project.title}
             </h2>
-            <img 
-                src={project.image}
-                width={'100'}
-                height={'100'} />
+            <div className={styles['project-container']}>
+                <div className={styles['image-container']}>
+                    <img className={styles['project-image']}
+                        src={project.image}
+                    />
+                </div>
+                <div className={styles['project-description']}>
+                    {project.description}
+                </div>
+            </div>
         </div>
     )
 };
