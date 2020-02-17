@@ -23,6 +23,10 @@ const useSiteMetadata = () => {
               label
               path
             }
+            projects {
+              title
+              image
+            }
             url
             title
             subtitle

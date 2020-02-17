@@ -24,6 +24,12 @@ module.exports = {
       path: '/pages/projects'
     }
   ],
+  projects: [
+    {
+      title: 'Tabata - Fitness App',
+      image: '/projects/tabata.JPG'
+    }
+  ],
   author: {
     name: 'Katsiaryna (Kate) Lupachova',
     photo: '/my-photo.png',
