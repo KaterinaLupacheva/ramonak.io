@@ -1,3 +1,6 @@
+@import '../../../assets/scss/variables';
+
 .tech{
-    
+    color: var(--color-primary);
+    font-size: $typographic-small-font-size;
 }
