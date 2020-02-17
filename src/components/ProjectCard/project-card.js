@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './project-card.module.scss';
+import Tech from './Tech/tech';
 
 const ProjectCard = ({ project }) => {
     return(
@@ -13,8 +14,13 @@ const ProjectCard = ({ project }) => {
                         src={project.image}
                     />
                 </div>
-                <div className={styles['project-description']}>
-                    {project.description}
+                <div className={styles['second-column']}>
+                    <div className={styles['project-description']}>
+                        {project.description}
+                    </div>
+                    <div className={styles['techs-container']}>
+                        {project.techs.map(tech => <Tech tech={tech} />)}
+                    </div>
                 </div>
             </div>
         </div>
