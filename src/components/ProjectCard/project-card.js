@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './project-card.module.scss';
+import ProjectImage from './Project-image/project-image';
 import Tech from './Tech/tech';
 import GihubButton from './Github-button/github-button';
 import ViewButton from './View-button/view-button';
@@ -12,13 +13,7 @@ const ProjectCard = ({ project }) => {
             </h2>
             <div className={styles['project-container']}>
                 <div className={styles['first-column']}>
-                    <div className={styles['image-container']}>
-                        <a href={project.link} target='_blank'>
-                            <img className={styles['project-image']}
-                                src={project.image}
-                            />
-                        </a>
-                    </div>
+                    <ProjectImage link={project.link} image={project.image} />
                     <div className={styles['buttons-container']}>
                         <GihubButton href={project.sourceCode} />
                         <ViewButton href={project.link} />
