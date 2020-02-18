@@ -1,6 +1,4 @@
-@import '../../../assets/scss/variables';
-
-.github-button{
+.view-button{
     width: 100px;
     display: flex;
     align-items: center;
@@ -14,5 +12,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-weight: bold;
     }
 }

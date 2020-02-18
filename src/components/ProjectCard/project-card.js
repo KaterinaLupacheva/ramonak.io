@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './project-card.module.scss';
 import Tech from './Tech/tech';
 import GihubButton from './Github-button/github-button';
+import ViewButton from './View-button/view-button';
 
 const ProjectCard = ({ project }) => {
     return(
@@ -18,7 +19,10 @@ const ProjectCard = ({ project }) => {
                             />
                         </a>
                     </div>
-                    <GihubButton href={project.sourceCode} />
+                    <div className={styles['buttons-container']}>
+                        <GihubButton href={project.sourceCode} />
+                        <ViewButton href={project.link} />
+                    </div>
                 </div>
                 <div className={styles['second-column']}>
                     <div className={styles['project-description']}>

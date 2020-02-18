@@ -29,6 +29,14 @@
                     max-height: 100%;
                 }
             }
+
+            .buttons-container{
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+            }
         }
 
         .second-column{
