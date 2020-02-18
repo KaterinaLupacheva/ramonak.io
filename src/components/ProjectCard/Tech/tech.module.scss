@@ -1,6 +1,8 @@
 @import '../../../assets/scss/variables';
 
 .tech{
-    color: var(--color-primary);
-    font-size: $typographic-small-font-size;
+    color: var(--color-secondary);
+    font-size: 1.1vw;
+    line-height: 1.2vw;
+    padding: 2vh 0 2vh 2vh;
 }

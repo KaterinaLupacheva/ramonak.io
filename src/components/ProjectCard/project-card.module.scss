@@ -32,17 +32,25 @@
         .second-column{
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             padding-left: 5vw;
 
             .project-description{
-                
+                text-align: right;    
             }
 
             .techs-container{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-evenly;
-                padding-top: 5vh;
+                justify-content: space-between;
+
+                :first-child{
+                    padding-left: 0;
+                }
+
+                :last-child{
+                    padding-right: 0;
+                }
             }
         }
     }
