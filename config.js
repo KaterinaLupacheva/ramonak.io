@@ -30,7 +30,7 @@ module.exports = {
       image: '/media/projects/tabata2.JPG',
       description: 'Fitness Progressive Web App (PWA) based on Tabata - a version of High Intensity Interval Training (HIIT).',
       link: 'https://tabata.ramonak.io',
-      techs: ['React.js / Redux', 'Spring Boot', 'PostgreSQL'],
+      techs: ['React.js / Redux', 'Spring Boot', 'Vaadin', 'PostgreSQL'],
       sourceCode: 'https://github.com/KaterinaLupacheva/tabata-app'
     }
   ],
