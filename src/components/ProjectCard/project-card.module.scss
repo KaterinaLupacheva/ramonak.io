@@ -4,6 +4,7 @@
 .project-card-container{
     border-bottom: 2px solid var(--color-base);
     padding-bottom: 3vh;
+    width: 100%;
 
     .project-name{
         width: 100%;
@@ -30,7 +31,7 @@
             .techs-container{
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                justify-content: flex-end;
                 font-size: 2vh;
                 line-height: 2.5vh;
 
@@ -70,9 +71,9 @@
             width: 100%;
     
             .first-column{
+                width: 40vw;
                 display: flex;
                 flex-direction: column;
-                width: 50vw;
                
                 .buttons-container{
                     width: 100%;
@@ -80,6 +81,7 @@
             }
     
             .second-column{
+                width: 50vw;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
