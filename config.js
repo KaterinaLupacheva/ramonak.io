@@ -26,12 +26,28 @@ module.exports = {
   ],
   projects: [
     {
+      title: 'Personal site',
+      image: '/media/projects/personal-site1.JPG',
+      description: 'My personal site, where I write blog posts about technologies I use and learn and showcase my web dev projects.',
+      link: 'https://ramonak.io',
+      techs: ['React.js', 'Gatsby.js', 'Netlify CMS'],
+      sourceCode: 'https://github.com/KaterinaLupacheva/ramonak.io'
+    },
+    {
       title: 'Tabata - Fitness App',
       image: '/media/projects/tabata2.JPG',
       description: 'Fitness Progressive Web App (PWA) based on Tabata - a version of High Intensity Interval Training (HIIT).',
       link: 'https://tabata.ramonak.io',
       techs: ['React.js / Redux', 'Spring Boot', 'Vaadin', 'PostgreSQL'],
       sourceCode: 'https://github.com/KaterinaLupacheva/tabata-app'
+    },
+    {
+      title: 'Celebrity Recognition App',
+      image: '/media/projects/celebrity1.JPG',
+      description: 'Fun app for finding out which celebrity do you look like by uploading or by pasting URL of your photo using Machine Learning API.',
+      link: 'https://celebrity.ramonak.io',
+      techs: ['React.js', 'Clarifai API'],
+      sourceCode: 'https://github.com/KaterinaLupacheva/celebrity-recognition-app'
     }
   ],
   author: {
