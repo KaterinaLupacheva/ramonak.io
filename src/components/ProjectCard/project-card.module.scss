@@ -2,7 +2,8 @@
 
 .project-card-container{
     width: 100%;
-    height: 100%;
+    border-bottom: 2px solid var(--color-base);
+    padding-bottom: 3vh;
 
     .project-name{
         width: 100%;
@@ -13,15 +14,12 @@
         display: flex;
         flex-direction: row;
         width: 100%;
-        height: 40vh;
 
         .first-column{
             display: flex;
             flex-direction: column;
-            width: 40vw;
-
+            width: 50vw;
            
-
             .buttons-container{
                 margin-top: 10px;
                 display: flex;
