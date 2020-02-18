@@ -10,7 +10,7 @@ const ProjectTemplate = () => {
     return(
         <Layout title={siteTitle} description={siteSubtitle}>
             <Sidebar />
-            <Page>
+            <Page title={}>
                 {projects.map(project => <ProjectCard project={project} key={project.title} />)}
             </Page>
         </Layout>

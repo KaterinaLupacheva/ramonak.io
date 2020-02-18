@@ -1,7 +1,7 @@
 @import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 
 .project-card-container{
-    width: 100%;
     border-bottom: 2px solid var(--color-base);
     padding-bottom: 3vh;
 
@@ -11,38 +11,28 @@
     }
 
     .project-container{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-
         .first-column{
-            display: flex;
-            flex-direction: column;
-            width: 50vw;
-           
             .buttons-container{
                 margin-top: 10px;
                 display: flex;
                 flex-direction: row;
-                width: 100%;
                 justify-content: space-between;
             }
         }
 
         .second-column{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding-left: 5vw;
-
+            padding-top: 10px;
+            
             .project-description{
-                text-align: right;    
+                text-align: justify;
             }
 
             .techs-container{
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
+                font-size: 2vh;
+                line-height: 2.5vh;
 
                 :first-child{
                     padding-left: 0;
@@ -53,5 +43,54 @@
                 }
             }
         }
+
     }
 }
+
+@include breakpoint-sm {
+    .project-card-container{
+        .project-container{
+            .second-column{
+                .techs-container{
+                    font-size: 1.1vw;
+                    line-height: 1.2vw;
+                }
+            }
+        }
+    }
+}
+
+@include breakpoint-md {
+    .project-card-container{
+        width: 100%;
+    
+        .project-container{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+    
+            .first-column{
+                display: flex;
+                flex-direction: column;
+                width: 50vw;
+               
+                .buttons-container{
+                    width: 100%;
+                }
+            }
+    
+            .second-column{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-left: 5vw;
+    
+                .project-description{
+                    text-align: right;    
+                }
+            }
+        }
+    }
+}
+
+
