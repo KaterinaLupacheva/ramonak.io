@@ -12,9 +12,9 @@ description: "This blog post is a story about development of my first personal p
 socialImage: "/posts/tabata/tabata-landing.JPG"
 ---
 
-![tabata-app](//posts/tabata/tabata-landing.JPG)
+![tabata-app](/posts/tabata/tabata-landing.JPG)
 
-This blog post is going to be about the process of developing my first significant personal project - Tabata App.
+This blog post is going to be about the process of developing my first significant personal project - [Tabata App](https://tabata.ramonak.io/).
 
 The idea of this app was born from personal needs. As a freelancer, I work mostly from home. Thus the movement is minimal. So to feel better and to be energized I need to work out.
 
@@ -32,11 +32,11 @@ So, my thinking was “I need a fitness web app, with bare minimum of settings a
 
 I’m a big fan of efficiency. And I’m not a fitness expert. But I’ve been practicing a home fitness for about the past 10 years (with some timeouts). I’ve read a lot of articles about the most efficient way of workout. And came to the conclusion that the most suitable and the most effective workout for me is High Intensity Interval Training (HIIT). Specifically, the Tabata training: you do every exercise for 20 secs and then rest for 10 secs. That’s why the Tabata timer with voice countdown was the first feature I’ve developed in the app.
 
-![tabata-timer](//posts/tabata/tabata-timer.JPG)
+![tabata-timer](/posts/tabata/tabata-timer.JPG)
 
-The “not be bored” part I’ve decided to solve by creating Random Workouts! The app randomly picks the exercises from the list of all exercises, that I’ve added to the database. 
+The “not be bored” part I’ve decided to solve by creating [Random Workouts!](https://tabata.ramonak.io/parameters) The app randomly picks the exercises from the list of all exercises, that I’ve added to the database.
 
-![tabata-start](//posts/tabata/tabata1.JPG)
+![tabata-start](/posts/tabata/tabata1.JPG)
 
 As for workout options, you can choose:
 
@@ -44,7 +44,7 @@ As for workout options, you can choose:
 - number of circuits (or sets): 1, 2 or 4
 - focus muscle group: whole body, lower body, upper body, core or cardio training.
 
-![tabata-parameters](//posts/tabata/tabata2.JPG)
+![tabata-parameters](/posts/tabata/tabata2.JPG)
 
 My usual setup is:
 
@@ -54,43 +54,43 @@ My usual setup is:
 
 And also I choose the option to add exercises with dumbbells, just for the extra load.
 
-![tabata-my-setup](//posts/tabata/tabata-my-setup.JPG)
+![tabata-my-setup](/posts/tabata/tabata-my-setup.JPG)
 
 So, in 5 seconds I’m ready to workout! A 16-minute high-intensity workout is enough for me. 
 
 Also, I’ve implemented the algorithm by which there will be at least 20% of cardio exercises in every random workout. I’ve done it to keep the heart rate up which is very important for an effective workout.  
 
-If you are not willing to completely put your fitness fate into the app’s arms, you can choose the exercises for workout by yourself from the list of all exercises. Then just pick the number of circuits and you are ready to go!
+If you are not willing to completely put your fitness fate into the app’s arms, you can [choose the exercises](https://tabata.ramonak.io/create-workout) for workout by yourself from the list of all exercises. Then just pick the number of circuits and you are ready to go!
 
-![tabata-create-workout](//posts/tabata/tabata4.JPG)
+![tabata-create-workout](/posts/tabata/tabata4.JPG)
 
 Well, the next problem was with the visuals of the exercises. Images? Not very informative, hard to show the exercise in the dynamics. GIFS? Doesn’t look good. So I’ve decided to add the videos! Not to worry about copyrights and other possible legal issues, I was left with the only option - to shoot videos of myself doing exercises.
 
 I have zero experience in video shooting and editing, but had to learn quickly. And moreover, I’m not a fitness instructor or some kind of model with the perfect body. I’m just an ordinary human being who likes to do fitness at home.
 
-So, I moved all the shyness and self-conscious away and stood in front of the camera trying to do the best I could. My husband acted as a cameraman of the iPhone camera. In one take we shoot for about 15 exercises.
+So, I moved all the shyness and self-consciousness away and stood in front of the camera trying to do the best I could. My husband acted as a cameraman of the iPhone camera. In one take we shoot for about 15 exercises.
 
 Then I had to edit them all. I cut the 1-2 repetitions of the exercises and looped the playback. The results were uploaded to AWS S3 and corresponding links were provided in the app.
 
-![tabata-workout](//posts/tabata/tabata3.JPG)
+![tabata-workout](/posts/tabata/tabata3.JPG)
 
-The last thing I did for the first release was implementing the Progressive Web App feature. Thus the app is fully functioning on mobile devices. When you open the app in the browser for the first time, just add it’s icon on the home screen.
+The last thing I did for the first release was implementing the [Progressive Web App](/posts/what-is-progressive-web-app) feature. Thus the app is fully functioning on mobile devices. When you open the app in the browser for the first time, just add it’s icon on the home screen.
 
 On Android there is a notification to install the app.
 
-![tabata-android](//posts/tabata/tabata-android.jpg)
+![tabata-andr](/posts/tabata/tabata-andr.jpg)
 
 On Apple’s devices it’s a little bit harder: first, you need to press the share button, and then press Add to home screen.
 
-![tabata-ios](//posts/tabata/tabata-ios.png)
+![tabata-ios](/posts/tabata/tabata-ios.png)
 
 So after about 2 months of hard work, the first version of the Tabata App was ready!!! 
 
 Couple words about the tech part. I’ve developed the app using the following main technologies:
 
-- front-end (Javascript): React.js, Redux, Sass
-- back-end (Java): Spring Boot, Spring Data, Spring Security, PostgreSQL database
-- admin panel: Vaadin framework (Java)
+- front-end (Javascript): [React.js](https://reactjs.org/), [Redux](https://redux.js.org/), [Sass](https://sass-lang.com/)
+- back-end (Java): [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data](https://spring.io/projects/spring-data), [Spring Security](https://spring.io/projects/spring-security), [PostgreSQL](https://www.postgresql.org/) database
+- admin panel: [Vaadin](https://vaadin.com/) framework (Java)
 
 I’m planning to write some technical blog posts about new things that I’ve learned and about some problems that I’ve solved while developing the app.  
 
