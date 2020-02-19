@@ -7,7 +7,6 @@ import { useSiteMetadata } from '../hooks';
 
 const ProjectTemplate = ({ data }) => {
     const { frontmatter } = data.markdownRemark;
-    console.log('DATA ' + JSON.stringify(frontmatter, null, 2))
     const { title: siteTitle, projects } = useSiteMetadata();
     return(
         <Layout title={`${frontmatter.title} - ${siteTitle}`} description={frontmatter.description} socialImage={frontmatter.socialImage}>
@@ -26,7 +25,6 @@ export const query = graphql`
       html
       frontmatter {
         title
-        date
         description
         socialImage
       }
