@@ -31,7 +31,7 @@ First, start a new React project using [create-react-app](https://github.com/fac
 
 Then let’s create all the components:
 
-**video-clip.component.js**
+**src/components/video-clip.component.js**
 
 ```jsx
 
@@ -54,7 +54,7 @@ const VideoClip = () => (
 export default VideoClip;
 ```
 
-**play-pause-button.component.js**
+**src/components/play-pause-button.component.js**
 
 ```jsx
 
@@ -74,7 +74,7 @@ const PlayPauseButton = () => <button style={styles}>Click</button>;
 export default PlayPauseButton;
 ```
 
-**controls.component.js**
+**src/components/controls.component.js**
 
 ```jsx
 
@@ -86,7 +86,7 @@ const Controls = () => <PlayPauseButton />;
 export default Controls;
 ```
 
-**App.js**
+**src/App.js**
 
 ```jsx
 
@@ -112,5 +112,96 @@ If we run the app (```npm start```), then we'll see just a video clip with contr
 ![start-creen](/posts/react-context/screen1.JPG)
 *video by https://pixabay.com/*
 
-Our goal is to control the playback of the video by clicking on the Click button.
+Our goal is to control the playback of the video by clicking on the Click button. For that, we need data about the video status (playing or paused) and a way to update this status by clicking on the button. And also we’d like to escape the “prop drilling”.
 
+In a typical React app, we would have a state object in the parent component (App.js) with a status property and a function for updating the status. This state would be passed-down to direct child components (VideoClip component and Controls component) via props, and then from Controls component further to PalyPauseButton component. Classical “prop-drilling”.
+
+Let’s use the help of the Context API.
+
+Create VideoContext with default status value as ‘paused’ and a default (empty) function for updating the status.
+
+**src/context/video.context.js**
+
+```jsx
+import React, { createContext } from 'react';
+
+const VideoContext = createContext({
+  status: 'paused',
+  togglePlayPause: () => {},
+});
+
+export default VideoContext;
+```
+
+Both VideoClip component and PlayPauseButton component must have access to the Video Context. As in React app, data should be passed top-down, we need to leverage the local state of the common ancestor component in order to simultaneously propagate changes into the context and into the child components. In our case the common ancestor is App.js.
+
+We'll add state to the App.js component by implementing ```useState``` Hook. The default value of the status must be the same as it's default value in the Video Context. And we’ll write the implementation of *togglePlayPause()* function:
+
+**src/App.js**
+
+```jsx
+import React, { useState} from 'react';
+
+...
+
+function App() {
+  const [status, setStatus] = useState('paused');
+  const togglePlayPause = () => setStatus(status === 'playing' ? 'paused' : 'playing');
+...
+}
+
+```
+
+In order for any child, grandchild, great-grandchild, and so on to have access to Video Context, we must wrap the parent element into VideoContext.Provider component, which will be used to pass the status and *togglePlayPause()* function via a *value* prop.
+
+**src/App.js**
+
+```jsx
+...
+import VideoContext from './context/video.context';
+...
+
+return (
+    <div className="App">
+      <VideoContext.Provider
+        value={{
+          status,
+          togglePlayPause,
+        }}
+      >
+        <VideoClip />
+        <Controls />
+      </VideoContext.Provider>
+    </div>
+  );
+...
+```
+
+To consume VideoContext we are going to use *useContext* Hook.
+
+**src/components/play-pause-button.component.js**
+
+```jsx
+import React, { useContext } from 'react';
+import VideoContext from '../context/video.context';
+...
+
+const PlayPauseButton = () => {
+  const { status, togglePlayPause } = useContext(VideoContext);
+  return (
+    <button style={styles} onClick={togglePlayPause}>
+      {status === 'playing' ? 'PAUSE' : 'PLAY'}
+    </button>
+  );
+};
+
+...
+```
+
+Thus by clicking on the button we are toggling playing and paused value of the status prop and also dynamically changing the title of the button. We can see it in the browser:
+
+<video autoplay loop controls>
+  <source src="/react-context/clip1.mp4" type="video/mp4">
+</video>
+
+But we still don’t control the playback of the video clip. Let’s fix this!
