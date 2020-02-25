@@ -135,7 +135,7 @@ export default VideoContext;
 
 Both VideoClip component and PlayPauseButton component must have access to the Video Context. As in React app, data should be passed top-down, we need to leverage the local state of the common ancestor component in order to simultaneously propagate changes into the context and into the child components. In our case the common ancestor is App.js.
 
-We'll add state to the App.js component by implementing ```useState``` Hook. The default value of the status must be the same as it's default value in the Video Context. And we’ll write the implementation of *togglePlayPause()* function:
+We'll add state to the App.js component by implementing **useState** Hook. The default value of the status must be the same as it's default value in the Video Context. And we’ll write the implementation of **togglePlayPause()** function:
 
 **src/App.js**
 
@@ -152,7 +152,7 @@ function App() {
 
 ```
 
-In order for any child, grandchild, great-grandchild, and so on to have access to Video Context, we must wrap the parent element into VideoContext.Provider component, which will be used to pass the status and *togglePlayPause()* function via a *value* prop.
+In order for any child, grandchild, great-grandchild, and so on to have access to Video Context, we must wrap the parent element into VideoContext.Provider component, which will be used to pass the status and **togglePlayPause()** function via a **value** prop.
 
 **src/App.js**
 
@@ -177,7 +177,7 @@ return (
 ...
 ```
 
-To consume VideoContext we are going to use *useContext* Hook.
+To consume VideoContext we are going to use **useContext** Hook.
 
 **src/components/play-pause-button.component.js**
 
@@ -205,3 +205,48 @@ Thus by clicking on the button we are toggling playing and paused value of the s
 </video>
 
 But we still don’t control the playback of the video clip. Let’s fix this!
+
+For that, we need to update VideoClip component. Once again for consuming VideoContext we’ll use **useContext** Hook. And to get the access to play() and pause() methods of a video element, we’ll implement [React Refs](https://reactjs.org/docs/refs-and-the-dom.html), which we’ll place inside the **useEffect** Hook.
+
+**src/components/video-clip.component.js**
+
+```jsx
+import React, { useContext, useEffect, createRef } from 'react';
+import VideoContext from '../context/video.context';
+
+...
+
+const VideoClip = () => {
+  const { status } = useContext(VideoContext);
+
+  const vidRef = createRef();
+
+  useEffect(() => {
+    if (status === 'playing') {
+      vidRef.current.play();
+    } else if (status === 'paused') {
+      vidRef.current.pause();
+    }
+  });
+
+  return (
+    <video style={videoStyles} controls ref={vidRef}>
+      <source
+        src="https://react-context.s3.eu-central-1.amazonaws.com/Pouring+Of+Milk.mp4"
+        type="video/mp4"
+      />
+    </video>
+  );
+};
+...
+```
+
+Result is in the browser window:
+
+<video autoplay loop controls>
+  <source src="/react-context/clip2.mp4" type="video/mp4">
+</video>
+
+We can control video playback in VideoClip component from a nested PlayPauseButton component, which is not directly related.
+
+The complete source code of this part of the tutorial is available in [this GitHub repo](https://github.com/KaterinaLupacheva/react-context/tree/master/with-hooks).
