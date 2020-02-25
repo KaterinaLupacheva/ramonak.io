@@ -56,7 +56,7 @@ And also I choose the option to add exercises with dumbbells, just for the extra
 
 ![tabata-my-setup](/posts/tabata/tabata-my-setup.JPG)
 
-So, in 5 seconds I’m ready to workout! A 16-minute high-intensity workout is enough for me. 
+So, in 5 seconds I’m ready to workout! A 16-minute high-intensity workout is enough for me.
 
 Also, I’ve implemented the algorithm by which there will be at least 20% of cardio exercises in every random workout. I’ve done it to keep the heart rate up which is very important for an effective workout.  
 
@@ -84,7 +84,7 @@ On Apple’s devices it’s a little bit harder: first, you need to press the sh
 
 ![tabata-ios](/posts/tabata/tabata-ios.png)
 
-So after about 2 months of hard work, the first version of the Tabata App was ready!!! 
+So after about 2 months of hard work, the first version of the Tabata App was ready!!!
 
 Couple words about the tech part. I’ve developed the app using the following main technologies:
 
