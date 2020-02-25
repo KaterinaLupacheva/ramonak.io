@@ -27,7 +27,9 @@ In this blog post, I’m going to solve this problem in two ways:
 
 ## Part I: React Context API with functional components and Hooks
 
-First, let’s create all the components:
+First, start a new React project using [create-react-app](https://github.com/facebook/create-react-app).  
+
+Then let’s create all the components:
 
 **video-clip.component.js**
 
@@ -52,4 +54,63 @@ const VideoClip = () => (
 export default VideoClip;
 ```
 
+**play-pause-button.component.js**
+
+```jsx
+
+import React from 'react';
+
+const styles = {
+  width: '100px',
+  height: '5vh',
+  backgroundColor: 'black',
+  color: 'white',
+  fontSize: '20px',
+  marginTop: '20px',
+};
+
+const PlayPauseButton = () => <button style={styles}>Click</button>;
+
+export default PlayPauseButton;
+```
+
+**controls.component.js**
+
+```jsx
+
+import React from 'react';
+import PlayPauseButton from './play-pause-button.component';
+
+const Controls = () => <PlayPauseButton />;
+
+export default Controls;
+```
+
+**App.js**
+
+```jsx
+
+import React from 'react';
+import VideoClip from './components/video-clip.component';
+import Controls from './components/controls.component';
+import './App.css';
+
+function App() {
+  return (
+    <div className="App">
+        <VideoClip />
+        <Controls />
+    </div>
+  );
+}
+
+export default App;
+```
+
+If we run the app (```npm start```), then we'll see just a video clip with control buttons and a "Click" button, which does nothing for now.
+
+![start-creen](/posts/react-context/screen1.JPG)
 *video by https://pixabay.com/*
+
+Our goal is to control the playback of the video by clicking on the Click button.
+
