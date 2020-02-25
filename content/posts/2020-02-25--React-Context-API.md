@@ -243,7 +243,7 @@ const VideoClip = () => {
 
 Result is in the browser window:
 
-<video autoplay loop controls>
+<video autoplay controls>
   <source src="/react-context/clip2.mp4" type="video/mp4">
 </video>
 
@@ -252,3 +252,144 @@ We can control video playback in VideoClip component from a nested PlayPauseButt
 The complete source code of this part of the tutorial is available in [this GitHub repo](https://github.com/KaterinaLupacheva/react-context/tree/master/with-hooks).
 
 ## Part II: React Context API with class components
+
+Now let’s solve the same problem, but refactoring all the components from functional to class components.
+
+But first I’m going to change video.context.js file and implement there another approach in developing context. I’ll create VideoContextProvider class inside video.context.js, in which all the logic concerning the current status of the video playback and the way to update it will be included.
+
+**src/context/video.context.js**
+
+```jsx
+import React, { createContext } from 'react';
+
+//create context with an empty object
+const VideoContext = createContext({});
+
+export class VideoContextProvider extends React.Component {
+  //helper function to play or pause the video clip using React Refs
+  playVideo = () => {
+    let { status } = this.state;
+    if (status === 'playing') {
+      this.state.vidRef.current.play();
+    } else if (status === 'paused') {
+      this.state.vidRef.current.pause();
+    }
+  };
+
+  //function for toggling the video status and it's playback
+  togglePlayPause = () => {
+    this.setState(
+      state => ({
+        ...state,
+        status: state.status === 'playing' ? 'paused' : 'playing',
+      }),
+      () => this.playVideo()
+    );
+  };
+
+  //initial context value
+  state = {
+    status: 'paused',
+    togglePlayPause: this.togglePlayPause,
+    vidRef: React.createRef(),
+  };
+
+  render() {
+    return (
+        //passing the state object as a value prop to all children
+        <VideoContext.Provider value={this.state}>
+            {this.props.children}
+        </VideoContext.Provider>;
+    )}
+}
+
+export default VideoContext;
+```
+
+Now we can import VideoContextProvider component into App.js and wrap it around child components.
+
+**src/App.js**
+
+```jsx
+import React from 'react';
+import VideoClip from './components/video-clip.component';
+import Controls from './components/controls.component';
+import { VideoContextProvider } from './context/video.context';
+import './App.css';
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        <VideoContextProvider>
+          <VideoClip />
+          <Controls />
+        </VideoContextProvider>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+I won’t change Controls component as it has no logic in it, so for the purpose of this tutorial it doesn’t matter if it’s a functional or a class component.
+
+I’ll show how to consume the Video Context in PlayPauseButton class component and VideoClip class component in two different ways.
+
+Let’s start with the PlayPauseButton component. Here we’ll use the **Consumer component**, which comes with every context object and subscribes to its changes. The Consumer component requires a function as a child, which receives the current context value and returns a React node. Using this approach, we can access the context value only in **render()** method.
+
+**src/components/play-pause-button.component.js**
+
+```jsx
+import React from 'react';
+import VideoContext from '../context/video.context';
+
+...
+
+class PlayPauseButton extends React.Component {
+  render() {
+    return (
+      <VideoContext.Consumer>
+        {({ status, togglePlayPause }) => (
+          <button style={styles} onClick={togglePlayPause}>
+            {status === 'playing' ? 'PAUSE' : 'PLAY'}
+          </button>
+        )}
+      </VideoContext.Consumer>
+    );
+  }
+}
+
+export default PlayPauseButton;
+```
+
+In the VideoClip class component, we’ll consume the VideoContext value using the **contextType** property of the class, which can be assigned to the context object. Thus we can reference context value in any of the lifecycle methods. But you can only subscribe to a single context using this approach.
+
+**src/components/video-clip.component.js**
+
+```jsx
+import React from 'react';
+import VideoContext from '../context/video.context';
+
+...
+
+class VideoClip extends React.Component {
+  render() {
+    return (
+      <video style={videoStyles} controls ref={this.context.vidRef}>
+        <source
+          src="https://react-context.s3.eu-central-1.amazonaws.com/Pouring+Of+Milk.mp4"
+          type="video/mp4"
+        />
+      </video>
+    );
+  }
+}
+
+VideoClip.contextType = VideoContext;
+
+export default VideoClip;
+```
+
+As we moved all the logic for playing and pausing the video, in VideoClip component we just need to use the vidRef prop fo the Video Context.
