@@ -22,8 +22,8 @@ While developing my recent project, [Tabata - Fitness App](https://tabata.ramona
 
 In this blog post, I’m going to solve this problem in two ways:
 
-1. Using only functional components, Hooks and Context API
-2. Using only class components and Context API
+1. [Using only functional components, Hooks and Context API](#part-i-react-context-api-with-functional-components-and-hooks)
+2. [Using only class components and Context API](#part-ii-react-context-api-with-class-components)
 
 ## Part I: React Context API with functional components and Hooks
 
@@ -250,3 +250,5 @@ Result is in the browser window:
 We can control video playback in VideoClip component from a nested PlayPauseButton component, which is not directly related.
 
 The complete source code of this part of the tutorial is available in [this GitHub repo](https://github.com/KaterinaLupacheva/react-context/tree/master/with-hooks).
+
+## Part II: React Context API with class components
