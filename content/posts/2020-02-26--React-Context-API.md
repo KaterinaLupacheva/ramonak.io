@@ -8,7 +8,7 @@ category: "Tutorial"
 tags:
   - "React"
   - "Context API"
-description: "How to update React's Context from a nested component in a two ways: using functional components with React Hooks and using class components."
+description: "How to update React's Context from a nested component in two ways: using functional components with React Hooks and using class components."
 socialImage: "/posts/react-context/react-context-api.jpg"
 ---
 
