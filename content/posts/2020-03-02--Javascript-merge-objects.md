@@ -8,8 +8,10 @@ category: "Tutorial"
 tags:
   - "Javascript"
 description: "Short blog post about how to merge multiple objects with the sum of property's values in Javascript."
-socialImage: ""
+socialImage: "/media/js-merge-objects.png"
 ---
+
+![js-merge-objects](/media/js-merge-objects.png)
 
 Assume we have an array of objects - baskets with fruits.
 
