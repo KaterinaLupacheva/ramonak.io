@@ -58,7 +58,7 @@ module.exports = {
       email: 'contact@ramonak.io',
       facebook: '#',
       telegram: '#',
-      twitter: 'IoRamonak',
+      twitter: 'ramonak_io',
       github: 'KaterinaLupacheva',
       rss: '',
       vkontakte: '',
