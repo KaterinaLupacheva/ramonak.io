@@ -9,16 +9,16 @@ tags:
   - "React"
   - "Javascript"
 description: "How to dynamically sort an array of objects using dropdown and React Hooks and render it in React"
-socialImage: ""
+socialImage: "/media/React-sort-with-dropdown.png"
 ---
 
-![react-sort-array]()
+![react-sort-array](/media/React-sort-with-dropdown.png)
 
 Assume we have the following problem:
 
 - sort an array of objects
 - do it dynamically based on different properties values
-- render this in browser using react.js
+- render this in browser using [react.js](https://reactjs.org/)
 
 OK, let’s get down to business!
 
