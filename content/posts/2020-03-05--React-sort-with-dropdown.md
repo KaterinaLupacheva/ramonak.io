@@ -1,5 +1,5 @@
 ---
-title: "React: how to dynamically sort array of objects using the dropdown (with React Hooks)"
+title: "React: how to dynamically sort an array of objects using the dropdown (with React Hooks)"
 date: "2020-03-05"
 template: "post"
 draft: false
@@ -47,7 +47,7 @@ const bands = [
 ];
 ```
 
-For the sake of this tutorial I’m not going to do any fancy components, so let’s render this array in plain **div’s***.
+For the sake of this tutorial I’m not going to do any fancy components, so let’s render this array in plain *div’s*.
 
 ```jsx
 function App() {
@@ -69,3 +69,15 @@ function App() {
 Check the view in browser:
 
 ![bands](/posts/react-sort-dropdown/bands.JPG)
+
+Looks good!
+
+Now let’s add the *select* element with options of sortable properties.
+
+```jsx
+<select>
+        <option value="albums">Albums</option>
+        <option value="members">Members</option>
+        <option value="formed">Formed in</option>
+</select>
+```
