@@ -81,3 +81,28 @@ Now let’s add the *select* element with options of sortable properties.
         <option value="formed">Formed in</option>
 </select>
 ```
+
+That’s fantastic, but absolutely nothing happens when we change the dropdown options.
+
+![dropdown](/posts/react-sort-dropdown/dropdown.JPG)
+
+To fix this problem we need to somehow connect the *select* element and the array which we want to sort and re-render sorted array values each time the different *select* option is chosen.
+
+According to [React’s docs](https://reactjs.org/docs/react-component.html):
+
+> By default, when your component’s state or props change, your component will re-render.
+
+That means that we have to add state to our component. And I’m going to do it with the help of [React Hooks](https://reactjs.org/docs/hooks-overview.html).
+
+We need two state variables:
+
+- for storing data (the array)
+- for keeping track of current sortable value
+
+```jsx
+const [data, setData] = useState([]);
+//By default, the bands array will be sorted by number of albums.
+const [sortType, setSortType] = useState('albums');
+```
+
+And now the most fun part: define a function which will sort the bands array based on selected in the dropdown option.
