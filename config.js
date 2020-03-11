@@ -52,7 +52,7 @@ module.exports = {
     {
       title: 'GitHub API Dashboard',
       image: '/media/projects/github.JPG',
-      description: 'A dashboard of a github account with stats and Victory charts. The data is fetched from GitHub REST API. Please, kepp in mind GitHub API Rate Limiting.',
+      description: 'A dashboard of a github account with stats and Victory charts. The data is fetched from GitHub REST API. Please, keep in mind GitHub API Rate Limiting.',
       link: 'http://github-dashboard.ramonak.io',
       techs: ['React.js', 'GitHub API', 'Victory', 'Styled Components'],
       sourceCode: 'https://github.com/KaterinaLupacheva/github-api-dashboard'
