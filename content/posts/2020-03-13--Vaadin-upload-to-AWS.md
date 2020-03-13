@@ -85,3 +85,171 @@ Delete all demo stuff: GreetService.java and all inside the MainViev.class const
 
 ## 5. Create custom upload component
 
+Create UploadS3.java class:
+
+```java
+public class UploadS3 extends Div {
+
+    private final MemoryBuffer buffer;
+    private final Upload upload;
+
+    public UploadS3() {
+        buffer = new MemoryBuffer();
+        upload = new Upload(buffer);
+        add(upload);
+    }
+}
+```
+
+Then add this custom component into MainView class:
+
+```java
+@Route
+@CssImport("./styles/shared-styles.css")
+public class MainView extends VerticalLayout {
+
+    public MainView() {
+        addClassName("centered-content");
+
+        UploadS3 upload = new UploadS3();
+        add(upload);
+    }
+}
+```
+
+Run the project and navigate in a browser to *localhost:8080* (or any other port which you defined in application.properties, I prefer to use 9999 port):
+
+![vaadin-upload](/posts/Vaadin-AWS/vaadin-upload.JPG)
+
+ We can see the default Vaadin’s upload component.
+
+## 6. Configure Amazon Client
+
+First of all, add aws-java-sdk dependency into pom.xml.
+
+```xml
+<dependency>
+    <groupId>com.amazonaws</groupId>
+    <artifactId>aws-java-sdk</artifactId>
+    <version>1.11.728</version>
+</dependency>
+```
+
+Then in **application.properties** file create custom props for AWS credentials and paste the value of **Access key ID** and **Secret access key** from downloaded earlier credentials.csv file. Also, add a property with the name of a created S3 bucket.
+
+```xml
+aws.accessKey=XXXXXXXXXXX
+aws.secretKey=XXXXXXXXXXXXXXXXXXXXXXXX
+aws.s3bucket.name=vaadin-upload
+```
+
+Then inject these properties’ values into **MainView** class constructor and pass them to UploadS3 component.
+
+```java
+public MainView(@Value("${aws.accessKey}") String accessKey,
+                    @Value("${aws.secretKey}") String secretKey,
+                    @Value("${aws.s3bucket.name}") String bucketName) {
+    addClassName("centered-content");
+
+    UploadS3 upload = new UploadS3(accessKey, secretKey, bucketName);
+    add(upload);
+}
+```
+
+In **UploadS3** class, initialize **AmazonS3 client** with provided credentials. So, for now, the code of the UploadS3 component is:
+
+```java
+public class UploadS3 extends Div {
+
+    private final MemoryBuffer buffer;
+    private final Upload upload;
+
+    private AmazonS3 s3client;
+
+    private final String accessKey;
+    private final String secretKey;
+    private final String bucketName;
+
+    public UploadS3(String accessKey, String secretKey, String bucketName) {
+        this.buffer = new MemoryBuffer();
+        this.upload = new Upload(buffer);
+        this.accessKey = accessKey;
+        this.secretKey = secretKey;
+        this.bucketName = bucketName;
+        initAWSClient();
+        add(upload);
+    }
+
+    private void initAWSClient() {
+        AWSCredentials credentials = new BasicAWSCredentials(this.accessKey, this.secretKey);
+        this.s3client = AmazonS3ClientBuilder.standard()
+                .withCredentials(new AWSStaticCredentialsProvider(credentials))
+                .withRegion(Regions.EU_CENTRAL_1)
+                .build();
+    }
+}
+```
+
+Now we need to add functionality for uploading a file into the S3 bucket. For that create the following method in the UploadS3 class:
+
+```java
+private void uploadFile() {
+    upload.addSucceededListener(event-> {
+        try {
+            InputStream is = buffer.getInputStream();
+            File tempFile = new File(event.getFileName());
+            FileUtils.copyInputStreamToFile(is, tempFile);
+
+            String objectKey = tempFile.getName();
+            s3client.putObject(new PutObjectRequest(bucketName, objectKey, tempFile));
+            if(tempFile.exists()) {
+                tempFile.delete();
+            }
+        } catch (AmazonServiceException | IOException ex) {
+            ex.printStackTrace();
+        }
+    });
+}
+```
+
+This method creates a temporary file in which the input stream from Vaadin’s upload component is copied. Then this file is uploaded to S3 bucket and deleted after that.
+
+As this method is an event listener we’ll call it in the constructor of UploadS3 class.
+
+```java
+public UploadS3(String accessKey, String secretKey, String bucketName) {
+    this.buffer = new MemoryBuffer();
+    this.upload = new Upload(buffer);
+    this.accessKey = accessKey;
+    this.secretKey = secretKey;
+    this.bucketName = bucketName;
+    initAWSClient();
+    uploadFile();
+    add(upload);
+}
+```
+
+Let’s test what we’ve developed!
+
+Run the app and open it in the browser.
+
+![upload-piano](/posts/Vaadin-AWS/upload_piano.gif)
+
+It looks like the file is successfully uploaded. But let’s check it in the S3 console.
+
+![bucket_uploaded](/posts/Vaadin-AWS/bucket_uploaded.JPG)
+
+Yes! The file is in the bucket!
+
+> If you are trying to upload a file which size is more than 1MB and getting the error
+>
+> ```txt
+>org.apache.tomcat.util.http.fileupload.FileUploadBase$FileSizeLimitExceededException: The field file exceeds its maximum permitted size of 1048576 bytes.
+>```
+>
+> just increase the limit of the following properties in the application.properties file:
+>
+> ```xml
+> spring.servlet.multipart.max-file-size=10MB
+> spring.servlet.multipart.max-request-size=10MB
+> ```
