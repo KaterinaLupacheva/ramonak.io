@@ -1,6 +1,6 @@
 ---
 title: "How to upload a file to Amazon S3 in Java (using Vaadin framework)"
-date: "2020-03-13"
+date: "2020-03-14"
 template: "post"
 draft: false
 slug: "vaadin-upload-file-to-amazon-s3-java"
@@ -312,5 +312,64 @@ public void uploadFile(TextField link) {
 
 Now when we upload the file, we immediately receive its URL.
 
-![uploaded-link](/posts/Vaadin-AWS/uploaded_link.gif)
+![uploaded-link](/posts/Vaadin-AWS/uploaded-link.gif)
+
+But if we copy and paste this URL into the browser’s address bar, we’ll get an error:
+
+![access-denied](/posts/Vaadin-AWS/access-denied.JPG)
+
+Access Denied! We can’t get the picture, which is fine!
+
+What if we try to obtain it programmatically?
+
+For that, we need to create a method in **UploadS3** class which will download the uploaded image from S3 bucket, convert its content to *input stream* and return *byte array*:
+
+```java
+public byte[] downloadImage() {
+    byte[] imageBytes = new byte[0];
+    S3Object s3object = s3client.getObject(bucketName, objectKey);
+    S3ObjectInputStream inputStream = s3object.getObjectContent();
+    try {
+        imageBytes = IOUtils.toByteArray(inputStream);
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+    return imageBytes;
+}
+```
+
+And then in the **MainView** class let’s add *Image* component, which will show the image after it’s been uploaded (and downloaded):
+
+```java
+...
+private final Image image;
+...
+
+public MainView(@Value("${aws.accessKey}") String accessKey,
+                    @Value("${aws.secretKey}") String secretKey,
+                    @Value("${aws.s3bucket.name}") String bucketName) {
+    ...
+    image = new Image("", "image");
+    link.addValueChangeListener(e -> {
+        byte[] imageBytes = upload.downloadImage();
+        StreamResource resource = new StreamResource("image",
+                () -> new ByteArrayInputStream(imageBytes));
+        image.setSrc(resource);
+        add(image);
+    });
+    ...
+}
+```
+
+Run the app and test it:
+
+![image-view](/posts/Vaadin-AWS/image-view.gif)
+
+Yes, we can access the image via our app!
+
+# Conclusion
+
+And that’s it! In this blog post, I described a step-by-step process of configuring Amazon S3 bucket for private access, uploading a file into the bucket using Java and Vaadin framework, and then testing the private access permission.
+
+*The complete source code of the project is available in [this GitHub repository](https://github.com/KaterinaLupacheva/vaadin-upload-aws-s3)*
 
