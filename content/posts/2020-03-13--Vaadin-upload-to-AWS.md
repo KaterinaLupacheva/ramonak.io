@@ -27,6 +27,13 @@ To upload the video of exercises directly to AWS S3 without the use of AWS conso
 
 Here how I’ve done it.
 
+This blog post consists of two parts:
+
+1. [Configure Amazon service for granting access to only one app to the specific S3 bucket](#amazon-services-configuration).
+2. [Java code to programmatically upload a file to S3 bucket](#spring-boot-and-vaadin-part).
+
+# Amazon services configuration
+
 ## 1. Create AWS account
 
 You can create it [here](http://aws.amazon.com/)
@@ -70,6 +77,8 @@ Go back to **Add user** tab in the browser, refresh the page and find in the lis
 Press **Next: Tags**, **Next: Review** and finally **Create user**. Now you can see the credentials for the user. Download .csv file in order not to lose the credentials as we’ll soon need them.
 
 Our AWS configuration is done. Let’s start to code!
+
+# Spring Boot and Vaadin part
 
 ## 4. Start Vaadin project
 
@@ -193,6 +202,10 @@ public class UploadS3 extends Div {
 Now we need to add functionality for uploading a file into the S3 bucket. For that create the following method in the UploadS3 class:
 
 ```java
+...
+private String objectKey;
+...
+
 private void uploadFile() {
     upload.addSucceededListener(event-> {
         try {
@@ -200,7 +213,7 @@ private void uploadFile() {
             File tempFile = new File(event.getFileName());
             FileUtils.copyInputStreamToFile(is, tempFile);
 
-            String objectKey = tempFile.getName();
+            objectKey = tempFile.getName();
             s3client.putObject(new PutObjectRequest(bucketName, objectKey, tempFile));
             if(tempFile.exists()) {
                 tempFile.delete();
@@ -253,3 +266,51 @@ Yes! The file is in the bucket!
 > spring.servlet.multipart.max-file-size=10MB
 > spring.servlet.multipart.max-request-size=10MB
 > ```
+
+# BONUS: private access testing
+
+Remember, when we configured permission policy for the S3 bucket, we set only programmatic access and only for our app. Let’s test it!
+
+First, let’s try to open the downloaded file (image in our case) by its URL, which we’ll obtain programmatically.
+
+For that we need to:
+
+- add TextField component in **MainView** class, pass it to *uploadFile* method of UploadS3 component
+
+```java
+private final TextField link;
+...
+
+public MainView(@Value("${aws.accessKey}") String accessKey,
+                    @Value("${aws.secretKey}") String secretKey,
+                    @Value("${aws.s3bucket.name}") String bucketName) {
+        ...
+        link = new TextField("Link");
+        link.setWidthFull();
+
+        ...
+        upload.uploadFile(link);
+
+        ...
+        add(upload, link);
+    }
+```
+
+- inside of *uploadFile* method of **UploadS3** class set the URL value of the uploaded file to passed TextField
+
+```java
+public void uploadFile(TextField link) {
+    upload.addSucceededListener(event-> {
+        ...
+
+        link.setValue(s3client.getUrl(bucketName, objectKey).toString());
+
+        ...
+    });
+}
+```
+
+Now when we upload the file, we immediately receive its URL.
+
+![uploaded-link](/posts/Vaadin-AWS/uploaded_link.gif)
+
