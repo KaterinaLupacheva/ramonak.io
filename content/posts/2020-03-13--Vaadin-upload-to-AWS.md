@@ -278,14 +278,11 @@ For that we need to:
 - add TextField component in **MainView** class, pass it to *uploadFile* method of UploadS3 component
 
 ```java
-private final TextField link;
-...
-
 public MainView(@Value("${aws.accessKey}") String accessKey,
                     @Value("${aws.secretKey}") String secretKey,
                     @Value("${aws.s3bucket.name}") String bucketName) {
         ...
-        link = new TextField("Link");
+        TextField link = new TextField("Link");
         link.setWidthFull();
 
         ...
