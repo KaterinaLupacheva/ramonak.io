@@ -88,7 +88,7 @@ The most convenient way to start Vaadin project is to use [Vaadin Starter](https
 
 Download, unzip the folder and open it in your favorite IDE.
 
-It's a basic Vaadin project, but it's fully working app (and it's [PWA](/posts/what-is-progressive-web-app) by default).
+It's a basic Vaadin project, but it's a fully working app (and it's [PWA](/posts/what-is-progressive-web-app) by default).
 
 Delete all demo stuff: GreetService.java and all inside the MainViev.class constructor.
 
