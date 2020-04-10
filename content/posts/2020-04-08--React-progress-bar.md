@@ -154,7 +154,7 @@ And that's the final result:
 
 ![animated-demo](/posts/progress-bar/animated-demo.gif)
 
-# Conclusion
+## Conclusion
 
 And that’s it! In this short blog post, I’ve described a step-by-step process of creating a custom Progress Bar React component. This component is fully customizable, so you can add any additional styling and functionality depending on your project needs.
 
