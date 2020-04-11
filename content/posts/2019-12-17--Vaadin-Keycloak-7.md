@@ -15,7 +15,7 @@ description: "The seventh (last) part of tutorial series Spring Boot – Vaadin 
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
-> This blog post is a seventh part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
+> This blog post is a seventh part of the [series](https://ramonak.io/posts/springboot–vaadin-keycloak–springsecurity-integration).
 > The source code of the complete project is available in <a href="https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo" target="_blank">this GitHub repository</a>
 
 So, we also have the Vaadin frontend app. 

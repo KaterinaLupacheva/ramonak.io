@@ -11,7 +11,7 @@ description: "The fifth part of tutorial series Spring Boot – Vaadin – Keycl
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
-> This blog post is a fifth part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
+> This blog post is a fifth part of the [series](https://ramonak.io/posts/springboot–vaadin-keycloak–springsecurity-integration).
 > The source code of the complete project is available in <a href="https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo" target="_blank">this GitHub repository</a>
 
 Now we need to define which applications (or Clients in Keycloak terms) are mapped with created Realm and users/roles. 

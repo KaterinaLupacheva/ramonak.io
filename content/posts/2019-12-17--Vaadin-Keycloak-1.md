@@ -3,7 +3,7 @@ title: Spring Boot – Vaadin – Keycloak – Spring Security Integration
 date: "2019-12-17T10:00:32.169Z"
 template: "post"
 draft: false
-slug: "spring-boot–vaadin-keycloak–spring-security-integration"
+slug: "springboot–vaadin-keycloak–springsecurity-integration"
 category: "Tutorial"
 tags:
   - "Vaadin"

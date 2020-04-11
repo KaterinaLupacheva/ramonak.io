@@ -14,7 +14,7 @@ description: "The sixth part of tutorial series Spring Boot – Vaadin – Keycl
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
-> This blog post is a sixth part of the [series](https://ramonak.io/posts/spring-boot-vaadin-keycloak-spring-security-integration).
+> This blog post is a sixth part of the [series](https://ramonak.io/posts/springboot–vaadin-keycloak–springsecurity-integration).
 > The source code of the complete project is available in <a href="https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo" target="_blank">this GitHub repository</a>
 
 To be able to secure Spring Boot apps we must add the Keycloak Spring Boot adapter JAR to the app.  For that we need to add Keycloak Spring Boot starter dependency and the adapter BOM dependency: 
