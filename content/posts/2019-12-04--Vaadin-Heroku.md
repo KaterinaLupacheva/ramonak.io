@@ -185,6 +185,6 @@ Or go to the browser and navigate to *<app_name>.herokuapp.com*, that in case of
 
 ## Conclusion
 
-Full source code for this tutorial is available at [GitHub repository](https://github.com/KaterinaLupacheva/vaadin14-heroku-tutorial).
+Full source code for this tutorial is available at [GitHub repository](https://github.com/KaterinaLupacheva/vaadin-heroku).
 
-The idea for this blog post was born after unsuccessfully trying to deploy Vaadin 14 app to Heroku. I had  [almost] no problems while deploying to Heroku Vaadin 10+ versions. But Vaadin 14 was a different case (mostly due to including npm). 
+The idea for this blog post was born after unsuccessfully trying to deploy Vaadin 14 app to Heroku. I had  [almost] no problems while deploying to Heroku Vaadin 10+ versions. But Vaadin 14 was a different case (mostly due to including npm).
