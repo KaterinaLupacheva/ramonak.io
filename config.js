@@ -56,6 +56,14 @@ module.exports = {
       link: 'http://github-dashboard.ramonak.io',
       techs: ['React.js', 'GitHub API', 'Victory', 'Styled Components'],
       sourceCode: 'https://github.com/KaterinaLupacheva/github-api-dashboard'
+    },
+    {
+      title: 'Progress Bar React Component',
+      image: '/media/projects/pg-bar.JPG',
+      description: 'A customizable Progress Bar React component with interactive playground and code generator, published to NPM.',
+      link: 'https://katerinalupacheva.github.io/react-progress-bar/',
+      techs: ['React.js', 'NPM', 'Create React Library'],
+      sourceCode: 'https://github.com/KaterinaLupacheva/react-progress-bar'
     }
   ],
   author: {
