@@ -64,6 +64,14 @@ module.exports = {
       link: 'https://katerinalupacheva.github.io/react-progress-bar/',
       techs: ['React.js', 'NPM', 'Create React Library'],
       sourceCode: 'https://github.com/KaterinaLupacheva/react-progress-bar'
+    },
+    {
+      title: 'Financial Manager App',
+      image: '/media/projects/fin-manager.JPG',
+      description: 'A simple app for keeping track of the cash flow with charts, pivot table and budget feature.',
+      link: 'https://fm.ramonak.io',
+      techs: ['React.js', 'Material UI', 'Charts.js', 'Firebase'],
+      sourceCode: 'https://github.com/KaterinaLupacheva/financial-manager'
     }
   ],
   author: {
