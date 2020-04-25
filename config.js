@@ -58,6 +58,22 @@ module.exports = {
       sourceCode: 'https://github.com/KaterinaLupacheva/github-api-dashboard'
     },
     {
+      title: 'Financial Manager App',
+      image: '/media/projects/fin-manager.JPG',
+      description: `A simple app for keeping track of person's cash flow with charts, pivot table and budget feature.`,
+      link: 'https://fm.ramonak.io',
+      techs: ['React.js', 'Material UI', 'Charts.js', 'Firebase'],
+      sourceCode: 'https://github.com/KaterinaLupacheva/financial-manager'
+    },
+    {
+      title: 'Coffee Shop Dashboard',
+      image: '/media/projects/coffee-dashboard.JPG',
+      description: 'A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.',
+      link: 'https://coffee-dashboard.netlify.app/',
+      techs: ['React.js', 'Material UI', 'Charts.js'],
+      sourceCode: 'https://github.com/KaterinaLupacheva/coffee-shop-dashboard'
+    },
+    {
       title: 'Progress Bar React Component',
       image: '/media/projects/pg-bar.JPG',
       description: 'A customizable Progress Bar React component with interactive playground and code generator, published to NPM.',
@@ -65,14 +81,6 @@ module.exports = {
       techs: ['React.js', 'NPM', 'Create React Library'],
       sourceCode: 'https://github.com/KaterinaLupacheva/react-progress-bar'
     },
-    {
-      title: 'Financial Manager App',
-      image: '/media/projects/fin-manager.JPG',
-      description: 'A simple app for keeping track of the cash flow with charts, pivot table and budget feature.',
-      link: 'https://fm.ramonak.io',
-      techs: ['React.js', 'Material UI', 'Charts.js', 'Firebase'],
-      sourceCode: 'https://github.com/KaterinaLupacheva/financial-manager'
-    }
   ],
   author: {
     name: 'Katsiaryna (Kate) Lupachova',
