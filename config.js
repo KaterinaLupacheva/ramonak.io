@@ -74,6 +74,14 @@ module.exports = {
       sourceCode: 'https://github.com/KaterinaLupacheva/coffee-shop-dashboard'
     },
     {
+      title: 'Google Analytics Dashboard',
+      image: '/media/projects/browsers-devices.JPG',
+      description: 'Custom Google Analytics Dashboard based on Google Analytics Reporting API v4 with OAuth2, charts and tables.',
+      link: '',
+      techs: ['React.js', 'Charts.js', 'Styled Components'],
+      sourceCode: 'https://github.com/KaterinaLupacheva/react-google-analytics-dashboard'
+    },
+    {
       title: 'Progress Bar React Component',
       image: '/media/projects/pg-bar.JPG',
       description: 'A customizable Progress Bar React component with interactive playground and code generator, published to NPM.',

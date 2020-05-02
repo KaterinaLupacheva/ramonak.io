@@ -13,10 +13,10 @@ const ProjectCard = ({ project }) => {
             </h2>
             <div className={styles['project-container']}>
                 <div className={styles['first-column']}>
-                    <ProjectImage link={project.link} image={project.image} />
+                    <ProjectImage link={project.link ? project.link : project.sourceCode} image={project.image} />
                     <div className={styles['buttons-container']}>
                         <GihubButton href={project.sourceCode} />
-                        <ViewButton href={project.link} />
+                        {project.link && <ViewButton href={project.link} />}
                     </div>
                 </div>
                 <div className={styles['second-column']}>
