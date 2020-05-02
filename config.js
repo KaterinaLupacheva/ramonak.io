@@ -78,7 +78,7 @@ module.exports = {
       image: '/media/projects/browsers-devices.JPG',
       description: 'Custom Google Analytics Dashboard based on Google Analytics Reporting API v4 with OAuth2, charts and tables.',
       link: '',
-      techs: ['React.js', 'Charts.js', 'Styled Components'],
+      techs: ['React.js', 'Google Analytics API', 'Charts.js'],
       sourceCode: 'https://github.com/KaterinaLupacheva/react-google-analytics-dashboard'
     },
     {
