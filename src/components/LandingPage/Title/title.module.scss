@@ -1,12 +1,19 @@
 @import "../../../assets/scss/variables";
 @import "../../../assets/scss/mixins";
 
+.particles {
+  position: absolute;
+}
+
 .wrapper {
+  position: relative;
   display: flex;
   justify-content: center;
   height: 90vh;
   align-items: center;
   padding-left: 4rem;
+
+ 
 }
 .container {
   display: flex;
@@ -19,4 +26,7 @@
   .highlighter {
     color: var(--color-primary);
   }
+
+
 }
+
