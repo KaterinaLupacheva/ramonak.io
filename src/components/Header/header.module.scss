@@ -1,44 +1,42 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
-@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
+@import url("https://fonts.googleapis.com/css?family=Special+Elite&display=swap");
 
-.header-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
-    .border{
-        width: 80%;
-        margin-top: auto;
-        border-bottom: 0.5px solid var(--color-gray-border);
-        text-align: center;
-        font-family: 'Special Elite', cursive;
-        font-size: large;
+.header-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  .border {
+    width: 80%;
+    margin-top: auto;
+    border-bottom: 0.5px solid var(--color-gray-border);
+    text-align: center;
+    font-family: "Special Elite", cursive;
+    font-size: large;
+  }
+  .logo {
+    padding: 0;
+  }
+
+  .theme-toggler {
+    padding: 0;
+
+    &:hover {
+      cursor: pointer;
     }
-    .logo{
-        padding: 0;
-    }
-
-    .theme-toggler{
-        padding: 0;
-
-        &:hover{
-            cursor: pointer;
-        }
-    }
+  }
 }
 
 @include breakpoint-sm {
-    .header-container {
-    
-        .logo{
-            padding: 10px 10px 10px 30px;
-        }
-
-        .theme-toggler{
-            padding: 10px 30px 10px 10px;
-        }
+  .header-container {
+    .logo {
+      padding: 10px 10px 10px 30px;
     }
+
+    .theme-toggler {
+      padding: 10px 30px 10px 10px;
+    }
+  }
 }

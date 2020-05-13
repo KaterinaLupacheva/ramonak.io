@@ -1,98 +1,95 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
-.project-card-container{
-    border-bottom: 2px solid var(--color-base);
-    padding-bottom: 3vh;
+.project-card-container {
+  border-bottom: 2px solid var(--color-base);
+  padding-bottom: 3vh;
+  width: 100%;
+
+  .project-name {
     width: 100%;
+    text-align: center;
+  }
 
-    .project-name{
-        width: 100%;
-        text-align: center;
+  .project-container {
+    .first-column {
+      .buttons-container {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
     }
 
-    .project-container{
-        .first-column{
-            .buttons-container{
-                margin-top: 10px;
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
-            }
+    .second-column {
+      padding-top: 10px;
+
+      .project-description {
+        text-align: justify;
+      }
+
+      .techs-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        font-size: 2vh;
+        line-height: 2.5vh;
+
+        :first-child {
+          padding-left: 0;
         }
 
-        .second-column{
-            padding-top: 10px;
-            
-            .project-description{
-                text-align: justify;
-            }
-
-            .techs-container{
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-end;
-                font-size: 2vh;
-                line-height: 2.5vh;
-
-                :first-child{
-                    padding-left: 0;
-                }
-
-                :last-child{
-                    padding-right: 0;
-                }
-            }
+        :last-child {
+          padding-right: 0;
         }
-
+      }
     }
+  }
 }
 
 @include breakpoint-sm {
-    .project-card-container{
-        .project-container{
-            .second-column{
-                .techs-container{
-                    font-size: 1.1vw;
-                    line-height: 1.2vw;
-                }
-            }
+  .project-card-container {
+    .project-container {
+      .second-column {
+        .techs-container {
+          font-size: 1.1vw;
+          line-height: 1.2vw;
         }
+      }
     }
+  }
 }
 
 @include breakpoint-md {
-    .project-card-container{
-        width: 100%;
-    
-        .project-container{
-            display: flex;
-            flex-direction: row;
-            width: 100%;
-    
-            .first-column{
-                width: 40vw;
-                display: flex;
-                flex-direction: column;
-               
-                .buttons-container{
-                    width: 100%;
-                }
-            }
-    
-            .second-column{
-                width: 50vw;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                padding-left: 5vw;
-    
-                .project-description{
-                    text-align: right;    
-                }
-            }
+  .project-card-container {
+    width: 100%;
+
+    .project-container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+
+      .first-column {
+        width: 40vw;
+        display: flex;
+        flex-direction: column;
+
+        .buttons-container {
+          width: 100%;
         }
+      }
+
+      .second-column {
+        width: 50vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding-left: 5vw;
+
+        .project-description {
+          text-align: right;
+        }
+      }
     }
+  }
 }
-
-

@@ -3,32 +3,33 @@
  */
 
 // Colors
-body.light{
-    margin-left: 0;
-    --textNormal: #222;
-    --color-base: #222;
-    --color-primary: #5D93FF;
-    --color-secondary: #F7A046;
-    --color-gray: grey;
-    --color-gray-border: #D2D2D2;
-    --color-gray-bg: grey;
+body.light {
+  margin-left: 0;
+  --textNormal: #222;
+  --color-base: #222;
+  --color-primary: #5d93ff;
+  --color-secondary: #f7a046;
+  --color-gray: grey;
+  --color-gray-border: #d2d2d2;
+  --color-gray-bg: grey;
 }
 
-body.dark{
-    margin-left: 0;
-    -webkit-font-smoothing: antialiased;
-    --bg: #282c35;
-    --textNormal: rgba(255, 255, 255, 0.88);
-    --color-base: #D91F5C;
-    --color-primary: var(--color-secondary);
-    --color-secondary: #F7A046;
-    --color-gray: grey;
-    --color-gray-border: #D2D2D2;
-    --color-gray-bg: #D91F5C;
+body.dark {
+  margin-left: 0;
+  -webkit-font-smoothing: antialiased;
+  --bg: #282c35;
+  --textNormal: rgba(255, 255, 255, 0.88);
+  --color-base: #d91f5c;
+  --color-primary: var(--color-secondary);
+  --color-secondary: #f7a046;
+  --color-gray: grey;
+  --color-gray-border: #d2d2d2;
+  --color-gray-bg: #d91f5c;
 }
 
 // Typographic
-$typographic-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+$typographic-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
 
 $typographic-root-font-size: 100;
 $typographic-base-font-size: 16px;
@@ -40,7 +41,9 @@ $typographic-base-font-color: var(--color-base);
 $typographic-link-p-font-color: var(--color-primary);
 $typographic-link-s-font-color: var(--color-secondary);
 
-$typographic-leading: round(16 * ($typographic-root-font-size / 100) * $typographic-base-line-height);
+$typographic-leading: round(
+  16 * ($typographic-root-font-size / 100) * $typographic-base-line-height
+);
 
 // Buttons
 $button-height: 35px;

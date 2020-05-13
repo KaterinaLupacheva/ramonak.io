@@ -1,5 +1,5 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .post {
   &__footer {
@@ -34,9 +34,7 @@
     &:focus {
       color: var(--color-primary);
     }
-
   }
-
 }
 
 @include breakpoint-md {
@@ -54,9 +52,7 @@
       max-width: auto;
       margin: 0;
       top: 80px;
-      left: 30px
+      left: 30px;
     }
-
   }
-
 }

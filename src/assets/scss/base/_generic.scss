@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
 
 /** 
  * Generic
@@ -10,7 +10,7 @@ html {
 body {
   margin: 0 0 0 calc(100vw - 100%);
   // font-family: $typographic-font-family;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: $typographic-base-font-color;
   line-height: $typographic-base-line-height;
   font-size: $typographic-base-font-size;
@@ -42,35 +42,35 @@ h2 {
   font-size: $typographic-base-font-size * 1.6875;
   @include line-height(1.5);
   @include margin-top(2);
-  @include margin-bottom(.5);
+  @include margin-bottom(0.5);
 }
 
 h3 {
   font-size: $typographic-base-font-size * 1.375;
   @include line-height(1);
   @include margin-top(2);
-  @include margin-bottom(.5);
+  @include margin-bottom(0.5);
 }
 
 h4 {
   font-size: $typographic-base-font-size * 1.2;
   @include line-height(1);
   @include margin-top(1.5);
-  @include margin-bottom(.5);
+  @include margin-bottom(0.5);
 }
 
 h5 {
   font-size: $typographic-base-font-size;
   @include line-height(1);
   @include margin-top(2.5);
-  @include margin-bottom(.5);
+  @include margin-bottom(0.5);
 }
 
 h6 {
   font-size: $typographic-base-font-size;
   @include line-height(1);
   @include margin-top(2.5);
-  @include margin-bottom(.5);
+  @include margin-bottom(0.5);
 }
 
 img {
@@ -90,7 +90,15 @@ hr {
   margin-right: auto;
   margin-left: auto;
   background-size: 100% 26px;
-  background-image: linear-gradient(to bottom, transparent 1px, transparent 11px, var(--color-base) 11px, var(--color-base) 15px, transparent 15px, transparent 26px);
+  background-image: linear-gradient(
+    to bottom,
+    transparent 1px,
+    transparent 11px,
+    var(--color-base) 11px,
+    var(--color-base) 15px,
+    transparent 15px,
+    transparent 26px
+  );
   width: 100px;
 }
 
@@ -103,7 +111,6 @@ a {
   &:active {
     color: $typographic-link-s-font-color;
   }
-
 }
 
 b,
@@ -119,7 +126,6 @@ ul {
     padding: 0 5px;
     margin-bottom: 10px;
   }
-
 }
 
 p {
@@ -128,7 +134,7 @@ p {
 }
 
 blockquote {
-  background-color: rgba(255,229,100,0.3);
+  background-color: rgba(255, 229, 100, 0.3);
   border-left-color: #ffe564;
   border-left-width: 9px;
   border-left-style: solid;
@@ -140,23 +146,25 @@ blockquote {
 }
 
 .gatsby-highlight {
-  .language-java, .language-text {
+  .language-java,
+  .language-text {
     color: rgb(255, 255, 255);
     tab-size: 1.5em;
     background: rgb(40, 44, 52);
     border-radius: 10px;
     overflow: auto;
-  
+
     font-size: 14px;
     line-height: 20px;
     white-space: pre-wrap;
     word-break: break-word;
     height: auto !important;
     margin: 1rem;
-  
-    font-family: source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace;
+
+    font-family: source-code-pro, Menlo, Monaco, Consolas, Courier New,
+      monospace;
   }
-} 
+}
 
 figure {
   display: block;
@@ -165,8 +173,8 @@ figure {
 }
 
 figcaption {
-  @include line-height(.75);
-  @include margin-top(.25);
+  @include line-height(0.75);
+  @include margin-top(0.25);
   color: var(--color-base);
   font-size: $typographic-small-font-size;
   font-style: italic;
@@ -193,5 +201,4 @@ figcaption {
   .float-left {
     float: left;
   }
-
 }

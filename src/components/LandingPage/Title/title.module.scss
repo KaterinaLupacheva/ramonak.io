@@ -1,22 +1,22 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
 
-.wrapper{
-    display: flex;
-    justify-content: center;
-    height: 90vh;
-    align-items: center;
+.wrapper {
+  display: flex;
+  justify-content: center;
+  height: 90vh;
+  align-items: center;
+  padding-left: 4rem;
 }
-.container{
-    width: 80vw;
-    display: flex;
-    flex-direction: column;
-    
-    h1{
-        margin-top: 1.5rem;
-    }
+.container {
+  display: flex;
+  flex-direction: column;
 
-    .highlighter{
-        color: var(--color-primary)
-    }    
+  h1 {
+    margin-top: 1.5rem;
+  }
+
+  .highlighter {
+    color: var(--color-primary);
+  }
 }

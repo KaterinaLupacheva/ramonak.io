@@ -1,22 +1,22 @@
-@import '../../../assets/scss/variables';
-@import '../../../assets/scss/mixins';
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
 
-.button-container{
-    text-align: center;
-    margin-top: 5rem;
-    transition: all 0.3s ease-in-out;
+.button-container {
+  text-align: center;
+  margin-top: 5rem;
+  transition: all 0.3s ease-in-out;
 
-    &:hover{
-       transform: scale(1.05);
-   }
-   .button{
-       padding: 0.3rem 1.2rem;
-       background-color: var(--color-base);
-       color: var(--color-secondary);
-       border: 0.16rem solid rgba(255,255,255,0);
-       border-radius: 2rem;
-       font-weight: 300;
-       text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
-       font-size: 20px;
-   }
+  &:hover {
+    transform: scale(1.05);
+  }
+  .button {
+    padding: 0.3rem 1.2rem;
+    background-color: var(--color-base);
+    color: var(--color-secondary);
+    border: 0.16rem solid rgba(255, 255, 255, 0);
+    border-radius: 2rem;
+    font-weight: 300;
+    text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+    font-size: 20px;
+  }
 }

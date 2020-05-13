@@ -4,8 +4,7 @@ import Layout from "../components/Layout";
 import { useSiteMetadata } from "../hooks";
 import Title from "../components/LandingPage/Title/title";
 import Sidebar from "../components/Sidebar";
-import Page from "../components/Page";
-import Description from '../components/LandingPage/Description/description';
+import Description from "../components/LandingPage/Description/description";
 
 const LandingPage = ({ data }) => {
   const { title: siteTitle } = useSiteMetadata();
@@ -17,10 +16,8 @@ const LandingPage = ({ data }) => {
       socialImage={frontmatter.socialImage}
     >
       <Sidebar />
-      {/* <Page> */}
-        <Title />
-        <Description />
-      {/* </Page> */}
+      <Title />
+      <Description />
     </Layout>
   );
 };

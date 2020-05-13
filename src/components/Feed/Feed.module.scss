@@ -1,19 +1,19 @@
-@import '../../assets/scss/variables';
-@import '../../assets/scss/mixins';
+@import "../../assets/scss/variables";
+@import "../../assets/scss/mixins";
 
 .feed {
   &__item {
     @include margin-bottom(1.25);
 
     &:last-child {
-      @include margin-bottom(.5);
+      @include margin-bottom(0.5);
     }
 
     &-title {
       font-size: $typographic-base-font-size * 1.6875;
       @include line-height(1.5);
       @include margin-top(0);
-      @include margin-bottom(.5);
+      @include margin-bottom(0.5);
 
       &-link {
         color: var(--color-base);
@@ -23,15 +23,13 @@
           color: var(--color-base);
           border-bottom: 1px solid var(--color-base);
         }
-
       }
-
     }
 
     &-description {
       font-size: $typographic-base-font-size;
       @include line-height(1);
-      @include margin-bottom(.75);
+      @include margin-bottom(0.75);
     }
 
     &-meta {
@@ -57,11 +55,8 @@
           &:focus {
             color: var(--color-primary);
           }
-
         }
-
       }
-
     }
 
     &-readmore {
@@ -73,9 +68,6 @@
         color: var(--color-primary);
         border-bottom: 1px solid var(--color-primary);
       }
-
     }
-
   }
-
 }
