@@ -2,12 +2,13 @@
 @import "../../../assets/scss/mixins";
 
 .button-container {
+  width: 60vw;
   text-align: center;
   margin-top: 5rem;
   transition: all 0.3s ease-in-out;
 
   &:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
   }
   .button {
     padding: 0.5rem 1.2rem;
