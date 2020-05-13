@@ -22,11 +22,11 @@ module.exports = {
     },
     {
       label: "About me",
-      path: "/pages/about",
+      path: "/about",
     },
     {
       label: "My projects",
-      path: "/pages/projects",
+      path: "/projects",
     },
   ],
   projects: [

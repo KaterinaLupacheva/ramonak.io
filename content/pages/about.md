@@ -2,6 +2,7 @@
 title: "About me"
 template: "page"
 socialImage: ""
+slug: '/about'
 ---
 
 Hi! My name is Kate :high_heel:. I'm a full-stack web developer and freelancer :computer:. 
