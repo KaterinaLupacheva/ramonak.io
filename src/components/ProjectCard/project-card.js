@@ -15,8 +15,8 @@ const ProjectCard = ({ project }) => {
                 <div className={styles['first-column']}>
                     <ProjectImage link={project.link ? project.link : project.sourceCode} image={project.image} />
                     <div className={styles['buttons-container']}>
-                        <GihubButton href={project.sourceCode} />
-                        {project.link && <ViewButton href={project.link} />}
+                        <GihubButton href={project.sourceCode} width="100px"/>
+                        {project.link && <ViewButton href={project.link}><span>View</span></ViewButton>}
                     </div>
                 </div>
                 <div className={styles['second-column']}>
