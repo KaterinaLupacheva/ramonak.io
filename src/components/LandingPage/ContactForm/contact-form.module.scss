@@ -1,0 +1,60 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
+.container{
+    @include padding-equal(2);
+    
+    display: flex;
+    flex-direction: column;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .form-fields{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    h1{
+        @include margin-top(0);
+        text-align: center;
+    }
+
+    .column{
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        @include padding-equal(1);
+    }
+
+    .submit-button{
+        width: 20vw;
+        margin: 0 auto;
+        border-radius: $button-border-radius;
+        background-color: var(--color-base);
+        color: var(--color-secondary);
+        font-weight: 700;
+        font-size: 26px;
+        @include padding-equal(0.1);
+        cursor: pointer;
+    }
+
+    input{
+        @include margin-bottom(1);
+        @include padding-equal(0.2);
+        line-height: $typographic-base-line-height;
+        font-size: $typographic-base-font-size;
+        border-radius: 5px;
+        border: medium solid var(--color-secondary);
+    }
+
+    textarea{
+        height: 100%;
+        border-radius: 5px;
+        border: medium solid var(--color-secondary);
+        @include margin-bottom(1);
+    }
+}

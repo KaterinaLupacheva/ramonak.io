@@ -14,7 +14,7 @@
     background-color: var(--color-base);
     color: var(--color-secondary);
     border: 0.16rem solid rgba(255, 255, 255, 0);
-    border-radius: 2rem;
+    border-radius: $button-border-radius;
     font-weight: 700;
     text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
     font-size: 26px;
