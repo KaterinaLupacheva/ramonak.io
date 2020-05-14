@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+  padding: 5rem 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--color-gray-border);
+
+  img{
+      width: 40vw;
+  }
+
+  .description{
+      width: 50vw;
+  }
+}

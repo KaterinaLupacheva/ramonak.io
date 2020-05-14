@@ -1,16 +1,13 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { useSiteMetadata } from "../hooks";
-import Title from "../components/LandingPage/Title/title";
+import { Title, Description, ContactForm } from "../components/LandingPage";
 import Sidebar from "../components/Sidebar";
-import Description from "../components/LandingPage/Description/description";
-import { ThemeToggler } from 'gatsby-plugin-dark-mode';
 
 const LandingPage = ({ data }) => {
   const { title: siteTitle } = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
-  const [theme, setTheme] = useState('');
 
   return (
     <Layout
@@ -21,6 +18,7 @@ const LandingPage = ({ data }) => {
       <Sidebar />
       <Title />
       <Description />
+      <ContactForm />
     </Layout>
   );
 };
