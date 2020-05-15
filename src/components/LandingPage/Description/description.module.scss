@@ -1,9 +1,26 @@
+@import "../../../assets/scss/variables";
+@import "../../../assets/scss/mixins";
+
 .container {
     display: flex;
-    justify-content: space-between;
-  padding: 5rem 2rem;
-  margin-top: 2rem;
+    flex-direction: column;
+    @include margin-top(1);
+    @include padding(0, 0, 2, 0);
+//   margin-top: 2rem;
   border-top: 1px solid var(--color-gray-border);
+  border-bottom: 1px solid var(--color-gray-border);
+
+  h1{
+      text-align: center;
+      @include margin-top(0);
+      @include padding-equal(1);
+  }
+
+  .section{
+      display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+  }
 
   img{
       width: 40vw;
