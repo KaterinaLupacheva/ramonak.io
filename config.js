@@ -118,7 +118,7 @@ module.exports = {
     {
       title: "Coffee Shop Dashboard",
       date: "April 2020",
-      image: "/media/projects/coffee-dashboard.JPG",
+      image: "/media/mockups/coffee.png",
       description:
         "A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.",
       link: "https://coffee-dashboard.netlify.app/",

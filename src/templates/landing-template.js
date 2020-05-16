@@ -2,11 +2,16 @@ import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/Layout";
 import { useSiteMetadata } from "../hooks";
-import { Title, Description, ContactForm } from "../components/LandingPage";
+import {
+  Title,
+  Description,
+  ContactForm,
+  Footer,
+} from "../components/LandingPage";
 import Sidebar from "../components/Sidebar";
 
 const LandingPage = ({ data }) => {
-  const { title: siteTitle, recentWork } = useSiteMetadata();
+  const { title: siteTitle, recentWork, copyright, author } = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
 
   return (
@@ -19,6 +24,7 @@ const LandingPage = ({ data }) => {
       <Title />
       <Description recentWork={recentWork} />
       <ContactForm />
+      <Footer copyright={copyright} contacts={author.contacts} />
     </Layout>
   );
 };
