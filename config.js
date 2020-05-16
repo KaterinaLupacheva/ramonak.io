@@ -104,6 +104,17 @@ module.exports = {
       sourceCode: "https://github.com/KaterinaLupacheva/react-progress-bar",
     },
   ],
+  recentWork: [
+    {
+      title: "Coffee Shop Dashboard",
+      date: "April 2020",
+      image: "/media/projects/coffee-dashboard.JPG",
+      description:
+        "A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.",
+      link: "https://coffee-dashboard.netlify.app/",
+      techs: ["React.js", "Material UI", "Charts.js"],
+    },
+  ],
   author: {
     name: "Katsiaryna (Kate) Lupachova",
     photo: "/my-photo.png",

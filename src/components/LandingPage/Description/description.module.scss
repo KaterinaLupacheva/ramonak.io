@@ -2,31 +2,66 @@
 @import "../../../assets/scss/mixins";
 
 .container {
-    display: flex;
-    flex-direction: column;
-    @include margin-top(1);
-    @include padding(0, 0, 2, 0);
-//   margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  @include margin-top(1);
+  @include padding(0, 0, 2, 0);
   border-top: 1px solid var(--color-gray-border);
   border-bottom: 1px solid var(--color-gray-border);
 
-  h1{
-      text-align: center;
-      @include margin-top(0);
-      @include padding-equal(1);
+  h1 {
+    text-align: center;
+    @include margin-top(0);
+    @include padding-equal(1);
   }
 
-  .section{
-      display: flex;
+  .section {
+    display: flex;
     justify-content: space-between;
     padding: 0 2rem;
   }
 
-  img{
-      width: 40vw;
+  img {
+    width: 40vw;
   }
 
-  .description{
-      width: 50vw;
+  .description {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .header {
+      display: flex;
+      justify-content: center;
+
+      h3 {
+        @include margin-top(0);
+      }
+
+      .badge {
+        border: 1px solid var(--color-gray-border);
+        border-radius: 10px;
+        @include margin(-0.4, 0, 0, 0.5);
+        height: 20px;
+        @include padding-equal(0.2);
+        background-color: var(--color-primary);
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+
+    .text {
+      h5 {
+        @include margin(0.5, 0, 0, 0);
+        text-align: center;
+      }
+
+      .techs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
   }
 }

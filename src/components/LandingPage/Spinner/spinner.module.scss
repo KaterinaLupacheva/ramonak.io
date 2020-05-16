@@ -1,13 +1,13 @@
-.spinner-overlay{
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.spinner-overlay {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.spinner-container{
-    display: inline-block;
+.spinner-container {
+  display: inline-block;
   width: 50px;
   height: 50px;
   border: 3px solid rgba(195, 195, 195, 0.6);
@@ -18,12 +18,12 @@
 }
 
 @keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-    }
+  to {
+    -webkit-transform: rotate(360deg);
   }
-  @-webkit-keyframes spin {
-    to {
-      -webkit-transform: rotate(360deg);
-    }
+}
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(360deg);
   }
+}

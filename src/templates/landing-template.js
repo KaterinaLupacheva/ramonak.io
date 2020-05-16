@@ -6,7 +6,7 @@ import { Title, Description, ContactForm } from "../components/LandingPage";
 import Sidebar from "../components/Sidebar";
 
 const LandingPage = ({ data }) => {
-  const { title: siteTitle } = useSiteMetadata();
+  const { title: siteTitle, recentWork } = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
 
   return (
@@ -17,7 +17,7 @@ const LandingPage = ({ data }) => {
     >
       <Sidebar />
       <Title />
-      <Description />
+      <Description recentWork={recentWork} />
       <ContactForm />
     </Layout>
   );
