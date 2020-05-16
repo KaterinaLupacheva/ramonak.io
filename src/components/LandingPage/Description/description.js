@@ -13,9 +13,11 @@ const Description = ({ recentWork }) => {
         {recentWork.map((work) => (
           <Fade bottom>
             <div className={styles["section"]} key={work.title}>
-              <a href={work.link} target="_blank">
-                <img src={work.image} />
-              </a>
+              <div className={styles["image-wrapper"]}>
+                <a href={work.link} target="_blank">
+                  <img src={work.image} />
+                </a>
+              </div>
               <div className={styles["description"]}>
                 <div className={styles["header"]}>
                   <h3>{work.title}</h3>

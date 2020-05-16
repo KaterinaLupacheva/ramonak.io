@@ -27,7 +27,7 @@
 }
 
 @include breakpoint-md {
-  .wrapper{
+  .wrapper {
     height: 90vh;
     @include padding(0, 0, 0, 2);
   }
