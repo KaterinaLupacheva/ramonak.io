@@ -5,26 +5,26 @@ socialImage: ""
 slug: '/about'
 ---
 
-Hi! My name is Kate :high_heel:. I'm a full-stack web developer and freelancer :computer:. 
+Hi! My name is Kate :high_heel:. I'm a full-stack web developer and freelancer :computer:.
 
-I specialize in developing web applications and web sites to make the life of my clients from around the world :earth_americas: easier.
+Although I specialize in Dashboards and Admin Panels building, I'd be happy to help to develop any web application or web site to make the life of my clients from around the world :earth_americas: easier.
 
-I'm a self-taught developer. And I'm continue to learn constantly :pencil:. 
+I'm a self-taught developer. And I'm continue to learn constantly :pencil:.
 
 Currently for the full-stack development I prefer to use:
+
+:small_blue_diamond: **JavaScript Stack**:
+
+* Node.js / Express.js for backend
+* React.js for frontend
+
+AND / OR
 
 :small_blue_diamond: **Java Stack** :
 
 * Spring Boot for backend
 
 * Vaadin Framework for frontend (<a href="/media/vaadin-certificate.pdf" target="_blank">Certified Vaadin 14 Developer</a>)
-
-AND / OR
-
-:small_blue_diamond: **JavaScript Stack**:
-
-* Node.js / Express.js for backend
-* React.js for frontend
 
 Other tools and technologies, that I use, include:
 

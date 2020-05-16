@@ -20,9 +20,6 @@ const Title = () => {
           value_area: 800,
         },
       },
-      // color: {
-      //   value: variables.color,
-      // },
       line_linked: {
         enable: true,
         opacity: 0.01,
