@@ -106,6 +106,16 @@ module.exports = {
   ],
   recentWork: [
     {
+      title: "Google Analytics Dashboard",
+      date: "May 2020",
+      image: "/media/projects/browsers-devices.JPG",
+      description:
+        "Custom Google Analytics Dashboard based on Google Analytics Reporting API v4 with OAuth2, charts and tables.",
+      link:
+        "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
+      techs: ["React.js", "Google Analytics API", "Charts.js"],
+    },
+    {
       title: "Coffee Shop Dashboard",
       date: "April 2020",
       image: "/media/projects/coffee-dashboard.JPG",
@@ -113,6 +123,15 @@ module.exports = {
         "A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.",
       link: "https://coffee-dashboard.netlify.app/",
       techs: ["React.js", "Material UI", "Charts.js"],
+    },
+    {
+      title: "GitHub API Dashboard",
+      date: "March 2020",
+      image: "/media/projects/github.JPG",
+      description:
+        "A dashboard of a GitHub account with stats and Victory charts. The data is fetched from GitHub REST API.",
+      link: "http://github-dashboard.ramonak.io",
+      techs: ["React.js", "GitHub API", "Victory", "Styled Components"],
     },
   ],
   author: {
