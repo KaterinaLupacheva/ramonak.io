@@ -1,14 +1,14 @@
 // @flow strict
-import { ICONS } from '../constants';
+import { ICONS } from "../constants";
 
 const getIcon = (name: string) => {
   let icon;
 
   switch (name) {
-    case 'twitter':
+    case "twitter":
       icon = ICONS.TWITTER;
       break;
-    case 'github':
+    case "github":
       icon = ICONS.GITHUB;
       break;
     // case 'vkontakte':
@@ -17,16 +17,16 @@ const getIcon = (name: string) => {
     // case 'telegram':
     //   icon = ICONS.TELEGRAM;
     //   break;
-    case 'email':
+    case "email":
       icon = ICONS.EMAIL;
       break;
     // case 'rss':
     //   icon = ICONS.RSS;
     //   break;
-    case 'linkedin':
+    case "linkedin":
       icon = ICONS.LINKEDIN;
       break;
-    case 'bitbucket':
+    case "bitbucket":
       icon = ICONS.BITBUCKET;
       break;
     // case 'instagram':

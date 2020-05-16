@@ -41,6 +41,12 @@
     font-size: 26px;
     @include padding-equal(0.1);
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--color-base);
+      background-color: var(--color-secondary);
+    }
   }
 
   input {

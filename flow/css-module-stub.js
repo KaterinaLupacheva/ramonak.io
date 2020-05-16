@@ -1,6 +1,6 @@
 // @flow strict
 type CSSModule = {
-  [key: string]: string,
+  [key: string]: string
 };
 
 const emptyCSSModule: CSSModule = {};

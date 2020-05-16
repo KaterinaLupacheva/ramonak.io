@@ -17,7 +17,7 @@ const ProjectTemplate = ({ data }) => {
     >
       <Sidebar />
       <Page title={frontmatter.title}>
-        {projects.map((project) => (
+        {projects.map(project => (
           <ProjectCard project={project} key={project.title} />
         ))}
       </Page>

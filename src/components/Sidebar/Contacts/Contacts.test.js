@@ -1,22 +1,21 @@
-
 // @flow strict
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Contacts from './Contacts';
+import React from "react";
+import renderer from "react-test-renderer";
+import Contacts from "./Contacts";
 
-describe('Contacts', () => {
+describe("Contacts", () => {
   const props = {
     contacts: {
-      email: '#',
-      twitter: '#',
-      vkontakte: '#',
-      github: '#',
-      rss: '#',
-      telegram: '#'
+      email: "#",
+      twitter: "#",
+      vkontakte: "#",
+      github: "#",
+      rss: "#",
+      telegram: "#"
     }
   };
 
-  it('renders correctly', () => {
+  it("renders correctly", () => {
     const tree = renderer.create(<Contacts {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });

@@ -11,20 +11,20 @@ const onCreateNode = ({ node, actions, getNode }) => {
       createNodeField({
         node,
         name: "slug",
-        value: node.frontmatter.slug,
+        value: node.frontmatter.slug
       });
     } else {
       const value = createFilePath({ node, getNode });
       createNodeField({
         node,
         name: "slug",
-        value,
+        value
       });
     }
 
     if (node.frontmatter.tags) {
       const tagSlugs = node.frontmatter.tags.map(
-        (tag) => `/tag/${_.kebabCase(tag)}/`
+        tag => `/tag/${_.kebabCase(tag)}/`
       );
       createNodeField({ node, name: "tagSlugs", value: tagSlugs });
     }

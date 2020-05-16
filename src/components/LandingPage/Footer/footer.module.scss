@@ -1,10 +1,10 @@
 @import "../../../assets/scss/variables";
 @import "../../../assets/scss/mixins";
 
-.footer-container{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    @include padding(0.5, 0, 0, 0);
-    border-top: 1px solid var(--color-gray-border);
+.footer-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  @include padding(0.5, 0, 0, 0);
+  border-top: 1px solid var(--color-gray-border);
 }

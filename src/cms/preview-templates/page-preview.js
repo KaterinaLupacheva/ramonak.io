@@ -1,6 +1,6 @@
 // @flow strict
-import React from 'react';
-import type { Entry, WidgetFor } from '../../types';
+import React from "react";
+import type { Entry, WidgetFor } from "../../types";
 
 type Props = {
   entry: Entry,
@@ -8,13 +8,13 @@ type Props = {
 };
 
 const PagePreview = ({ entry, widgetFor }: Props) => {
-  const body = widgetFor('body');
-  const title = entry.getIn(['data', 'title']);
+  const body = widgetFor("body");
+  const title = entry.getIn(["data", "title"]);
 
   return (
     <div className="page">
       <h1 className="page__title">{title}</h1>
-      <div className="page__body">{ body }</div>
+      <div className="page__body">{body}</div>
     </div>
   );
 };

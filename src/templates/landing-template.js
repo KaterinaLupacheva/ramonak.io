@@ -6,7 +6,7 @@ import {
   Title,
   Description,
   ContactForm,
-  Footer,
+  Footer
 } from "../components/LandingPage";
 import Sidebar from "../components/Sidebar";
 

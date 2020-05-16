@@ -14,20 +14,20 @@ module.exports = {
   menu: [
     {
       label: "Home",
-      path: "/",
+      path: "/"
     },
     {
       label: "Blog",
-      path: "/posts",
+      path: "/posts"
     },
     {
       label: "About me",
-      path: "/about",
+      path: "/about"
     },
     {
       label: "My projects",
-      path: "/projects",
-    },
+      path: "/projects"
+    }
   ],
   projects: [
     {
@@ -37,7 +37,7 @@ module.exports = {
         "My personal site, where I write blog posts about technologies I use and learn and showcase my web dev projects.",
       link: "https://ramonak.io",
       techs: ["React.js", "Gatsby.js", "Netlify CMS"],
-      sourceCode: "https://github.com/KaterinaLupacheva/ramonak.io",
+      sourceCode: "https://github.com/KaterinaLupacheva/ramonak.io"
     },
     {
       title: "Tabata - Fitness App",
@@ -46,7 +46,7 @@ module.exports = {
         "Fitness Progressive Web App (PWA) based on Tabata - a version of High Intensity Interval Training (HIIT).",
       link: "https://tabata.ramonak.io",
       techs: ["React.js / Redux", "Spring Boot", "Vaadin", "PostgreSQL"],
-      sourceCode: "https://github.com/KaterinaLupacheva/tabata-app",
+      sourceCode: "https://github.com/KaterinaLupacheva/tabata-app"
     },
     {
       title: "Celebrity Recognition App",
@@ -56,7 +56,7 @@ module.exports = {
       link: "https://celebrity.ramonak.io",
       techs: ["React.js", "Clarifai API"],
       sourceCode:
-        "https://github.com/KaterinaLupacheva/celebrity-recognition-app",
+        "https://github.com/KaterinaLupacheva/celebrity-recognition-app"
     },
     {
       title: "GitHub API Dashboard",
@@ -65,7 +65,7 @@ module.exports = {
         "A dashboard of a GitHub account with stats and Victory charts. The data is fetched from GitHub REST API. Please, keep in mind GitHub API Rate Limiting.",
       link: "http://github-dashboard.ramonak.io",
       techs: ["React.js", "GitHub API", "Victory", "Styled Components"],
-      sourceCode: "https://github.com/KaterinaLupacheva/github-api-dashboard",
+      sourceCode: "https://github.com/KaterinaLupacheva/github-api-dashboard"
     },
     {
       title: "Financial Manager App",
@@ -73,7 +73,7 @@ module.exports = {
       description: `A simple app for keeping track of person's cash flow with charts, pivot table and budget feature.`,
       link: "https://fm.ramonak.io",
       techs: ["React.js", "Material UI", "Charts.js", "Firebase"],
-      sourceCode: "https://github.com/KaterinaLupacheva/financial-manager",
+      sourceCode: "https://github.com/KaterinaLupacheva/financial-manager"
     },
     {
       title: "Coffee Shop Dashboard",
@@ -82,7 +82,7 @@ module.exports = {
         "A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.",
       link: "https://coffee-dashboard.netlify.app/",
       techs: ["React.js", "Material UI", "Charts.js"],
-      sourceCode: "https://github.com/KaterinaLupacheva/coffee-shop-dashboard",
+      sourceCode: "https://github.com/KaterinaLupacheva/coffee-shop-dashboard"
     },
     {
       title: "Google Analytics Dashboard",
@@ -92,7 +92,7 @@ module.exports = {
       link: "",
       techs: ["React.js", "Google Analytics API", "Charts.js"],
       sourceCode:
-        "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
+        "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard"
     },
     {
       title: "Progress Bar React Component",
@@ -101,19 +101,19 @@ module.exports = {
         "A customizable Progress Bar React component with interactive playground and code generator, published to NPM.",
       link: "https://katerinalupacheva.github.io/react-progress-bar/",
       techs: ["React.js", "NPM", "Create React Library"],
-      sourceCode: "https://github.com/KaterinaLupacheva/react-progress-bar",
-    },
+      sourceCode: "https://github.com/KaterinaLupacheva/react-progress-bar"
+    }
   ],
   recentWork: [
     {
       title: "Google Analytics Dashboard",
       date: "May 2020",
-      image: "/media/projects/browsers-devices.JPG",
+      image: "/media/mockups/GA.png",
       description:
         "Custom Google Analytics Dashboard based on Google Analytics Reporting API v4 with OAuth2, charts and tables.",
       link:
         "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
-      techs: ["React.js", "Google Analytics API", "Charts.js"],
+      techs: ["React.js", "Google Analytics API", "Charts.js"]
     },
     {
       title: "Coffee Shop Dashboard",
@@ -122,17 +122,17 @@ module.exports = {
       description:
         "A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.",
       link: "https://coffee-dashboard.netlify.app/",
-      techs: ["React.js", "Material UI", "Charts.js"],
+      techs: ["React.js", "Material UI", "Charts.js"]
     },
     {
       title: "GitHub API Dashboard",
       date: "March 2020",
-      image: "/media/projects/github.JPG",
+      image: "/media/mockups/Github.png",
       description:
         "A dashboard of a GitHub account with stats and Victory charts. The data is fetched from GitHub REST API.",
       link: "http://github-dashboard.ramonak.io",
-      techs: ["React.js", "GitHub API", "Victory", "Styled Components"],
-    },
+      techs: ["React.js", "GitHub API", "Victory", "Styled Components"]
+    }
   ],
   author: {
     name: "Katsiaryna (Kate) Lupachova",
@@ -153,7 +153,7 @@ module.exports = {
       weibo: "",
       codepen: "",
       youtube: "",
-      bitbucket: "EkaterinaLupacheva",
-    },
-  },
+      bitbucket: "EkaterinaLupacheva"
+    }
+  }
 };

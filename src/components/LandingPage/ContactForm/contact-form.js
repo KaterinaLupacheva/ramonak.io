@@ -7,30 +7,30 @@ const ContactForm = () => {
   const INITIAL_STATE = {
     name: "",
     email: "",
-    message: "",
+    message: ""
   };
   const [state, setState] = useState(INITIAL_STATE);
   const [submitted, setSubmitted] = useState(false);
   const [isSending, setIsSending] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     setState({
       ...state,
-      [e.target.name]: e.target.value,
+      [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     try {
       setIsSending(true);
       const resp = await fetch("https://formspree.io/mlepdqpa", {
         headers: {
           Accept: "application/json",
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
         method: "POST",
-        body: JSON.stringify(state),
+        body: JSON.stringify(state)
       });
       const r = await resp.json();
       if (r.ok) {

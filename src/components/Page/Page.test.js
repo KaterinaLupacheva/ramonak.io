@@ -1,15 +1,15 @@
 // @flow strict
-import React from 'react';
-import renderer from 'react-test-renderer';
-import Page from './Page';
+import React from "react";
+import renderer from "react-test-renderer";
+import Page from "./Page";
 
-describe('Page', () => {
+describe("Page", () => {
   const props = {
-    children: 'test',
-    title: 'test',
+    children: "test",
+    title: "test"
   };
 
-  it('renders correctly', () => {
+  it("renders correctly", () => {
     const tree = renderer.create(<Page {...props} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
