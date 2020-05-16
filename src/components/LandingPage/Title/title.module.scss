@@ -9,9 +9,8 @@
   position: relative;
   display: flex;
   justify-content: center;
-  height: 90vh;
+  @include padding-equal(0.5);
   align-items: center;
-  @include padding(0, 0, 0, 2);
 }
 .container {
   height: 100%;
@@ -24,5 +23,12 @@
 
   .highlighter {
     color: var(--color-primary);
+  }
+}
+
+@include breakpoint-md {
+  .wrapper{
+    height: 90vh;
+    @include padding(0, 0, 0, 2);
   }
 }
