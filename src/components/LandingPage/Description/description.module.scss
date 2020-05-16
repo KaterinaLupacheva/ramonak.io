@@ -19,6 +19,10 @@
     display: flex;
     justify-content: space-between;
     @include padding-equal(2);
+
+    &:not(:last-child) {
+      border-bottom: 0.5px solid var(--color-gray-border);
+    }
   }
 
   img {
