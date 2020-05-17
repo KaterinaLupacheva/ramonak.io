@@ -2,7 +2,6 @@
 @import "../../../assets/scss/mixins";
 
 .container {
-  width: 100vw;
   display: flex;
   flex-direction: column;
   @include margin-top(1);
@@ -49,7 +48,7 @@
           border: 1px solid var(--color-gray-border);
           border-radius: 10px;
           @include margin(-0.4, 0, 0, 0.5);
-          height: 20px;
+          height: fit-content;
           @include padding-equal(0.2);
           background-color: var(--color-primary);
           font-weight: bold;
@@ -112,6 +111,7 @@
 
 @include breakpoint-md {
   .container {
+    width: 98vw;
     .section {
       display: flex;
       flex-direction: row;
