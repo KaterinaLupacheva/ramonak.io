@@ -44,7 +44,7 @@ const ContactForm = () => {
     }
   };
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} id="contact">
       <h1>Get in touch</h1>
       {!submitted ? (
         !isSending ? (
