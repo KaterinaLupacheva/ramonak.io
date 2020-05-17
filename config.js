@@ -32,7 +32,7 @@ module.exports = {
   projects: [
     {
       title: "Personal site",
-      image: "/media/projects/personal-site1.JPG",
+      image: "/media/projects/landing.JPG",
       description:
         "My personal site, where I write blog posts about technologies I use and learn and showcase my web dev projects.",
       link: "https://ramonak.io",
