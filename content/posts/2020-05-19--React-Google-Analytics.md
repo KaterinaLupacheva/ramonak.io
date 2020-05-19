@@ -9,12 +9,12 @@ tags:
   - "React"
   - "Google API"
 description: "The blog post about how to enable Google Analytics Reporting API in Google developers console, create OAuth 2.0 client ID and develop a custom Google Analytics Dashboard using React.js."
-socialImage: "/media/react-to-npm.png"
+socialImage: "/media/react-ga.png"
 ---
 
-![react-to-npm](/media/react-to-npm.png)
+![react-ga-image](/media/react-ga.png)
 
-Google Analytics is a great tool. You can use it for measuring a website performance by a huge amount of metrics. But what if you need to build a custom app where you can see just those metrics that you or your customer want to measure? And this app should have a unique design (Google Analytics default UI, well, not very impressive).
+[Google Analytics](https://analytics.google.com/analytics/web/) is a great tool. You can use it for measuring a website performance by a huge amount of metrics. But what if you need to build a custom app where you can see just those metrics that you or your customer want to measure? And this app should have a unique design (Google Analytics default UI, well, is not very impressive).
 
 Let’s try to solve this problem using React.js and Google Analytics Reporting API.
 
@@ -65,7 +65,7 @@ Navigate to “Credentials” menu on the left bar, then press “Create credent
 
 Select *Web application* in the Application type field, and then enter *http://localhost:3000* in the Authorized JavaScript origins field. Also, you can enter the name of the app (Web client 1 by default). Press “Save”.
 
-The data with your Client ID and Client Secret appears. We don’t need to save it in some safe place as we always can see the credentials on the developers’ console.
+The data with your Client ID and Client Secret appears. We don’t need to save it in some safe place as we always can see the credentials in the developers’ console.
 
 Finally, we are done with enabling Analytics Reporting API and getting OAuth Client ID. Now it’s time to write some code.
 
@@ -209,7 +209,7 @@ function App() {
 export default App;
 ```
 
-1. When the App component mounts, load the Auth2 library([Docs reference](https://developers.google.com/identity/sign-in/web/reference#auth_setup))
+1. When the App component mounts, load the Auth2 library ([Docs reference](https://developers.google.com/identity/sign-in/web/reference#auth_setup))
 2. Initialize auth2 client (runs inside checkSignedIn util function) and call checkSignedIn function. 
 3. Update value of  *isSignedIn* state variable with the result of checkSignedIn function. If is not signed in, render sign-in button.
 
@@ -242,15 +242,15 @@ The last thing that we need to implement is to create a React component which wi
 But first, you need to get the view ID. It’s a Google Analytics custom property that is created in the Google Analytics account. You can obtain the view ID in two ways:
 
 1. Using [Account Explorer Service](https://ga-dev-tools.appspot.com/account-explorer/)
-2. In your Google Analytics account:
+2. In your **Google Analytics account**:
 
-- navigate to **Admin** section on the left side menu
+    - navigate to **Admin** section on the left side menu
 ![analytics1](/posts/react-ga/analytics1.png)
 
-- in the View column click on **View Settings**
+    - in the View column click on **View Settings**
 ![analytics2](/posts/react-ga/analytics2.png)
 
-- copy the **View ID**
+    - copy the **View ID**
 ![analytics3](/posts/react-ga/analytics3.png)
 
 Then create a new file in the src folder - *report.js*.
@@ -361,4 +361,4 @@ In this blog post, I’ve described the process of enabling the Google Analytics
 
 ![devices](/posts/react-ga/browsers-devices.JPG)
 
-The source code of the **Custom Google Analytics Dashboard**, as well as the code fragments, which are used in this blog post,  is available in [this GitHub repo](https://github.com/KaterinaLupacheva/react-google-analytics-dashboard).
+The source code of the **Custom Google Analytics Dashboard**, as well as the code fragments, which are used in this blog post,  are available in [this GitHub repo](https://github.com/KaterinaLupacheva/react-google-analytics-dashboard).
