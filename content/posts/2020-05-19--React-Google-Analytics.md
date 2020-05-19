@@ -25,7 +25,7 @@ Let’s try to solve this problem using React.js and Google Analytics Reporting 
 
 We’ll be using the official Google Analytics tutorial - [Javascript quickstart for web applications](https://developers.google.com/analytics/devguides/reporting/core/v4/quickstart/web-js), but the Javascript part will be refactored to React.js code.
 
-## Part 1: Enable the API.
+## Part 1: Enable the API
 
 For that go to [this link](https://console.developers.google.com/flows/enableapi?apiid=analyticsreporting.googleapis.com&credential=client_key) to Google Developers console.
 
@@ -353,7 +353,7 @@ By running the app for my [personal site](https://ramonak.io/), I get the follow
 
 ## Conclusion
 
-In this blog post, I’ve described the process of enabling the Google Analytics Reporting API and how to query it from React App. Using this approach I’ve build a **Custom Google Analytics Dashboard** with different reports. The results are shown in charts, graphs and tables.
+In this blog post, I’ve described the process of enabling the Google Analytics Reporting API and how to query it from React App. Using this approach I’ve built a **Custom Google Analytics Dashboard** with different reports. The results are shown in charts, graphs and tables.
 
 ![users](/posts/react-ga/users.JPG)
 
