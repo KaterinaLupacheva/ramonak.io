@@ -236,3 +236,129 @@ If you trust yourself as a developer (ha-ha), then click on the **Advanced** lin
 Next, grant your app permission to view your Google Analytics data and you'll see your Google Analytics Report! Well, soon. Very soon.
 
 ![coming-soon](/posts/react-ga/coming-soon.JPG)
+
+The last thing that we need to implement is to create a React component which will fetch the necessary data from Google Analytics Reporting API.
+
+But first, you need to get the view ID. It’s a Google Analytics custom property that is created in the Google Analytics account. You can obtain the view ID in two ways:
+
+1. Using [Account Explorer Service](https://ga-dev-tools.appspot.com/account-explorer/)
+2. In your Google Analytics account:
+
+- navigate to **Admin** section on the left side menu
+![analytics1](/posts/react-ga/analytics1.png)
+
+- in the View column click on **View Settings**
+![analytics2](/posts/react-ga/analytics2.png)
+
+- copy the **View ID**
+![analytics3](/posts/react-ga/analytics3.png)
+
+Then create a new file in the src folder - *report.js*.
+
+**src/report.js**
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+const Report = () => {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const queryReport = () => {//(1)
+      window.gapi.client
+        .request({
+          path: "/v4/reports:batchGet",
+          root: "https://analyticsreporting.googleapis.com/",
+          method: "POST",
+          body: {
+            reportRequests: [
+              {
+                viewId: "YOUR_VIEW_ID", //enter your view ID here
+                dateRanges: [
+                  {
+                    startDate: "10daysAgo",
+                    endDate: "today",
+                  },
+                ],
+                metrics: [
+                  {
+                    expression: "ga:users",
+                  },
+                ],
+                dimensions: [
+                  {
+                    name: "ga:date",
+                  },
+                ],
+              },
+            ],
+          },
+        })
+        .then(displayResults, console.error.bind(console));
+    };
+
+    const displayResults = (response) => {//(2)
+      const queryResult = response.result.reports[0].data.rows;
+      const result = queryResult.map((row) => {
+        const dateSting = row.dimensions[0];
+        const formattedDate = `${dateSting.substring(0, 4)}
+        -${dateSting.substring(4, 6)}-${dateSting.substring(6, 8)}`;
+        return {
+          date: formattedDate,
+          visits: row.metrics[0].values[0],
+        };
+      });
+      setData(result);
+    };
+
+    queryReport();
+  }, []);
+
+  return data.map((row) => (
+    <div key={row.date}>{`${row.date}: ${row.visits} visits`}</div>//(3)
+  ));
+};
+
+export default Report;
+```
+
+1. After the component renders, query the Google Analytics Reporting API. In this example, we are querying for daily visits for the last 10 days. The all available query parameters you can find in the [Docs](https://developers.google.com/analytics/devguides/reporting/core/v4/rest/v4/reports/batchGet).
+2. Transform the response data into an array of objects with two keys each: date and number of visits. Then set the value of the data state variable to the formatted result.
+3. Render the data array.
+
+Import this component into App.js and replace the “Coming soon” div element with it.
+
+**App.js**
+
+```jsx
+...
+import Report from './report';
+...
+
+return (
+    <div className="App">
+      {!isSignedIn ? (
+        <div id="signin-button"></div>
+      ) : (
+        <Report />
+      )}
+    </div>
+  );
+  ...
+```
+
+By running the app for my [personal site](https://ramonak.io/), I get the following result:
+
+![query-result](/posts/react-ga/query-result.JPG)
+
+## Conclusion
+
+In this blog post, I’ve described the process of enabling the Google Analytics Reporting API and how to query it from React App. Using this approach I’ve build a **Custom Google Analytics Dashboard** with different reports. The results are shown in charts, graphs and tables.
+
+![users](/posts/react-ga/users.JPG)
+
+![pages](/posts/react-ga/pages.JPG)
+
+![devices](/posts/react-ga/browsers-devices.JPG)
+
+The source code of the **Custom Google Analytics Dashboard**, as well as the code fragments, which are used in this blog post,  is available in [this GitHub repo](https://github.com/KaterinaLupacheva/react-google-analytics-dashboard).
