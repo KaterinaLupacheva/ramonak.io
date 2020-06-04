@@ -105,7 +105,7 @@ module.exports = {
     },
     {
       title: "React Excel Library",
-      image: "/media/react-excel.JPG",
+      image: "https://i.ibb.co/Qm3QPhb/react-excel-demo.gif",
       description:
         "React component to upload, edit and transform data of excel sheet into an array of objects. Published to NPM.",
       link: "https://katerinalupacheva.github.io/react-excel/",
