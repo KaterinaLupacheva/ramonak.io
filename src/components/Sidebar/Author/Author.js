@@ -3,14 +3,15 @@ import React, { useState } from "react";
 import { withPrefix, Link } from "gatsby";
 import map from "../../../../static/media/map.png";
 import styles from "./Author.module.scss";
+import * as flag from "./flag.png";
 
 type Props = {
   author: {
     name: string,
     bio: string,
-    photo: string
+    photo: string,
   },
-  isIndex: ?boolean
+  isIndex: ?boolean,
 };
 
 const Author = ({ author, isIndex }: Props) => {
@@ -18,15 +19,18 @@ const Author = ({ author, isIndex }: Props) => {
   const container = "mapContainer";
   return (
     <div className={styles["author"]}>
-      <Link to="/">
-        <img
-          src={withPrefix(author.photo)}
-          className={styles["author__photo"]}
-          width="75"
-          height="75"
-          alt={author.name}
-        />
-      </Link>
+      <div className={styles["author__container"]}>
+        <Link to="/">
+          <img
+            src={withPrefix(author.photo)}
+            className={styles["author__photo"]}
+            width="75"
+            height="75"
+            alt={author.name}
+          />
+        </Link>
+        <img src={flag} width="75" height="75" alt="flag" />
+      </div>
       {isIndex === true ? (
         <h1 className={styles["author__title"]}>
           <Link className={styles["author__title-link"]} to="/">

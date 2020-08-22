@@ -145,7 +145,7 @@ module.exports = {
   ],
   author: {
     name: "Katsiaryna (Kate) Lupachova",
-    photo: "/my-photo.png",
+    photo: "/photo.jpg",
     bio: "Full-stack web developer, freelancer based in Belarus (Europe)",
     contacts: {
       email: "contact@ramonak.io",

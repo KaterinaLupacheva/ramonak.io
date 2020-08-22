@@ -2,6 +2,11 @@
 @import "../../../assets/scss/mixins";
 
 .author {
+  &__container {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
   &__photo {
     display: inline-block;
     margin-bottom: 0;

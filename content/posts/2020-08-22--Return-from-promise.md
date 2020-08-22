@@ -1,6 +1,6 @@
 ---
 title: "Javascript: How to access the return value of a Promise object"
-date: "2020-08-21"
+date: "2020-08-22"
 template: "post"
 draft: false
 slug: "javascript-return-promise"
