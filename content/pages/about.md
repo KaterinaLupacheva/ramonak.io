@@ -9,6 +9,8 @@ Hi! My name is Kate :high_heel:. I'm a full-stack web developer and freelancer :
 
 Although I specialize in Dashboards and Admin Panels building, I'd be happy to help to develop any web application or web site to make the life of my clients from around the world :earth_americas: easier.
 
+<img align="right" src="/photo1.jpg" alt="my-photo" />
+
 I'm a self-taught developer. And I'm continue to learn constantly :pencil:.
 
 Currently for the full-stack development I prefer to use:
