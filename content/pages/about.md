@@ -11,7 +11,7 @@ Although I specialize in Dashboards and Admin Panels building, I'd be happy to h
 
 <img align="right" src="/photo1.jpg" alt="my-photo" />
 
-I'm a self-taught developer. And I'm continue to learn constantly :pencil:.
+I'm a self-taught developer. And I continue to learn constantly :pencil:.
 
 Currently for the full-stack development I prefer to use:
 
