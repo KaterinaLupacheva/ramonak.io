@@ -66,7 +66,7 @@ When not coding, you can find me playing the piano :notes: or the guitar :guitar
     <br/>
     <br/>
     I always dreamed to have my own business someday, or at least be my own boss. At the same time, I was prone to the automation and optimization of all processes in my banking career. And besides, the tech industry is booming in Belarus for the last decade.
-    <h3>Switching to Development</h3>
+    <h3>Switching to Programming</h3>
     So, at 35, with no relevant degree, I've decided to completely change my professional life and to become somebody like a programmer. At the time I didn't have a clear idea of what exactly I'd like to do. I had no friends in the tech industry, nobody who could become my mentor in this journey. So my learning path was very curvy with lots of trials and errors.
     <br/>
     <br/>
