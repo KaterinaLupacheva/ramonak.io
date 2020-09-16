@@ -14,43 +14,43 @@ module.exports = {
     menu: siteConfig.menu,
     author: siteConfig.author,
     projects: siteConfig.projects,
-    recentWork: siteConfig.recentWork
+    recentWork: siteConfig.recentWork,
   },
   plugins: [
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/content`,
-        name: "pages"
-      }
+        name: "pages",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/static/media`,
-        name: "media"
-      }
+        name: "media",
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "css",
-        path: `${__dirname}/static/css`
-      }
+        path: `${__dirname}/static/css`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "assets",
-        path: `${__dirname}/static`
-      }
+        path: `${__dirname}/static`,
+      },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: `${__dirname}/content/posts`
-      }
+        path: `${__dirname}/content/posts`,
+      },
     },
     {
       resolve: "gatsby-plugin-feed",
@@ -69,13 +69,13 @@ module.exports = {
         feeds: [
           {
             serialize: ({ query: { site, allMarkdownRemark } }) =>
-              allMarkdownRemark.edges.map(edge => ({
+              allMarkdownRemark.edges.map((edge) => ({
                 ...edge.node.frontmatter,
                 description: edge.node.frontmatter.description,
                 date: edge.node.frontmatter.date,
                 url: site.siteMetadata.site_url + edge.node.fields.slug,
                 guid: site.siteMetadata.site_url + edge.node.fields.slug,
-                custom_elements: [{ "content:encoded": edge.node.html }]
+                custom_elements: [{ "content:encoded": edge.node.html }],
               })),
             query: `
               {
@@ -103,10 +103,10 @@ module.exports = {
               }
             `,
             output: "/rss.xml",
-            title: siteConfig.title
-          }
-        ]
-      }
+            title: siteConfig.title,
+          },
+        ],
+      },
     },
     {
       resolve: "gatsby-transformer-remark",
@@ -116,20 +116,20 @@ module.exports = {
           {
             resolve: "gatsby-remark-katex",
             options: {
-              strict: "ignore"
-            }
+              strict: "ignore",
+            },
           },
           {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 960,
               withWebp: true,
-              ignoreFileExtensions: []
-            }
+              ignoreFileExtensions: [],
+            },
           },
           {
             resolve: "gatsby-remark-responsive-iframe",
-            options: { wrapperStyle: "margin-bottom: 1.0725rem" }
+            options: { wrapperStyle: "margin-bottom: 1.0725rem" },
           },
           {
             resolve: "gatsby-remark-emojis",
@@ -147,9 +147,9 @@ module.exports = {
                 "margin-top": "1px",
                 position: "relative",
                 top: "5px",
-                width: "25px"
-              }
-            }
+                width: "25px",
+              },
+            },
           },
           {
             resolve: `gatsby-remark-prismjs`,
@@ -194,35 +194,35 @@ module.exports = {
                   language: "superscript",
                   extend: "javascript",
                   definition: {
-                    superscript_types: /(SuperType)/
+                    superscript_types: /(SuperType)/,
                   },
                   insertBefore: {
                     function: {
-                      superscript_keywords: /(superif|superelse)/
-                    }
-                  }
-                }
+                      superscript_keywords: /(superif|superelse)/,
+                    },
+                  },
+                },
               ],
               // Customize the prompt used in shell output
               // Values below are default
               prompt: {
                 user: "root",
                 host: "localhost",
-                global: false
+                global: false,
               },
               // By default the HTML entities <>&'" are escaped.
               // Add additional HTML escapes by providing a mapping
               // of HTML entities and their escape value IE: { '}': '&#123;' }
-              escapeEntities: {}
-            }
+              escapeEntities: {},
+            },
           },
 
           "gatsby-remark-autolink-headers",
           "gatsby-remark-copy-linked-files",
           "gatsby-remark-smartypants",
-          "gatsby-remark-external-links"
-        ]
-      }
+          "gatsby-remark-external-links",
+        ],
+      },
     },
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
@@ -230,17 +230,17 @@ module.exports = {
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
-        modulePath: `${__dirname}/src/cms/index.js`
-      }
+        modulePath: `${__dirname}/src/cms/index.js`,
+      },
     },
     {
       resolve: "gatsby-plugin-google-gtag",
       options: {
         trackingIds: [siteConfig.googleAnalyticsId],
         pluginConfig: {
-          head: true
-        }
-      }
+          head: true,
+        },
+      },
     },
     {
       resolve: "gatsby-plugin-sitemap",
@@ -267,12 +267,12 @@ module.exports = {
         `,
         output: "/sitemap.xml",
         serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => ({
+          allSitePage.edges.map((edge) => ({
             url: site.siteMetadata.siteUrl + edge.node.path,
             changefreq: "daily",
-            priority: 0.7
-          }))
-      }
+            priority: 0.7,
+          })),
+      },
     },
     {
       resolve: "gatsby-plugin-manifest",
@@ -283,8 +283,8 @@ module.exports = {
         background_color: "#FFF",
         theme_color: "#F7A046",
         display: "standalone",
-        icon: "static/favicon.ico"
-      }
+        icon: "static/favicon.ico",
+      },
     },
     "gatsby-plugin-offline",
     "gatsby-plugin-catch-links",
@@ -295,11 +295,33 @@ module.exports = {
       options: {
         postCssPlugins: [...postCssPlugins],
         cssLoaderOptions: {
-          camelCase: false
-        }
-      }
+          camelCase: false,
+        },
+      },
     },
     "gatsby-plugin-flow",
-    "gatsby-plugin-optimize-svgs"
-  ]
+    "gatsby-plugin-optimize-svgs",
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        path: `${__dirname}/content/pages`,
+        name: "cpages",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/content/pages`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          posts: require.resolve("./src/templates/page-template.js"),
+          default: require.resolve("./src/templates/digital-garden-template.js"),
+        },
+      },
+    },
+  ],
 };
