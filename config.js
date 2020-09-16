@@ -25,6 +25,10 @@ module.exports = {
       path: "/projects",
     },
     {
+      label: "Digital Garden",
+      path: "/garden",
+    },
+    {
       label: "About me",
       path: "/about",
     },
