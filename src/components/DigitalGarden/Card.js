@@ -9,7 +9,7 @@ const Card = (props) => (
     <div className={styles["title"]} src={props.image}>
       {props.title}
     </div>
-    <div className={styles["date"]}>{props.date}</div>
+    <div className={styles["date"]}>{`last updated ${props.date}`}</div>
   </div>
 );
 

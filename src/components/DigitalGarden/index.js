@@ -1,4 +1,4 @@
-import DetailsContainer from './DetailsContainer';
+import CardsContainer from './CardsContainer';
 import Card from './Card';
 
-export {DetailsContainer, Card};
+export {CardsContainer, Card};
