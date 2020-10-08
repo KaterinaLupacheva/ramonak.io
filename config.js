@@ -147,6 +147,33 @@ module.exports = {
       techs: ["React.js", "GitHub API", "Victory", "Styled Components"],
     },
   ],
+  digitalGarden: [
+    {
+      image: "/media/logos/heroku.png",
+      title: "Heroku",
+      date: "Oct. 2020",
+    },
+    {
+      image: "/media/logos/git.png",
+      title: "Git",
+      date: "Oct. 2020",
+    },
+    {
+      image: "/media/logos/postgresql.png",
+      title: "PostgreSQL",
+      date: "Oct. 2020",
+    },
+    {
+      image: "/media/logos/react.png",
+      title: "React",
+      date: "Oct. 2020",
+    },
+    {
+      image: "/media/logos/vscode.png",
+      title: "VS Code",
+      date: "Oct. 2020",
+    },
+  ],
   author: {
     name: "Katsiaryna (Kate) Lupachova",
     photo: "/photo.jpg",

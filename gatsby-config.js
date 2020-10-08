@@ -15,6 +15,7 @@ module.exports = {
     author: siteConfig.author,
     projects: siteConfig.projects,
     recentWork: siteConfig.recentWork,
+    digitalGarden: siteConfig.digitalGarden,
   },
   plugins: [
     {
@@ -319,7 +320,9 @@ module.exports = {
       options: {
         defaultLayouts: {
           posts: require.resolve("./src/templates/page-template.js"),
-          default: require.resolve("./src/templates/digital-garden-template.js"),
+          default: require.resolve(
+            "./src/templates/digital-garden-template.js"
+          ),
         },
       },
     },
