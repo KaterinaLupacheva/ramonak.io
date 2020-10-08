@@ -6,13 +6,9 @@ slug: '/garden'
 description: "My Digital Garden - a place where I document what I've learned"
 ---
 
-import {DetailsContainer} from '../../src/components/DigitalGarden';
+import {DetailsContainer, Card} from '../../src/components/DigitalGarden';
+import heroku from '../../static/media/logos/heroku.png';
 
 DESCRIPTION
 
-<details>
-    <summary><b>Heroku</b></summary>
-
-</details>
-
-<DetailsContainer title="test" />
+<Card image={heroku} title="Heroku" date="last updated Oct. 2020"/>
