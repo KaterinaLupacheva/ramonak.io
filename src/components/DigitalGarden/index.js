@@ -1,3 +1,4 @@
 import CardsContainer from "./CardsContainer";
+import Heroku from "./Heroku";
 
-export { CardsContainer };
+export { CardsContainer, Heroku };

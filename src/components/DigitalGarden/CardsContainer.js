@@ -1,14 +1,18 @@
 import React from "react";
 import styles from "./cards-container.module.scss";
-import { useSiteMetadata } from "../../hooks";
 import Card from "./Card";
 
-const CardsContainer = () => {
-  const { digitalGarden } = useSiteMetadata();
+const CardsContainer = ({ data, showView }) => {
   return (
     <div className={styles["cards-container"]}>
-      {digitalGarden.map((item) => (
-        <Card image={item.image} title={item.title} date={item.date} />
+      {data.map((item, idx) => (
+        <Card
+          key={idx}
+          image={item.image}
+          title={item.title}
+          date={item.date}
+          showView={showView}
+        />
       ))}
     </div>
   );
