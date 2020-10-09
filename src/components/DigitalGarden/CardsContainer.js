@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./cards-container.module.scss";
 import Card from "./Card";
 
-const CardsContainer = ({ data, showView }) => {
+const CardsContainer = ({ data, showView, id }) => {
   return (
     <div className={styles["cards-container"]}>
       {data.map((item, idx) => (
@@ -12,6 +12,7 @@ const CardsContainer = ({ data, showView }) => {
           title={item.title}
           date={item.date}
           showView={showView}
+          isClicked={idx === id}
         />
       ))}
     </div>

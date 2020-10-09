@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Page from "../components/Page";
-import { CardsContainer, Heroku } from "../components/DigitalGarden";
+import { CardsContainer, Heroku, Git } from "../components/DigitalGarden";
 import { useSiteMetadata } from "../hooks";
 
 const DigitalGardenTemplate = ({ children, pageContext }) => {
   const { title: siteTitle, digitalGarden } = useSiteMetadata();
   const { title, description, socialImage } = pageContext.frontmatter;
-  const [view, setView] = useState(0);
+  const [viewId, setViewId] = useState();
+
+  const titles = digitalGarden.map((item) => item.title);
+
+  const displayData = (clicked) => {
+    setViewId(titles.indexOf(clicked));
+  };
+
   return (
     <Layout
       title={`${title} - ${siteTitle}`}
@@ -18,8 +25,15 @@ const DigitalGardenTemplate = ({ children, pageContext }) => {
       <Sidebar />
       <Page title={title}>
         {children}
-        <CardsContainer data={digitalGarden} showView={(a) => setView(a)} />
-        <div>{view === "Heroku" && <Heroku />}</div>
+        <CardsContainer
+          data={digitalGarden}
+          showView={(a) => displayData(a)}
+          id={viewId}
+        />
+        <div>
+          {viewId === 0 && <Heroku />}
+          {viewId === 1 && <Git />}
+        </div>
       </Page>
     </Layout>
   );
