@@ -1,0 +1,28 @@
+@import "../../assets/scss/variables";
+
+.block{
+    border-bottom: 1px dotted var(--color-gray-border);
+    padding-bottom: 2rem;
+}
+
+.action{
+    margin-top: 5vh;
+}
+
+.code{
+      max-width: 40rem;
+      color: #ccc;
+      font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+      font-size: 1em;
+      text-align: left;
+      white-space: pre;
+      word-spacing: normal;
+      word-break: normal;
+      line-height: 1.5;
+      tab-size: 4;
+      hyphens: none;
+      padding: 1em;
+      margin: .5em 0;
+      overflow: auto;
+      background: #2d2d2d;
+}
