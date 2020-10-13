@@ -2,6 +2,26 @@
 title: "Heroku"
 ---
 
+import {CodeBlock} from '../../../src/components/DigitalGarden'
+
 ## Heroku
 
-heroku heroku heroku info
+### Export database from Heroku
+
+- Create backup
+
+<CodeBlock>
+{`heroku pg:backups:capture --app <heroku_app_name>`}
+</CodeBlock>
+
+- Download backup
+
+<CodeBlock>
+{`heroku pg:backups:download --app <heroku_app_name>`}
+</CodeBlock>
+
+### Restore dump to local database
+
+<CodeBlock>
+{`pg_restore --verbose --clean --no-acl --no-owner -h localhost -U <postgres_username> -d <database> latest.dump`}
+</CodeBlock>
