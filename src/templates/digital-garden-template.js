@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Page from "../components/Page";
-import { CardsContainer, Heroku, Git } from "../components/DigitalGarden";
+import { CardsContainer } from "../components/DigitalGarden";
 import { useSiteMetadata, useSmoothScroll } from "../hooks";
 
 const DigitalGardenTemplate = ({ children, pageContext }) => {
@@ -12,13 +12,11 @@ const DigitalGardenTemplate = ({ children, pageContext }) => {
   const [refToScroll, smoothScroll] = useSmoothScroll();
 
   const titles = digitalGarden.map((item) => item.title);
-
-  const displayData = (clicked) => {
-    setViewId(titles.indexOf(clicked));
-  };
+  const index = titles.indexOf(title);
 
   useEffect(() => {
-    if (!isNaN(viewId)) {
+    setViewId(index);
+    if (index >= 0) {
       smoothScroll();
     }
   }, [viewId]);
@@ -30,17 +28,15 @@ const DigitalGardenTemplate = ({ children, pageContext }) => {
       socialImage={socialImage}
     >
       <Sidebar />
-      <Page title={title}>
-        {children}
-        <CardsContainer
-          data={digitalGarden}
-          showView={(a) => displayData(a)}
-          id={viewId}
-        />
-        <div ref={refToScroll}>
-          {viewId === 0 && <Heroku />}
-          {viewId === 1 && <Git />}
-        </div>
+      <Page title="Digital Garden">
+        <h2>
+          A collection of short solutions to daily tech problems, notes, some
+          thoughts and explorations that might convert into a blog post someday.
+          My take on Learn in public concept.
+        </h2>
+
+        <CardsContainer data={digitalGarden} id={index} />
+        <div ref={refToScroll}>{children}</div>
       </Page>
     </Layout>
   );

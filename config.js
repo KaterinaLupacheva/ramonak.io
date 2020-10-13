@@ -151,11 +151,13 @@ module.exports = {
     {
       image: "/media/logos/heroku.png",
       title: "Heroku",
+      link: "/digital-garden/heroku",
       date: "Oct. 2020",
     },
     {
       image: "/media/logos/git.png",
       title: "Git",
+      link: "/digital-garden/git",
       date: "Oct. 2020",
     },
     {

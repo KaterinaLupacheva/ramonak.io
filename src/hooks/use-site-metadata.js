@@ -42,6 +42,7 @@ const useSiteMetadata = () => {
             digitalGarden {
               image
               title
+              link
               date
             }
             url

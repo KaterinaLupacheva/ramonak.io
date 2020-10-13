@@ -5,7 +5,6 @@ import { Fade } from "react-reveal";
 import { Link } from "gatsby";
 
 const Description = ({ recentWork }) => {
-  console.log(recentWork);
   return (
     <>
       <div className={styles["container"]}>
