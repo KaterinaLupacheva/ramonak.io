@@ -32,7 +32,7 @@ const DigitalGardenTemplate = ({ children, pageContext }) => {
         <h2>
           A collection of short solutions to daily tech problems, notes, some
           thoughts and explorations that might convert into a blog post someday.
-          My take on Learn in public concept.
+          My take on <i>Learn in public</i> concept.
         </h2>
 
         <CardsContainer data={digitalGarden} id={index} />

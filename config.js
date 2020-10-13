@@ -26,7 +26,7 @@ module.exports = {
     },
     {
       label: "Digital Garden",
-      path: "/garden",
+      path: "/digital-garden",
     },
     {
       label: "About me",
@@ -163,16 +163,19 @@ module.exports = {
     {
       image: "/media/logos/postgresql.png",
       title: "PostgreSQL",
+      link: "/digital-garden/postgresql",
       date: "Oct. 2020",
     },
     {
       image: "/media/logos/react.png",
       title: "React",
+      link: "/digital-garden/react",
       date: "Oct. 2020",
     },
     {
       image: "/media/logos/vscode.png",
       title: "VS Code",
+      link: "/digital-garden/vscode",
       date: "Oct. 2020",
     },
   ],
