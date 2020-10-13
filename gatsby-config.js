@@ -324,6 +324,11 @@ module.exports = {
             "./src/templates/digital-garden-template.js"
           ),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-autolink-headers`,
+          },
+        ],
       },
     },
   ],
