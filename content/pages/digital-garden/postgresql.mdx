@@ -1,5 +1,34 @@
 ---
-title: "PostreSQL"
+title: "PostgreSQL"
 ---
 
-### PostreSQL
+import {CodeBlock} from '../../../src/components/DigitalGarden'
+
+## PostgreSQL
+
+1. [Grant all privileges to user](#grant-all-privileges-to-user)
+2. [Connect to database by some user](#connect-to-database-by-some-user)
+### Grant all privileges to user
+
+1. Connect to psql cli
+
+<CodeBlock>{`psql -U <user>`}</CodeBlock>
+
+> Super user - postgres.
+You will be prompted to enter a password.
+
+2. Connect to database
+
+<CodeBlock>{`\c <database_name>`}</CodeBlock>
+
+3. Grant privileges
+
+<CodeBlock>{`GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to <user_name>;`}</CodeBlock>
+ 
+-----------------------------------------------------
+
+### Connect to database by some user
+
+<CodeBlock>{`\c <database_name> <user_name>`}</CodeBlock>
+
+You will be prompted to enter a password.

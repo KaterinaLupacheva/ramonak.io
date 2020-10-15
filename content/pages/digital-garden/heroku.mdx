@@ -6,6 +6,9 @@ import {CodeBlock} from '../../../src/components/DigitalGarden'
 
 ## Heroku
 
+1. [Export database from Heroku](#export-database-from-heroku)
+2. [Restore dump to local database](#restore-dump-to-local-database)
+
 ### Export database from Heroku
 
 - Create backup
@@ -19,6 +22,8 @@ import {CodeBlock} from '../../../src/components/DigitalGarden'
 <CodeBlock>
 {`heroku pg:backups:download --app <heroku_app_name>`}
 </CodeBlock>
+
+-----------------------------------------------------
 
 ### Restore dump to local database
 
