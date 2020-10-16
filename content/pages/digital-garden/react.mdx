@@ -2,4 +2,26 @@
 title: "React"
 ---
 
-### React
+## React
+
+1. [Display app on a full screen](#display-app-on-a-full-screen)
+2. [Add multiple components](#add-multiple-components)
+
+### Display app on a full screen
+
+Add to index.css
+
+```
+html, body, #root, #root>div {
+  height: 100%;
+}
+```
+
+### Add multiple components
+
+```
+const n = 5; //number of repeats
+
+[...Array(n)].map((e, i) => <NameOfComponent key={i} />)
+
+```
