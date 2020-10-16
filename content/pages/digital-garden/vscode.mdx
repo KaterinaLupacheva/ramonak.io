@@ -2,4 +2,31 @@
 title: "VS Code"
 ---
 
-### VS Code
+import {CodeBlock} from '../../../src/components/DigitalGarden'
+
+## VS Code
+
+1. [Open VSCode](#open-vscode)
+2. [Open or create file/folder](#open-or-create-file/folder)
+3. [Search file](#search-file)
+4. [Run prettier](#run-prettier)
+
+### Open VSCode
+
+<CodeBlock>{`code .`}</CodeBlock>
+
+### Open or create file/folder
+
+<CodeBlock>{`code index.html style.css documentation\readme.md`}</CodeBlock>
+
+If the specified file does not exist, VS Code will create them for you along with any new intermediate folders.
+
+### Search file
+
+<CodeBlock>{`ctrl + p`}</CodeBlock>
+
+### Run prettier
+
+<CodeBlock>{`prettier “**/*.js” --write`}</CodeBlock>
+              
+js can be replaced on any other extension

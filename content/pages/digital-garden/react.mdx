@@ -2,6 +2,8 @@
 title: "React"
 ---
 
+import {CodeBlock} from '../../../src/components/DigitalGarden'
+
 ## React
 
 1. [Display app on a full screen](#display-app-on-a-full-screen)
@@ -11,17 +13,13 @@ title: "React"
 
 Add to index.css
 
-```
-html, body, #root, #root>div {
+<CodeBlock>{`html, body, #root, #root>div {
   height: 100%;
-}
-```
+}`}</CodeBlock>
 
 ### Add multiple components
 
-```
-const n = 5; //number of repeats
-
+<CodeBlock>{`
+  const n = 5; //number of repeats
 [...Array(n)].map((e, i) => <NameOfComponent key={i} />)
-
-```
+`}</CodeBlock>
