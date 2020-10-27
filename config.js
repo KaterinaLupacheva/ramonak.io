@@ -116,6 +116,16 @@ module.exports = {
       techs: ["React.js", "NPM", "Create React Library"],
       sourceCode: "https://github.com/KaterinaLupacheva/react-excel",
     },
+    {
+      title: "Worktime logger",
+      image: "https://i.ibb.co/rv9CvG4/worktime-logger.gif",
+      description:
+        "The app calculates a daily worktime that needs to be logged based on the time period, salary and hourly rate. Result can be exported to CSV.",
+      link: "https://katerinalupacheva.github.io/worktime-logger/",
+      techs: ["React.js", "Material UI", "CSV export"],
+      sourceCode: "https://github.com/KaterinaLupacheva/worktime-logger",
+    },
+
   ],
   recentWork: [
     {
