@@ -120,6 +120,10 @@ function App() {
 export default App;
 ```
 
+Demo:
+
+![use-smooth-scroll](https://i.ibb.co/dbM8TVN/use-Smooth-Scroll1.gif)
+
 ### 2. useDocTitle custom hook
 
 A custom hook can use not only one other hook but as many as you wish. Now let's write a custom hook that contains two other hooks.
