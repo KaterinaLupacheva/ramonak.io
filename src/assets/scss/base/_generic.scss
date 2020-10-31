@@ -166,6 +166,12 @@ blockquote {
   }
 }
 
+.gatsby-highlight-code-line {
+	background-color: #4f424c;
+	display: block;
+	border-left: 0.25em solid #f99;
+  }
+
 figure {
   display: block;
   width: 100%;

@@ -89,6 +89,37 @@ Here is this app in action:
 
 ![scroll-demo](https://i.ibb.co/7bVGwNR/use-Smooth-Scroll.gif)
 
+This hook can be used multiple times across the app. And the important thing is that **two components using the same hook do not share the state**.
+
+For instance, we can use the useSmoothScroll hook for marking another element to which we'd like to scroll and do so by clicking on another button.
+
+*useSmoothScroll.js*
+
+```jsx{7,11,17}
+import React from "react";
+import "./App.css";
+import useSmoothScroll from "./hooks/useSmoothScroll";
+
+function App() {
+  const [refToScroll, smoothScroll] = useSmoothScroll();
+  const [topRef, smoothScrollToTop] = useSmoothScroll();
+
+  return (
+    <div className="App">
+      <button ref={topRef} onClick={smoothScroll}>
+        Scroll
+      </button>
+      <div style={{ marginTop: "150vh" }} ref={refToScroll}>
+        I wanna be seen
+      </div>
+      <button onClick={smoothScrollToTop}>Go UP</button>
+    </div>
+  );
+}
+
+export default App;
+```
+
 ### 2. useDocTitle custom hook
 
 A custom hook can use not only one other hook but as many as you wish. Now let's write a custom hook that contains two other hooks.

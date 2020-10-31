@@ -114,6 +114,7 @@ module.exports = {
       options: {
         plugins: [
           "gatsby-remark-relative-images",
+          "gatsby-remark-prismjs",
           {
             resolve: "gatsby-remark-katex",
             options: {
