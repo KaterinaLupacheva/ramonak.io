@@ -161,7 +161,7 @@ import "./App.css";
 import useDocTitle from "./hooks/useDocTitle";
 
 function App() {
-  const [_, setDocTitle] = useDocTitle("Start page");
+  const [, setDocTitle] = useDocTitle("Start page");
 
   return (
     <div className="App">
@@ -178,3 +178,80 @@ export default App;
 The hook in action:
 
 ![useDocTitle-demo](https://i.ibb.co/9WPSRL7/use-Doc-Title.gif)
+
+### 3. useRoute custom hook
+
+Also, a custom hook can be used inside another custom hook.  
+
+Let's create a new custom hook - useRoute, which purpose is to update the browser URL without page reload.
+
+*useRoute.js*
+
+```jsx
+import { useState, useEffect } from "react";
+
+const useRoute = (initialRoute) => {
+  const [route, setRoute] = useState(initialRoute);
+
+  useEffect(() => {
+    window.history.pushState(null, "", route);
+  }, [route]);
+
+  return [route, setRoute];
+};
+
+export default useRoute;
+```
+
+The structure of this hook is very similar to our previous useDocTitle hook structure. The main difference is that we use *[window.history.pushState()](https://developer.mozilla.org/en-US/docs/Web/API/History/pushState)* method inside the useEffect hook.
+
+Now we are going to add this hook into the *useDocTitle* hook.
+
+*useDocTitle.js*
+
+```jsx{2,6,10}
+import { useState, useEffect } from "react";
+import useRoute from "./useRoute";
+
+const useDocTitle = (title) => {
+  const [docTitle, setDocTitle] = useState(title);
+  const [, setRoute] = useRoute();
+
+  useEffect(() => {
+    document.title = docTitle;
+    setRoute(docTitle);
+  }, [docTitle]);
+
+  return [docTitle, setDocTitle];
+};
+
+export default useDocTitle;
+```
+
+Now the browser's URL will be updated at the same time as when the document title is changed.
+
+So we can use this hook like this:
+
+```jsx
+import React from "react";
+import "./App.css";
+import useDocTitle from "./hooks/useDocTitle";
+
+function App() {
+  const [, setDocTitle] = useDocTitle("home");
+
+  return (
+    <div className="App">
+      <button onClick={() => setDocTitle("updated")}>
+        Change doc title and route
+      </button>
+    </div>
+  );
+}
+
+export default App;
+```
+
+And the demo of how it works:
+
+![use-route](https://i.ibb.co/341S0FD/useRoute.gif)
