@@ -125,7 +125,15 @@ module.exports = {
       techs: ["React.js", "Material UI", "CSV export"],
       sourceCode: "https://github.com/KaterinaLupacheva/worktime-logger",
     },
-
+    {
+      title: "Paper React Component",
+      image: "/media/projects/paper-demo.JPG",
+      description:
+        "Paper React component based on Material design with interactive playground and code generator, published to NPM.",
+      link: "https://katerinalupacheva.github.io/paper-component/",
+      techs: ["React.js", "NPM", "Create React Library"],
+      sourceCode: "https://github.com/KaterinaLupacheva/paper-component",
+    },
   ],
   recentWork: [
     {
