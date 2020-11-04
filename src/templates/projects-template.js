@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { Fade } from "react-reveal";
 import Layout from "../components/Layout";
 import Sidebar from "../components/Sidebar";
 import Page from "../components/Page";
@@ -17,8 +18,10 @@ const ProjectTemplate = ({ data }) => {
     >
       <Sidebar />
       <Page title={frontmatter.title}>
-        {projects.map(project => (
-          <ProjectCard project={project} key={project.title} />
+        {projects.map((project) => (
+          <Fade bottom>
+            <ProjectCard project={project} key={project.title} />
+          </Fade>
         ))}
       </Page>
     </Layout>
