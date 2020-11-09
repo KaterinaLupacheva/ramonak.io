@@ -1,5 +1,5 @@
 ---
-title: "React: How to create a custom button group component in 5 minutes"
+title: "React: How to create a custom Button Group component in 5 minutes"
 date: "2020-11-08"
 template: "post"
 draft: false
