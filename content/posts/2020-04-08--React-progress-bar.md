@@ -35,7 +35,7 @@ const ProgressBar = (props) => {
 export default ProgressBar;
 ```
 
-Basically, the component consists of the two parts:
+Basically, the component consists of two parts:
 
 1. the main parent div container - represents the whole bar
 2. the child div -  completed part of the bar with the span which will show the completed percentage number.
