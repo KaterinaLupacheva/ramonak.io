@@ -18,7 +18,7 @@ socialImage: "/media/spring-vaadin-keycloak.png"
 > This blog post is a seventh part of the [series](https://ramonak.io/posts/springboot–vaadin-keycloak–springsecurity-integration).
 > The source code of the complete project is available in <a href="https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo" target="_blank">this GitHub repository</a>
 
-So, we also have the Vaadin frontend app. 
+So, we also have the Vaadin frontend app.
 
 For starters, we should repeat the same steps, as it was while integrating Spring Boot backend app and Keycloak server:
 
@@ -273,6 +273,8 @@ We are logged out from all the clients (apps) that are united in the Keycloak’
 
 ## Conclusion
 
-That’s it! We’ve implemented the basic integration of Spring Boot app, Vaadin App and Keycloak server. We’ve done the minimum required configuration tweeks, so the whole system was fully functioning. 
+That’s it! We’ve implemented the basic integration of Spring Boot app, Vaadin App and Keycloak server. We’ve done the minimum required configuration tweeks, so the whole system was fully functioning.
 
 The complete source code of the project is available in [this GitHub repository](https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo).
+
+If you'd like to learn how to use Spring Security with JWT, checkout [this tutorial](https://www.toptal.com/spring/spring-security-tutorial).
