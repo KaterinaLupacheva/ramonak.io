@@ -9,8 +9,8 @@ const Description = ({ recentWork }) => {
     <>
       <div className={styles["container"]}>
         <h1>My Recent Work</h1>
-        {recentWork.map((work) => (
-          <Fade bottom>
+        {recentWork.map((work, id) => (
+          <Fade bottom key={id}>
             <div className={styles["section"]} key={work.title}>
               <div className={styles["image-wrapper"]}>
                 <a href={work.link} target="_blank">
