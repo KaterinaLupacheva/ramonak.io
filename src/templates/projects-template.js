@@ -18,8 +18,8 @@ const ProjectTemplate = ({ data }) => {
     >
       <Sidebar />
       <Page title={frontmatter.title}>
-        {projects.map((project) => (
-          <Fade bottom>
+        {projects.map((project, id) => (
+          <Fade bottom key={id}>
             <ProjectCard project={project} key={project.title} />
           </Fade>
         ))}
