@@ -3,7 +3,7 @@ title: "Render, update, and transform Excel spreadsheet data into an array of ob
 date: "2020-06-01"
 template: "post"
 draft: false
-slug: "react-excel-render-update-api"
+slug: "react-excel-render-update"
 category: "Tutorial"
 tags:
   - "React"
