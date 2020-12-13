@@ -13,7 +13,7 @@ const useViewCounter = (slug) => {
     fetch(`${url}/api/views/${slug}`)
       .then((res) => res.json())
       .then((json) => {
-        setViews(json.views);
+        setViews(json.totalViews);
       })
       .catch((err) => console.error(err.message));
   }, [slug]);
