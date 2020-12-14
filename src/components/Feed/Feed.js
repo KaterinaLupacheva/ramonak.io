@@ -6,12 +6,12 @@ import type { Edges } from "../../types";
 import styles from "./Feed.module.scss";
 
 type Props = {
-  edges: Edges
+  edges: Edges,
 };
 
 const Feed = ({ edges }: Props) => (
   <div className={styles["feed"]}>
-    {edges.map(edge => (
+    {edges.map((edge) => (
       <div className={styles["feed__item"]} key={edge.node.fields.slug}>
         <div className={styles["feed__item-meta"]}>
           <time
@@ -33,7 +33,7 @@ const Feed = ({ edges }: Props) => (
         <h2 className={styles["feed__item-title"]}>
           <Link
             className={styles["feed__item-title-link"]}
-            to={edge.node.fields.slug}
+            to={`/posts/${edge.node.fields.slug}`}
           >
             {edge.node.frontmatter.title}
           </Link>
