@@ -8,18 +8,18 @@ import type { MarkdownRemark } from "../types";
 
 type Props = {
   data: {
-    markdownRemark: MarkdownRemark
-  }
+    markdownRemark: MarkdownRemark,
+  },
 };
 
 const PostTemplate = ({ data }: Props) => {
   const { title: siteTitle, subtitle: siteSubtitle } = useSiteMetadata();
   const { frontmatter } = data.markdownRemark;
-  useViewCounter(data.markdownRemark.fields.slug);
+  useViewCounter("ramonak: " + data.markdownRemark.fields.slug);
   const {
     title: postTitle,
     description: postDescription,
-    socialImage
+    socialImage,
   } = frontmatter;
   const metaDescription =
     postDescription !== null ? postDescription : siteSubtitle;
