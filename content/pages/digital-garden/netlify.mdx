@@ -1,0 +1,40 @@
+---
+title: "Netlify"
+---
+
+import { CodeBlock } from "../../../src/components/DigitalGarden";
+
+## Netlify
+
+1. [Prevent Netlify from treating warnings as errors during the build](#prevent-netlify-from-treating-warnings-as-errors-during-the-build)
+2. [React - page not found when using React router](#react-page-not-found-when-using-react-router)
+
+### Prevent Netlify from treating warnings as errors during the build
+
+- Site settings -> Build & Deploy -> Continuous deployment -> Edit settings
+
+- Enter Build command
+
+<CodeBlock>{`CI='' <your_build_command>`}</CodeBlock>
+
+Build command options:
+
+- npm run build
+- yarn build
+- gatsby build
+
+and so on.
+
+[Docs](https://docs.netlify.com/configure-builds/troubleshooting-tips/#build-fails-on-warning-message)
+
+### React - page not found when using React router
+
+- In the public folder of a project create file _\_redirects_
+
+- Add the following rewrite rule
+
+<CodeBlock>{`/*    /index.html   200`}</CodeBlock>
+
+- Redeploy your site
+
+[Docs](https://docs.netlify.com/routing/redirects/rewrites-proxies/#history-pushstate-and-single-page-apps)
