@@ -196,6 +196,12 @@ module.exports = {
       link: "/digital-garden/vscode",
       date: "Oct. 2020",
     },
+    {
+      image: "/media/logos/netlify.png",
+      title: "Netlify",
+      link: "/digital-garden/netlify",
+      date: "Jan. 2021",
+    },
   ],
   author: {
     name: "Katsiaryna (Kate) Lupachova",
