@@ -38,12 +38,12 @@ export default ProgressBar;
 Basically, the component consists of two parts:
 
 1. the main parent div container - represents the whole bar
-2. the child div -  completed part of the bar with the span which will show the completed percentage number.
+2. the child div - completed part of the bar with the span which will show the completed percentage number.
 
 Our custom progress bar component will receive just two props:
 
-- *bgcolor* - background color of the completed part of the bar
-- *completed* - number between 0 and 100
+- _bgcolor_ - background color of the completed part of the bar
+- _completed_ - number between 0 and 100
 
 ## 2. Add styling
 
@@ -55,25 +55,25 @@ const ProgressBar = (props) => {
 
   const containerStyles = {
     height: 20,
-    width: '100%',
+    width: "100%",
     backgroundColor: "#e0e0de",
     borderRadius: 50,
-    margin: 50
-  }
+    margin: 50,
+  };
 
   const fillerStyles = {
-    height: '100%',
+    height: "100%",
     width: `${completed}%`,
     backgroundColor: bgcolor,
-    borderRadius: 'inherit',
-    textAlign: 'right'
-  }
+    borderRadius: "inherit",
+    textAlign: "right",
+  };
 
   const labelStyles = {
     padding: 5,
-    color: 'white',
-    fontWeight: 'bold'
-  }
+    color: "white",
+    fontWeight: "bold",
+  };
 
   return (
     <div style={containerStyles}>
@@ -106,7 +106,11 @@ function App() {
   return (
     <div className="App">
       {testData.map((item, idx) => (
-        <ProgressBar key={idx} bgcolor={item.bgcolor} completed={item.completed} />
+        <ProgressBar
+          key={idx}
+          bgcolor={item.bgcolor}
+          completed={item.completed}
+        />
       ))}
     </div>
   );
@@ -122,7 +126,8 @@ Run the app and check what we’ve got in the browser.
 And that’s it! The simple Progress Bar React component is ready!
 
 ## BONUS. Adding animation.
-Well, actually, to animate the progress bar movement it is sufficient to add just one line into the *fillerStyles*:
+
+Well, actually, to animate the progress bar movement it is sufficient to add just one line into the _fillerStyles_:
 
 ```jsx
 const fillerStyles = {
@@ -132,7 +137,7 @@ const fillerStyles = {
   }
 ```
 
-To demonstrate animation in action I’m going to create a function, which will randomly generate the completed prop value every 2 sec. This function will be place inside the *useEffect* hook.
+To demonstrate animation in action I’m going to create a function, which will randomly generate the completed prop value every 2 sec. This function will be place inside the _useEffect_ hook.
 
 ```jsx
 function App() {
@@ -158,4 +163,6 @@ And that's the final result:
 
 And that’s it! In this short blog post, I’ve described a step-by-step process of creating a custom Progress Bar React component. This component is fully customizable, so you can add any additional styling and functionality depending on your project needs.
 
-*The complete source code of the component is available in [this GitHub repository](https://github.com/KaterinaLupacheva/simple-progress-bar)*
+_The complete source code of the component is available in [this GitHub repository](https://github.com/KaterinaLupacheva/simple-progress-bar)_
+
+_Also, you can use this component (with TypeScript support) as [npm package](https://www.npmjs.com/package/@ramonak/react-progress-bar)._
