@@ -53,16 +53,6 @@ module.exports = {
       sourceCode: "https://github.com/KaterinaLupacheva/tabata-app",
     },
     {
-      title: "Celebrity Recognition App",
-      image: "/media/projects/celebrity1.JPG",
-      description:
-        "Fun app for finding out which celebrity do you look like by uploading or by pasting URL of your photo using Machine Learning API.",
-      link: "https://celebrity.ramonak.io",
-      techs: ["React.js", "Clarifai API"],
-      sourceCode:
-        "https://github.com/KaterinaLupacheva/celebrity-recognition-app",
-    },
-    {
       title: "GitHub API Dashboard",
       image: "/media/projects/github.JPG",
       description:
@@ -72,6 +62,15 @@ module.exports = {
       sourceCode: "https://github.com/KaterinaLupacheva/github-api-dashboard",
     },
     {
+      title: "Dashboard Layout",
+      image: "/media/projects/dashboard-layout.gif",
+      description:
+        "React Material UI Dashboard layout template. Starter code with the implementation of: Basic layout: header, the main content area with drawer, footer; Drawer toggle; Navigation between pages.",
+      link: "https://katerinalupacheva.github.io/dashboard-layout/",
+      techs: ["React.js", "Material UI", "TypeScript"],
+      sourceCode: "https://github.com/KaterinaLupacheva/dashboard-layout",
+    },
+    {
       title: "Financial Manager App",
       image: "/media/projects/fin-manager.JPG",
       description: `A simple app for keeping track of person's cash flow with charts, pivot table and budget feature.`,
@@ -79,15 +78,7 @@ module.exports = {
       techs: ["React.js", "Material UI", "Charts.js", "Firebase"],
       sourceCode: "https://github.com/KaterinaLupacheva/financial-manager",
     },
-    {
-      title: "Coffee Shop Dashboard",
-      image: "/media/projects/coffee-dashboard.JPG",
-      description:
-        "A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.",
-      link: "https://coffee-dashboard.netlify.app/",
-      techs: ["React.js", "Material UI", "Charts.js"],
-      sourceCode: "https://github.com/KaterinaLupacheva/coffee-shop-dashboard",
-    },
+
     {
       title: "Google Analytics Dashboard",
       image: "/media/projects/browsers-devices.JPG",
@@ -99,12 +90,21 @@ module.exports = {
         "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
     },
     {
+      title: "Coffee Shop Dashboard",
+      image: "/media/projects/coffee-dashboard.JPG",
+      description:
+        "A sample dashboard for a Coffee Shop. An owner or administrator can have in one place all information about orders, products, sales, employees, and many more.",
+      link: "https://coffee-dashboard.netlify.app/",
+      techs: ["React.js", "Material UI", "Charts.js"],
+      sourceCode: "https://github.com/KaterinaLupacheva/coffee-shop-dashboard",
+    },
+    {
       title: "Progress Bar React Component",
       image: "/media/projects/pg-bar.JPG",
       description:
         "A customizable Progress Bar React component with interactive playground and code generator, published to NPM.",
       link: "https://katerinalupacheva.github.io/react-progress-bar/",
-      techs: ["React.js", "NPM", "Create React Library"],
+      techs: ["React.js", "TypeScript", "NPM"],
       sourceCode: "https://github.com/KaterinaLupacheva/react-progress-bar",
     },
     {
@@ -126,6 +126,16 @@ module.exports = {
       sourceCode: "https://github.com/KaterinaLupacheva/worktime-logger",
     },
     {
+      title: "Celebrity Recognition App",
+      image: "/media/projects/celebrity1.JPG",
+      description:
+        "Fun app for finding out which celebrity do you look like by uploading or by pasting URL of your photo using Machine Learning API.",
+      link: "https://celebrity.ramonak.io",
+      techs: ["React.js", "Clarifai API"],
+      sourceCode:
+        "https://github.com/KaterinaLupacheva/celebrity-recognition-app",
+    },
+    {
       title: "Paper React Component",
       image: "/media/projects/paper-demo.JPG",
       description:
@@ -134,8 +144,26 @@ module.exports = {
       techs: ["React.js", "NPM", "Create React Library"],
       sourceCode: "https://github.com/KaterinaLupacheva/paper-component",
     },
+    {
+      title: "React Button Group",
+      image: "/media/projects/button-group.gif",
+      description:
+        "React ButtonGroup component with the selection (active button) functionality, published to NPM.",
+      link: "https://ramonak.io/posts/react-button-group",
+      techs: ["React.js", "NPM", "Create React Library"],
+      sourceCode: "https://github.com/KaterinaLupacheva/react-button-group",
+    },
   ],
   recentWork: [
+    {
+      title: "Dashboard Layout Template",
+      date: "February 2021",
+      image: "/media/projects/dashboard-layout.gif",
+      description:
+        "React Material UI Dashboard layout template. Starter code with the implementation of: Basic layout: header, the main content area with drawer, footer; Drawer toggle; Navigation between pages.",
+      link: "https://github.com/KaterinaLupacheva/dashboard-layout",
+      techs: ["React.js", "Material UI", "TypeScript"],
+    },
     {
       title: "Google Analytics Dashboard",
       date: "May 2020",
