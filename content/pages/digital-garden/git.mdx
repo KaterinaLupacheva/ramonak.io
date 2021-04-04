@@ -2,19 +2,21 @@
 title: "Git"
 ---
 
-import {CodeBlock} from '../../../src/components/DigitalGarden'
+import { CodeBlock } from "../../../src/components/DigitalGarden";
 
 ## Git
 
 1. [Merge dev branch into master](#merge-dev-branch-into-master)
 2. [Create one repository with folders of different projects](#create-one-repository-with-folders-of-different-projects)
 3. [Change commit message of the last commit](#change-commit-message-of-the-last-commit)
+4. [Checkout pull requests locally](#checkout-pull-requests-locally)
 
+<div id="id-section1" />
 ### Merge dev branch into master
 
 - On dev branch
-<CodeBlock>{`git merge master`}</CodeBlock>
-	     - to solve merge conflicts if any
+
+  <CodeBlock>{`git merge master`}</CodeBlock>- to solve merge conflicts if any
 
 - Checkout to master branch
 
@@ -38,32 +40,52 @@ import {CodeBlock} from '../../../src/components/DigitalGarden'
 
 <CodeBlock>{`git push origin :dev`}</CodeBlock>
 
------------------------------------------------------
+---
 
 ### Create one repository with folders of different projects
 
-1. Create github repository with readme file 
+1. Create github repository with readme file
 
-2. Clone it 
-<CodeBlock>{`git clone <repo_url>`}</CodeBlock>
+2. Clone it
+
+   <CodeBlock>{`git clone <repo_url>`}</CodeBlock>
 
 3. Unzip cloned folder
 
 4. Copy folder with project into this folder
 
 5. From root folder add all files to git
-<CodeBlock>{`git add .`}</CodeBlock>
+
+   <CodeBlock>{`git add .`}</CodeBlock>
 
 6. Commit changes
-<CodeBlock>{`git commit -m “message”`}</CodeBlock> 
+
+   <CodeBlock>{`git commit -m “message”`}</CodeBlock>{" "}
 
 7. Push changes
-<CodeBlock>{`git push origin master`}</CodeBlock> 
+   <CodeBlock>{`git push origin master`}</CodeBlock>{" "}
 
 To add another folder repeat from 4th step.
 
------------------------------------------------------
+---
 
 ### Change commit message of the last commit
 
-<CodeBlock>{`git commit --amend -m "your new message"`}</CodeBlock> 
+<CodeBlock>{`git commit --amend -m "your new message"`}</CodeBlock>
+
+---
+
+### Checkout pull requests locally
+
+1. <CodeBlock>{`git fetch origin pull/ID/head:BRANCHNAME`}</CodeBlock>
+
+where
+
+- ID - pull request's ID (#18)
+- BRANCHNAME - a name of the branch
+
+2. <CodeBlock>{`git checkout BRANCHNAME`}</CodeBlock>
+
+For there, you can run the code locally, make changes, then push the new branch up.
+
+[Docs](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally)
