@@ -10,6 +10,7 @@ import { CodeBlock } from "../../../src/components/DigitalGarden";
 2. [Create one repository with folders of different projects](#create-one-repository-with-folders-of-different-projects)
 3. [Change commit message of the last commit](#change-commit-message-of-the-last-commit)
 4. [Checkout pull requests locally](#checkout-pull-requests-locally)
+5. [Tags](#tags)
 
 ### Merge dev branch into master
 
@@ -88,3 +89,27 @@ where
 For there, you can run the code locally, make changes, then push the new branch up.
 
 [Docs](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/checking-out-pull-requests-locally)
+
+---
+
+### Tags
+
+- list all your tags
+
+<CodeBlock>{`git tag`}</CodeBlock>
+
+- delete tag
+
+<CodeBlock>{`git tag -d <tag_name>`}</CodeBlock>
+
+- create tag
+
+<CodeBlock>{`git tag <tag_name>`}</CodeBlock>
+
+- push tags
+
+<CodeBlock>{`git push origin --tags`}</CodeBlock>
+
+[Docs](https://git-scm.com/book/en/v2/Git-Basics-Tagging)
+
+---
