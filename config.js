@@ -204,7 +204,7 @@ module.exports = {
       image: "/media/logos/git.png",
       title: "Git",
       link: "/digital-garden/git",
-      date: "Oct. 2020",
+      date: "Jun. 2021",
     },
     {
       image: "/media/logos/postgresql.png",
