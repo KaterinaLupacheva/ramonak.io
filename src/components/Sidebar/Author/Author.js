@@ -46,7 +46,7 @@ const Author = ({ author, isIndex }: Props) => {
       )}
 
       <p className={styles["author__subtitle"]}>
-        Full-stack web developer, freelancer based in{" "}
+        Mobile and web apps developer, freelancer based in{" "}
         <span
           className={styles["belarus"]}
           onClick={() => toggleIsVisible(!isVisible)}

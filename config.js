@@ -6,7 +6,7 @@ module.exports = {
   title: "Ramonak.io",
   subtitle:
     "Personal site and blog by Katsiaryna (Kate) Lupachova: freelancer, full-stack web developer from Belarus.",
-  copyright: "2019 - 2020  © All rights reserved.",
+  copyright: "2019 - 2021  © All rights reserved.",
   disqusShortname: "",
   postsPerPage: 8,
   googleAnalyticsId: process.env.GATSBY_GOOGLE_ANALYTICS,
@@ -234,7 +234,7 @@ module.exports = {
   author: {
     name: "Katsiaryna (Kate) Lupachova",
     photo: "/photo.jpg",
-    bio: "Full-stack web developer, freelancer based in Belarus (Europe)",
+    bio: "Mobile and web developer, freelancer based in Belarus (Europe)",
     contacts: {
       email: "contact@ramonak.io",
       facebook: "#",
