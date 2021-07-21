@@ -585,4 +585,4 @@ i18n
 
 And that's it! We have added internationalization to the React Native app!
 
-The full source code available in [this repo](https://github.com/KaterinaLupacheva/tutorials/tree/master/react-native-i18n).
+The full source code is available in [this repo](https://github.com/KaterinaLupacheva/tutorials/tree/master/react-native-i18n).
