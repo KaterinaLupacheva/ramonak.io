@@ -1,6 +1,6 @@
 ---
 title: "React Native Internationalization with i18next"
-date: "2021-07-19"
+date: "2021-07-21"
 template: "post"
 draft: false
 slug: "react-native-internationalization"
@@ -14,15 +14,21 @@ socialImage: "/media/rn-i18n.png"
 
 ![rn-i18n](/media/rn-i18n.png)
 
-## Content
+## What are we going to build?
 
-- general config
-- get translations from a google sheet
-- custom plugin to store selected language in async storage
+We are going to build the React Native app that:
+
+- supports multiple languages (with [react-i18next](https://react.i18next.com/) library)
+- gets translations from a Google sheet and writes it straight to the app (with [google-spreadsheet](https://www.npmjs.com/package/google-spreadsheet) library)
+- sets default language based on a user's device locale
+- stores a user's language choice in Async storage
+- has a Language Picker component
+
+## Intro
 
 Assume we have a basic React Native project. For this blog post, I'm going to use [expo](https://docs.expo.io/) project, but the steps will be the same for a project that was initialized with React Native CLI.
 
-The app has just one screen that renders the text "Hello!" and a button with the title "Click".
+The app has just one screen that renders the text "Hello!" and a button with the title "Press".
 
 ![init screen](/posts/react-native-i18n/1.png)
 
@@ -50,15 +56,21 @@ export default function App() {
 
 Now we are going to add support of multiple languages in our app.
 
+## Content
+
+- [general config of react-i18next](#1-install-and-configure-react-i18next-library)
+- [get translations from a Google sheet](#2-add-translations-google-sheet--automated-script)
+- [custom plugin to store selected language in async storage](#3-custom-plugin-to-store-chosen-language-in-the-local-storage)
+
 ## 1. Install and configure react-i18next library
 
-First of all we need to add [react-i18next](https://react.i18next.com/) to our project by running
+First of all, we need to add [react-i18next](https://react.i18next.com/) to our project by running
 
 ```bash
 npm i react-i18next i18next
 ```
 
-This will intstall i18next framework and its React wrapper.
+This will install i18next framework and its React wrapper.
 
 Next we need to configure it by creating a new file, let's say _i18n.config.ts_ (or any other name as you like), at the top level of the project:
 
@@ -131,7 +143,7 @@ After adding all translations, the Google sheet should look like this:
 
 ![google sheet translations](/posts/react-native-i18n/3.png)
 
-Now let's move to the fun - to write a script that:
+Now let's move to the fun part - writting a script that:
 
 - will read translations from the Google Sheet
 - will write them straight into the translations folder of the project, each language translations into their respective JSON file, and properly formatted.
@@ -279,6 +291,7 @@ So here:
 And finally, chain all the above async methods:
 
 ```js
+//utils/script.js
 ...
 
 init()
@@ -340,7 +353,7 @@ const resources = {
 
 ```
 
-Now we can translate the content of the app with the help of useTranslation hook provided by react-i18next library.
+Now we can translate the content of the app with the help of **useTranslation** hook provided by react-i18next library.
 
 ```ts{3,9,10}
 //App.tsx
@@ -361,7 +374,7 @@ export default function App() {
 //styles omitted
 ```
 
-To switch between supported languages in the app, build Language Picker component:
+To switch between supported languages in the app, build **Language Picker** component:
 
 ```ts
 //LanguagePicker.tsx
@@ -458,6 +471,118 @@ Let's check how it works now:
 
 ![demo1](/posts/react-native-i18n/lang.gif)
 
-It works as expected, but wouldn't it be nice to store a user's language choice, so after a user opens the app his/her previously selected language is used by default?
-
 ## 3. Custom plugin to store chosen language in the local storage
+
+The internationalization works as expected, but wouldn't it be nice to store a user's language choice, so after a user opens the app his/her previously selected language is used by default?
+
+i18next comes with several React Native [plugins](https://www.i18next.com/overview/plugins-and-utils) to enhance the features available. But let's try to write the custom plugin from scratch that:
+
+- stores the user's language choice in Async storage
+- gets the saved language from Async storage on the app start
+- if there is nothing stored in Async storage, detect a device's language. If it's not supported, use fallback language.
+
+How to create a custom plugin is described in a separate section of i18next [docs](https://www.i18next.com/misc/creating-own-plugins#creating-own-plugins). For our use case, we need a [languageDetector plugin](https://www.i18next.com/misc/creating-own-plugins#languagedetector).
+
+Let's get our hands dirty!
+
+### - Install @react-native-async-storage/async-storage library
+
+- for expo app
+
+```bash
+expo install @react-native-async-storage/async-storage
+```
+
+- for React Native CLI or expo bare React Native app
+
+```bash
+npm i @react-native-async-storage/async-storage
+```
+
+Additional step for iOS (not needed for expo project):
+
+```bash
+npx pod-install
+```
+
+### - Install expo-localization library
+
+```bash
+expo install expo-localization
+```
+
+For React Native CLI or expo bare React Native app also follow [these additional installation instructions](https://github.com/expo/expo/tree/master/packages/expo-localization).
+
+### - Write languageDetectorPlugin
+
+```ts
+//utils/languageDetectorPlugin.ts
+
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import * as Localization from "expo-localization";
+
+const STORE_LANGUAGE_KEY = "settings.lang";
+
+const languageDetectorPlugin = {
+  type: "languageDetector",
+  async: true,
+  init: () => {},
+  detect: async function (callback: (lang: string) => void) {
+    try {
+      //get stored language from Async storage
+      await AsyncStorage.getItem(STORE_LANGUAGE_KEY).then((language) => {
+        if (language) {
+          //if language was stored before, use this language in the app
+          return callback(language);
+        } else {
+          //if language was not stored yet, use device's locale
+          return callback(Localization.locale);
+        }
+      });
+    } catch (error) {
+      console.log("Error reading language", error);
+    }
+  },
+  cacheUserLanguage: async function (language: string) {
+    try {
+      //save a user's language choice in Async storage
+      await AsyncStorage.setItem(STORE_LANGUAGE_KEY, language);
+    } catch (error) {}
+  },
+};
+
+module.exports = { languageDetectorPlugin };
+```
+
+### - Update i18n config file
+
+```ts
+//i18n.config.ts
+...
+
+const { languageDetectorPlugin } = require("./utils/languageDetectorPlugin");
+
+...
+
+i18n
+  .use(initReactI18next)
+  .use(languageDetectorPlugin)
+  .init({
+    resources,
+    //language to use if translations in user language are not available
+    fallbackLng: "en",
+    interpolation: {
+      escapeValue: false, // not needed for react!!
+    },
+    react: {
+      useSuspense: false, //in case you have any suspense related errors
+    },
+  });
+
+...
+
+```
+
+And that's it! We have added internationalization to the React Native app!
+
+The full source code available in [this repo](https://github.com/KaterinaLupacheva/tutorials/tree/master/react-native-i18n).
