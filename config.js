@@ -5,7 +5,7 @@ module.exports = {
   pathPrefix: "/",
   title: "Ramonak.io",
   subtitle:
-    "Personal site and blog by Katsiaryna (Kate) Lupachova: freelancer, full-stack web developer from Belarus.",
+    "Personal site and blog by Katsiaryna (Kate) Lupachova: freelancer, full-stack web and mobile developer from Belarus.",
   copyright: "2019 - 2021  © All rights reserved.",
   disqusShortname: "",
   postsPerPage: 8,

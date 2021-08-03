@@ -10,3 +10,4 @@ gatsby-starter-lumen.iml
 api
 
 .env
+.DB_Store
