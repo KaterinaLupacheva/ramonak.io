@@ -9,7 +9,6 @@ const useViewCounter = (slug) => {
     }
 
     const url = "https://my-projects-dashboard.vercel.app";
-    // const url = "http://localhost:3000";
 
     fetch(`${url}/api/views/${slug}`)
       .then((res) => res.json())
