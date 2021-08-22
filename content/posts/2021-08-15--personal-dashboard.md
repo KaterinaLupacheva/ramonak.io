@@ -40,6 +40,8 @@ The app has a "classic" dashboard layout:
 - content area
 - footer
 
+Also, the app uses [ESLint](https://eslint.org/) custom rules, [prettier](https://prettier.io/) code formatting, [husky](https://typicode.github.io/husky/#/) git hooks with [lint-staged](https://github.com/okonet/lint-staged).
+
 ## Pages
 
 The dashboard consists of 5 pages:
@@ -96,3 +98,38 @@ The main section of the page consists of cards with information about **each blo
 The card is clickable. By clicking on it, the article opens in a new tab, using the URL data from the API.
 
 All blog posts can be **sorted** by the published date (sorted by default), number of views, reactions, or comments. How to implement this feature is described in [this blog post](https://ramonak.io/posts/react-how-to-sort-array-of-objects-with-dropdown-and-hooks).
+
+## Page 3 - GitHub stats
+
+![page-three](/posts/personal-dashboard/page3.gif)
+
+Before using [GitHub REST API](https://docs.github.com/en/rest) you need to create a personal access token. [Here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) are the instructions on how to do so.
+
+At the top of the page, the general GitHub **user profile data** and **main stats** indicators are shown. A user profile data is a response from https://api.github.com/user endpoint and it includes:
+
+- name
+- bio
+- avatar
+- location
+- company
+  and other profile information.
+
+The **followers' count** and the **number of the public repos** are also coming from the above-mentioned endpoint.
+
+But the data about **total stars** and **total forks** amount is calculated based on each repo data. To get the information about all user's repos you should query https://api.github.com/user/repos endpoint.
+
+Same as for dev.to followers count, the data on GitHub total repos, total followers, total stars, and total forks is stored **daily** in the **database** with the help of the **scheduled GitHub action**.
+
+The repositories section of the page displays cards with **each repo data**, such as:
+
+- repo name
+- website (if exists)
+- description
+- number of stars, forks, watchers
+- language
+- created at and updated at dates
+- license
+
+The cards are **sortable** by stars (default), forks, and the last update date.
+
+> I have a separate app that utilizes GitHub REST API - [GitHub API dashboard](https://github-dashboard.ramonak.io/), that I've developed a while back and probably need to update. A user can enter any existing GitHub username and see public information on that user, including profile information, a person's programming languages structure, and repos data.
