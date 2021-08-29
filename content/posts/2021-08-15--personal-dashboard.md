@@ -1,6 +1,6 @@
 ---
 title: "Next.js, Material UI, MongoDB Personal Dashboard"
-date: "2021-09-01"
+date: "2021-08-29"
 template: "post"
 draft: false
 slug: "personal-dashboard"
@@ -50,7 +50,7 @@ The dashboard consists of 5 pages:
 2. [dev.to stats](#page-2---devto-stats)
 3. [GitHub stats](#page-3---github-stats)
 4. [Twitter stats](#page-4---twitter-stats)
-5. NPM packages stats
+5. [NPM packages stats](#page-5---npm-packages-stats)
 
 ## Page 1 - Overview of my blog posts, npm packages demo, and hobby apps stats
 
@@ -165,3 +165,25 @@ The data in the Tweets section of the page comes from `https://api.twitter.com/1
 If a tweet returns from the API **truncated**, I compute a link to its full content.
 
 The tweet cards are **sortable** by published date (default), retweets, and likes.
+
+## Page 5 - NPM packages stats
+
+![page-five](/posts/personal-dashboard/page5.gif)
+
+While developing a piece of functionality for any projects that I'm involved with, sometimes I publish it as a public **library** on [NPM](https://www.npmjs.com/). Thus any developer (myself included) can use it, and I feel great that I can do something useful for a community.
+
+If you'd like to publish your library, I wrote the **blog post** on [how to publish a custom React component to NPM](https://ramonak.io/posts/react-publish-to-npm).
+
+There is no need to obtain an API key or token for querying NPM registry API. For the dashboard, I use only the endpoint that provides the data about a **package downloads count** - `https://api.npmjs.org/downloads/`. You can read more about it [here](https://github.com/npm/registry/blob/master/docs/download-counts.md).
+
+I have **4 public NPM libraries** at the moment. There are stats on each of them in the dashboard:
+
+- a chart with the daily downloads count for the last month
+- an average downloads per day (calculated)
+- weekly downloads
+
+As you can see, the [React progress bar](https://www.npmjs.com/package/@ramonak/react-progress-bar) library has the biggest downloads count among my libraries so far. The robust UI components libraries are great, and I love to use them. But sometimes you just need one simple customizable component. And I had exactly such a use case. Here is the blog post about [how to create a custom progress bar component in 5 minutes](https://ramonak.io/posts/react-progress-bar).
+
+## Conclusion
+
+The source code for my personal dashboard is available in [this repo](https://github.com/KaterinaLupacheva/my-projects-dashboard). And here is the [live version](https://my-projects-dashboard.vercel.app/) (deployed on [Vercel](https://vercel.com)).
