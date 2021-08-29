@@ -1,6 +1,6 @@
 ---
-title: "Next.js, Material UI, MongoDB and API integrations Personal Dashboard"
-date: "2021-08-29"
+title: "Next.js, Material UI, MongoDB Personal Dashboard"
+date: "2021-09-01"
 template: "post"
 draft: false
 slug: "personal-dashboard"
@@ -9,7 +9,7 @@ tags:
   - "React"
   - "Material UI"
   - "Next.js"
-description: "Overview of how I built the dashboard for my personal projects using Next.js, Material UI, MongoDB and API integrations."
+description: "Overview of how I built the dashboard for my personal projects using Next.js, Material UI, MongoDB, with dev.to, GitHub, Twitter, and npm API integration."
 socialImage: "/media/personal-dashboard.png"
 ---
 
@@ -48,8 +48,8 @@ The dashboard consists of 5 pages:
 
 1. [Overview of my blog posts, npm packages demo, and hobby apps stats](#page-1---overview-of-my-blog-posts-npm-packages-demo-and-hobby-apps-stats)
 2. [dev.to stats](#page-2---devto-stats)
-3. GitHub stats
-4. Twitter stats
+3. [GitHub stats](#page-3---github-stats)
+4. [Twitter stats](#page-4---twitter-stats)
 5. NPM packages stats
 
 ## Page 1 - Overview of my blog posts, npm packages demo, and hobby apps stats
@@ -78,7 +78,7 @@ I'm a follower of the "Learn in public" concept. When I learn something new whil
 
 To use dev.to API you just need to obtain the **API key**. How to do so is described in the [official docs](https://docs.forem.com/api/).
 
-There are two stat cards at the top of the page. They show data about **followers count** and the total **number of posts** for today. The data is gathered from https://dev.to/api/followers/users and https://dev.to/api/articles/me APIs respectively. "Running numbers" animation implemented with the [react-spring](https://react-spring.io/) library.
+There are two stat cards at the top of the page. They show data about **followers count** and the total **number of posts** for today. The data is gathered from `https://dev.to/api/followers/users` and `https://dev.to/api/articles/me` APIs respectively. "Running numbers" animation implemented with the [react-spring](https://react-spring.io/) library.
 
 Also, there are **dynamics of followers count chart**. But dev.to API provides data only for the current number of followers. Where do I get the data for the previous days? To be able to display this data we need to:
 
@@ -87,7 +87,7 @@ Also, there are **dynamics of followers count chart**. But dev.to API provides d
 
 The number at the bottom right corner of the followers' count card shows the followers' number change for the last week.
 
-The main section of the page consists of cards with information about **each blog post**. This data is fetched from https://dev.to/api/articles/me API. Each card has information about:
+The main section of the page consists of cards with information about **each blog post**. This data is fetched from `https://dev.to/api/articles/me` API. Each card has information about:
 
 - article's title
 - date of publishing
@@ -105,7 +105,7 @@ All blog posts can be **sorted** by the published date (sorted by default), numb
 
 Before using [GitHub REST API](https://docs.github.com/en/rest) you need to create a personal access token. [Here](https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token) are the instructions on how to do so.
 
-At the top of the page, the general GitHub **user profile data** and **main stats** indicators are shown. A user profile data is a response from https://api.github.com/user endpoint and it includes:
+At the top of the page, the general GitHub **user profile data** and **main stats** indicators are shown. A user profile data is a response from `https://api.github.com/user` endpoint and it includes:
 
 - name
 - bio
@@ -116,7 +116,7 @@ At the top of the page, the general GitHub **user profile data** and **main stat
 
 The **followers' count** and the **number of the public repos** are also coming from the above-mentioned endpoint.
 
-But the data about **total stars** and **total forks** amount is calculated based on each repo data. To get the information about all user's repos you should query https://api.github.com/user/repos endpoint.
+But the data about **total stars** and **total forks** amount is calculated based on each repo data. To get the information about all user's repos you should query `https://api.github.com/user/repos` endpoint.
 
 Same as for dev.to followers count, the data on GitHub total repos, total followers, total stars, and total forks is stored **daily** in the **database** with the help of the **scheduled GitHub action**.
 
@@ -133,3 +133,35 @@ The repositories section of the page displays cards with **each repo data**, suc
 The cards are **sortable** by stars (default), forks, and the last update date.
 
 > I have a separate app that utilizes GitHub REST API - [GitHub API dashboard](https://github-dashboard.ramonak.io/), that I've developed a while back and probably need to update. A user can enter any existing GitHub username and see public information on that user, including profile information, a person's programming languages structure, and repos data.
+
+## Page 4 - Twitter stats
+
+![page-four](/posts/personal-dashboard/page4.gif)
+
+I'm not a very active (mildly speaking) Twitter user. I mean I do read other people's tweets, but do not tweet myself often. Maybe this will change eventually, but it is what it is now.
+
+As it's stated in the [docs](https://developer.twitter.com/en/docs/twitter-api/getting-started/getting-access-to-the-twitter-api), to get access to the Twitter API you need to:
+
+1. apply and receive approval for a developer account
+2. get your app's key and tokens.
+
+Specifically for my dashboard, I use v1.1. of the API and Bearer Token for authorization.
+
+The top section of the page displays general information about the Twitter **profile**. This data comes from `https://api.twitter.com/1.1/users/show` API and includes:
+
+- screen name
+- name
+- description
+- location
+- when a profile was created
+- followers count
+- image URL
+  and so on.
+
+Same as for dev.to and GitHub followers count, the data on Twitter followers is stored **daily** in the **database** with the help of the **scheduled GitHub action**.
+
+The data in the Tweets section of the page comes from `https://api.twitter.com/1.1/statuses/user_timeline` API. This API returns a tweet's text, date of publishing, retweets and likes count, etc. I visually distinguish if a tweet was a reply to some other tweet and a tweet by itself.
+
+If a tweet returns from the API **truncated**, I compute a link to its full content.
+
+The tweet cards are **sortable** by published date (default), retweets, and likes.
