@@ -44,6 +44,16 @@ module.exports = {
       sourceCode: "https://github.com/KaterinaLupacheva/ramonak.io",
     },
     {
+      title: "Google Analytics Dashboard",
+      image: "/media/projects/browsers-devices.JPG",
+      description:
+        "Custom Google Analytics Dashboard based on Google Analytics Reporting API v4 with OAuth2, charts and tables.",
+      link: "",
+      techs: ["React.js", "Google Analytics API", "Charts.js"],
+      sourceCode:
+        "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
+    },
+    {
       title: "Tabata - Fitness App",
       image: "/media/projects/tabata2.JPG",
       description:
@@ -51,6 +61,15 @@ module.exports = {
       link: "https://tabata.ramonak.io",
       techs: ["React.js / Redux", "Spring Boot", "Vaadin", "PostgreSQL"],
       sourceCode: "https://github.com/KaterinaLupacheva/tabata-app",
+    },
+    {
+      title: "Personal Dashboard",
+      image: "/media/projects/page1.gif",
+      description:
+        "The dashboard for my personal projects using Next.js, Material UI, MongoDB, with dev.to, GitHub, Twitter, and npm API integration.",
+      link: "",
+      techs: ["Next.js", "Material UI", "TypeScript", "MongoDB"],
+      sourceCode: "https://github.com/KaterinaLupacheva/my-projects-dashboard",
     },
     {
       title: "GitHub API Dashboard",
@@ -77,17 +96,6 @@ module.exports = {
       link: "https://fm.ramonak.io",
       techs: ["React.js", "Material UI", "Charts.js", "Firebase"],
       sourceCode: "https://github.com/KaterinaLupacheva/financial-manager",
-    },
-
-    {
-      title: "Google Analytics Dashboard",
-      image: "/media/projects/browsers-devices.JPG",
-      description:
-        "Custom Google Analytics Dashboard based on Google Analytics Reporting API v4 with OAuth2, charts and tables.",
-      link: "",
-      techs: ["React.js", "Google Analytics API", "Charts.js"],
-      sourceCode:
-        "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
     },
     {
       title: "Coffee Shop Dashboard",
@@ -156,11 +164,20 @@ module.exports = {
   ],
   recentWork: [
     {
+      title: "Personal Dashboard",
+      date: "August 2021",
+      image: "/media/projects/page1.gif",
+      description:
+        "The dashboard for my personal projects using Next.js, Material UI, MongoDB, with dev.to, GitHub, Twitter, and npm API integration.",
+      link: "https://github.com/KaterinaLupacheva/my-projects-dashboard",
+      techs: ["Next.js", "Material UI", "TypeScript", "MongoDB"],
+    },
+    {
       title: "Dashboard Layout Template",
       date: "February 2021",
       image: "/media/projects/dashboard-layout.gif",
       description:
-        "React Material UI Dashboard layout template. Starter code with the implementation of: Basic layout: header, the main content area with drawer, footer; Drawer toggle; Navigation between pages.",
+        "React Material UI Dashboard layout template. Starter code with the implementation of Basic layout: header, the main content area with drawer, footer, drawer toggle, navigation between pages.",
       link: "https://github.com/KaterinaLupacheva/dashboard-layout",
       techs: ["React.js", "Material UI", "TypeScript"],
     },
@@ -170,8 +187,7 @@ module.exports = {
       image: "/media/mockups/GA.png",
       description:
         "Custom Google Analytics Dashboard based on Google Analytics Reporting API v4 with OAuth2, charts and tables.",
-      link:
-        "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
+      link: "https://github.com/KaterinaLupacheva/react-google-analytics-dashboard",
       techs: ["React.js", "Google Analytics API", "Charts.js"],
     },
     {
