@@ -67,7 +67,7 @@ module.exports = {
       image: "/media/projects/page1.gif",
       description:
         "The dashboard for my personal projects using Next.js, Material UI, MongoDB, with dev.to, GitHub, Twitter, and npm API integration.",
-      link: "",
+      link: "https://my-projects-dashboard.vercel.app/",
       techs: ["Next.js", "Material UI", "TypeScript", "MongoDB"],
       sourceCode: "https://github.com/KaterinaLupacheva/my-projects-dashboard",
     },
