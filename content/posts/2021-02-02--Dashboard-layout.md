@@ -107,7 +107,7 @@ The only thing is left to add is the ability to toggle the drawer. To achieve th
 - depending on its state change the width of the drawer (0px - when closed, 240 px - when opened)
 - toggle menu icon in the header section
 
-To store and update the drawer's we are going to use the _useState_ hook. The initial state of the drawer is closed.
+To store and update the drawer's state we are going to use the _useState_ hook. The initial state of the drawer is closed.
 
 ```jsx
 const [isOpened, setIsOpened] = useState(false);

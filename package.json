@@ -80,7 +80,6 @@
     "lodash": "^4.17.20",
     "moment": "^2.29.1",
     "netlify-cms-app": "^2.14.12",
-    "node-sass": "^4.14.1",
     "normalize-scss": "^7.0.1",
     "prism-react-renderer": "^1.1.1",
     "prismjs": "^1.23.0",
@@ -91,7 +90,8 @@
     "react-particles-js": "^3.4.1",
     "react-reveal": "^1.2.2",
     "react-spring": "^8.0.27",
-    "react-tsparticles": "^1.33.3"
+    "react-tsparticles": "^1.33.3",
+    "sass": "^1.43.5"
   },
   "devDependencies": {
     "@babel/core": "7.7.7",
