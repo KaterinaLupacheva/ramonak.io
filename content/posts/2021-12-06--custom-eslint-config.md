@@ -23,7 +23,7 @@ Another trendy tool is [Prettier](https://prettier.io/). It makes your code look
 
 And let's not forget about **TypeScript**! It's a static type checker for JavaScript, and it improves developer experience by a ton.
 
-Plus, we will publish our ESLint and Prettier config as an **NPM package**, thus making it reusable and easily installable in any React project (well, generally in any Javascript project, but it will contain react.js specific rules).
+Plus, we will publish our ESLint and Prettier config as an **NPM package**, thus making it reusable and easily installable in any React project (well, generally in any Javascript project, but it will contain react.js / React Native specific rules).
 
 Usually, when I start a new React project, I add all the above-mentioned tools manually, one by one. Finally, I found a time to create my custom config package based on the most typical setup on projects that I'm working/worked on. This blog post is a walkthrough of how I did it.
 
