@@ -1,20 +1,22 @@
 import Head from 'next/head';
-import router from 'next/router';
-import { PropsWithChildren } from 'react';
+import { useRouter } from 'next/router';
+import { PropsWithChildren, ReactNode } from 'react';
 
+import Menu from '../Menu';
 import { LayoutContainer } from './styles';
 
 type LayoutProps = {
-  meta: {
+  meta?: {
     title?: string;
     description?: string;
     type?: string;
     image?: string;
     date?: string;
   };
+  children: ReactNode;
 };
 
-export default function Layout({ meta }: PropsWithChildren<LayoutProps>) {
+export default function Layout({ meta, children }: PropsWithChildren<LayoutProps>) {
   const URL = 'https://ramonak.io';
 
   const defaultMeta = {
@@ -25,6 +27,9 @@ export default function Layout({ meta }: PropsWithChildren<LayoutProps>) {
     image: `${URL}/static/images/ramonak.jpg`,
     ...meta,
   };
+
+  const router = useRouter();
+
   return (
     <LayoutContainer>
       <Head>
@@ -43,8 +48,13 @@ export default function Layout({ meta }: PropsWithChildren<LayoutProps>) {
         <meta name="twitter:title" content={defaultMeta.title} />
         <meta name="twitter:description" content={defaultMeta.description} />
         <meta name="twitter:image" content={defaultMeta.image} />
-        {meta.date && <meta property="article:published_time" content={meta.date} />}
+        {defaultMeta.date && <meta property="article:published_time" content={defaultMeta.date} />}
       </Head>
+      <Menu />
+      {children}
+      {/*theme
+      children
+      footer */}
     </LayoutContainer>
   );
 }
