@@ -2,8 +2,9 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { PropsWithChildren, ReactNode } from 'react';
 
+import Footer from '../Footer';
 import Menu from '../Menu';
-import { LayoutContainer } from './styles';
+import { LayoutContainer, Main } from './styles';
 
 type LayoutProps = {
   meta?: {
@@ -51,7 +52,10 @@ export default function Layout({ meta, children }: PropsWithChildren<LayoutProps
         {defaultMeta.date && <meta property="article:published_time" content={defaultMeta.date} />}
       </Head>
       <Menu />
-      {children}
+      <Main>
+        {children}
+        <Footer />
+      </Main>
       {/*theme
       children
       footer */}

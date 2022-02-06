@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MenuContainer = styled.div`
+export const MenuContainer = styled.nav`
   display: flex;
   max-width: 80vw;
   justify-content: center;

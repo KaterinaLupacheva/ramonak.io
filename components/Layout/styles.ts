@@ -6,3 +6,11 @@ export const LayoutContainer = styled.div`
   padding: 2rem;
   background-color: ${(props) => props.theme.colors.bg};
 `;
+
+export const Main = styled.main`
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+`;
