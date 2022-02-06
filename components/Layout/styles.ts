@@ -5,6 +5,8 @@ export const LayoutContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
   background-color: ${(props) => props.theme.colors.bg};
+  color: ${(props) => props.theme.colors.text};
+  transition: all 0.3s ease-out;
 `;
 
 export const Main = styled.main`

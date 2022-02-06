@@ -7,7 +7,10 @@ export const FooterContainer = styled.footer`
   width: 100%;
 `;
 
-export const Copyright = styled.div``;
+export const Copyright = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
 export const ContactsContainer = styled.div`
   display: flex;

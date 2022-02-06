@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { PropsWithChildren, ReactNode } from 'react';
 
 import Footer from '../Footer';
-import Menu from '../Menu';
+import TopBar from '../TopBar/TopBar';
 import { LayoutContainer, Main } from './styles';
 
 type LayoutProps = {
@@ -51,14 +51,11 @@ export default function Layout({ meta, children }: PropsWithChildren<LayoutProps
         <meta name="twitter:image" content={defaultMeta.image} />
         {defaultMeta.date && <meta property="article:published_time" content={defaultMeta.date} />}
       </Head>
-      <Menu />
+      <TopBar />
       <Main>
         {children}
         <Footer />
       </Main>
-      {/*theme
-      children
-      footer */}
     </LayoutContainer>
   );
 }

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const MenuContainer = styled.nav`
   display: flex;
-  max-width: 80vw;
   justify-content: center;
+  align-items: center;
 `;
 
 export const NavItem = styled.a<{ isActive: boolean }>`
@@ -15,5 +15,6 @@ export const NavItem = styled.a<{ isActive: boolean }>`
 
   &:hover {
     background-color: ${(props) => props.theme.colors.grey};
+    color: ${(props) => props.theme.colors.ramonakRed};
   }
 `;

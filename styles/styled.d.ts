@@ -6,6 +6,8 @@ declare module 'styled-components' {
       bg: string;
       text: string;
       grey: string;
+      ramonakRed: string;
     };
+    variant: 'dark' | 'light';
   }
 }
