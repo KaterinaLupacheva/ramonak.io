@@ -6,4 +6,5 @@ export const TopBarContainer = styled.div`
   margin-left: 10vw;
   margin-right: 10vw;
   justify-content: space-between;
+  margin-bottom: 4rem;
 `;
