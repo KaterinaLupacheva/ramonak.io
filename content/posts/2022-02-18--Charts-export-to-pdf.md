@@ -183,13 +183,13 @@ That was step 3. Now we need to add each image data to a pdf document. Let's che
 4. **y** - y Coordinate (in units declared at the inception of PDF document) against the upper edge of the page. This one is a little bit trickier. We need to have a variable for keeping track of the used or already occupied pdf page space, e.g., start with the initial value of 20px, for example, and then increase it every time by the added image height.
 5. **width** - width of the image (in pixels in our case)
 6. **height** - height of the mage (again in pixels)
-7. **alias** - alias of the image (if used multiple times). This is a very **important** prop when adding multiple images. Without using it will have a blank page in our specific case.
+7. **alias** - alias of the image (if used multiple times). This is a very **important** prop when adding multiple images. Without using it we'll have a blank page in our specific case.
 8. **compression**
 9. **rotation**
 
 We are not going to use 8th and 9th props.
 
-For getting the width and height of a chart container, we'll use offsetWidth and offsetHeight props of the HTML Element class. Let's implement this.
+For getting the width and height of a chart container, we'll use `offsetWidth` and `offsetHeight` props of the HTML Element class. Let's implement this.
 
 ```ts
 let top = 20;
@@ -290,7 +290,7 @@ async function creatPdf({
 }
 ```
 
-To test how it works, add a button by clicking on which the exportMultipleChartsToPdf function will run.
+To test how it works, add a button by clicking on which the `exportMultipleChartsToPdf` function will run.
 
 ```jsx
 //App.tsx
