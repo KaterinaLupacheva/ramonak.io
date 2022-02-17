@@ -1,6 +1,6 @@
 ---
 title: "Export multiple charts to PDF with React and jsPDF"
-date: "2022-02-17"
+date: "2022-02-18"
 template: "post"
 draft: false
 slug: "highcharts-react-pdf"
