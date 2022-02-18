@@ -1,7 +1,7 @@
 import { Github, Linkedin, Twitter } from '@styled-icons/fa-brands';
-import { ReactNode } from 'react';
 
-import { ContactsContainer, Link } from './styles';
+import ExternalLink from '../shared/ExternalLink';
+import { ContactsContainer } from './styles';
 
 export default function Contacts() {
   return (
@@ -18,14 +18,3 @@ export default function Contacts() {
     </ContactsContainer>
   );
 }
-
-type ExternalLinkProps = {
-  href: string;
-  children: ReactNode;
-};
-
-const ExternalLink = ({ href, children }: ExternalLinkProps) => (
-  <Link target="_blank" rel="noopener noreferrer" href={href}>
-    {children}
-  </Link>
-);

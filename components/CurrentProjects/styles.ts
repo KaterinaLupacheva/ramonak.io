@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const CurrentProjectsContainer = styled.div``;
+export const CurrentProjectsContainer = styled.div`
+  margin-bottom: 2rem;
+`;
 
 export const ProjectsContainer = styled.div`
   display: flex;
