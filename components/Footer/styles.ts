@@ -20,5 +20,3 @@ export const ContactsContainer = styled.div`
     }
   }
 `;
-
-export const Link = styled.a``;

@@ -7,6 +7,7 @@ export const lightTheme: DefaultTheme = {
     text: '#222;',
     grey: '#e6e6e6',
     ramonakRed: '#d91f5c',
+    grey1: '#bdbbbb',
   },
 };
 
@@ -17,5 +18,6 @@ export const darkTheme: DefaultTheme = {
     text: '#fafafa',
     grey: '#e6e6e6',
     ramonakRed: '#d91f5c',
+    grey1: '#edebeb',
   },
 };

@@ -7,6 +7,7 @@ declare module 'styled-components' {
       text: string;
       grey: string;
       ramonakRed: string;
+      grey1: string;
     };
     variant: 'dark' | 'light';
   }
