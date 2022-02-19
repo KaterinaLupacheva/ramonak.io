@@ -1,5 +1,5 @@
 {
-  "name": "ramonak-nextjs",
+  "name": "examples-starter",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -12,31 +12,35 @@
   "dependencies": {
     "@styled-icons/fa-brands": "^10.38.0",
     "@styled-icons/fa-solid": "^10.34.0",
-    "next": "12.0.7",
+    "date-fns": "^2.28.0",
+    "next": "^12.0.10",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-is": "^17.0.2",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
-    "@types/node": "17.0.4",
-    "@types/react": "17.0.38",
-    "@types/styled-components": "^5.1.19",
-    "@typescript-eslint/eslint-plugin": "^5.5.0",
-    "@typescript-eslint/parser": "^5.5.0",
-    "babel-plugin-styled-components": "^2.0.2",
-    "eslint": "^8.4.0",
-    "eslint-config-next": "12.0.7",
-    "eslint-config-prettier": "^8.3.0",
+    "@types/react": "^17.0.21",
+    "@types/react-dom": "^17.0.9",
+    "@types/styled-components": "^5.1.23",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "babel-plugin-styled-components": "^2.0.3",
+    "contentlayer": "latest",
+    "eslint": "^8.9.0",
+    "eslint-config-next": "^12.1.0",
+    "eslint-config-prettier": "^8.4.0",
     "eslint-config-ramonak": "0.0.1",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.27.1",
+    "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-simple-import-sort": "^7.0.0",
-    "husky": ">=6",
-    "lint-staged": ">=10",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.4",
+    "next-contentlayer": "latest",
     "prettier": "^2.5.1",
-    "typescript": "^4.5.2"
+    "rehype-highlight": "^5.0.0",
+    "typescript": "^4.5.5"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "yarn lint:fix"
