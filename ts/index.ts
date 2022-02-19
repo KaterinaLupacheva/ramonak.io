@@ -15,4 +15,5 @@ export type CurrentProject = {
   position: string;
   companyLink: string;
   tech: string;
+  image?: string;
 };

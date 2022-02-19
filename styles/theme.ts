@@ -8,6 +8,8 @@ export const lightTheme: DefaultTheme = {
     grey: '#e6e6e6',
     ramonakRed: '#d91f5c',
     grey1: '#bdbbbb',
+    contrastBg: '#fff',
+    grey2: '#858792',
   },
 };
 
@@ -19,5 +21,7 @@ export const darkTheme: DefaultTheme = {
     grey: '#e6e6e6',
     ramonakRed: '#d91f5c',
     grey1: '#edebeb',
+    grey2: '#858792',
+    contrastBg: '#252734',
   },
 };

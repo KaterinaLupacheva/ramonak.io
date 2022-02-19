@@ -8,6 +8,8 @@ declare module 'styled-components' {
       grey: string;
       ramonakRed: string;
       grey1: string;
+      grey2: string;
+      contrastBg: string;
     };
     variant: 'dark' | 'light';
   }

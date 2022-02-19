@@ -2,17 +2,15 @@ import { currentProjects } from '../../lib/currentProjects';
 import CurrentProjectCard from '../CurrentProjectCard';
 import SeeAll from '../SeeAll';
 import { Title } from '../shared/styled';
-import { CurrentProjectsContainer, ProjectsContainer } from './styles';
+import { CurrentProjectsContainer } from './styles';
 
 export default function CurrentProjects() {
   return (
     <CurrentProjectsContainer>
       <Title>Current Projects</Title>
-      <ProjectsContainer>
-        {currentProjects.map((project, idx) => (
-          <CurrentProjectCard project={project} key={idx} />
-        ))}
-      </ProjectsContainer>
+      {currentProjects.map((project, idx) => (
+        <CurrentProjectCard project={project} key={idx} />
+      ))}
       <SeeAll label="Projects" href="/projects" />
     </CurrentProjectsContainer>
   );

@@ -14,5 +14,6 @@ export const currentProjects: CurrentProject[] = [
     position: 'JavaScript developer',
     date: 'August 2021 - present',
     tech: 'JavaScript',
+    image: '/static/projects/storehero/storehero.png',
   },
 ];
