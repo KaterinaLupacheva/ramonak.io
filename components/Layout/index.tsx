@@ -39,6 +39,7 @@ export default function Layout({ meta, children }: PropsWithChildren<LayoutProps
         <meta content={defaultMeta.description} name="description" />
         <meta property="og:url" content={`${URL}${router.asPath}`} />
         <link rel="canonical" href={`${URL}${router.asPath}`} />
+        <link href="/favicon.ico" rel="shortcut icon" />
         <meta property="og:type" content={defaultMeta.type} />
         <meta property="og:site_name" content="ramonak.io" />
         <meta property="og:description" content={defaultMeta.description} />

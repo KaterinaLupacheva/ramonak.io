@@ -19,7 +19,7 @@ type CurrentProjectCardProps = {
 
 export default function CurrentProjectCard({ project }: CurrentProjectCardProps) {
   const { companyLink, companyName, date, position, tech, image } = project;
-  console.log(image);
+
   return (
     <CurrentProjectCardContainer>
       <Content>
