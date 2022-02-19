@@ -6,5 +6,8 @@ export const TopBarContainer = styled.div`
   margin-left: 10vw;
   margin-right: 10vw;
   justify-content: space-between;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  position: sticky;
+  top: 0px;
+  background-color: ${(props) => props.theme.colors.bg};
 `;
