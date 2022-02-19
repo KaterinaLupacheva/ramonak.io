@@ -10,4 +10,5 @@ export const TopBarContainer = styled.div`
   position: sticky;
   top: 0px;
   background-color: ${(props) => props.theme.colors.bg};
+  z-index: 10;
 `;

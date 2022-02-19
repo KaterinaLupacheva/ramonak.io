@@ -3,6 +3,7 @@ import type { NextPage } from 'next';
 import CurrentProjects from '../components/CurrentProjects';
 import Divider from '../components/Divider';
 import Introduction from '../components/Introduction';
+import LatestBlogPosts from '../components/LatestBlogPosts';
 import Layout from '../components/Layout';
 
 const Home: NextPage = () => {
@@ -12,10 +13,7 @@ const Home: NextPage = () => {
       <Divider />
       <CurrentProjects />
       <Divider />
-      {/* title and photo
-      work (Matics, storehero, sikoba) -> see other projects (hobby projects, open source libraries)
-      recent blog posts (see all)
-short about (in my free time..., tech stack...) -> read more about me */}
+      <LatestBlogPosts />
     </Layout>
   );
 };

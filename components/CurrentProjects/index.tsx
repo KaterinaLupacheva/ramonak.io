@@ -11,7 +11,7 @@ export default function CurrentProjects() {
       {currentProjects.map((project, idx) => (
         <CurrentProjectCard project={project} key={idx} />
       ))}
-      <SeeAll label="Projects" href="/projects" />
+      <SeeAll label="See All Projects" href="/projects" />
     </CurrentProjectsContainer>
   );
 }

@@ -3,7 +3,7 @@ import { useRouter } from 'next/router';
 import { PropsWithChildren, ReactNode } from 'react';
 
 import Footer from '../Footer';
-import TopBar from '../TopBar/TopBar';
+import TopBar from '../TopBar';
 import { LayoutContainer, Main } from './styles';
 
 type LayoutProps = {
