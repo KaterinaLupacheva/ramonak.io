@@ -24,11 +24,11 @@ export default function Introduction() {
           <Title>Hi! I&apos;m Kate, a web and mobile apps developer</Title>
           <Subtitle>
             In my free time, I write{' '}
-            <NextLink href="/blog">
+            <NextLink href="/blog" passHref>
               <Link>blog posts</Link>
             </NextLink>{' '}
             about the new things that I learn, develop some fun{' '}
-            <NextLink href="/projects">
+            <NextLink href="/projects" passHref>
               <Link>projects</Link>
             </NextLink>
             , contribute to an{' '}

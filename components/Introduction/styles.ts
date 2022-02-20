@@ -25,6 +25,7 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.div`
   font-size: 1.25rem;
+  line-height: 1.5;
   margin-bottom: 2rem;
   color: ${(props) => props.theme.colors.grey2};
 
