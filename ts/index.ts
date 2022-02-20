@@ -17,3 +17,14 @@ export type CurrentProject = {
   tech: string;
   image?: string;
 };
+
+export type Post = {
+  type: 'Post';
+  title: string;
+  date: string;
+  description: string;
+  socialImage: string;
+  slug: string;
+  content: string;
+  publishedAtFormatted: string;
+};

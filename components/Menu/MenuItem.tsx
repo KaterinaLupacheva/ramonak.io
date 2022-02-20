@@ -13,7 +13,7 @@ export default function MenuItem({ href, text }: MenuItemProps) {
   const isActive = router.asPath === href;
 
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref>
       <NavItem isActive={isActive}>
         <span>{text}</span>
       </NavItem>

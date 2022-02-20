@@ -11,20 +11,22 @@ export const BlogPostCardContainer = styled.div`
   background-color: ${(props) => props.theme.colors.contrastBg};
   display: flex;
   align-items: center;
+  margin-bottom: 2rem;
 `;
 
 export const SideContainer = styled.div`
   height: 100%;
-  margin-left: 5rem;
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
-  height: 8rem;
-  width: 20rem;
+  margin-right: 5rem;
 `;
 
-export const Picture = styled(Image)``;
+export const Picture = styled(Image)`
+  border: 1px solid ${(props) => props.theme.colors.grey};
+  border-radius: 0.5rem;
+`;
 
 export const Date = styled.div`
   color: ${(props) => props.theme.colors.grey2};

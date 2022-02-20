@@ -1,4 +1,5 @@
-import blogImage from '../../public/static/blog-images/charts-export-pdf.png';
+import { Post } from 'ts';
+
 import {
   BlogPostCardContainer,
   Date,
@@ -11,15 +12,25 @@ import {
   ViewsContainer,
 } from './styles';
 
-export default function BlogPostCard() {
+type BlogPostCardProps = {
+  post: Post;
+  withImage?: boolean;
+};
+
+export default function BlogPostCard({
+  post: { socialImage, publishedAtFormatted, title },
+  withImage = false,
+}: BlogPostCardProps) {
   return (
     <BlogPostCardContainer>
-      <ImageWrapper>
-        <Picture src={blogImage} layout="responsive" />
-      </ImageWrapper>
+      {withImage && (
+        <ImageWrapper>
+          <Picture src={socialImage} layout="fixed" width={250} height={128} objectFit="contain" />
+        </ImageWrapper>
+      )}
       <SideContainer>
-        <Date>February 18, 2022</Date>
-        <Title>Export multiple charts to PDF with React and jsPDF</Title>
+        <Date>{publishedAtFormatted}</Date>
+        <Title>{title}</Title>
         <ViewsContainer>
           <EyeIcon />
           <Views>1234</Views>

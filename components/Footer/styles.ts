@@ -5,6 +5,7 @@ export const FooterContainer = styled.footer`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  margin-top: 2rem;
 `;
 
 export const Copyright = styled.div`

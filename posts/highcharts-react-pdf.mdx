@@ -1,9 +1,10 @@
 ---
-type: 'Post'
+type: "Post"
 title: "Export multiple charts to PDF with React and jsPDF"
 date: "2022-02-18"
 description: "How to export multiple charts into multipage pdf document with React.js, Highcharts and jsPDF."
 socialImage: "/media/charts-export-pdf.png"
+slug: "highcharts-react-pdf"
 ---
 
 ![charts-export-pdf](/media/charts-export-pdf.png)
@@ -39,7 +40,7 @@ import HighchartsReact from "highcharts-react-official";
 import Highcharts from "highcharts";
 
 type ChartProps = {
-  chartOptions: Highcharts.Options;
+  chartOptions: Highcharts.Options,
 };
 
 export default function Chart({ chartOptions }: ChartProps) {
@@ -88,6 +89,7 @@ Here we can add as many charts as we like:
 //App.tsx
 
 import "./App.css";
+
 import Chart from "./Chart";
 import {
   barChartOptions,
@@ -143,9 +145,9 @@ I prefer to keep all business logic separate from UI logic. So, create a new `ut
 // utils.ts
 
 export async function exportMultipleChartsToPdf() {
-  const doc = new jsPDF("p", "px"); // (1)
+  const doc = new jsPDF('p', 'px'); // (1)
 
-  const elements = document.getElementsByClassName("custom-chart"); // (2)
+  const elements = document.getElementsByClassName('custom-chart'); // (2)
 
   await creatPdf({ doc, elements }); // (3-5)
 
@@ -289,6 +291,7 @@ To test how it works, add a button by clicking on which the `exportMultipleChart
 //App.tsx
 
 import "./App.css";
+
 import Chart from "./Chart";
 import {
   barChartOptions,

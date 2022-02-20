@@ -1,9 +1,10 @@
 ---
-type: 'Post'
-title: "MDX"
+type: "Post"
+title: "How to create custom reusable ESLint, TypeScript, Prettier config for React apps"
 date: "2021-12-05"
 description: "How to create a custom reusable ESLint (for TypeScript) and Prettier config and publish it as npm package. And how to add Husky and lint-staged packages to React project."
 socialImage: "/media/custom-eslint-config.png"
+slug: "custom-esling-plugin"
 ---
 
 ![custom-eslint-config](/media/custom-eslint-config.png)
@@ -159,7 +160,7 @@ Feel free to add any custom rules based on your specific requirements.
 We need to add an entry point to our package. So create `index.js` file with the following content:
 
 ```js
-const eslintrc = require("./.eslintrc.json");
+const eslintrc = require('./.eslintrc.json');
 
 module.exports = eslintrc;
 ```

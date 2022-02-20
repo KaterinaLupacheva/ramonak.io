@@ -6,6 +6,9 @@ import readingTime from 'reading-time';
 import rehypeCodeTitle from 'rehype-code-titles';
 import rehypePrismPlus from 'rehype-prism-plus';
 import remarkGfm from 'remark-gfm';
+import { Post } from 'ts';
+
+import { formatDate } from './dates';
 
 const root = process.cwd();
 
@@ -42,12 +45,18 @@ export async function getAllFilesFrontMatter() {
   return files.reduce((allPosts, postSlug) => {
     const source = fs.readFileSync(path.join(root, 'posts', postSlug), 'utf8');
     const { data } = matter(source);
+    const publishedAtFormatted = formatDate(data.date);
 
     return [
       {
         ...data,
+        publishedAtFormatted,
       },
       ...allPosts,
     ];
-  }, [] as any[]);
+  }, []);
+}
+
+export function getLatest3Posts(posts: Post[]) {
+  return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 4);
 }
