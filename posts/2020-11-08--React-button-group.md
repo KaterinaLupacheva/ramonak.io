@@ -113,7 +113,7 @@ First of all, we need to keep track of an index of an active button. For this, w
 
 *ButtonGroup.js*
 
-```jsx{1,4,8}
+```jsx
 import React, { useState } from "react";
 
 const ButtonGroup = ({ buttons }) => {
@@ -157,7 +157,7 @@ Then define a button's className whether this button is selected or not.
 
 *ButtonGroup.js*
 
-```jsx{2,13}
+```jsx
 import React, { useState } from "react";
 import "./button-group.css";
 

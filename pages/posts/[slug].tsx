@@ -1,23 +1,16 @@
-import fs from 'fs';
-import matter from 'gray-matter';
+import { getAllPaths, getFileBySlug } from 'lib/mdx';
 import Link from 'next/link';
-import { MDXRemote } from 'next-mdx-remote';
-import { serialize } from 'next-mdx-remote/serialize';
-import path from 'path';
-import rehypeCodeTitle from 'rehype-code-titles';
-import rehypePrismPlus from 'rehype-prism-plus';
-import remarkGfm from 'remark-gfm';
+import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Layout from '../../components/Layout';
 
-const POSTS_PATH = path.join(process.cwd(), 'posts');
+type PostPageProps = {
+  post: { mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>; frontMatter: any };
+};
 
-const postFilePaths = fs
-  .readdirSync(POSTS_PATH)
-  // Only include md(x) files
-  .filter((path) => /\.mdx?$/.test(path));
+export default function PostPage({ post }: PostPageProps) {
+  const { mdxSource, frontMatter } = post;
 
-export default function PostPage({ source, frontMatter }: any) {
   return (
     <Layout>
       <header>
@@ -32,7 +25,7 @@ export default function PostPage({ source, frontMatter }: any) {
         {frontMatter.description && <p className="description">{frontMatter.description}</p>}
       </div>
       <main>
-        <MDXRemote {...source} />
+        <MDXRemote {...mdxSource} />
       </main>
 
       <style jsx>{`
@@ -50,39 +43,17 @@ export default function PostPage({ source, frontMatter }: any) {
   );
 }
 
-export const getStaticProps = async ({ params }: any) => {
-  const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`);
-  const source = fs.readFileSync(postFilePath);
-
-  const { content, data } = matter(source);
-  console.log(data);
-  console.log('content', content);
-  const mdxSource = await serialize(content, {
-    // Optionally pass remark/rehype plugins
-    mdxOptions: {
-      remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeCodeTitle, rehypePrismPlus],
-    },
-    scope: data,
-  });
-
-  return {
-    props: {
-      source: mdxSource,
-      frontMatter: data,
-    },
-  };
-};
-
-export const getStaticPaths = async () => {
-  const paths = postFilePaths
-    // Remove file extensions for page paths
-    .map((path) => path.replace(/\.mdx?$/, ''))
-    // Map the path into the static paths object required by Next.js
-    .map((slug) => ({ params: { slug } }));
+export async function getStaticPaths() {
+  const paths = await getAllPaths();
 
   return {
     paths,
     fallback: false,
   };
-};
+}
+
+export async function getStaticProps({ params }) {
+  const post = await getFileBySlug(params.slug);
+
+  return { props: { post } };
+}

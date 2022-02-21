@@ -5,6 +5,7 @@ import path from 'path';
 import readingTime from 'reading-time';
 import rehypeCodeTitle from 'rehype-code-titles';
 import rehypePrismPlus from 'rehype-prism-plus';
+import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 import { Post } from 'ts';
 
@@ -16,16 +17,22 @@ export async function getFiles() {
   return fs.readdirSync(path.join(root, 'posts'));
 }
 
-export async function getFileBySlug(slug: string) {
-  const source = fs.readFileSync(path.join(root, 'data', `${slug}.mdx`), 'utf8');
+export async function getAllPaths() {
+  const files = await getAllFilesFrontMatter();
+  return files.map((file) => ({ params: { slug: file.slug } }));
+}
 
-  const { data, content } = matter(source);
+export async function getFileBySlug(slug: string) {
+  const files = await getAllFilesFrontMatter();
+  const file = files.find((file) => file.slug === slug);
+
+  const { content, ...rest } = file;
   const mdxSource = await serialize(content, {
     mdxOptions: {
       remarkPlugins: [remarkGfm],
-      rehypePlugins: [rehypeCodeTitle, rehypePrismPlus],
+      rehypePlugins: [rehypeCodeTitle, rehypePrismPlus, rehypeSlug],
     },
-    scope: data,
+    scope: rest,
   });
 
   return {
@@ -33,8 +40,7 @@ export async function getFileBySlug(slug: string) {
     frontMatter: {
       wordCount: content.split(/\s+/gu).length,
       readingTime: readingTime(content),
-      slug: slug || null,
-      ...data,
+      ...rest,
     },
   };
 }
@@ -44,13 +50,14 @@ export async function getAllFilesFrontMatter() {
 
   return files.reduce((allPosts, postSlug) => {
     const source = fs.readFileSync(path.join(root, 'posts', postSlug), 'utf8');
-    const { data } = matter(source);
+    const { data, content } = matter(source);
     const publishedAtFormatted = formatDate(data.date);
 
     return [
       {
         ...data,
         publishedAtFormatted,
+        content,
       },
       ...allPosts,
     ];

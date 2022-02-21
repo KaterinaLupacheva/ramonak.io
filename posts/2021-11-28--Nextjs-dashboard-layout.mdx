@@ -304,7 +304,7 @@ To store and update the drawer's state, we are going to use the _useState_ hook.
 
 Plus, we need to be able to toggle the drawer (open or close) by clicking on the icon in the Header component. Thus the state setter (setOpened) should be passed as a prop to the Header component.
 
-```jsx{5,12,14-16,20,22}
+```jsx
 //components/DashboardLayout/index.tsx
 
 ...
@@ -337,7 +337,7 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
 
 The Header component should have the icon button to open or close the drawer. The icon itself should be different depending on the drawer state.
 
-```jsx{4,6-9,11,14-16}
+```jsx
 //components/Header/index.tsx
 
 import { HeaderContainer, TitleContainer, IconContainer } from "./styles";
@@ -379,7 +379,7 @@ export const IconContainer = styled.div`
 
 Each drawer state change should update the Sidebar component's styles, e.g., to change its width. To achieve this, we need to pass the _isOpened_ prop to the SidebarContainer styled component.
 
-```jsx{5-7,9,10}
+```jsx
 //components/Sidebar/index.tsx
 
 import { SidebarContainer } from "./styles";
@@ -543,7 +543,7 @@ And then call this function recursively again to implement the same logic for th
 
 Now let's render the menu items.
 
-```jsx{4,5,14}
+```jsx
 // components/Sidebar/index.tsx
 
 import { SidebarContainer } from "./styles";

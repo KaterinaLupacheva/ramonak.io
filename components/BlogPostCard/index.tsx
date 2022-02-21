@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Post } from 'ts';
 
 import {
@@ -18,24 +19,34 @@ type BlogPostCardProps = {
 };
 
 export default function BlogPostCard({
-  post: { socialImage, publishedAtFormatted, title },
+  post: { socialImage, publishedAtFormatted, title, slug },
   withImage = false,
 }: BlogPostCardProps) {
   return (
-    <BlogPostCardContainer>
-      {withImage && (
-        <ImageWrapper>
-          <Picture src={socialImage} layout="fixed" width={250} height={128} objectFit="contain" />
-        </ImageWrapper>
-      )}
-      <SideContainer>
-        <Date>{publishedAtFormatted}</Date>
-        <Title>{title}</Title>
-        <ViewsContainer>
-          <EyeIcon />
-          <Views>1234</Views>
-        </ViewsContainer>
-      </SideContainer>
-    </BlogPostCardContainer>
+    <Link href={`/posts/${slug}`} passHref>
+      <a>
+        <BlogPostCardContainer>
+          {withImage && (
+            <ImageWrapper>
+              <Picture
+                src={socialImage}
+                layout="fixed"
+                width={250}
+                height={128}
+                objectFit="contain"
+              />
+            </ImageWrapper>
+          )}
+          <SideContainer>
+            <Date>{publishedAtFormatted}</Date>
+            <Title>{title}</Title>
+            <ViewsContainer>
+              <EyeIcon />
+              <Views>1234</Views>
+            </ViewsContainer>
+          </SideContainer>
+        </BlogPostCardContainer>
+      </a>
+    </Link>
   );
 }

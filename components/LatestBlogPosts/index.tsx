@@ -10,7 +10,6 @@ type LatestBlogPostsProps = {
 };
 
 export default function LatestBlogPosts({ posts }: LatestBlogPostsProps) {
-  console.log('LATESTS', posts);
   return (
     <LatestBlogPostsContainer>
       <Title>Latest Blog Posts</Title>

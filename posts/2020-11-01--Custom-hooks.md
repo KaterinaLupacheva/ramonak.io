@@ -101,7 +101,7 @@ For instance, we can use the useSmoothScroll hook for marking another element to
 
 *useSmoothScroll.js*
 
-```jsx{7,11,17}
+```jsx
 import React from "react";
 import "./App.css";
 import useSmoothScroll from "./hooks/useSmoothScroll";
@@ -215,7 +215,7 @@ Now we are going to add this hook into the *useDocTitle* hook.
 
 *useDocTitle.js*
 
-```jsx{2,6,10}
+```jsx
 import { useState, useEffect } from "react";
 import useRoute from "./useRoute";
 
