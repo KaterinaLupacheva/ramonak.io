@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 import Layout from '../../components/Layout';
+import components from '../../components/MDXComponents';
 
 type PostPageProps = {
   post: { mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>; frontMatter: any };
@@ -13,19 +14,12 @@ export default function PostPage({ post }: PostPageProps) {
 
   return (
     <Layout>
-      <header>
-        <nav>
-          <Link href="/">
-            <a>👈 Go back home</a>
-          </Link>
-        </nav>
-      </header>
       <div className="post-header">
         <h1>{frontMatter.title}</h1>
         {frontMatter.description && <p className="description">{frontMatter.description}</p>}
       </div>
       <main>
-        <MDXRemote {...mdxSource} />
+        <MDXRemote {...mdxSource} components={components} />
       </main>
 
       <style jsx>{`
