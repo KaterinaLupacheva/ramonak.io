@@ -1,14 +1,18 @@
-import { format, parseISO } from 'date-fns';
 import { Post } from 'ts';
 
 import { BlogHeaderContainer, Date, Description, InfoContainer, ReadTime, Title } from './styles';
 
-export default function BlogHeader({ title, description, date, readingTime }: Post) {
+export default function BlogHeader({
+  title,
+  description,
+  readingTime,
+  publishedAtFormatted,
+}: Post) {
   return (
     <BlogHeaderContainer>
       <Title>{title}</Title>
       <InfoContainer>
-        <Date>{format(parseISO(date), 'MMMM dd, yyyy')}</Date>
+        <Date>{publishedAtFormatted}</Date>
         <ReadTime>{readingTime.text}</ReadTime>
       </InfoContainer>
       <Description>{description}</Description>

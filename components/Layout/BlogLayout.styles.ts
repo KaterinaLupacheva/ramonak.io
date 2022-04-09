@@ -12,10 +12,20 @@ export const Container = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  line-height: 1.75;
+  font-size: 1.125rem;
+  line-height: 1.82813rem;
 
   & p {
     margin-bottom: 1.5rem;
     margin-top: 1.5rem;
+  }
+
+  & code {
+    font-size: 1em;
+  }
+
+  & a {
+    text-decoration: underline;
+    color: ${(props) => props.theme.colors.ramonakRed};
   }
 `;

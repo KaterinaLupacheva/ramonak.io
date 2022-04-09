@@ -1,4 +1,5 @@
 import BlogHeader from 'components/BlogHeader';
+import Divider from 'components/Divider';
 import { PropsWithChildren } from 'react';
 import { Post } from 'ts';
 
@@ -20,6 +21,7 @@ export default function BlogLayout({ children, post }: PropsWithChildren<{ post:
         <Container>
           <BlogHeader {...post} />
           <ContentWrapper>{children}</ContentWrapper>
+          <Divider />
         </Container>
       </Wrapper>
     </Layout>

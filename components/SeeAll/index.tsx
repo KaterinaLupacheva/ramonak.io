@@ -9,7 +9,7 @@ type SeeAllProps = {
 
 export default function SeeAll({ label, href }: SeeAllProps) {
   return (
-    <NextLink href={href}>
+    <NextLink href={href} passHref>
       <SeeAllContainer>{label}...</SeeAllContainer>
     </NextLink>
   );
