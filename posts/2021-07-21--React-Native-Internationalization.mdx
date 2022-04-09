@@ -7,7 +7,12 @@ description: "How to add internationalization functionality to a React Native ap
 socialImage: "/media/rn-i18n.png"
 ---
 
-![rn-i18n](/media/rn-i18n.png)
+<Image 
+  alt={`rn-i18n`}
+  src={`/media/rn-i18n.png`}
+  width={800}
+  height={400}
+/>
 
 ## What are we going to build?
 
@@ -25,7 +30,12 @@ Assume we have a basic React Native project. For this blog post, I'm going to us
 
 The app has just one screen that renders the text "Hello!" and a button with the title "Press".
 
-![init screen](/posts/react-native-i18n/1.png)
+<Image 
+  alt={`init screen`}
+  src={`/posts/react-native-i18n/1.png`}
+  width={300}
+  height={500}
+/>
 
 The source code:
 
@@ -92,7 +102,7 @@ _A list of all config options is available in the [docs](https://www.i18next.com
 
 Then just import this file in the entry point of your project: App.tsx for expo projects or index.ts/index.js for React Native CLI projects.
 
-```tsx{6}
+```tsx
 //App.tsx
 
 import { StatusBar } from "expo-status-bar";
@@ -130,13 +140,23 @@ Usually, the app is being translated by other team members (if your team is inte
 
 Create a Google Sheet with the following structure:
 
-![google sheet structure](/posts/react-native-i18n/2.png)
+<Image 
+  alt={`google sheet structure`}
+  src={`/posts/react-native-i18n/2.png`}
+  width={500}
+  height={150}
+/>
 
 Column A will have translations keys (HELLO, PRESS, etc). These values will be used as keys in JSON files with translations. Columns B-F will contain translations themselves, the first row - supported languages names (en - English, es - Spanish, fr - French, and so on).
 
 After adding all translations, the Google sheet should look like this:
 
-![google sheet translations](/posts/react-native-i18n/3.png)
+<Image 
+  alt={`google sheet translations`}
+  src={`/posts/react-native-i18n/3.png`}
+  width={500}
+  height={150}
+/>
 
 Now let's move to the fun part - writting a script that:
 
@@ -303,7 +323,12 @@ node script.js
 
 all the translations should be written in the _translations_ folder as separate JSON files for each language.
 
-![translations folder](/posts/react-native-i18n/4.png)
+<Image 
+  alt={`translations folder`}
+  src={`/posts/react-native-i18n/4.png`}
+  width={800}
+  height={400}
+/>
 
 To be able to use these _translations_ in our React Native project, we need to:
 
@@ -350,7 +375,7 @@ const resources = {
 
 Now we can translate the content of the app with the help of **useTranslation** hook provided by react-i18next library.
 
-```ts{3,9,10}
+```ts
 //App.tsx
 ...
 import { useTranslation } from "react-i18next";
@@ -439,7 +464,7 @@ export default LanguagePicker;
 
 Add the Language Picker component in the App.tsx:
 
-```ts{8,14}
+```ts
 //App.tsx
 
 import { StatusBar } from "expo-status-bar";
@@ -464,7 +489,12 @@ export default function App() {
 
 Let's check how it works now:
 
-![demo1](/posts/react-native-i18n/lang.gif)
+<Image 
+  alt={`demo1`}
+  src={`/posts/react-native-i18n/lang.gif`}
+  width={300}
+  height={500}
+/>
 
 ## 3. Custom plugin to store chosen language in the local storage
 

@@ -13,7 +13,6 @@ slug: "custom-eslint-config"
   height={400}
 />
 
-
 ## Intro
 
 There are many tools that help developers eliminate possible errors and bugs, and in the end, ship more robust and maintainable code. Among them, the most commonly used static code analysis tool is [ESLint](https://eslint.org/).
@@ -60,7 +59,12 @@ npx eslint --init
 
 You will be prompted to answer different questions. Based on my typical type of projects, I answered them like that:
 
-![eslint](/posts/eslint-config/eslint.png)
+<Image 
+  alt={`eslint`}
+  src={`/posts/eslint-config/eslint.png`}
+  width={800}
+  height={300}
+/>
 
 It will install `@typescript-eslint/eslint-plugin`, `@typescript-eslint/parser`, `eslint`, `eslint-plugin-react` packages as dev dependencies in the project (in your specific use case packages might be different, depending on your answers). And also, it will add _.eslintrc_ file with the basic config.
 
