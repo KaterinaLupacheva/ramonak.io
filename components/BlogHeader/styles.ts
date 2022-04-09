@@ -19,9 +19,15 @@ export const InfoContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   color: ${(props) => props.theme.colors.grey2};
-  margin-bottom: 20px;
+  margin-bottom: 2rem;
 `;
 
 export const Date = styled.span``;
 
-export const ReadTime = styled.span``;
+export const ReadTime = styled.span`
+  padding-right: 0.5rem;
+`;
+
+export const SideContainer = styled.div`
+  display: flex;
+`;

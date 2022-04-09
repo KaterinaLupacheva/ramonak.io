@@ -32,3 +32,7 @@ export type Post = {
   wordCount: string | number;
   readingTime: ReadTimeResults;
 };
+
+export type Views = {
+  total: number;
+};

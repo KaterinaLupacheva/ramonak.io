@@ -1,4 +1,3 @@
-import { Eye } from '@styled-icons/fa-solid/Eye';
 import Image from 'next/image';
 import styled from 'styled-components';
 
@@ -34,19 +33,4 @@ export const Date = styled.div`
 
 export const Title = styled.h4`
   font-size: 1.25rem;
-`;
-
-export const ViewsContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-export const Views = styled.div`
-  color: ${(props) => props.theme.colors.grey2};
-`;
-
-export const EyeIcon = styled(Eye)`
-  color: ${(props) => props.theme.colors.grey2};
-  height: 1rem;
-  margin-right: 0.4rem;
 `;

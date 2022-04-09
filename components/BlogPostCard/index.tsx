@@ -1,17 +1,8 @@
+import ViewsCounter from 'components/ViewsCounter';
 import Link from 'next/link';
 import { Post } from 'ts';
 
-import {
-  BlogPostCardContainer,
-  Date,
-  EyeIcon,
-  ImageWrapper,
-  Picture,
-  SideContainer,
-  Title,
-  Views,
-  ViewsContainer,
-} from './styles';
+import { BlogPostCardContainer, Date, ImageWrapper, Picture, SideContainer, Title } from './styles';
 
 type BlogPostCardProps = {
   post: Post;
@@ -40,10 +31,7 @@ export default function BlogPostCard({
           <SideContainer>
             <Date>{publishedAtFormatted}</Date>
             <Title>{title}</Title>
-            <ViewsContainer>
-              <EyeIcon />
-              <Views>1234</Views>
-            </ViewsContainer>
+            <ViewsCounter slug={slug} />
           </SideContainer>
         </BlogPostCardContainer>
       </a>
