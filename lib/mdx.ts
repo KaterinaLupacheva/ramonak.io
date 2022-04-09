@@ -1,5 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
+import { MDXRemoteSerializeResult } from 'next-mdx-remote/dist/types';
 import { serialize } from 'next-mdx-remote/serialize';
 import path from 'path';
 import readingTime from 'reading-time';
@@ -22,7 +23,10 @@ export async function getAllPaths() {
   return files.map((file) => ({ params: { slug: file.slug } }));
 }
 
-export async function getFileBySlug(slug: string) {
+export async function getFileBySlug(slug: string): Promise<{
+  mdxSource: MDXRemoteSerializeResult<Record<string, unknown>>;
+  frontMatter: Post;
+}> {
   const files = await getAllFilesFrontMatter();
   const file = files.find((file) => file.slug === slug);
 

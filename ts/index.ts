@@ -1,3 +1,5 @@
+import { ReadTimeResults } from 'reading-time';
+
 export type Project = {
   companyName: string;
   projectTitle: string;
@@ -27,4 +29,6 @@ export type Post = {
   slug: string;
   content: string;
   publishedAtFormatted: string;
+  wordCount: string | number;
+  readingTime: ReadTimeResults;
 };
