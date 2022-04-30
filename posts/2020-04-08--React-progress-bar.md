@@ -121,7 +121,7 @@ export default App;
 
 Run the app and check what we’ve got in the browser.
 
-![three-bars-demo](/posts/progress-bar/demo1.JPG)
+![three-bars-demo](/media/react-progress-bar.JPG)
 
 And that’s it! The simple Progress Bar React component is ready!
 

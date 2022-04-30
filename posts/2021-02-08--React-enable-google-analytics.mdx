@@ -12,7 +12,11 @@ description: "How to conditionally enable Google Analytics tracker depending on 
 socialImage: "/media/react-ga-consent.png"
 ---
 
-![dashboard-layout](/media/react-ga-consent.png)
+<Image alt={`dashboard-layout`}
+  src={`/media/react-ga-consent.png`}
+  width={800}
+  height={400}
+/>
 
 ## Introduction
 
@@ -78,7 +82,11 @@ export default App;
 
 If you run the app, you'll see a Cookie Consent bar at the bottom of the page with two buttons: "I understand" and "I decline".
 
-![demo](/posts/react-ga-consent/image1.JPG)
+<Image alt={`demo`}
+  src={`/posts/react-ga-consent/image1.JPG`}
+  width={800}
+  height={400}
+/>
 
 The next thing is to handle actions when a user declines or accepts cookies usage.
 
@@ -138,7 +146,11 @@ const handleDeclineCookie = () => {
 
 By default, react-cookie-consent library writes a CookieConsent cookie value "true" or "false" based on a user action (accept or decline respectively). You can check this in developer tools on *Application* tab.
 
-![cookie](/posts/react-ga-consent/image2.JPG)
+<Image alt={`cookie-consent`}
+  src={`/posts/react-ga-consent/image2.JPG`}
+  width={800}
+  height={400}
+/>
 
 The Cookie Consent bar won't appear on the next app visit from the same browser. So we have to handle Google Analytics initialization on every app run (or website visit) if a user granted prior consent. This can be accomplished with _useEffect_ hook and _getConsentValue()_ function of react-cookie-consent library:
 

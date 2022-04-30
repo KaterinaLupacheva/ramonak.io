@@ -28,4 +28,10 @@ export const ContentWrapper = styled.div`
     text-decoration: underline;
     color: ${(props) => props.theme.colors.ramonakRed};
   }
+
+  & p img {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
