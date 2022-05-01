@@ -71,3 +71,40 @@ export async function getAllFilesFrontMatter() {
 export function getLatest3Posts(posts: Post[]) {
   return posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, 4);
 }
+
+export async function getContent(slug: string) {
+  const files = fs.readdirSync(path.join(root, 'content'));
+
+  const filesFrontMatter = files.reduce((allFiles, filePath) => {
+    const source = fs.readFileSync(path.join(root, 'content', filePath), 'utf8');
+    const { data, content } = matter(source);
+
+    return [
+      {
+        ...data,
+        content,
+      },
+      ...allFiles,
+    ];
+  }, []);
+
+  const file = filesFrontMatter.find((file) => file.slug === slug);
+
+  const { content, ...rest } = file;
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [rehypeCodeTitle, rehypePrismPlus, rehypeSlug],
+    },
+    scope: rest,
+  });
+
+  return {
+    mdxSource,
+    frontMatter: {
+      wordCount: content.split(/\s+/gu).length,
+      readingTime: readingTime(content),
+      ...rest,
+    },
+  };
+}

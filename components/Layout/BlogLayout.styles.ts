@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Container = styled.div`
-  max-width: 50rem;
+  max-width: 100%;
 `;
 
 export const ContentWrapper = styled.div`

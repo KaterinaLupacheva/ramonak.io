@@ -1,5 +1,5 @@
 {
-  "extends": ["ramonak", "eslint-config-next"],
+  "extends": ["eslint-config-next"],
   "rules": {
     "@typescript-eslint/no-var-requires": 0
   }
