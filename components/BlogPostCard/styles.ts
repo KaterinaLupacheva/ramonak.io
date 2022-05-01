@@ -6,7 +6,7 @@ export const BlogPostCardContainer = styled.div`
     0px 1px 14px 0px rgba(0, 0, 0, 0.12);
   border-radius: 0.5rem;
   padding: 1rem;
-  height: 10rem;
+  height: auto;
   background-color: ${(props) => props.theme.colors.contrastBg};
   display: flex;
   align-items: center;
