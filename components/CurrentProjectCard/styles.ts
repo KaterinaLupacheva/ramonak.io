@@ -47,14 +47,4 @@ export const Position = styled.p`
   font-weight: bolder;
 `;
 
-export const NDA = styled.div`
-  border: 1px solid ${(props) => props.theme.colors.grey};
-  border-radius: 0.5rem;
-  height: 8rem;
-  width: 20rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.25rem;
-  border: 1px solid ${(props) => props.theme.colors.text};
-`;
+

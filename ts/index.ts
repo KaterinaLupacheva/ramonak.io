@@ -1,4 +1,4 @@
-import { ReadTimeResults } from 'reading-time';
+import { ReadTimeResults } from "reading-time";
 
 export type Project = {
   companyName: string;
@@ -9,6 +9,7 @@ export type Project = {
   companyLink: string;
   tech: string[];
   projectLink?: string;
+  isMobile?: boolean;
 };
 
 export type CurrentProject = {
@@ -21,7 +22,7 @@ export type CurrentProject = {
 };
 
 export type Post = {
-  type: 'Post';
+  type: "Post";
   title: string;
   date: string;
   description: string;

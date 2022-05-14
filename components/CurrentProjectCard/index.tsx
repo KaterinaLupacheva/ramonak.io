@@ -1,23 +1,25 @@
-import store from '../../public/static/projects/storehero/storehero.png';
-import { CurrentProject } from '../../ts';
-import ExternalLink from '../shared/ExternalLink';
+import NDA from "components/NDA";
+import store from "../../public/static/projects/storehero/storehero.png";
+import { CurrentProject } from "../../ts";
+import ExternalLink from "../shared/ExternalLink";
 import {
   CompanyName,
   Content,
   CurrentProjectCardContainer,
   ImageWrapper,
-  NDA,
   Period,
   Position,
   ProjectImage,
   Tech,
-} from './styles';
+} from "./styles";
 
 type CurrentProjectCardProps = {
   project: CurrentProject;
 };
 
-export default function CurrentProjectCard({ project }: CurrentProjectCardProps) {
+export default function CurrentProjectCard({
+  project,
+}: CurrentProjectCardProps) {
   const { companyLink, companyName, date, position, tech, image } = project;
 
   return (
@@ -30,13 +32,19 @@ export default function CurrentProjectCard({ project }: CurrentProjectCardProps)
         <Tech>Main technology - {tech}</Tech>
         <Period>{date}</Period>
       </Content>
-      {image ? (
-        <ImageWrapper>
-          <ProjectImage src={store} layout="fill" objectFit="cover" objectPosition="top" />
-        </ImageWrapper>
-      ) : (
-        <NDA>NDA signed</NDA>
-      )}
+
+      <ImageWrapper>
+        {image ? (
+          <ProjectImage
+            src={store}
+            layout="fill"
+            objectFit="cover"
+            objectPosition="top"
+          />
+        ) : (
+          <NDA />
+        )}
+      </ImageWrapper>
     </CurrentProjectCardContainer>
   );
 }

@@ -44,14 +44,20 @@ export const Description = styled.p`
   font-size: 1.25rem;
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<{ isMobile: boolean }>`
   position: relative;
-  width: 8rem;
+  width: ${({ isMobile }) => (isMobile ? "8rem" : "50rem")};
   height: 16rem;
 
   @media (max-width: 800px) {
     display: none;
   }
+`;
+
+export const NDAWrapper = styled.div`
+  margin-left: auto;
+  width: 23rem;
+  height: 100%;
 `;
 
 export const ProjectImage = styled(Image)`

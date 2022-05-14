@@ -1,3 +1,4 @@
+import NDA from "components/NDA";
 import { Project } from "../../ts";
 import ExternalLink from "../shared/ExternalLink";
 import {
@@ -5,6 +6,7 @@ import {
   ContentWrapper,
   Description,
   ImageWrapper,
+  NDAWrapper,
   Period,
   ProjectCardContainer,
   ProjectImage,
@@ -28,6 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     image,
     tech,
     date,
+    isMobile,
   } = project;
   return (
     <ProjectCardContainer>
@@ -48,8 +51,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </TechContainer>
         </SideContainer>
-        <ImageWrapper>
-          <ProjectImage src={image} alt={projectTitle} layout="fill" />
+
+        <ImageWrapper isMobile={isMobile}>
+          {image ? (
+            <ProjectImage src={image} alt={projectTitle} layout="fill" />
+          ) : (
+            <NDAWrapper>
+              <NDA />
+            </NDAWrapper>
+          )}
         </ImageWrapper>
       </ContentWrapper>
     </ProjectCardContainer>
