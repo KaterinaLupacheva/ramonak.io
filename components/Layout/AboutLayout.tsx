@@ -19,7 +19,7 @@ export default function AboutLayout({ children }) {
       <AboutWrapper>
         <ContentWrapper>{children}</ContentWrapper>
         <ImageWrapper>
-          <Image src={photo} alt="my photo" objectFit="fill" />
+          <Image src={photo} alt="my photo" />
         </ImageWrapper>
       </AboutWrapper>
     </Layout>

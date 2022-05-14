@@ -1,4 +1,3 @@
-import Layout from "components/Layout";
 import AboutLayout from "components/Layout/AboutLayout";
 import { getContent } from "lib/mdx";
 import { MDXRemote } from "next-mdx-remote";
