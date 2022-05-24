@@ -201,7 +201,7 @@ const PlayPauseButton = () => {
 Thus by clicking on the button we are toggling playing and paused value of the status prop and also dynamically changing the title of the button. We can see it in the browser:
 
 <video autoplay loop controls>
-  <source src="/react-context/clip1.mp4" type="video/mp4">
+  <source src="/react-context/clip1.mp4" type="video/mp4" />
 </video>
 
 But we still don’t control the playback of the video clip. Let’s fix this!
@@ -244,7 +244,7 @@ const VideoClip = () => {
 Result is in the browser window:
 
 <video autoplay controls>
-  <source src="/react-context/clip2.mp4" type="video/mp4">
+  <source src="/react-context/clip2.mp4" type="video/mp4" />
 </video>
 
 We can control video playback in VideoClip component from a nested PlayPauseButton component, which is not directly related.
@@ -397,7 +397,7 @@ As we moved all the logic for playing and pausing the video, in VideoClip compon
 The app works the same, as when using only functional components and Hooks.
 
 <video autoplay controls>
-  <source src="/react-context/clip2.mp4" type="video/mp4">
+  <source src="/react-context/clip2.mp4" type="video/mp4" />
 </video>
 
 The complete source code of this part of the tutorial is available in [this GitHub repo](https://github.com/KaterinaLupacheva/react-context/tree/master/with-classes).

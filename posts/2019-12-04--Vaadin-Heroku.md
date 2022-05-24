@@ -14,6 +14,7 @@ tags:
 description: "Blog post about how to deploy Vaadin 14 application to Heroku Cloud."
 socialImage: "/media/vaadin-heroku.png"
 ---
+
 ![vaadin-heroku](/media/vaadin-heroku.png)
 
 In this tutorial, we’ll go through the process of building a simple Vaadin 14 application and deploying it to Heroku cloud using heroku-maven-plugin.
@@ -22,11 +23,11 @@ In this tutorial, we’ll go through the process of building a simple Vaadin 14 
 
 Since Vaadin 14 [npm](https://www.npmjs.com/) is used as the front-end package manager. Although using Bower for frontend dependencies is currently discouraged, it is still fully supported in Vaadin 14, but will be deprecated in Vaadin 15.
 
-[Heroku](https://www.heroku.com/) is a platform that enables developers to build, run, and operate applications entirely in the cloud. 
+[Heroku](https://www.heroku.com/) is a platform that enables developers to build, run, and operate applications entirely in the cloud.
 
-##  1. Prepare Vaadin Application
+## 1. Prepare Vaadin Application
 
-The most simple and convenient way to start building Vaadin application is to use Vaadin Starter Project. For that, we go to https://vaadin.com/start, chose the latest Vaadin version (which is 14 as of December 2019), Spring Boot tech stack, enter Maven Group ID and the Project Name. Press download button.
+The most simple and convenient way to start building Vaadin application is to use Vaadin Starter Project. For that, we go to <https://vaadin.com/start>, chose the latest Vaadin version (which is 14 as of December 2019), Spring Boot tech stack, enter Maven Group ID and the Project Name. Press download button.
 
 ![vaadin-start](/posts/Vaadin-Heroku/vaadin-start.png)
 
@@ -64,13 +65,13 @@ heroku login
 
 Press any button and you’ll be redirected to Heroku login page.
 
-Now we’re ready to create our Heroku application by entering 
+Now we’re ready to create our Heroku application by entering
 
 ```
  heroku create <app_name>
 ```
 
-where <app_name> – is the name of your app (you can name it whatever you like). For this tutorial I’ll be using the name vaadin-heroku-app. So I enter 
+where `<app_name>` – is the name of your app (you can name it whatever you like). For this tutorial I’ll be using the name vaadin-heroku-app. So I enter
 
 ```
 heroku create vaadin-heroku-app
@@ -78,18 +79,18 @@ heroku create vaadin-heroku-app
 
 Now we have an empty Heroku application.
 
-## 3. Update Vaadin project 
+## 3. Update Vaadin project
 
 Next we need to update pom.xml to be able to deploy Vaadin project to Heroku.
 
-* First of all, in build tag add frontend-maven-plugin. This plugin downloads/installs Node and NPM locally for the project.
+- First of all, in build tag add frontend-maven-plugin. This plugin downloads/installs Node and NPM locally for the project.
 
 ```
 <plugins>
     <plugin>
         <groupId>com.github.eirslett</groupId>
         <artifactId>frontend-maven-plugin</artifactId>
-          <!-- Use the latest released version: 
+          <!-- Use the latest released version:
             https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
         <version>LATEST_VERSION</version>
         ...
@@ -97,7 +98,7 @@ Next we need to update pom.xml to be able to deploy Vaadin project to Heroku.
 …
 ```
 
-* Configure this plugin by adding execution goals and node version.
+- Configure this plugin by adding execution goals and node version.
 
 ```
 <executions>
@@ -114,7 +115,7 @@ Next we need to update pom.xml to be able to deploy Vaadin project to Heroku.
 </configuration>
 ```
 
-* In production profile for vaadin-maven-plugin add execution goal prepare-frontend
+- In production profile for vaadin-maven-plugin add execution goal prepare-frontend
 
 ```
 <profiles>
@@ -147,7 +148,7 @@ Next we need to update pom.xml to be able to deploy Vaadin project to Heroku.
 …
 ```
 
-* And finally add heroku-maven-plugin with following configuration
+- And finally add heroku-maven-plugin with following configuration
 
 ```
 <plugin>
@@ -157,34 +158,34 @@ Next we need to update pom.xml to be able to deploy Vaadin project to Heroku.
    <configuration>
        <appName>vaadin-heroku-app</appName>
        <processTypes>
-   		<web>java $JAVA_OPTS -jar target/vaadin-heroku-2.0-SNAPSHOT.jar --server.port=$PORT</web>
+     <web>java $JAVA_OPTS -jar target/vaadin-heroku-2.0-SNAPSHOT.jar --server.port=$PORT</web>
        </processTypes>
    </configuration>
 </plugin>
 ```
 
-Heroku-maven-plugin provides direct deployment of prepackaged standalone web applications to Heroku. 
+Heroku-maven-plugin provides direct deployment of prepackaged standalone web applications to Heroku.
 
 Tag < appName > is the name of your Heroku app and is necessary only if your application is not under version control with Git.
 
 Tag < web > tells Heroku to start a web process and run .jar file.
 
-To deploy Vaadin app in production mode to Heroku enter following command from the project directory  
+To deploy Vaadin app in production mode to Heroku enter following command from the project directory
 
 ```
 mvn clean package -Pproduction heroku:deploy
 ```
 
-After a successful build you can open the app by entering  
+After a successful build you can open the app by entering
 
 ```
 heroku open -a <app_name>
 ```
 
-Or go to the browser and navigate to *<app_name>.herokuapp.com*, that in case of this tutorial is vaadin-heroku-app.herokuapp.com
+Or go to the browser and navigate to _<app_name>.herokuapp.com_, that in case of this tutorial is vaadin-heroku-app.herokuapp.com
 
 ## Conclusion
 
 Full source code for this tutorial is available at [GitHub repository](https://github.com/KaterinaLupacheva/vaadin-heroku).
 
-The idea for this blog post was born after unsuccessfully trying to deploy Vaadin 14 app to Heroku. I had  [almost] no problems while deploying to Heroku Vaadin 10+ versions. But Vaadin 14 was a different case (mostly due to including npm).
+The idea for this blog post was born after unsuccessfully trying to deploy Vaadin 14 app to Heroku. I had [almost] no problems while deploying to Heroku Vaadin 10+ versions. But Vaadin 14 was a different case (mostly due to including npm).
