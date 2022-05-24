@@ -27,7 +27,7 @@ Since Vaadin 14 [npm](https://www.npmjs.com/) is used as the front-end package m
 
 ## 1. Prepare Vaadin Application
 
-The most simple and convenient way to start building Vaadin application is to use Vaadin Starter Project. For that, we go to <https://vaadin.com/start>, chose the latest Vaadin version (which is 14 as of December 2019), Spring Boot tech stack, enter Maven Group ID and the Project Name. Press download button.
+The most simple and convenient way to start building Vaadin application is to use Vaadin Starter Project. For that, we go to `https://vaadin.com/start`, chose the latest Vaadin version (which is 14 as of December 2019), Spring Boot tech stack, enter Maven Group ID and the Project Name. Press download button.
 
 ![vaadin-start](/posts/Vaadin-Heroku/vaadin-start.png)
 
@@ -182,7 +182,7 @@ After a successful build you can open the app by entering
 heroku open -a <app_name>
 ```
 
-Or go to the browser and navigate to _<app_name>.herokuapp.com_, that in case of this tutorial is vaadin-heroku-app.herokuapp.com
+Or go to the browser and navigate to `<app_name>.herokuapp.com`, that in case of this tutorial is vaadin-heroku-app.herokuapp.com
 
 ## Conclusion
 

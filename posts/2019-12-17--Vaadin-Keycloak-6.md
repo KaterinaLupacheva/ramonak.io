@@ -188,7 +188,7 @@ And we get an error page… Which means that it’s working as it’s supposed t
 
 To be able to login as Admin,  first of all we need to logout as a “simple” user role. As we have just a backend service we won’t be adding fancy logout button (we’ll do it in our frontend app). We’ll logout using Keycloak admin console.
 
-Go to localhost:<keycloak_port>/auth/admin, which in my case is
+Go to `localhost:<keycloak_port>/auth/admin`, which in my case is
 
 ```
 localhost:9991/auth/admin

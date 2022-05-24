@@ -45,7 +45,7 @@ You will be prompted to ask a few questions about your package. Here are my answ
 
 ![answers](/posts/npm-publish/crl-answers.JPG)
 
-As a package name, I’ve entered *@ramonak/react-progress-bar*. This is so-called the [scoped package](https://docs.npmjs.com/using-npm/scope.html). By adding *@<your_username>* you can group your packages and also use any package name that might be already taken.
+As a package name, I’ve entered *@ramonak/react-progress-bar*. This is so-called the [scoped package](https://docs.npmjs.com/using-npm/scope.html). By adding `@<your_username>` you can group your packages and also use any package name that might be already taken.
 
 After create-react-library finishes creating the skeleton of our module, we have the following project structure:
 

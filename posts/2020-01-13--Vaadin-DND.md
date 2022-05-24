@@ -328,7 +328,7 @@ public class FieldPosition extends Div implements DropTarget<Div> { //(1)
 Time to test what we've developed so far. Restart the app and navigate to ```localhost:9999``` in browser:
 
 <video autoplay loop controls>
-  <source src="/vaadin-dnd/dnd1.mp4" type="video/mp4">
+  <source src="/vaadin-dnd/dnd1.mp4" type="video/mp4" />
 </video>
 
 Everything works as intended!
@@ -348,7 +348,7 @@ We can change the style of the draggable component while dragging it. Vaadin aut
 And when we'll try to drag the player card, the background color changes and ```v-dragged``` class name is being added to the element.
 
 <video autoplay loop controls>
-  <source src="/vaadin-dnd/dnd2.mp4" type="video/mp4">
+  <source src="/vaadin-dnd/dnd2.mp4" type="video/mp4" />
 </video>
 
 Also, we can change the styling of the drop target components - Field Positions. Let's highlight possible drop targets when the drag event starts. To do so we have come work to be done:
@@ -440,7 +440,7 @@ addDropListener(event -> {
 Let's see how it all works in a browser:
 
 <video autoplay loop controls>
-  <source src="/vaadin-dnd/dnd3.mp4" type="video/mp4">
+  <source src="/vaadin-dnd/dnd3.mp4" type="video/mp4" />
 </video>
 
 Works fine!
@@ -472,7 +472,7 @@ setDropEffect(DropEffect.MOVE);
 Now if we restart the app and navigate in browser to localhost:9999:
 
 <video autoplay loop controls>
-  <source src="/vaadin-dnd/dnd4.mp4" type="video/mp4">
+  <source src="/vaadin-dnd/dnd4.mp4" type="video/mp4" />
 </video>
 
 All the additional styling works as expected!
