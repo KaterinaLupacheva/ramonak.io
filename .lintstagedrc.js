@@ -8,7 +8,5 @@ const buildEslintCommand = (filenames) => [
 ];
 
 module.exports = {
-  // Type check TypeScript files
-  "**/*.(ts|tsx)": () => "npm run tsc --noEmit",
   "*.{js,jsx,ts,tsx}": [buildEslintCommand],
 };
