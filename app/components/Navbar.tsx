@@ -27,7 +27,7 @@ export function Navbar() {
     regular: "text-slate-900",
   };
   return (
-    <nav className="mb-16 tracking-tight h-[80px] sticky w-full top-0">
+    <nav className="mb-1 h-[80px] sticky w-full top-0 z-20">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Link
           href="/"
