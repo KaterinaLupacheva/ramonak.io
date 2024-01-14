@@ -7,9 +7,14 @@ export default function Home() {
       <Image alt="background image" src="/Background.png" fill />
       <Navbar />
       <div className="flex z-10 items-center">
-        <p className="text-slate-950 text-7xl text-center font-semibold leading-normal">
-          Hello, my name is Kate
-        </p>
+        <div className="flex flex-col">
+          <p className="text-slate-950 text-7xl text-center font-semibold leading-normal">
+            Hello, my name is Kate
+          </p>
+          <p className="text-gray-500 text-[22px] font-normal font-['Fira Code'] leading-[30px]">
+            {">"} I am a full-stack developer
+          </p>
+        </div>
         <Image
           alt="kate background image"
           src="/kate.png"
