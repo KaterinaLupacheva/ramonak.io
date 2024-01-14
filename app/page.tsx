@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Navbar } from "./components/Navbar";
+import Social from "./components/Social";
 
 export default function Home() {
   return (
@@ -8,12 +9,13 @@ export default function Home() {
       <Navbar />
       <div className="flex z-10 items-center">
         <div className="flex flex-col">
-          <p className="text-slate-950 text-7xl text-center font-semibold leading-normal">
+          <p className="text-slate-950 text-7xl text-left font-semibold leading-normal">
             Hello, my name is Kate
           </p>
-          <p className="text-gray-500 text-[22px] font-normal font-['Fira Code'] leading-[30px]">
-            {">"} I am a full-stack developer
+          <p className="text-gray-500 text-[22px] font-normal leading-[30px]">
+            {">"} I am a full-stack web and mobile apps developer
           </p>
+          <Social />
         </div>
         <Image
           alt="kate background image"
