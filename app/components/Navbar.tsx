@@ -26,8 +26,9 @@ export function Navbar() {
     isActive: "text-indigo-600",
     regular: "text-slate-900",
   };
+  // bg-[#e6ecf1] bg-gradient-to-r from-[#fdf6ec] to-[#b6cfe7]
   return (
-    <nav className="mb-1 h-[80px] sticky w-full top-0 z-20">
+    <nav className="mb-1 h-[80px] w-full z-20">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Link
           href="/"
