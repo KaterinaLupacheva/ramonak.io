@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Navbar } from "./components/Navbar";
 import Social from "./components/Social";
 import NiceToMeetYou from "./components/NiceToMeetYou";
+import Technologies from "./components/Technologies";
 
 export default function Home() {
   return (
@@ -28,6 +29,7 @@ export default function Home() {
         </div>
       </div>
       <NiceToMeetYou />
+      <Technologies />
     </div>
   );
 }
