@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar";
 import Social from "./components/Social";
 import NiceToMeetYou from "./components/NiceToMeetYou";
 import Technologies from "./components/Technologies";
+import Portfolio from "./components/Portfolio";
 
 export default function Home() {
   return (
@@ -30,6 +31,7 @@ export default function Home() {
       </div>
       <NiceToMeetYou />
       <Technologies />
+      <Portfolio />
     </div>
   );
 }
