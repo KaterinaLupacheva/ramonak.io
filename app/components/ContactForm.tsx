@@ -1,6 +1,7 @@
 "use client";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "./TextInput";
+import { useState } from "react";
 
 export type Inputs = {
   name: string;
@@ -9,16 +10,25 @@ export type Inputs = {
 };
 
 export default function ContactForm() {
+  const [isSubmitted, setIsSubmitted] = useState(false);
   const {
     register,
     handleSubmit,
-    watch,
-    control,
     formState: { errors },
+    reset,
   } = useForm<Inputs>();
-  console.log("errors", errors);
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
+
+  const onSubmit: SubmitHandler<Inputs> = async (data) => {
     console.log(data);
+    await fetch("/api/send", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    reset();
+    setIsSubmitted(true);
   };
 
   return (
@@ -73,6 +83,11 @@ export default function ContactForm() {
             />
           </div>
         </form>
+        {isSubmitted ? (
+          <p className="text-green-500 text-lg font-semibold pt-2">
+            Your message was sent!
+          </p>
+        ) : null}
       </div>
     </div>
   );
