@@ -4,6 +4,7 @@ import Social from "./components/Social";
 import NiceToMeetYou from "./components/NiceToMeetYou";
 import Technologies from "./components/Technologies";
 import Portfolio from "./components/Portfolio";
+import Projects from "./components/Projects";
 
 export default function Home() {
   return (
@@ -32,6 +33,7 @@ export default function Home() {
       <NiceToMeetYou />
       <Technologies />
       <Portfolio />
+      <Projects />
     </div>
   );
 }
