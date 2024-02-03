@@ -10,7 +10,7 @@ export default function Portfolio() {
           I am focused on creating beautiful and user friendly applications
           while writing clean code.
         </p>
-        <button className="bg-indigo-600 text-white text-lg font-semibold rounded-lg px-8 py-3 mt-8">
+        <button className="bg-[#4D5BCE] text-white text-lg font-semibold rounded-lg px-8 py-3 mt-8">
           See all works {"->"}
         </button>
       </div>

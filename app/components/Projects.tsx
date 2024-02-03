@@ -2,7 +2,7 @@ import ProjectSection from "./ProjectSection";
 
 export default function Projects() {
   return (
-    <div className="flex flex-col pt-24 bg-white gap-24">
+    <div className="flex flex-col py-24 bg-white gap-24">
       {myProjects.map((section, idx) => (
         <ProjectSection
           key={section.title}

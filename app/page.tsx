@@ -5,6 +5,7 @@ import NiceToMeetYou from "./components/NiceToMeetYou";
 import Technologies from "./components/Technologies";
 import Portfolio from "./components/Portfolio";
 import Projects from "./components/Projects";
+import ContactForm from "./components/ContactForm";
 
 export default function Home() {
   return (
@@ -34,6 +35,7 @@ export default function Home() {
       <Technologies />
       <Portfolio />
       <Projects />
+      <ContactForm />
     </div>
   );
 }
