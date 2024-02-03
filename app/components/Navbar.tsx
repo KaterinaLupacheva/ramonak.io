@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { MouseEventHandler } from "react";
 
 const navItems = {
   "/": {
@@ -22,11 +23,23 @@ const navItems = {
 
 export function Navbar() {
   const pathname = usePathname();
+
   const colorVariants = {
     isActive: "text-indigo-600",
     regular: "text-slate-900",
   };
-  // bg-[#e6ecf1] bg-gradient-to-r from-[#fdf6ec] to-[#b6cfe7]
+
+  const handleScroll: MouseEventHandler<HTMLAnchorElement> = (e) => {
+    e.preventDefault();
+
+    const href = e.currentTarget.href;
+    const targetId = href.replace(/.*\#/, "");
+
+    const elem = document.getElementById(targetId);
+
+    elem?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <nav className="mb-1 h-[80px] w-full z-20">
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
@@ -54,14 +67,15 @@ export function Navbar() {
             );
           })}
         </div>
-        <Link
-          href="/contact"
+        <a
+          href="#contact-form"
+          onClick={handleScroll}
           className="px-[18px] py-[10px] bg-indigo-600 rounded-lg shadow border border-indigo-600 justify-center items-center gap-2 flex ml-20"
         >
           <div className="text-white text-base font-medium font-['Inter'] leading-normal">
             Contact Me
           </div>
-        </Link>
+        </a>
       </div>
     </nav>
   );

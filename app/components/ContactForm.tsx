@@ -32,7 +32,10 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-12 bg-[#F2F4F7]">
+    <div
+      className="flex flex-col items-center justify-center p-12 bg-[#F2F4F7]"
+      id="contact-form"
+    >
       <div className="max-w-[53%] flex flex-col items-center text-center pb-16">
         <h3 className="text-indigo-600 text-base font-semibold">Contact us</h3>
         <p className="text-gray-900 text-5xl font-semibold font-['Inter'] py-4">
