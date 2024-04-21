@@ -7,11 +7,6 @@ import { navItems } from "../constants/nav";
 export function Navbar() {
   const pathname = usePathname();
 
-  const colorVariants = {
-    isActive: "text-indigo-600",
-    regular: "text-slate-900",
-  };
-
   const handleScroll: MouseEventHandler<HTMLAnchorElement> = (e) => {
     e.preventDefault();
 
@@ -23,27 +18,32 @@ export function Navbar() {
     elem?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const isDarkBg = navItems[pathname]?.isDarkBg;
+
+  const bgColor = isDarkBg
+    ? "bg-slate-950"
+    : "bg-gradient-to-r from-[#fefde9] to-[#d8e7f9]";
+
+  const textColor = isDarkBg ? "text-white" : "text-slate-900";
+
   return (
-    <nav className="mb-1 h-[80px] w-full z-20">
+    <nav className={`h-[80px] w-full z-20 ${bgColor}`}>
       <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
         <Link
           href="/"
-          className="opacity-70 text-slate-950 text-xl font-bold font-['Inter'] uppercase tracking-wide mr-10"
+          className={`${textColor} opacity-70  text-xl font-bold font-['Inter'] uppercase tracking-wide mr-10`}
         >
           ramonak
         </Link>
 
         <div className="items-center justify-between flex w-auto space-x-10">
           {Object.entries(navItems).map(([path, { name }]) => {
-            const textColor =
-              path === pathname
-                ? colorVariants.isActive
-                : colorVariants.regular;
+            const itemColor = path === pathname ? "text-indigo-600" : textColor;
             return (
               <Link
                 key={path}
                 href={path}
-                className={`${textColor} text-base font-medium font-['Inter'] leading-normal`}
+                className={`${itemColor} text-base font-medium font-['Inter'] leading-normal`}
               >
                 {name}
               </Link>
