@@ -2,24 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MouseEventHandler } from "react";
-
-const navItems = {
-  "/": {
-    name: "Home",
-  },
-  "/about": {
-    name: "About",
-  },
-  "/projects": {
-    name: "Projects",
-  },
-  "/snippets": {
-    name: "Snippets",
-  },
-  "/blog": {
-    name: "Blog",
-  },
-};
+import { navItems } from "../constants/nav";
 
 export function Navbar() {
   const pathname = usePathname();
