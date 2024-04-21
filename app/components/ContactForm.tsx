@@ -19,7 +19,6 @@ export default function ContactForm() {
   } = useForm<Inputs>();
 
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
-    console.log(data);
     await fetch("/api/send", {
       method: "POST",
       body: JSON.stringify(data),

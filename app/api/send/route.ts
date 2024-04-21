@@ -6,7 +6,7 @@ export async function POST(request: Request) {
   const { name, email, description } = await request.json();
   try {
     const data = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "site@ramonak.io",
       to: ["contact@ramonak.io"],
       subject: "New Contact Form Submission!",
       text: `Name: ${name}\nEmail: ${email}\nDescription: ${description}`,
