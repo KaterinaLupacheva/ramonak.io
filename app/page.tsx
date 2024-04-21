@@ -14,7 +14,7 @@ export default function Home() {
       <div className="relative h-screen flex flex-col items-center px-10">
         <Image alt="background image" src="/Background.png" fill />
         <Navbar />
-        <div className="flex z-10 items-center">
+        <div className="flex z-10 items-center h-full">
           <div className="flex flex-col">
             <p className="text-slate-950 text-7xl text-left font-semibold leading-normal">
               Hello, my name is Kate
