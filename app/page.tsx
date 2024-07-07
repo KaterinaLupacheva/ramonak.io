@@ -6,7 +6,6 @@ import Technologies from "./components/Technologies";
 import Portfolio from "./components/Portfolio";
 import Projects from "./components/Projects";
 import ContactForm from "./components/ContactForm";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
