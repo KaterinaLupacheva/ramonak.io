@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function Introduction() {
   return (
     <div className="flex bg-slate-950 pt-40 pl-20">
