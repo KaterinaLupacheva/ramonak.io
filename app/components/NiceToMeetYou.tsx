@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function NiceToMeetYou() {
   return (
     <div className="w-full py-20 bg-slate-950 flex-col justify-start items-start gap-16 inline-flex px-10">
@@ -19,7 +21,7 @@ export default function NiceToMeetYou() {
               </ul>
             </div>
             <p className="text-emerald-400 text-base font-bold font-['Inter'] leading-[30px]">
-              {"> "}Read More
+              <Link href="/about">{"> "}Read More</Link>
             </p>
           </div>
         </div>
