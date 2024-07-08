@@ -5,7 +5,7 @@ import Timeline from "./components/Timeline";
 export default function About() {
   return (
     <>
-      <div className="bg-slate-950">
+      <div className="bg-slate-950 pb-10">
         <Introduction />
         <Timeline />
       </div>

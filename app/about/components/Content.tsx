@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import bankImage from "./images/image_bank.png";
 import programmingImage from "./images/programming.png";
+import javaImage from "./images/java.png";
 
 type ContentItemProps = {
   imageSrc: StaticImageData;
@@ -11,7 +12,7 @@ type ContentItemProps = {
 
 export default async function Content() {
   return (
-    <>
+    <div className="bg-white py-24 h-full px-20">
       <ContentItem imageSrc={bankImage} sectionTitle="Banking Career">
         <p>
           After graduating from Belarussian State Economic University with a
@@ -66,7 +67,41 @@ export default async function Content() {
           development began.
         </p>
       </ContentItem>
-    </>
+      <ContentItem imageSrc={javaImage} sectionTitle="Java Course">
+        <p>
+          I&rsquo;ve wanted to start with a beginner level of Java off-line
+          course. But for that, I needed to have a basic understanding of web
+          technologies (HTML, CSS, how the Internet works, and so on). So I had
+          a crash course on that.
+        </p>
+        <p>
+          Then during the next 6 months, I&rsquo;ve successfully completed the
+          Java Fundamentals course and Java Enterprise course in the Educational
+          Center of HI-Tech Park Belarus (IT Academy). There were lots of hard
+          studies during these 6 months. I&rsquo;d say that it was 95% of
+          self-studies and only 5% of classwork. By the way, I was the only
+          female in the advanced section of the Java course and finished it as
+          the best student in the class!
+        </p>
+        <p>
+          I understood that I really like programming, all this problem-solving
+          thing. But at the same time, it was obvious that Java is mostly
+          required in big tech companies and I definitely didn&rsquo;t want to
+          go back into the corporate world. Besides, when I was working on my
+          final project of the course, I wanted to have a &quot;normal&quot;
+          front-end, although due to assignment it was enough to display results
+          of the back-end queries in a console. I guess I&rsquo;ve tried to use
+          some Java frontend tools like JSP and it was awful!
+        </p>
+        <p>
+          When the Java course was coming to an end, I&rsquo;ve started to think
+          about what should I do next? I had an idea that it would be great to
+          work in a small start-up team. But the problem was that nobody needed
+          a developer with a zero experience. Start-ups require an experienced
+          developer who can bring results fast.
+        </p>
+      </ContentItem>
+    </div>
   );
 }
 
@@ -78,9 +113,7 @@ function ContentItem({
 }: ContentItemProps) {
   return (
     <div
-      className={`h-full flex ${
-        isReverse ? "flex-row-reverse" : "flex-row"
-      } px-20 gap-4 bg-white pt-24`}
+      className={`flex ${isReverse ? "flex-row-reverse" : "flex-row"} gap-4`}
     >
       <div className="w-1/2 flex justify-center items-center p-20">
         <Image src={imageSrc} alt="image" />
