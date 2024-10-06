@@ -1,8 +1,11 @@
 import bankImage from "./images/image_bank.png";
 import programmingImage from "./images/programming.png";
 import javaImage from "./images/java.png";
+import startUpImage from "./images/start-up1.png";
+import startUpImage2 from "./images/start-up2.png";
 import LightContentItem from "./LightContentItem";
 import TwoColumnsContentItem from "./TwoColumnsContentItem";
+import Image from "next/image";
 
 export default async function Content() {
   return (
@@ -128,6 +131,84 @@ export default async function Content() {
           project. And more importantly, the admin panel was doing its job just
           fine.
         </p>
+      </TwoColumnsContentItem>
+      <div className="bg-slate-950 flex justify-center px-20">
+        <Image src={startUpImage} alt="Start-up" />
+      </div>
+      <TwoColumnsContentItem>
+        <div>
+          <p>
+            In April-May 2019 a new start-up project was presented to the lab -
+            weekmenu.by: the app for helping families to make a menu for a week
+            (with recipes) that generates a list of ingredients to be bought
+            once in a week. It was decided to join this new project
+            (weekmenu.by) to the existing project (naakcii.by) and start
+            building an ecosystem Happy Family.
+          </p>
+          <div className="my-4"></div>
+          <p>
+            By that time most of the team members found jobs in tech companies,
+            so a new portion of IT Academy graduates joined the team. I
+            wasn&rsquo;t looking for a job on purpose. I wanted to gain
+            experience in this start-up world and eventually start my own
+            project. BTW, in April-May 2019 I&rsquo;ve attended a Project
+            management course, as I wanted to improve my knowledge base on how
+            to build a process of tech product development in a team.
+          </p>
+        </div>
+        <div>
+          <p>
+            Work on a new project started very enthusiastically. UI/UX design,
+            user stories, app architecture, ideas about integration of two
+            services, and into 3rd parties API. But unfortunately, it lasted not
+            for long. The lab wasn&rsquo;t paying anything to its members. So
+            people were founding a real job pretty quickly and leaving the
+            project.
+          </p>
+          <div className="my-4"></div>
+          <p>
+            The funny thing is that I was the most &quot;experienced&quot;
+            developer of the team at the time. So my responsibilities include
+            app architecture, code review, assistance to other developers. And
+            of course, once again I was developing an admin panel for the
+            project using the Vaadin framework. By the way, in December 2019 I
+            passed an exam and got Vaadin 14 Developer Certificate .
+          </p>
+        </div>
+      </TwoColumnsContentItem>
+      <div className="bg-slate-950 flex justify-center px-20">
+        <Image src={startUpImage2} alt="Start-up" />
+      </div>
+      <TwoColumnsContentItem>
+        <div>
+          <p>
+            Well, things were moving very slowly. More and more people were
+            leaving the project as they were lacking motivation. The most
+            problem was in finding front-end developers, specifically Angular
+            developers, as the first project (naakcii.by) was developed with
+            Angular, so our mentor had a strong opinion that to integrate two
+            projects they should use the same tech stack (I completely disagree
+            with that). Unfortunately, gradually, the work on the projects
+            completely stopped.
+          </p>
+        </div>
+        <div>
+          <p className="text-[#43D9AD] font-bold mb-4">
+            What I&apos;ve learned working on two start-up projects:
+          </p>
+          <ul className="list-disc pl-5">
+            <li>
+              Improved my tech skills in Spring Boot, Vaadin, PostgreSQL, Git,
+              Bitbucket, Jira
+            </li>
+            <li>
+              Gained experience in remote work with a team of developers on real
+              projects
+            </li>
+            <li>Saw how Scrum methodology looks like in practice</li>
+            <li>Met a lot of new really nice people</li>
+          </ul>
+        </div>
       </TwoColumnsContentItem>
     </>
   );

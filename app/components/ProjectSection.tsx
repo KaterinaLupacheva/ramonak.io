@@ -19,7 +19,9 @@ export default function ProjectSection({
 }: ProjectSectionProps) {
   return (
     <div
-      className={`flex items-center gap-24 ${isReversed && "flex-row-reverse"}`}
+      className={`flex items-center gap-24 ${
+        isReversed && "flex-row-reverse"
+      } pr-4`}
     >
       <div className={`w-1/2 ${isReversed ? "pr-28" : "pl-28"}`}>
         <div className="flex">
