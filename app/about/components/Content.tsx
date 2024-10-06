@@ -3,6 +3,8 @@ import programmingImage from "./images/programming.png";
 import javaImage from "./images/java.png";
 import startUpImage from "./images/start-up1.png";
 import startUpImage2 from "./images/start-up2.png";
+import javascriptImage from "./images/javascript.png";
+import freelanceImage from "./images/freelance.png";
 import LightContentItem from "./LightContentItem";
 import TwoColumnsContentItem from "./TwoColumnsContentItem";
 import Image from "next/image";
@@ -210,6 +212,66 @@ export default async function Content() {
           </ul>
         </div>
       </TwoColumnsContentItem>
+      <div className="bg-white py-24 px-20">
+        <LightContentItem
+          imageSrc={javascriptImage}
+          sectionTitle="Learning JavaScript"
+          isReverse
+        >
+          <p>
+            In the meantime, I was starting to look at freelance job
+            opportunities. But with my tech stack (Java) it was practically
+            impossible to compete with experienced developers. So I decided to
+            switch my programming language preferences and start learning
+            front-end technologies: Javascript and then React.
+          </p>
+          <p>
+            At the end of October 2019, I&rsquo;ve started to learn JavaScript.
+            For me, it was way easier to learn JavaScript than Java. Maybe
+            because it was a second programming language for me. But overall
+            after &quot;heavy&quot; and strict Java, JavaScript was like fresh
+            air. And you can use JavaScript (Node.js) for a back-end too!
+          </p>
+          <p>
+            After learning JavaScript fundamentals I moved to React.js. Why did
+            I choose React.js? Once again, because it&rsquo;s the most popular
+            JavaScript library. I was having sooooo much fun learning React! You
+            know, in Java you can&rsquo;t see the results of your work visually.
+            And React is all about UI.
+          </p>
+        </LightContentItem>
+        <LightContentItem
+          imageSrc={freelanceImage}
+          sectionTitle="Preparing For Freelance"
+        >
+          <p>
+            I&rsquo;ve read several articles of experienced freelancers, where
+            the main message was that you should start to find jobs as soon as
+            possible and learning during the process of working on it. I
+            didn&rsquo;t feel that it&rsquo;s the right way for me. I
+            can&rsquo;t take a job if I don&rsquo;t feel that I can accomplish
+            it.
+          </p>
+          <p>
+            I&rsquo;ve decided to practice my front-end skills while developing
+            apps and tools, that I needed in my everyday life. For example, a
+            fitness app Tabata App for my personal training, a Financial manager
+            app - to keep track of our family incomes and expenses, a Celebrity
+            recognition app just for fun.
+          </p>
+          <p>
+            Later I&rsquo;ve decided to try to develop a well-know for me thing
+            - admin panels and dashboards. But this time using React. Vaadin is
+            a great tool. You can create a nice dashboard pretty easy and fast
+            using an array of Vaadin&rsquo;s components. But it&rsquo;s become
+            quite challenging to create a dashboard with more custom design.
+            With React you can build whatever you like (UI wise), the sky and
+            your imagination is the limit. So, I&rsquo;ve developed several
+            dashboards, like GitHub Dashboard, Coffee Shop Dashboard, Google
+            Analytics Dashboard.
+          </p>
+        </LightContentItem>
+      </div>
     </>
   );
 }
