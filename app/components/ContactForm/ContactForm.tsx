@@ -1,7 +1,7 @@
 "use client";
+import { useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import TextInput from "../TextInput/TextInput";
-import { useState } from "react";
 import styles from "./ContactForm.module.css";
 
 export type Inputs = {
@@ -34,10 +34,10 @@ export default function ContactForm() {
   return (
     <section className={styles.section} id="contact-form">
       <div className={styles.header}>
-        <h3 className={styles.eyebrow}>Contact us</h3>
+        <h3 className={styles.eyebrow}>Contact</h3>
         <p className={styles.title}>Get in touch</p>
         <p className={styles.description}>
-          I’d love to hear from you. Please fill out this form.
+          Have a role, product, or collaboration in mind? Send me a message.
         </p>
       </div>
       <div className={styles.formWrap}>

@@ -1,0 +1,179 @@
+.container {
+  display: grid;
+  gap: 0;
+  padding: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 2rem;
+  background: rgba(248, 250, 252, 0.78);
+  box-shadow: var(--shadow-card);
+}
+
+/* Tab bar */
+
+.tabBar {
+  display: flex;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  margin-bottom: 1.75rem;
+  overflow-x: auto;
+}
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.75rem 1.5rem 0.875rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  margin-bottom: -1px;
+  text-align: left;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  color: var(--color-text-muted);
+}
+
+.tab:hover {
+  color: var(--color-text);
+}
+
+.tabActive {
+  color: var(--color-text);
+  border-bottom-color: var(--color-primary);
+}
+
+.tabEyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.tabActive .tabEyebrow {
+  opacity: 1;
+}
+
+.tabLabel {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Panel */
+
+.panel {
+  display: grid;
+  gap: 1rem;
+}
+
+.surfaceHeader {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.eyebrow {
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.surfaceTitle {
+  font-size: 1.75rem;
+  line-height: 1.05;
+}
+
+.summary {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.context {
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+/* Details grid */
+
+.details {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.block {
+  display: grid;
+  gap: 0.75rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.blockTitle {
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.list {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.listItem {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--color-text-muted);
+}
+
+/* Stack tags — smaller/lighter than capability pills */
+
+.stackList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.stackItem {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 500;
+}
+
+@media (max-width: 980px) {
+  .details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .tab {
+    padding: 0.6rem 1rem 0.75rem;
+  }
+
+  .tabLabel {
+    font-size: 0.875rem;
+  }
+}

@@ -3,8 +3,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 3rem 1.5rem;
-  background: #f2f4f7;
+  padding: 4rem 1.5rem;
+  background: linear-gradient(
+    180deg,
+    rgba(241, 245, 249, 0.7),
+    rgba(248, 250, 252, 0.92)
+  );
 }
 
 .header {
@@ -12,31 +16,40 @@
   width: min(100%, 40rem);
   flex-direction: column;
   align-items: center;
+  padding-bottom: 3rem;
   text-align: center;
-  padding-bottom: 4rem;
 }
 
 .eyebrow {
-  color: #4f46e5;
-  font-size: 1rem;
-  font-weight: 600;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .title {
   padding: 1rem 0;
-  color: #111827;
-  font-size: clamp(2.5rem, 5vw, 3rem);
+  color: var(--color-text);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
   font-weight: 600;
+  line-height: 1;
 }
 
 .description {
   color: var(--color-text-muted);
-  font-size: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1.7;
 }
 
 .formWrap {
   width: 100%;
   max-width: 34.375rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 1.5rem;
+  background: rgba(248, 250, 252, 0.82);
+  box-shadow: var(--shadow-soft);
 }
 
 .field {
@@ -46,27 +59,27 @@
 .label {
   display: block;
   margin-bottom: 0.75rem;
-  color: #07074d;
+  color: var(--color-text);
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .textarea {
   width: 100%;
   min-height: 8rem;
   resize: vertical;
-  border: 1px solid #e0e0e0;
+  border: 1px solid rgba(15, 23, 42, 0.1);
   border-radius: var(--radius-md);
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.9);
   padding: 0.75rem 1.5rem;
-  color: #6b7280;
+  color: var(--color-text);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .textarea:focus {
-  border-color: #6a64f1;
-  box-shadow: 0 10px 25px rgba(106, 100, 241, 0.15);
+  border-color: var(--color-primary);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
 }
 
 .error {
@@ -88,7 +101,7 @@
 
 .submit:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 30px rgba(77, 91, 206, 0.22);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
 }
 
 .success {

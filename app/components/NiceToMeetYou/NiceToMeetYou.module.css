@@ -13,7 +13,7 @@
 }
 
 .eyebrow {
-  color: var(--pink-color);
+  color: var(--color-text-muted);
   font-size: 1rem;
   font-weight: 600;
   text-transform: uppercase;

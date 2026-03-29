@@ -1,21 +1,21 @@
 :root {
   --color-text: #0f172a;
-  --color-text-muted: #667085;
-  --color-surface: #ffffff;
-  --color-surface-alt: #f2f4f7;
-  --color-surface-dark: #020617;
-  --color-border: #d0d5dd;
-  --color-primary: #4d5bce;
-  --color-primary-dark: #3c47aa;
+  --color-text-muted: #64748b;
+  --color-surface: #f8fafc;
+  --color-surface-alt: #f1f5f9;
+  --color-surface-strong: #e2e8f0;
+  --color-surface-dark: #0f172a;
+  --color-border: rgba(15, 23, 42, 0.1);
+  --color-primary: #0f172a;
+  --color-primary-dark: #1e293b;
   --color-success: #22c55e;
   --color-success-dark: #43d9ad;
-  --page-gradient: linear-gradient(90deg, #fefde9 0%, #d8e7f9 100%);
-  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
-  --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.08);
+  --page-gradient: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.06);
+  --shadow-card: 0 28px 50px rgba(15, 23, 42, 0.09);
   --radius-md: 0.75rem;
-  --radius-lg: 1rem;
+  --radius-lg: 1.5rem;
   --content-width: 1200px;
-  --pink-color: #ff96bb;
 }
 
 * {
@@ -40,9 +40,17 @@ figure {
 
 body {
   color: var(--color-text);
-  background: var(--color-surface);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f8fafc;
+  font-family: var(--font-sans), sans-serif;
   line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.03em;
 }
 
 body > main {
