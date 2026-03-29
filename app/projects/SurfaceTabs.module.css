@@ -65,12 +65,12 @@
 
 .panel {
   display: grid;
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .surfaceHeader {
   display: grid;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .eyebrow {
@@ -89,31 +89,34 @@
 .summary {
   font-size: 1.05rem;
   line-height: 1.75;
-  color: var(--color-text-muted);
+  color: var(--color-text);
+  max-width: 48rem;
 }
 
 .context {
   font-size: 0.95rem;
   line-height: 1.75;
   color: var(--color-text-muted);
+  max-width: 52rem;
 }
 
 /* Details grid */
 
 .details {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-  gap: 1rem;
-  margin-top: 0.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0.9rem;
+  margin-top: 0.35rem;
 }
 
 .block {
   display: grid;
   gap: 0.75rem;
-  padding: 1rem 1.15rem;
+  padding: 1rem 1.15rem 1.1rem;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 1.25rem;
   background: rgba(255, 255, 255, 0.48);
+  max-width: 52rem;
 }
 
 .blockTitle {
@@ -124,43 +127,24 @@
   text-transform: uppercase;
 }
 
-.list {
-  display: grid;
-  gap: 0.6rem;
-  margin: 0;
-  padding-left: 1.1rem;
-}
-
-.listItem {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: var(--color-text-muted);
-}
-
-/* Stack tags — smaller/lighter than capability pills */
+/* Stack tags */
 
 .stackList {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .stackItem {
   display: inline-flex;
   align-items: center;
-  padding: 0.2rem 0.6rem;
+  padding: 0.32rem 0.72rem;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.6);
   color: var(--color-text-muted);
-  font-size: 0.78rem;
-  font-weight: 500;
-}
-
-@media (max-width: 980px) {
-  .details {
-    grid-template-columns: 1fr;
-  }
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {
@@ -175,5 +159,17 @@
 
   .tabLabel {
     font-size: 0.875rem;
+  }
+
+  .surfaceTitle {
+    font-size: 1.5rem;
+  }
+
+  .summary {
+    font-size: 1rem;
+  }
+
+  .context {
+    font-size: 0.92rem;
   }
 }

@@ -87,6 +87,17 @@ export default function ProjectsPage() {
 
                 <p className={styles.summary}>{project.summary}</p>
                 <p className={styles.context}>{project.context}</p>
+
+                <div className={styles.highlightsBlock}>
+                  <h3 className={styles.highlightsTitle}>Highlights</h3>
+                  <ul className={styles.highlightsList}>
+                    {project.highlights.map((item) => (
+                      <li key={item} className={styles.highlightsItem}>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
 

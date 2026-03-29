@@ -29,9 +29,9 @@ export const projectGroups: ProjectGroup[] = [
     title: "StoreHero",
     eyebrow: "Ecommerce analytics company",
     summary:
-      "A multi-tenant ecommerce analytics product family focused on profitability, LTV, marketing performance, store operations, and integration-heavy merchant workflows.",
+      "A multi-tenant ecommerce analytics product family focused on profitability, LTV, marketing performance, and integration-heavy merchant workflows.",
     context:
-      "Work spanning both the merchant-facing analytics platform and the internal admin tooling — covering product UX, analytics complexity, multi-tenant architecture, and operational depth.",
+      "I am currently working across both the merchant-facing analytics platform and the internal admin tooling, covering product UX, analytics complexity, multi-tenant architecture, and operational depth.",
     image: "/images/storehero.png",
     links: [
       {
@@ -40,9 +40,9 @@ export const projectGroups: ProjectGroup[] = [
       },
     ],
     highlights: [
-      "Worked inside a multi-tenant product architecture with store-based tenancy, agency relationships, RBAC, protected routes, and operational tooling.",
-      "Contributed across an integration surface spanning Shopify, Rutter, Meta Ads, Google Ads, TikTok Ads, Klaviyo, GA4, SendGrid, Stripe, and multiple AWS services.",
-      "Supported product capabilities such as ETL processing, async data sync flows, exports, whitelabeling, caching, and PWA support.",
+      "I work inside a multi-tenant product architecture with store-based tenancy, agency relationships, RBAC, protected routes, and operational tooling.",
+      "I contribute across an integration surface spanning Shopify, Meta Ads, Google Ads, TikTok Ads, Klaviyo, GA4, SendGrid, and multiple AWS services.",
+      "I support product capabilities such as ETL processing, async data sync flows, exports, whitelabeling, caching, and PWA support.",
     ],
     surfaces: [
       {
@@ -54,9 +54,10 @@ export const projectGroups: ProjectGroup[] = [
         context:
           "This side of the product combines analytics-heavy UX, reporting logic, AI-assisted workflows, and a large external integration surface.",
         highlights: [
-          "Contributed to AI-assisted analytics features with streaming chat, structured insight outputs, forecasting-related tooling, and metric-oriented recommendations.",
-          "Built within a hybrid Next.js setup using React, TypeScript, Prisma, PostgreSQL, DynamoDB, Vercel KV, and AWS services.",
-          "Worked on exports, reporting surfaces, and complex merchant-facing product flows shaped by ecommerce and marketing data.",
+          "I build merchant-facing features shaped by ecommerce and marketing data coming from Shopify, ad platforms, analytics tools, and related systems.",
+          "I contribute to AI-assisted analytics features with streaming chat, structured insight outputs, forecasting-related tooling, and metric-oriented recommendations.",
+          "I work within a hybrid Next.js setup using React, TypeScript, Prisma, PostgreSQL, DynamoDB, Vercel KV, and AWS services.",
+          "I work on exports, reporting surfaces, and complex product flows around profitability, LTV, and channel performance.",
         ],
         stack: [
           "Next.js",
@@ -82,14 +83,14 @@ export const projectGroups: ProjectGroup[] = [
         context:
           "Internal tooling for managing stores, sync queues, multi-tenant controls, feature flags, presigned file uploads, and platform operations.",
         highlights: [
-          "Built with Next.js 16 App Router, React 19, and TypeScript 5.",
-          "Used TanStack React Query, Prisma, PostgreSQL, Server Actions, and REST routes for admin data and operational workflows.",
-          "Worked with NextAuth v5, presigned file uploads, async sync queues, feature flags, and agency/store separation.",
+          "I build this surface with Next.js 16 App Router, React 19, and TypeScript 5.",
+          "I use TanStack React Query, Prisma, PostgreSQL, Server Actions, and REST routes for admin data and operational workflows.",
+          "I work with NextAuth v5, presigned file uploads, async sync queues, feature flags, and agency/store separation.",
         ],
         stack: [
           "Next.js 16",
           "React 19",
-          "TypeScript 5",
+          "TypeScript",
           "MUI",
           "Styled Components",
           "Emotion",
@@ -106,11 +107,11 @@ export const projectGroups: ProjectGroup[] = [
   {
     slug: "matics",
     title: "Matics",
-    eyebrow: "Manufacturing software company",
+    eyebrow: "Manufacturing operations platform",
     summary:
       "A manufacturing operations product family centered on real-time monitoring, planning, scheduling, dashboards, and decision-making across industrial environments.",
     context:
-      "Work spanning both the core frontend platform and the real-time cockpit — covering dense data visualization, live operations, multilingual UX, and enterprise authentication.",
+      "I am currently working across both the core frontend platform and the real-time cockpit, covering dense data visualization, live operations, multilingual UX, and enterprise authentication.",
     image: "/images/matics.png",
     links: [
       {
@@ -119,9 +120,9 @@ export const projectGroups: ProjectGroup[] = [
       },
     ],
     highlights: [
-      "Built interfaces for operational data, planning, charts, scheduling, diagrams, and decision-making workflows in manufacturing contexts.",
-      "Worked across strict TypeScript codebases, real-time data patterns, enterprise auth, multilingual products, and PWA-related concerns.",
-      "Used advanced UI and visualization libraries to support high-density operational workflows without sacrificing usability.",
+      "I build interfaces for operational data, planning, charts, scheduling, diagrams, and decision-making workflows in manufacturing contexts.",
+      "I work across strict TypeScript codebases, real-time data patterns, enterprise auth, multilingual products, and PWA-related concerns.",
+      "I use advanced UI and visualization libraries to support high-density operational workflows without sacrificing usability.",
     ],
     surfaces: [
       {
@@ -133,23 +134,19 @@ export const projectGroups: ProjectGroup[] = [
         context:
           "Dense visualization, advanced interaction patterns, feature-based architecture, and a React app embedded into a legacy Angular shell.",
         highlights: [
-          "Built charts, scheduling views, tables, virtualized lists, diagrams, drag-and-drop flows, and form-heavy operational interfaces.",
-          "Worked with React 18, strict TypeScript, Redux Toolkit, Redux-Saga, and a feature-based architecture.",
-          "Integrated Highcharts, React-Google-Charts, Bryntum Gantt, React Flow, React Big Calendar, and a React app embedded into a legacy Angular shell.",
+          "I build charts, scheduling views, tables, virtualized lists, diagrams, drag-and-drop flows, and form-heavy operational interfaces.",
+          "I work with React 18, strict TypeScript, Redux Toolkit, Redux-Saga, and a feature-based architecture.",
+          "I integrate Highcharts, React-Google-Charts, Bryntum Gantt, React Flow, React Big Calendar, and a React app embedded into a legacy Angular shell.",
         ],
         stack: [
           "React 18",
           "TypeScript",
           "Redux Toolkit",
-          "Redux-Saga",
           "Styled Components",
           "MUI",
           "Highcharts",
           "React Flow",
-          "Bryntum Gantt",
           "React Hook Form",
-          "Vitest",
-          "Webpack 5",
         ],
       },
       {
@@ -159,25 +156,22 @@ export const projectGroups: ProjectGroup[] = [
         summary:
           "A PWA for factory-floor monitoring, live production status, machine operations, job assignments, quality tracking, and KPI visibility.",
         context:
-          "Real-time factory monitoring with enterprise authentication (Azure AD, MSAL, Okta), offline/PWA support, and interfaces designed for fast-moving operational data.",
+          "Real-time factory monitoring with enterprise authentication, offline/PWA support, and interfaces designed for fast-moving operational data.",
         highlights: [
-          "Built with React 18, TypeScript 5.7, Vite 6, Redux Toolkit, and React Router 6.",
-          "Used SignalR for live bidirectional updates and Axios interceptors for authentication and timezone handling.",
-          "Worked with Azure Active Directory, MSAL, Okta, reCAPTCHA, 30+ languages, and Workbox-backed PWA capabilities.",
+          "I build this PWA with React 18, TypeScript 5.7, Vite 6, Redux Toolkit, and React Router 6.",
+          "I use SignalR for live bidirectional updates and Axios interceptors for authentication and timezone handling.",
+          "I work with Azure Active Directory, MSAL, Okta, reCAPTCHA, 30+ languages, and Workbox-backed PWA capabilities.",
         ],
         stack: [
           "React 18",
-          "TypeScript 5.7",
-          "Vite 6",
+          "TypeScript",
+          "Vite",
           "Redux Toolkit",
           "React Router 6",
-          "SignalR",
           "Axios",
           "Highcharts",
           "dnd-kit",
           "i18next",
-          "Workbox",
-          "Express",
         ],
       },
     ],

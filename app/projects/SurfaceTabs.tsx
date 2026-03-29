@@ -32,28 +32,15 @@ export default function SurfaceTabs({
       )}
 
       <div className={styles.panel} role="tabpanel">
-        {!hasTabs && (
-          <div className={styles.surfaceHeader}>
-            <p className={styles.eyebrow}>{surface.eyebrow}</p>
-            <h3 className={styles.surfaceTitle}>{surface.title}</h3>
-          </div>
-        )}
+        <div className={styles.surfaceHeader}>
+          <p className={styles.eyebrow}>{surface.eyebrow}</p>
+          <h3 className={styles.surfaceTitle}>{surface.title}</h3>
+        </div>
 
         <p className={styles.summary}>{surface.summary}</p>
         <p className={styles.context}>{surface.context}</p>
 
         <div className={styles.details}>
-          <div className={styles.block}>
-            <h4 className={styles.blockTitle}>Highlights</h4>
-            <ul className={styles.list}>
-              {surface.highlights.map((item) => (
-                <li key={item} className={styles.listItem}>
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </div>
-
           <div className={styles.block}>
             <h4 className={styles.blockTitle}>Core stack</h4>
             <div className={styles.stackList}>
