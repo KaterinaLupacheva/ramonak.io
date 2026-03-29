@@ -1,6 +1,6 @@
 "use client";
 import { SubmitHandler, useForm } from "react-hook-form";
-import TextInput from "./TextInput";
+import TextInput from "../TextInput/TextInput";
 import { useState } from "react";
 import styles from "./ContactForm.module.css";
 

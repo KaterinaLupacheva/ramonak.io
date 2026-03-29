@@ -1,5 +1,5 @@
 import { UseFormRegister } from "react-hook-form";
-import { Inputs } from "./ContactForm";
+import { Inputs } from "../ContactForm/ContactForm";
 import styles from "./TextInput.module.css";
 
 type TextInputProps = {

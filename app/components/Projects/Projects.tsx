@@ -1,4 +1,4 @@
-import ProjectSection from "./ProjectSection";
+import ProjectSection from "../ProjectSection/ProjectSection";
 import styles from "./Projects.module.css";
 
 export default function Projects() {

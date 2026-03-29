@@ -1,4 +1,4 @@
-import TechnologyCard from "./TechnologyCard";
+import TechnologyCard from "../TechnologyCard/TechnologyCard";
 import styles from "./Technologies.module.css";
 
 const techs = [

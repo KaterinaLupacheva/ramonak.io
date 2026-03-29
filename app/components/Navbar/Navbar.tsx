@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MouseEventHandler } from "react";
-import { navItems } from "../constants/nav";
+import { navItems } from "../../constants/nav";
 import styles from "./Navbar.module.css";
 
 export function Navbar() {

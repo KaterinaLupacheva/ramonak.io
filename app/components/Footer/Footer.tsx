@@ -1,8 +1,8 @@
 import Link from "next/link";
-import { navItems } from "../constants/nav";
-import { socials } from "../constants/social";
+import { navItems } from "../../constants/nav";
+import { socials } from "../../constants/social";
 import Image from "next/image";
-import ScrollToTop from "./ScrollToTop";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 import styles from "./Footer.module.css";
 
 export default function Footer() {

@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Social from "./components/Social";
-import NiceToMeetYou from "./components/NiceToMeetYou";
-import Technologies from "./components/Technologies";
-import Portfolio from "./components/Portfolio";
-import Projects from "./components/Projects";
-import ContactForm from "./components/ContactForm";
+import Social from "./components/Social/Social";
+import NiceToMeetYou from "./components/NiceToMeetYou/NiceToMeetYou";
+import Technologies from "./components/Technologies/Technologies";
+import Portfolio from "./components/Portfolio/Portfolio";
+import Projects from "./components/Projects/Projects";
+import ContactForm from "./components/ContactForm/ContactForm";
 import styles from "./page.module.css";
 
 export default function Home() {

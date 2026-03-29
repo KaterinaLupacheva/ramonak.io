@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { socials } from "../constants/social";
+import { socials } from "../../constants/social";
 import styles from "./Social.module.css";
 
 export default function Social() {
