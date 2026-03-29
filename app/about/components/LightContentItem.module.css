@@ -1,0 +1,62 @@
+.section {
+  display: flex;
+  gap: 1rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  padding: 5rem;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.content {
+  width: 50%;
+  color: var(--color-text);
+}
+
+.content h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.content p,
+.content ul {
+  color: #344054;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.content p + p,
+.content ul,
+.content ul + p {
+  margin-top: 1rem;
+}
+
+.content ul {
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .section,
+  .reverse {
+    flex-direction: column;
+  }
+
+  .media,
+  .content {
+    width: 100%;
+    padding: 0;
+  }
+}

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { MouseEventHandler } from "react";
 import { navItems } from "../constants/nav";
+import styles from "./Navbar.module.css";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -19,45 +20,34 @@ export function Navbar() {
   };
 
   const isDarkBg = navItems[pathname]?.isDarkBg;
-
-  const bgColor = isDarkBg
-    ? "bg-slate-950"
-    : "bg-gradient-to-r from-[#fefde9] to-[#d8e7f9]";
-
-  const textColor = isDarkBg ? "text-white" : "text-slate-900";
+  const navClassName = [styles.nav, isDarkBg ? styles.dark : styles.light].join(
+    " ",
+  );
+  const textColor = isDarkBg ? styles.lightText : styles.darkText;
 
   return (
-    <nav className={`h-[80px] w-full z-20 ${bgColor}`}>
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-        <Link
-          href="/"
-          className={`${textColor} opacity-70  text-xl font-bold font-['Inter'] uppercase tracking-wide mr-10`}
-        >
+    <nav className={navClassName}>
+      <div className={styles.inner}>
+        <Link href="/" className={[styles.brand, textColor].join(" ")}>
           ramonak
         </Link>
 
-        <div className="items-center justify-between flex w-auto space-x-10">
+        <div className={styles.links}>
           {Object.entries(navItems).map(([path, { name }]) => {
-            const itemColor = path === pathname ? "text-indigo-600" : textColor;
+            const itemColor = path === pathname ? styles.active : textColor;
             return (
               <Link
                 key={path}
                 href={path}
-                className={`${itemColor} text-base font-medium font-['Inter'] leading-normal`}
+                className={[styles.link, itemColor].join(" ")}
               >
                 {name}
               </Link>
             );
           })}
         </div>
-        <a
-          href="#contact-form"
-          onClick={handleScroll}
-          className="px-[18px] py-[10px] bg-indigo-600 rounded-lg shadow border border-indigo-600 justify-center items-center gap-2 flex ml-20"
-        >
-          <div className="text-white text-base font-medium font-['Inter'] leading-normal">
-            Contact Me
-          </div>
+        <a href="#contact-form" onClick={handleScroll} className={styles.cta}>
+          <span>Contact Me</span>
         </a>
       </div>
     </nav>

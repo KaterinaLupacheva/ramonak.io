@@ -1,28 +1,76 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --pink-color: #FF96BB;
+  --color-text: #0f172a;
+  --color-text-muted: #667085;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f2f4f7;
+  --color-surface-dark: #020617;
+  --color-border: #d0d5dd;
+  --color-primary: #4d5bce;
+  --color-primary-dark: #3c47aa;
+  --color-success: #22c55e;
+  --color-success-dark: #43d9ad;
+  --page-gradient: linear-gradient(90deg, #fefde9 0%, #d8e7f9 100%);
+  --shadow-soft: 0 12px 30px rgba(15, 23, 42, 0.08);
+  --shadow-card: 0 20px 45px rgba(15, 23, 42, 0.08);
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --content-width: 1200px;
+  --pink-color: #ff96bb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure {
+  margin: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--color-text);
+  background: var(--color-surface);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+body > main {
+  display: flex;
+  min-height: 100vh;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
 }

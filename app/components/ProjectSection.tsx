@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from "./ProjectSection.module.css";
 
 type ProjectSectionProps = {
   title: string;
@@ -17,20 +18,24 @@ export default function ProjectSection({
   image,
   isReversed,
 }: ProjectSectionProps) {
+  const sectionClassName = [styles.section, isReversed ? styles.reversed : ""]
+    .filter(Boolean)
+    .join(" ");
+  const copyClassName = [
+    styles.copy,
+    isReversed ? styles.copyReversed : styles.copyDefault,
+  ].join(" ");
+
   return (
-    <div
-      className={`flex items-center gap-24 ${
-        isReversed && "flex-row-reverse"
-      } pr-4`}
-    >
-      <div className={`w-1/2 ${isReversed ? "pr-28" : "pl-28"}`}>
-        <div className="flex">
-          <p className="text-gray-900 font-bold text-2xl">{title}</p>
+    <div className={sectionClassName}>
+      <div className={copyClassName}>
+        <div className={styles.header}>
+          <p className={styles.title}>{title}</p>
           <a
             href={href}
             rel="noopener noreferrer"
             target="_blank"
-            className="w-12 h-12 ml-1 text-gray"
+            className={styles.link}
           >
             <Image
               src="/icons/openInNewTab.svg"
@@ -40,15 +45,16 @@ export default function ProjectSection({
             />
           </a>
         </div>
-        <p className="text-gray-500 text-lg pt-2">{description}</p>
-        <p className="text-[#4D5BCE] text-lg pt-2 font-semi">{period}</p>
+        <p className={styles.description}>{description}</p>
+        <p className={styles.period}>{period}</p>
       </div>
-      <div className="w-1/2">
+      <div className={styles.imageWrap}>
         <Image
           src={`/images/${image}.png`}
           alt="Open in new tab"
           width={768}
           height={512}
+          className={styles.image}
         />
       </div>
     </div>

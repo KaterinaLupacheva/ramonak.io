@@ -1,0 +1,24 @@
+.section {
+  display: flex;
+  justify-content: center;
+  padding: 10rem 1.5rem 0;
+  background: var(--color-surface-dark);
+}
+
+.inner {
+  width: min(100%, var(--content-width));
+  text-align: left;
+}
+
+.line {
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.mobile {
+  color: #4ade80;
+}
+
+.web {
+  color: #f472b6;
+}

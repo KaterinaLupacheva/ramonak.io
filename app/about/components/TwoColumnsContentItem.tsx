@@ -1,3 +1,5 @@
+import styles from "./TwoColumnsContentItem.module.css";
+
 type TwoColumnsContentItemProps = {
   sectionTitle?: string;
   children: React.ReactNode;
@@ -8,9 +10,11 @@ export default function TwoColumnsContentItem({
   children,
 }: TwoColumnsContentItemProps) {
   return (
-    <div className="flex flex-col items-center justify-center bg-slate-950 py-24 px-20 text-white">
-      <h2 className="text-2xl mb-8 text-center">{sectionTitle}</h2>
-      <div className="grid grid-cols-2 gap-4 text-base">{children}</div>
-    </div>
+    <section className={styles.section}>
+      <div className={styles.inner}>
+        {sectionTitle ? <h2 className={styles.title}>{sectionTitle}</h2> : null}
+        <div className={styles.grid}>{children}</div>
+      </div>
+    </section>
   );
 }

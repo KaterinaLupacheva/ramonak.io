@@ -1,8 +1,9 @@
 import ProjectSection from "./ProjectSection";
+import styles from "./Projects.module.css";
 
 export default function Projects() {
   return (
-    <div className="flex flex-col py-24 bg-white gap-24">
+    <section className={styles.section}>
       {myProjects.map((section, idx) => (
         <ProjectSection
           key={section.title}
@@ -10,7 +11,7 @@ export default function Projects() {
           isReversed={idx % 2 !== 0}
         />
       ))}
-    </div>
+    </section>
   );
 }
 

@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { socials } from "../constants/social";
+import styles from "./Social.module.css";
 
 export default function Social() {
   return (
-    <ul className="w-[336px] h-12 justify-start items-start gap-6 inline-flex z-10 pt-10">
+    <ul className={styles.list}>
       {socials.map((social) => (
         <SocialItem key={social.icon} {...social} />
       ))}
@@ -24,7 +25,7 @@ function SocialItem({ icon, href, alt }: SocialItemProps) {
         href={href}
         rel="noopener noreferrer"
         target="_blank"
-        className="w-12 h-12 bg-slate-950 bg-opacity-10 rounded-full justify-center items-center inline-flex"
+        className={styles.link}
       >
         <Image
           src={`/icons/${icon}.svg`}

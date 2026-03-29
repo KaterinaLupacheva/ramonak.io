@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from "./TechnologyCard.module.css";
 
 type TechnologyCardProps = {
   name: string;
@@ -12,15 +13,11 @@ export default function TechnologyCard({
   icon,
 }: TechnologyCardProps) {
   return (
-    <div className="p-6 bg-gray-100 rounded-lg flex-col justify-start items-start inline-flex">
+    <div className={styles.card}>
       <Image src={icon} alt={name} width={48} height={48} />
-      <div className="self-stretch flex-col justify-start items-start gap-2 flex">
-        <div className="self-stretch text-slate-900 text-xl font-semibold font-['Inter'] leading-[30px]">
-          {name}
-        </div>
-        <div className="self-stretch text-indigo-600 text-base font-normal font-['Fira Code'] leading-normal">
-          {description}
-        </div>
+      <div className={styles.content}>
+        <div className={styles.title}>{name}</div>
+        <div className={styles.description}>{description}</div>
       </div>
     </div>
   );

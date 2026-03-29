@@ -1,0 +1,9 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroSection {
+  background: var(--color-surface-dark);
+  padding-bottom: 2.5rem;
+}

@@ -1,4 +1,5 @@
 import TechnologyCard from "./TechnologyCard";
+import styles from "./Technologies.module.css";
 
 const techs = [
   {
@@ -28,20 +29,18 @@ const techs = [
 
 export default function Technologies() {
   return (
-    <div className="w-full py-24 bg-white flex-col justify-start gap-8 inline-flex px-10">
-      <div className="h-20 px-8 flex-col justify-start items-start flex">
-        <div className="self-stretch text-[color:var(--pink-color)] text-base font-semibold font-['Inter'] uppercase leading-normal pb-2">
-          Tech stack
+    <section className={styles.section}>
+      <div className={styles.inner}>
+        <div className={styles.header}>
+          <div className={styles.eyebrow}>Tech stack</div>
+          <p className={styles.title}>Technologies I use</p>
         </div>
-        <p className="self-stretch text-gray-900 text-4xl font-semibold font-['Inter']">
-          Technologies I use
-        </p>
+        <div className={styles.grid}>
+          {techs.map((tech) => (
+            <TechnologyCard key={tech.name} {...tech} />
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 auto-rows-fr gap-8 px-8">
-        {techs.map((tech) => (
-          <TechnologyCard key={tech.name} {...tech} />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 }

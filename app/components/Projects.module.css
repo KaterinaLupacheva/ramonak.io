@@ -1,0 +1,7 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  padding: 6rem 0;
+  background: var(--color-surface);
+}

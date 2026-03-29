@@ -1,0 +1,52 @@
+.lightSection {
+  background: var(--color-surface);
+  padding: 6rem 1.5rem;
+}
+
+.lightInner,
+.imageBandInner {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+.lightInner {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.imageBand {
+  display: flex;
+  justify-content: center;
+  background: var(--color-surface-dark);
+  padding: 0 1.5rem;
+}
+
+.bandImage {
+  width: 100%;
+  height: auto;
+}
+
+.spacer {
+  height: 1rem;
+}
+
+.accentTitle {
+  margin-bottom: 1rem;
+  color: var(--color-success-dark);
+  font-weight: 700;
+}
+
+.list {
+  padding-left: 1.25rem;
+}
+
+.list li + li {
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .lightSection {
+    padding: 4rem 1.5rem;
+  }
+}

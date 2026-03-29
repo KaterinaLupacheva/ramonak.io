@@ -1,0 +1,31 @@
+.field {
+  margin-bottom: 1.25rem;
+}
+
+.label {
+  display: block;
+  margin-bottom: 0.75rem;
+  color: #07074d;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--radius-md);
+  background: #ffffff;
+  padding: 0.75rem 1.5rem;
+  color: #6b7280;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: #6a64f1;
+  box-shadow: 0 10px 25px rgba(106, 100, 241, 0.15);
+}
+
+.error {
+  border-color: #ef4444;
+}

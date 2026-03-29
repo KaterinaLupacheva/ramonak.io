@@ -1,3 +1,5 @@
+import styles from "./Timeline.module.css";
+
 const events = [
   {
     year: "2004",
@@ -30,11 +32,11 @@ const events = [
 
 export default function Timeline() {
   return (
-    <div className="flex justify-center bg-slate-950 h-60 mt-40">
-      <div className="relative w-full mx-20">
-        <div className="absolute w-full h-1 bg-gray-700 top-1/2 transform -translate-y-1/2"></div>
+    <section className={styles.section}>
+      <div className={styles.inner}>
+        <div className={styles.line}></div>
 
-        <div className="flex justify-around absolute w-full left-20">
+        <div className={styles.topRow}>
           {events.map((event, index) => {
             if (index % 2 !== 0) {
               return (
@@ -48,7 +50,7 @@ export default function Timeline() {
           })}
         </div>
 
-        <div className="flex justify-around absolute w-full bottom-1 -left-5">
+        <div className={styles.bottomRow}>
           {events.map((event, index) => {
             if (index % 2 === 0) {
               return (
@@ -63,7 +65,7 @@ export default function Timeline() {
           })}
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
@@ -78,18 +80,18 @@ function TimelineEvent({
   description,
   isReverse = false,
 }: TimelineEventProps) {
+  const className = [styles.event, isReverse ? styles.reverse : ""]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div
-      className={`flex ${
-        isReverse ? "flex-col-reverse" : "flex-col"
-      } items-center`}
-    >
-      <div className="bg-white p-4 rounded-lg shadow-md w-fit w-min-80">
-        <p className="text-gray-700 font-semibold">{year}</p>
-        <p className="text-gray-600">{description}</p>
+    <div className={className}>
+      <div className={styles.card}>
+        <p className={styles.year}>{year}</p>
+        <p className={styles.description}>{description}</p>
       </div>
-      <div className="w-1 h-6 bg-gray-700"></div>
-      <div className="w-6 h-6 bg-gray-700 rounded-full border-2 border-white"></div>
+      <div className={styles.stem}></div>
+      <div className={styles.dot}></div>
     </div>
   );
 }

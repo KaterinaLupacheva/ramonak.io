@@ -1,6 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import styles from "./ScrollToTop.module.css";
 
 export default function ScrollToTop() {
   const scrollToTop = () => {
@@ -10,10 +11,10 @@ export default function ScrollToTop() {
     });
   };
   return (
-    <div className="text-[#43D9AD]">
+    <div className={styles.wrapper}>
       <Link
         href="#"
-        className="flex text-sm"
+        className={styles.link}
         onClick={scrollToTop}
         scroll={false}
       >
@@ -23,7 +24,7 @@ export default function ScrollToTop() {
           width={14}
           height={16}
           priority
-          className="mr-2"
+          className={styles.icon}
         />
         Back to the top
       </Link>

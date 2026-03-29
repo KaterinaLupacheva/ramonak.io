@@ -19,7 +19,6 @@
     "resend": "^3.1.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -30,7 +29,6 @@
     "husky": "^9.0.10",
     "lint-staged": "^15.2.0",
     "postcss": "^8",
-    "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }
 }

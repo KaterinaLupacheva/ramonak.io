@@ -3,25 +3,24 @@ import { navItems } from "../constants/nav";
 import { socials } from "../constants/social";
 import Image from "next/image";
 import ScrollToTop from "./ScrollToTop";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-950 text-white py-8">
-      <div className="max-w-6xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+    <footer className={styles.footer}>
+      <div className={styles.inner}>
+        <div className={styles.top}>
           <div>
-            <h2 className="text-xl font-bold">RAMONAK</h2>
-            <nav className="mt-4">
-              <ul className="flex space-x-4">
+            <h2 className={styles.brand}>RAMONAK</h2>
+            <nav className={styles.nav}>
+              <ul className={styles.navList}>
                 {Object.entries(navItems).map(([path, { name }]) => {
                   return (
-                    <Link
-                      key={path}
-                      href={path}
-                      className={`text-[#98A2B3] font-medium font-['Inter'] leading-normal hover:text-gray-300`}
-                    >
-                      {name}
-                    </Link>
+                    <li key={path}>
+                      <Link href={path} className={styles.navLink}>
+                        {name}
+                      </Link>
+                    </li>
                   );
                 })}
               </ul>
@@ -29,9 +28,9 @@ export default function Footer() {
           </div>
           <ScrollToTop />
         </div>
-        <div className="flex justify-between text-[#98A2B3] items-center border-t border-gray-600 pt-4 mt-4">
+        <div className={styles.bottom}>
           <p>© {new Date().getFullYear()} Ramonak. All rights reserved.</p>
-          <ul className="flex space-x-4">
+          <ul className={styles.socialList}>
             {socials.map(({ icon, href, alt }) => (
               <li key={icon}>
                 <a href={href} rel="noopener noreferrer" target="_blank">
