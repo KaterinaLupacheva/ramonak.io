@@ -6,29 +6,20 @@ import styles from "./page.module.css";
 
 const proofPoints = [
   {
-    title: "Analytics and ETL",
+    title: "Data-rich product UI",
     description:
-      "Product work around reporting, profitability, LTV, marketing performance, exports, and async data flows.",
+      "I design and ship interfaces for reporting, exports, and workflows backed by complex data.",
   },
   {
-    title: "Operational interfaces",
+    title: "Operational tools",
     description:
-      "Real-time dashboards, planning views, KPI tracking, charts, tables, and workflows for fast-moving environments.",
+      "Dashboards, planning screens, tables, and charts built for people making decisions under time pressure.",
   },
   {
-    title: "Integration-heavy systems",
+    title: "Integrations and scale",
     description:
-      "Experience with multi-tenant SaaS, enterprise auth, internal tooling, cloud services, and third-party platform integrations.",
+      "I work comfortably across multi-tenant SaaS, internal tooling, auth flows, and third-party platforms.",
   },
-];
-
-const capabilities = [
-  "Multi-tenant SaaS",
-  "Analytics + ETL",
-  "Real-time dashboards",
-  "Admin platforms",
-  "Enterprise auth",
-  "PWA support",
 ];
 
 const selectedWork = [
@@ -37,10 +28,9 @@ const selectedWork = [
     href: "/projects#storehero",
     ctaLabel: "View Project",
     label: "Ecommerce analytics product family",
-    description:
-      "A multi-tenant ecommerce analytics platform focused on profitability, LTV, marketing performance, and merchant reporting.",
+    description: "A multi-tenant analytics platform for ecommerce teams.",
     detail:
-      "I currently work across both the merchant-facing analytics product and internal admin tooling, covering integrations, ETL flows, async processing, exports, and AI-assisted analytics.",
+      "I build product features across customer-facing analytics and internal admin tooling, from integrations to reporting workflows.",
     image: "/images/storehero.png",
   },
   {
@@ -48,10 +38,9 @@ const selectedWork = [
     href: "/projects#matics",
     ctaLabel: "View Project",
     label: "Manufacturing operations product family",
-    description:
-      "A real-time operations platform for production monitoring, planning, scheduling, dashboards, and decision-making in industrial environments.",
+    description: "A real-time platform for factory operations and planning.",
     detail:
-      "I currently work across the core frontend platform and the live cockpit, building dense operational interfaces with charts, scheduling views, multilingual support, enterprise auth, and PWA capabilities.",
+      "I build high-density operational interfaces that stay clear and usable in fast-moving environments.",
     image: "/images/matics.png",
   },
   {
@@ -59,18 +48,17 @@ const selectedWork = [
     href: "/projects#bekipay-sikoba",
     ctaLabel: "View Project",
     label: "Fintech mobile product",
-    description:
-      "A cross-platform fintech app for peer-to-peer payments, credit-line workflows, multi-currency support, and secure account management.",
+    description: "A cross-platform app for payments and account management.",
     detail:
-      "The strongest technical differentiator is its security architecture: BIP32/BIP39 wallet flows, signature-based API authentication, encrypted seed storage, and configurable SSL pinning.",
+      "I led frontend delivery for mobile and web admin experiences with a strong focus on trust and security.",
     image: "/images/bekiPay.png",
   },
 ];
 
 const workingStyle = [
-  "I’m most effective on product surfaces that combine strong UX expectations with non-trivial engineering underneath.",
-  "I do my best work on systems with multiple integrations, evolving requirements, and interfaces that need to stay usable under complexity.",
-  "I like turning ambiguous product needs into clear, shippable features across analytics, operations, and internal tooling.",
+  "I like turning fuzzy product ideas into clear, shippable features.",
+  "I care about both interaction quality and implementation quality.",
+  "I work best in collaborative teams with fast feedback loops.",
 ];
 
 export default function Home() {
@@ -81,28 +69,24 @@ export default function Home() {
           <div className={styles.heroCopy}>
             <p className={styles.kicker}>Kate Lupachova</p>
             <h1 className={styles.headline}>
-              Product engineer for analytics platforms, operational dashboards,
-              and complex SaaS.
+              I build thoughtful products for data-heavy teams.
             </h1>
             <p className={styles.subhead}>
-              I do full-stack product work within modern web app architectures,
-              building for data-heavy workflows, real-time operations, and
-              integration-rich systems.
+              Full-stack engineer focused on React and Next.js. I help teams
+              turn complex workflows into interfaces that feel simple, fast, and
+              reliable.
             </p>
             <div className={styles.heroActions}>
               <a href="#selected-work" className={styles.primaryAction}>
-                See Selected Work
+                View Work
               </a>
               <a href="#contact-form" className={styles.secondaryAction}>
-                Contact Me
+                Contact
               </a>
-              <Link href="/about" className={styles.textAction}>
-                Read about me
-              </Link>
             </div>
             <div className={styles.heroMeta}>
               <p className={styles.availability}>
-                Available for select freelance and product roles.
+                Open to select freelance collaborations and product roles.
               </p>
               <Social />
             </div>
@@ -110,9 +94,9 @@ export default function Home() {
 
           <div className={styles.heroPanel}>
             <div className={styles.panelHeader}>
-              <span className={styles.panelLabel}>What I build</span>
+              <span className={styles.panelLabel}>Focus areas</span>
               <p className={styles.panelHint}>
-                Complex product surfaces where UX and engineering both matter.
+                Product work where UX quality and engineering depth go together.
               </p>
             </div>
 
@@ -126,21 +110,10 @@ export default function Home() {
             </div>
 
             <p className={styles.panelFootnote}>
-              Current work spans merchant analytics, factory-floor operations,
-              internal admin tooling, and fintech.
+              Recent domains: ecommerce analytics, manufacturing operations, and
+              fintech.
             </p>
           </div>
-        </div>
-      </section>
-
-      <section className={styles.capabilitiesSection}>
-        <p className={styles.sectionEyebrow}>Technical areas</p>
-        <div className={styles.capabilitiesList}>
-          {capabilities.map((item) => (
-            <span key={item} className={styles.capability}>
-              {item}
-            </span>
-          ))}
         </div>
       </section>
 
@@ -148,7 +121,7 @@ export default function Home() {
         <div className={styles.sectionIntro}>
           <p className={styles.sectionEyebrow}>Selected work</p>
           <h2 className={styles.sectionTitle}>
-            Selected projects aligned with the kind of work I do best.
+            A few products I have helped ship.
           </h2>
         </div>
 
@@ -188,8 +161,7 @@ export default function Home() {
         <div className={styles.sectionIntro}>
           <p className={styles.sectionEyebrow}>How I work</p>
           <h2 className={styles.sectionTitle}>
-            Best on products with dense workflows, messy data, and real
-            operational complexity.
+            Calm, collaborative, and delivery-focused.
           </h2>
         </div>
 
