@@ -6,71 +6,71 @@ import styles from "./page.module.css";
 
 const proofPoints = [
   {
-    title: "Data-heavy interfaces",
+    title: "Analytics and ETL",
     description:
-      "Dashboards, scheduling views, KPI tracking, tables, charts, and operational UIs built to stay clear under complexity.",
+      "Product work around reporting, profitability, LTV, marketing performance, exports, and async data flows.",
   },
   {
-    title: "Complex integrations",
+    title: "Operational interfaces",
     description:
-      "Hands-on integration work across ecommerce, ads, analytics, notifications, auth, cloud services, and async processing.",
+      "Real-time dashboards, planning views, KPI tracking, charts, tables, and workflows for fast-moving environments.",
   },
   {
-    title: "Production architecture",
+    title: "Integration-heavy systems",
     description:
-      "Experience with multi-tenant SaaS, RBAC, ETL flows, protected routes, exports, PWA support, and internationalization.",
+      "Experience with multi-tenant SaaS, enterprise auth, internal tooling, cloud services, and third-party platform integrations.",
   },
 ];
 
 const capabilities = [
   "Multi-tenant SaaS",
+  "Analytics + ETL",
   "Real-time dashboards",
-  "Data visualization",
-  "System integrations",
-  "RBAC and auth",
-  "Internationalization",
+  "Admin platforms",
+  "Enterprise auth",
+  "PWA support",
 ];
 
 const selectedWork = [
   {
     title: "StoreHero",
     href: "/projects#storehero",
-    ctaLabel: "View Case Study",
-    label: "Ecommerce analytics SaaS",
+    ctaLabel: "View Project",
+    label: "Ecommerce analytics product family",
     description:
-      "A multi-tenant ecommerce analytics platform combining profitability reporting, LTV insights, marketing attribution, and AI-assisted analysis across a large integration surface.",
+      "A multi-tenant ecommerce analytics platform focused on profitability, LTV, marketing performance, and merchant reporting.",
     detail:
-      "Built around ETL flows, async processing, AI-assisted analytics with streaming chat and GPT-4 integration, exports, and integrations spanning Shopify, ads platforms, analytics, messaging, and AWS services.",
+      "I currently work across both the merchant-facing analytics product and internal admin tooling, covering integrations, ETL flows, async processing, exports, and AI-assisted analytics.",
     image: "/images/storehero.png",
   },
   {
     title: "Matics",
     href: "/projects#matics",
-    ctaLabel: "View Case Study",
-    label: "Manufacturing operations software",
+    ctaLabel: "View Project",
+    label: "Manufacturing operations product family",
     description:
-      "Real-time operations software for manufacturing, with live dashboards, scheduling views, KPI tracking, multilingual support, and complex frontend workflows.",
+      "A real-time operations platform for production monitoring, planning, scheduling, dashboards, and decision-making in industrial environments.",
     detail:
-      "Frontend work across charts, diagrams, drag-and-drop flows, enterprise auth, and interfaces designed for high-density operational decision-making.",
+      "I currently work across the core frontend platform and the live cockpit, building dense operational interfaces with charts, scheduling views, multilingual support, enterprise auth, and PWA capabilities.",
     image: "/images/matics.png",
   },
   {
-    title: "bekiPay",
+    title: "bekiPay / Sikoba",
     href: "/projects#bekipay-sikoba",
-    ctaLabel: "View Case Study",
-    label: "React Native fintech app",
+    ctaLabel: "View Project",
+    label: "Fintech mobile product",
     description:
-      "A cross-platform fintech app with peer-to-peer payments, multi-currency support, and a dual-key ECDSA cryptographic account architecture across iOS and Android.",
+      "A cross-platform fintech app for peer-to-peer payments, credit-line workflows, multi-currency support, and secure account management.",
     detail:
-      "The most technically distinctive project in the portfolio for its security model: BIP32/BIP39 HD wallet integration, signature-based API auth, encrypted seed storage, and configurable SSL pinning.",
+      "The strongest technical differentiator is its security architecture: BIP32/BIP39 wallet flows, signature-based API authentication, encrypted seed storage, and configurable SSL pinning.",
     image: "/images/bekiPay.png",
   },
 ];
 
 const workingStyle = [
-  "I care about clean implementation as much as usable, high-quality interfaces.",
-  "I’m most valuable on products with messy data, multiple integrations, evolving requirements, and interfaces that need to stay usable under complexity.",
-  "I’m comfortable turning ambiguous product needs into clear, shippable features that balance product thinking with engineering depth.",
+  "I’m most effective on product surfaces that combine strong UX expectations with non-trivial engineering underneath.",
+  "I do my best work on systems with multiple integrations, evolving requirements, and interfaces that need to stay usable under complexity.",
+  "I like turning ambiguous product needs into clear, shippable features across analytics, operations, and internal tooling.",
 ];
 
 export default function Home() {
@@ -81,16 +81,17 @@ export default function Home() {
           <div className={styles.heroCopy}>
             <p className={styles.kicker}>Kate Lupachova</p>
             <h1 className={styles.headline}>
-              Full-stack developer building polished web products.
+              Product engineer for analytics platforms, operational dashboards,
+              and complex SaaS.
             </h1>
             <p className={styles.subhead}>
-              I build React and Node.js products for complex, data-heavy
-              workflows, from multi-tenant SaaS platforms and admin systems to
-              real-time dashboards and integration-heavy web apps.
+              I do full-stack product work within modern web app architectures,
+              building for data-heavy workflows, real-time operations, and
+              integration-rich systems.
             </p>
             <div className={styles.heroActions}>
               <a href="#selected-work" className={styles.primaryAction}>
-                View Projects
+                See Selected Work
               </a>
               <a href="#contact-form" className={styles.secondaryAction}>
                 Contact Me
@@ -109,10 +110,9 @@ export default function Home() {
 
           <div className={styles.heroPanel}>
             <div className={styles.panelHeader}>
-              <span className={styles.panelLabel}>What I bring</span>
+              <span className={styles.panelLabel}>What I build</span>
               <p className={styles.panelHint}>
-                Web-focused, product-minded, and comfortable with integration
-                complexity.
+                Complex product surfaces where UX and engineering both matter.
               </p>
             </div>
 
@@ -126,8 +126,8 @@ export default function Home() {
             </div>
 
             <p className={styles.panelFootnote}>
-              Recent work spans dashboards, ecommerce tooling, analytics
-              integrations, and internal platforms.
+              Current work spans merchant analytics, factory-floor operations,
+              internal admin tooling, and fintech.
             </p>
           </div>
         </div>
@@ -148,7 +148,7 @@ export default function Home() {
         <div className={styles.sectionIntro}>
           <p className={styles.sectionEyebrow}>Selected work</p>
           <h2 className={styles.sectionTitle}>
-            A few products that show the range of my work.
+            Selected projects aligned with the kind of work I do best.
           </h2>
         </div>
 
@@ -188,8 +188,8 @@ export default function Home() {
         <div className={styles.sectionIntro}>
           <p className={styles.sectionEyebrow}>How I work</p>
           <h2 className={styles.sectionTitle}>
-            Product-minded execution, clean code, and a strong eye for interface
-            quality.
+            Best on products with dense workflows, messy data, and real
+            operational complexity.
           </h2>
         </div>
 
