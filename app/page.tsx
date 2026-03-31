@@ -56,9 +56,30 @@ const selectedWork = [
 ];
 
 const workingStyle = [
-  "I like turning fuzzy product ideas into clear, shippable features.",
-  "I care about both interaction quality and implementation quality.",
-  "I work best in collaborative teams with fast feedback loops.",
+  {
+    badge: "01",
+    title: "Scope before syntax",
+    description:
+      "Before writing code, I define what's in and out of scope, surface ambiguities, and identify decisions that need to be made first. Less rework, more momentum.",
+  },
+  {
+    badge: "02",
+    title: "Full-stack ownership",
+    description:
+      "I track the full slice — from data model to UI state — so integration gaps get caught at design time, not during code review.",
+  },
+  {
+    badge: "03",
+    title: "Ship early, learn fast",
+    description:
+      "I break features into the smallest shippable slice. I'd rather demo something rough to stakeholders than deliver a polished surprise at the end.",
+  },
+  {
+    badge: "04",
+    title: "Leave a trail",
+    description:
+      "I document decisions and flag trade-offs async. Working remotely means good written context isn't optional — it's part of the job.",
+  },
 ];
 
 export default function Home() {
@@ -146,15 +167,17 @@ export default function Home() {
         <div className={styles.sectionIntro}>
           <p className={styles.sectionEyebrow}>How I work</p>
           <h2 className={styles.sectionTitle}>
-            Calm, collaborative, and delivery-focused.
+            What&rsquo;s it like to work with me?
           </h2>
         </div>
 
         <div className={styles.approachPanel}>
           {workingStyle.map((item) => (
-            <p key={item} className={styles.approachItem}>
-              {item}
-            </p>
+            <article key={item.badge} className={styles.approachCard}>
+              <span className={styles.approachBadge}>{item.badge}</span>
+              <h3 className={styles.approachTitle}>{item.title}</h3>
+              <p className={styles.approachDescription}>{item.description}</p>
+            </article>
           ))}
         </div>
       </section>

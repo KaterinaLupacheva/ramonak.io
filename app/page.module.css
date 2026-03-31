@@ -43,7 +43,8 @@
 .sectionEyebrow,
 .panelLabel,
 .proofIndex,
-.workLabel {
+.workLabel,
+.approachBadge {
   color: var(--color-primary);
   font-size: 0.9rem;
   font-weight: 700;
@@ -158,14 +159,12 @@
   text-transform: uppercase;
 }
 
-.approachPanel {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  padding: 1.25rem;
+.approachCard {
+  padding: 1.5rem;
   border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 1.25rem;
-  background: rgba(248, 250, 252, 0.5);
+  background: rgba(248, 250, 252, 0.6);
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
 }
 
 .panelHeader {
@@ -178,14 +177,12 @@
 .panelFootnote,
 .proofDescription,
 .workDescription,
-.workDetail,
-.approachItem {
+.workDetail {
   color: var(--color-text-muted);
 }
 
 .panelHint,
-.panelFootnote,
-.approachItem {
+.panelFootnote {
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -349,10 +346,19 @@
   gap: 0.8rem 1.2rem;
 }
 
-.approachItem {
-  padding-top: 0.85rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.06);
+.approachTitle {
+  margin-top: 1rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+}
+
+.approachDescription {
+  margin-top: 0.75rem;
   font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-muted);
 }
 
 @media (max-width: 900px) {
@@ -467,8 +473,11 @@
     padding-top: 0.6rem;
   }
 
-  .approachItem {
-    padding-top: 0.65rem;
+  .approachCard {
+    padding: 1.25rem;
+  }
+
+  .approachDescription {
     font-size: 0.96rem;
     line-height: 1.55;
   }
