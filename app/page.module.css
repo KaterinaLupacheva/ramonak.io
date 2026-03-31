@@ -290,17 +290,19 @@
 }
 
 .workGrid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
+  display: flex;
+  flex-direction: column;
 }
 
 .workCard {
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 340px 1fr;
 }
 
 .workImageWrap {
-  aspect-ratio: 4 / 3;
   overflow: hidden;
+  min-height: 240px;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.55),
@@ -360,9 +362,17 @@
   }
 
   .proofGrid,
-  .workGrid,
   .approachPanel {
     grid-template-columns: 1fr;
+  }
+
+  .workCard {
+    grid-template-columns: 1fr;
+  }
+
+  .workImageWrap {
+    aspect-ratio: 4 / 3;
+    min-height: unset;
   }
 
   .heroShell {

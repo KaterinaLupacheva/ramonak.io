@@ -27,7 +27,7 @@ const selectedWork = [
     title: "StoreHero",
     href: "/projects#storehero",
     ctaLabel: "View Project",
-    label: "Ecommerce analytics product family",
+    label: "Ecommerce analytics",
     description: "A multi-tenant analytics platform for ecommerce teams.",
     detail:
       "I build product features across customer-facing analytics and internal admin tooling, from integrations to reporting workflows.",
@@ -37,7 +37,7 @@ const selectedWork = [
     title: "Matics",
     href: "/projects#matics",
     ctaLabel: "View Project",
-    label: "Manufacturing operations product family",
+    label: "Manufacturing operations",
     description: "A real-time platform for factory operations and planning.",
     detail:
       "I build high-density operational interfaces that stay clear and usable in fast-moving environments.",
