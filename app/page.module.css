@@ -15,13 +15,17 @@
 .heroShell {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(18rem, 0.85fr);
+  grid-template-columns: 1fr;
   gap: 2.25rem;
   width: min(100%, var(--content-width));
   padding: 3.25rem;
   border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 2rem;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.55));
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 250, 252, 0.55)
+  );
   box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
   overflow: hidden;
 }
@@ -48,10 +52,22 @@
 }
 
 .headline {
-  max-width: 13ch;
+  max-width: 22ch;
   color: var(--color-text);
   font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1;
+  line-height: 1.15;
+}
+
+.headlineIntro {
+  display: block;
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  letter-spacing: -0.01em;
+}
+
+.headlineAccent {
+  color: var(--color-accent);
 }
 
 .subhead {
@@ -128,7 +144,20 @@
   line-height: 1.5;
 }
 
-.heroPanel,
+.focusAreas {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.focusLabel {
+  color: var(--color-primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
 .approachPanel {
   display: flex;
   flex-direction: column;
@@ -137,10 +166,6 @@
   border: 1px solid rgba(15, 23, 42, 0.06);
   border-radius: 1.25rem;
   background: rgba(248, 250, 252, 0.5);
-}
-
-.heroPanel {
-  justify-content: space-between;
 }
 
 .panelHeader {
@@ -180,6 +205,25 @@
 .chip:first-child {
   padding-top: 0;
   border-top: 0;
+}
+
+.tagCloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--color-text);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
 }
 
 .chipTitle,
@@ -315,7 +359,6 @@
     padding-top: 1.25rem;
   }
 
-  .heroShell,
   .proofGrid,
   .workGrid,
   .approachPanel {

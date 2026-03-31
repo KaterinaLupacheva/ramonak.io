@@ -67,15 +67,26 @@ export default function Home() {
       <section className={styles.hero}>
         <div className={styles.heroShell}>
           <div className={styles.heroCopy}>
-            <p className={styles.kicker}>Kate Lupachova</p>
             <h1 className={styles.headline}>
-              I build thoughtful products for data-heavy teams.
+              <span className={styles.headlineIntro}>Hi, I&rsquo;m Kate.</span>
+              <br />I build{" "}
+              <span className={styles.headlineAccent}>thoughtful</span> products
+              for data-heavy teams.
             </h1>
             <p className={styles.subhead}>
-              Full-stack engineer focused on React and Next.js. I help teams
-              turn complex workflows into interfaces that feel simple, fast, and
-              reliable.
+              Full-stack engineer turning complex workflows into interfaces that
+              feel simple, fast, and reliable.
             </p>
+            <div className={styles.focusAreas}>
+              <span className={styles.focusLabel}>Focus areas</span>
+              <div className={styles.tagCloud}>
+                {proofPoints.map((point) => (
+                  <span key={point.title} className={styles.tag}>
+                    {point.title}
+                  </span>
+                ))}
+              </div>
+            </div>
             <div className={styles.heroActions}>
               <a href="#selected-work" className={styles.primaryAction}>
                 View Work
@@ -85,34 +96,8 @@ export default function Home() {
               </a>
             </div>
             <div className={styles.heroMeta}>
-              <p className={styles.availability}>
-                Open to select freelance collaborations and product roles.
-              </p>
               <Social />
             </div>
-          </div>
-
-          <div className={styles.heroPanel}>
-            <div className={styles.panelHeader}>
-              <span className={styles.panelLabel}>Focus areas</span>
-              <p className={styles.panelHint}>
-                Product work where UX quality and engineering depth go together.
-              </p>
-            </div>
-
-            <div className={styles.chipGrid}>
-              {proofPoints.map((point) => (
-                <article key={point.title} className={styles.chip}>
-                  <p className={styles.chipTitle}>{point.title}</p>
-                  <p className={styles.chipDescription}>{point.description}</p>
-                </article>
-              ))}
-            </div>
-
-            <p className={styles.panelFootnote}>
-              Recent domains: ecommerce analytics, manufacturing operations, and
-              fintech.
-            </p>
           </div>
         </div>
       </section>
