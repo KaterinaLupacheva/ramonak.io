@@ -21,15 +21,15 @@
 
 .eyebrow,
 .projectEyebrow {
-  color: var(--color-primary);
-  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-size: var(--text-xs);
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
 .title {
-  font-size: clamp(3rem, 6vw, 5.5rem);
+  font-size: var(--text-2xl);
   line-height: 0.95;
   color: var(--color-text);
   text-wrap: balance;
@@ -42,7 +42,7 @@
 }
 
 .description {
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* intentionally between --text-md and --text-lg */
   line-height: 1.8;
   max-width: 46rem;
 }
@@ -65,7 +65,7 @@
   background: rgba(248, 250, 252, 0.74);
   box-shadow: var(--shadow-soft);
   color: var(--color-text);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   font-weight: 600;
 }
 
@@ -126,8 +126,8 @@
 
 .projectTitle {
   margin-top: 0.5rem;
-  font-size: clamp(2rem, 3vw, 2.75rem);
-  line-height: 1;
+  font-size: var(--text-xl);
+  line-height: 1.1;
 }
 
 .links {
@@ -158,12 +158,12 @@
 }
 
 .summary {
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   line-height: 1.75;
 }
 
 .context {
-  font-size: 1rem;
+  font-size: var(--text-sm);
   line-height: 1.75;
 }
 
@@ -174,11 +174,11 @@
 }
 
 .highlightsTitle {
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-accent);
 }
 
 .highlightsList {
@@ -193,7 +193,7 @@
   position: relative;
   padding-left: 1rem;
   color: var(--color-text-muted);
-  font-size: 0.98rem;
+  font-size: var(--text-base);
   line-height: 1.65;
 }
 
@@ -205,7 +205,7 @@
   width: 0.38rem;
   height: 0.38rem;
   border-radius: 999px;
-  background: var(--color-primary);
+  background: var(--color-accent);
   opacity: 0.9;
 }
 

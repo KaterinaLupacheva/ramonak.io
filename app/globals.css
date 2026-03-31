@@ -8,6 +8,7 @@
   --color-border: rgba(15, 23, 42, 0.1);
   --color-primary: #0f172a;
   --color-primary-dark: #1e293b;
+  --color-accent: #df2a46;
   --color-success: #22c55e;
   --color-success-dark: #43d9ad;
   --page-gradient: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
@@ -16,6 +17,13 @@
   --radius-md: 0.75rem;
   --radius-lg: 1.5rem;
   --content-width: 1200px;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.75rem;
+  --text-xl: clamp(2rem, 3vw, 2.75rem);
+  --text-2xl: clamp(3rem, 6vw, 5.5rem);
 }
 
 * {
