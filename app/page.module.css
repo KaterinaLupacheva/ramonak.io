@@ -1,99 +1,143 @@
 .page {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
+  gap: 6rem;
+  padding-bottom: 3rem;
 }
 
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: calc(100vh - 5rem);
-  padding: 2.25rem 1.5rem 0;
-}
-
-.heroShell {
   position: relative;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.25rem;
-  width: min(100%, var(--content-width));
-  padding: 3.25rem;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: 2rem;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(248, 250, 252, 0.55)
-  );
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.05);
-  overflow: hidden;
+  min-height: calc(100svh - 5rem);
+  overflow: clip;
+  background:
+    radial-gradient(circle at 82% 16%, rgba(223, 42, 70, 0.12), transparent 24%),
+    radial-gradient(circle at 16% 24%, rgba(15, 23, 42, 0.045), transparent 28%),
+    linear-gradient(180deg, #f5f8fb 0%, #ffffff 74%);
 }
 
-.heroCopy {
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: auto auto 8% -10%;
+  width: 24rem;
+  height: 24rem;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.04);
+  filter: blur(20px);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 7% -7rem auto auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background: rgba(223, 42, 70, 0.08);
+  filter: blur(24px);
+}
+
+.heroInner {
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: column;
-  gap: 1.35rem;
-  justify-content: space-between;
+  align-items: center;
+  width: min(100%, var(--content-width));
+  min-height: inherit;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 3rem;
 }
 
+.heroContent {
+  display: flex;
+  min-width: 0;
+  width: 100%;
+}
+
+.heroCopy {
+  display: flex;
+  max-width: 42rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.15rem;
+  animation: heroRise 0.8s ease both;
+}
+
+.heroEyebrow,
 .kicker,
 .sectionEyebrow,
-.panelLabel,
-.proofIndex,
 .workLabel,
 .approachBadge {
-  color: var(--color-primary);
-  font-size: 0.9rem;
+  color: var(--color-accent);
+  font-size: 0.82rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
 }
 
 .headline {
-  max-width: 22ch;
+  display: flex;
+  flex-direction: column;
+  gap: 0.28em;
+  max-width: 15.5ch;
+  font-family: var(--font-sans), sans-serif;
+  font-size: clamp(2.9rem, 5vw, 4.9rem);
+  line-height: 0.97;
+  font-weight: 600;
+  letter-spacing: -0.035em;
   color: var(--color-text);
-  font-size: clamp(2.8rem, 6vw, 5rem);
-  line-height: 1.15;
+  text-wrap: balance;
 }
 
 .headlineIntro {
   display: block;
-  font-size: clamp(1.4rem, 2.5vw, 2rem);
-  font-weight: 600;
-  color: var(--color-text-muted);
-  letter-spacing: -0.01em;
+  font-size: 0.42em;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-.headlineAccent {
-  color: var(--color-accent);
+.headlineMain {
+  display: block;
+}
+
+.subhead,
+.sectionDescription,
+.workSummary,
+.workDetail,
+.approachDescription {
+  color: var(--color-text-muted);
 }
 
 .subhead {
-  max-width: 36rem;
-  color: var(--color-text-muted);
-  font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+  max-width: 32rem;
+  font-size: clamp(1rem, 1.55vw, 1.16rem);
+  line-height: 1.7;
+}
+
+.heroContext {
+  max-width: 34rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
   line-height: 1.65;
 }
 
 .heroActions {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.8rem;
 }
 
 .primaryAction,
-.secondaryAction,
 .workLink {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 3rem;
-  padding: 0.75rem 1.2rem;
+  min-height: 3.1rem;
+  padding: 0.8rem 1.3rem;
   border-radius: 999px;
-  font-size: 1rem;
+  font-size: 0.98rem;
   font-weight: 700;
   transition:
     transform 0.2s ease,
@@ -102,7 +146,8 @@
     border-color 0.2s ease;
 }
 
-.primaryAction {
+.primaryAction,
+.workLink {
   background: var(--color-primary);
   color: #ffffff;
 }
@@ -113,133 +158,41 @@
   transform: translateY(-1px);
 }
 
-.secondaryAction {
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  background: rgba(255, 255, 255, 0.72);
-}
-
-.secondaryAction:hover {
-  transform: translateY(-1px);
-  border-color: rgba(15, 23, 42, 0.22);
-}
-
-.textAction {
+.tertiaryAction {
   display: inline-flex;
   align-items: center;
+  min-height: 3.1rem;
   color: var(--color-text);
+  font-size: 0.96rem;
   font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.tertiaryAction:hover {
+  color: var(--color-primary);
+  transform: translateY(-1px);
+}
+
+.socialWrap {
+  min-width: 0;
 }
 
 .heroMeta {
+  width: min(100%, var(--content-width));
+  margin: -2rem auto 0;
+  padding: 0 1.5rem;
+}
+
+.heroMetaInner {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 1rem 1.5rem;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.availability {
-  max-width: 20rem;
-  color: var(--color-text);
-  font-size: 0.9rem;
-  font-weight: 500;
-  line-height: 1.5;
-}
-
-.focusAreas {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.focusLabel {
-  color: var(--color-primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.approachCard {
-  padding: 1.5rem;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: 1.25rem;
-  background: rgba(248, 250, 252, 0.6);
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
-}
-
-.panelHeader {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.panelHint,
-.panelFootnote,
-.proofDescription,
-.workDescription,
-.workDetail {
-  color: var(--color-text-muted);
-}
-
-.panelHint,
-.panelFootnote {
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.chipGrid,
-.proofGrid,
-.workGrid {
-  display: grid;
-  gap: 0.9rem;
-}
-
-.chip {
-  padding: 0.9rem 0;
-  border-top: 1px solid rgba(15, 23, 42, 0.06);
-}
-
-.chip:first-child {
-  padding-top: 0;
-  border-top: 0;
-}
-
-.tagCloud {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.45rem 0.85rem;
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
-  color: var(--color-text);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-
-.chipTitle,
-.proofTitle,
-.workTitle {
-  font-size: 1.25rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-}
-
-.chipDescription,
-.workDescription,
-.workDetail {
-  margin-top: 0.4rem;
-  font-size: 0.98rem;
-  line-height: 1.6;
-}
-
-.proofSection,
 .workSection,
 .approachSection {
   width: min(100%, var(--content-width));
@@ -249,172 +202,255 @@
 
 .sectionIntro {
   display: grid;
-  gap: 0.75rem;
-  max-width: 40rem;
-  margin-bottom: 1.5rem;
+  gap: 0.85rem;
+  max-width: 46rem;
+  margin-bottom: 2rem;
 }
 
 .sectionTitle {
-  font-size: clamp(1.9rem, 3.5vw, 3rem);
-  line-height: 1.1;
+  font-family: var(--font-serif), serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 0.98;
+  color: var(--color-text);
   text-wrap: balance;
 }
 
-.proofGrid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+.sectionDescription {
+  max-width: 38rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
-.proofCard,
-.workCard {
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  border-radius: 1.25rem;
-  background: rgba(248, 250, 252, 0.6);
-  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
-}
-
-.proofCard {
-  padding: 1.5rem;
-}
-
-.proofTitle {
-  margin-top: 1rem;
-}
-
-.proofDescription {
-  margin-top: 0.75rem;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
-.workGrid {
-  display: flex;
-  flex-direction: column;
-}
-
-.workCard {
-  overflow: hidden;
+.workList {
   display: grid;
-  grid-template-columns: 340px 1fr;
+  gap: 2rem;
 }
 
-.workImageWrap {
+.workFeature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.workFeatureReverse {
+  grid-template-columns: minmax(18rem, 0.8fr) minmax(0, 1.2fr);
+}
+
+.workFeatureReverse .workVisual {
+  order: 2;
+}
+
+.workFeatureReverse .workContent {
+  order: 1;
+}
+
+.workVisual {
+  position: relative;
+  min-height: 29rem;
   overflow: hidden;
-  min-height: 240px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.55),
-    rgba(226, 232, 240, 0.75)
-  );
+  border-radius: 2rem;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(226, 232, 240, 0.7));
+  box-shadow: var(--shadow-card);
+}
+
+.workVisual::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 35%;
+  background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.14));
+  pointer-events: none;
 }
 
 .workImage {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s ease;
 }
 
-.workBody {
-  padding: 1.2rem;
+.workFeature:hover .workImage {
+  transform: scale(1.03);
 }
 
-.workHeading {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+.workContent {
+  display: grid;
+  gap: 0.95rem;
+  align-content: center;
 }
 
-.workLink {
-  min-width: 5rem;
-  align-self: flex-start;
-  background: var(--color-primary);
-  color: #ffffff;
+.workTitle {
+  font-size: clamp(2rem, 3vw, 3rem);
+  line-height: 0.98;
+  color: var(--color-text);
+}
+
+.workSummary {
+  max-width: 30rem;
+  font-size: 1.12rem;
+  line-height: 1.75;
 }
 
 .workDetail {
-  margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.06);
+  max-width: 30rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.workLink {
+  justify-self: flex-start;
+  margin-top: 0.25rem;
 }
 
 .approachSection {
   padding-bottom: 0.5rem;
 }
 
-.approachPanel {
+.approachList {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.8rem 1.2rem;
+  gap: 1.5rem 2rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.approachItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding-top: 1.35rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.approachItem:nth-child(-n + 2) {
+  border-top: 0;
+}
+
+.approachBadge {
+  color: var(--color-primary);
+}
+
+.approachBody {
+  display: grid;
+  gap: 0.65rem;
 }
 
 .approachTitle {
-  margin-top: 1rem;
-  font-size: 1.15rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 1.22rem;
+  line-height: 1.2;
   color: var(--color-text);
 }
 
 .approachDescription {
-  margin-top: 0.75rem;
   font-size: 1rem;
-  line-height: 1.7;
-  color: var(--color-text-muted);
+  line-height: 1.75;
+}
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFloat {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.97);
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero {
+    min-height: auto;
+  }
+
+  .heroInner {
+    padding-top: 3rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .heroCopy {
+    max-width: 38rem;
+  }
+
+  .workFeature,
+  .workFeatureReverse {
+    grid-template-columns: 1fr;
+  }
+
+  .workFeatureReverse .workVisual,
+  .workFeatureReverse .workContent {
+    order: initial;
+  }
 }
 
 @media (max-width: 900px) {
+  .page {
+    gap: 4rem;
+  }
+
   .hero {
-    min-height: auto;
-    padding-top: 1.25rem;
+    padding-bottom: 0.5rem;
   }
 
-  .proofGrid,
-  .approachPanel {
-    grid-template-columns: 1fr;
+  .heroInner {
+    gap: 2rem;
   }
 
-  .workCard {
-    grid-template-columns: 1fr;
-  }
-
-  .workImageWrap {
-    aspect-ratio: 4 / 3;
-    min-height: unset;
-  }
-
-  .heroShell {
-    padding: 2rem 1.25rem;
+  .heroMetaInner {
+    flex-direction: column;
+    gap: 1rem;
   }
 
   .headline {
-    max-width: 100%;
+    max-width: 12ch;
   }
 
-  .workHeading {
-    flex-direction: column;
+  .approachList {
+    grid-template-columns: 1fr;
+  }
+
+  .approachItem:nth-child(-n + 2) {
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .approachItem:first-child {
+    border-top: 0;
+  }
+
+  .workVisual {
+    min-height: 24rem;
   }
 }
 
 @media (max-width: 640px) {
   .page {
-    gap: 2rem;
+    gap: 3rem;
   }
 
-  .hero,
-  .proofSection,
+  .heroInner,
+  .heroMeta,
   .workSection,
   .approachSection {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
-  .hero {
-    padding-top: 0.75rem;
-  }
-
-  .heroShell {
-    gap: 1.5rem;
-    padding: 1.35rem 1rem;
-    border-radius: 1.25rem;
+  .heroInner {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .heroCopy {
@@ -422,63 +458,77 @@
   }
 
   .headline {
-    font-size: clamp(2.1rem, 9.5vw, 2.6rem);
-    line-height: 1.05;
+    max-width: 100%;
+    font-size: clamp(2.65rem, 11vw, 3.8rem);
+    line-height: 0.94;
   }
 
-  .subhead {
-    font-size: 1rem;
-    line-height: 1.55;
+  .subhead,
+  .sectionDescription,
+  .workSummary,
+  .approachDescription {
+    font-size: 0.98rem;
+    line-height: 1.65;
   }
 
   .heroActions {
-    gap: 0.6rem;
     flex-direction: column;
-    align-items: stretch;
+    align-items: flex-start;
+  }
+
+  .heroMeta {
+    margin-top: -1rem;
+  }
+
+  .heroMetaInner {
+    padding-top: 1.25rem;
   }
 
   .primaryAction,
-  .secondaryAction,
-  .textAction,
   .workLink {
-    min-height: 2.75rem;
-    justify-content: center;
+    width: 100%;
+  }
+
+  .tertiaryAction {
+    min-height: auto;
   }
 
   .sectionIntro {
-    gap: 0.5rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
   }
 
   .sectionTitle {
-    font-size: clamp(1.55rem, 7.2vw, 2rem);
-    line-height: 1.15;
+    font-size: clamp(1.8rem, 9vw, 2.7rem);
+    line-height: 1;
   }
 
-  .workGrid,
-  .approachPanel {
-    gap: 0.75rem;
+  .workList {
+    gap: 1.5rem;
   }
 
-  .workCard {
-    border-radius: 1rem;
+  .workFeature {
+    gap: 1rem;
   }
 
-  .workBody {
-    padding: 1rem;
+  .workVisual {
+    min-height: 16rem;
+    border-radius: 1.25rem;
+  }
+
+  .workTitle {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
   }
 
   .workDetail {
-    margin-top: 0.6rem;
-    padding-top: 0.6rem;
+    padding-top: 0.75rem;
   }
 
-  .approachCard {
-    padding: 1.25rem;
+  .approachList {
+    gap: 0;
   }
 
-  .approachDescription {
-    font-size: 0.96rem;
-    line-height: 1.55;
+  .approachItem {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
   }
 }
