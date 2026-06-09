@@ -25,7 +25,7 @@
 
 .sectionTitle {
   margin-top: 0.35rem;
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   line-height: 1.2;
   color: var(--color-text);
 }
@@ -73,7 +73,7 @@
 }
 
 .cardTitle {
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   line-height: 1.3;
 }
@@ -97,21 +97,21 @@
 }
 
 .surfaceTitle {
-  font-size: clamp(1.45rem, 2vw, 1.9rem);
+  font-size: var(--text-2xl);
   line-height: 1.05;
   color: var(--color-text);
 }
 
 .summary {
   max-width: 42rem;
-  font-size: 1rem;
+  font-size: var(--text-base);
   line-height: 1.75;
   color: var(--color-text);
 }
 
 .context {
   max-width: 46rem;
-  font-size: 0.95rem;
+  font-size: var(--text-base);
   line-height: 1.75;
   color: var(--color-text-muted);
 }
@@ -140,7 +140,7 @@
   position: relative;
   padding-left: 1rem;
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: var(--text-base);
   line-height: 1.65;
 }
 
@@ -197,7 +197,7 @@
   .summary,
   .context,
   .highlightItem {
-    font-size: 0.92rem;
+    font-size: var(--text-sm);
     line-height: 1.6;
   }
 

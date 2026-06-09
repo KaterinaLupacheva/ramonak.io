@@ -27,14 +27,14 @@
 
 .content h2 {
   margin-bottom: 1.5rem;
-  font-size: 2rem;
+  font-size: var(--text-3xl);
   line-height: 1.2;
 }
 
 .content p,
 .content ul {
   color: #344054;
-  font-size: 1.05rem;
+  font-size: var(--text-md);
   line-height: 1.75;
 }
 

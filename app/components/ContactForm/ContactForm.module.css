@@ -22,7 +22,7 @@
 
 .eyebrow {
   color: var(--color-primary);
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -31,14 +31,14 @@
 .title {
   padding: 1rem 0;
   color: var(--color-text);
-  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-size: var(--text-4xl);
   font-weight: 600;
   line-height: 1;
 }
 
 .description {
   color: var(--color-text-muted);
-  font-size: 1.1rem;
+  font-size: var(--text-md);
   line-height: 1.7;
 }
 
@@ -60,7 +60,7 @@
   display: block;
   margin-bottom: 0.75rem;
   color: var(--color-text);
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
 }
 
@@ -93,7 +93,7 @@
   background: var(--color-primary);
   padding: 0.75rem 2rem;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -107,6 +107,6 @@
 .success {
   padding-top: 0.5rem;
   color: var(--color-success);
-  font-size: 1.125rem;
+  font-size: var(--text-md);
   font-weight: 600;
 }

@@ -15,20 +15,20 @@
 
 .eyebrow {
   color: #4f46e5;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
 }
 
 .title {
   padding: 1rem 0;
   color: #111827;
-  font-size: clamp(2.5rem, 5vw, 3rem);
+  font-size: var(--text-3xl);
   font-weight: 600;
 }
 
 .description {
   color: var(--color-text-muted);
-  font-size: 1.25rem;
+  font-size: var(--text-lg);
 }
 
 .button {
@@ -38,7 +38,7 @@
   background: var(--color-primary);
   color: #ffffff;
   padding: 0.75rem 2rem;
-  font-size: 1.125rem;
+  font-size: var(--text-md);
   font-weight: 600;
   cursor: pointer;
 }

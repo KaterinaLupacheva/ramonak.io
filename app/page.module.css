@@ -69,7 +69,7 @@
 .workLabel,
 .approachBadge {
   color: var(--color-accent);
-  font-size: 0.82rem;
+  font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -81,7 +81,7 @@
   gap: 0.28em;
   max-width: 15.5ch;
   font-family: var(--font-sans), sans-serif;
-  font-size: clamp(2.9rem, 5vw, 4.9rem);
+  font-size: var(--text-5xl);
   line-height: 0.97;
   font-weight: 600;
   letter-spacing: -0.035em;
@@ -110,7 +110,7 @@
 
 .subhead {
   max-width: 32rem;
-  font-size: clamp(1rem, 1.55vw, 1.16rem);
+  font-size: var(--text-base);
   line-height: 1.7;
 }
 
@@ -130,7 +130,7 @@
   min-height: 3.1rem;
   padding: 0.8rem 1.3rem;
   border-radius: 999px;
-  font-size: 0.98rem;
+  font-size: var(--text-base);
   font-weight: 700;
   transition:
     transform 0.2s ease,
@@ -156,7 +156,7 @@
   align-items: center;
   min-height: 3.1rem;
   color: var(--color-text);
-  font-size: 0.96rem;
+  font-size: var(--text-base);
   font-weight: 700;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -187,7 +187,7 @@
 
 .sectionTitle {
   font-family: var(--font-serif), serif;
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-size: var(--text-4xl);
   line-height: 0.98;
   color: var(--color-text);
   text-wrap: balance;
@@ -195,7 +195,7 @@
 
 .sectionDescription {
   max-width: 38rem;
-  font-size: 1.05rem;
+  font-size: var(--text-md);
   line-height: 1.75;
 }
 
@@ -259,14 +259,14 @@
 }
 
 .workTitle {
-  font-size: clamp(2rem, 3vw, 3rem);
+  font-size: var(--text-3xl);
   line-height: 0.98;
   color: var(--color-text);
 }
 
 .workSummary {
   max-width: 30rem;
-  font-size: 1.12rem;
+  font-size: var(--text-md);
   line-height: 1.75;
 }
 
@@ -274,7 +274,7 @@
   max-width: 30rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(15, 23, 42, 0.08);
-  font-size: 0.98rem;
+  font-size: var(--text-base);
   line-height: 1.7;
 }
 
@@ -316,13 +316,13 @@
 }
 
 .approachTitle {
-  font-size: 1.22rem;
+  font-size: var(--text-lg);
   line-height: 1.2;
   color: var(--color-text);
 }
 
 .approachDescription {
-  font-size: 1rem;
+  font-size: var(--text-base);
   line-height: 1.75;
 }
 
@@ -439,7 +439,7 @@
   .sectionDescription,
   .workSummary,
   .approachDescription {
-    font-size: 0.98rem;
+    font-size: var(--text-base);
     line-height: 1.65;
   }
 

@@ -20,14 +20,14 @@
 
 .eyebrow {
   color: var(--color-text-muted);
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   text-transform: uppercase;
 }
 
 .title {
   color: #111827;
-  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-size: var(--text-3xl);
   font-weight: 600;
 }
 

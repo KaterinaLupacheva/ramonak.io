@@ -14,7 +14,7 @@
 
 .eyebrow {
   color: var(--color-text-muted);
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -27,7 +27,7 @@
 .lead {
   width: 60%;
   color: #ffffff;
-  font-size: clamp(2.25rem, 5vw, 3.25rem);
+  font-size: var(--text-4xl);
   font-weight: 600;
   line-height: 1.38;
 }
@@ -41,7 +41,7 @@
 
 .details {
   color: rgba(255, 255, 255, 0.6);
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .details p {
@@ -60,7 +60,7 @@
 .readMore {
   margin-top: 1rem;
   color: #34d399;
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 700;
   line-height: 1.875;
 }

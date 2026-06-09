@@ -12,7 +12,7 @@
 
 .line {
   color: #ffffff;
-  font-size: 1.5rem;
+  font-size: var(--text-xl);
 }
 
 .mobile {
