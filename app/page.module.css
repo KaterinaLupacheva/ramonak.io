@@ -114,13 +114,6 @@
   line-height: 1.7;
 }
 
-.heroContext {
-  max-width: 34rem;
-  color: var(--color-text);
-  font-size: 0.95rem;
-  line-height: 1.65;
-}
-
 .heroActions {
   display: flex;
   flex-wrap: wrap;
@@ -174,23 +167,8 @@
   transform: translateY(-1px);
 }
 
-.socialWrap {
-  min-width: 0;
-}
-
-.heroMeta {
-  width: min(100%, var(--content-width));
-  margin: -2rem auto 0;
-  padding: 0 1.5rem;
-}
-
-.heroMetaInner {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+.heroSocial {
+  padding-top: 0.5rem;
 }
 
 .workSection,
@@ -204,7 +182,7 @@
   display: grid;
   gap: 0.85rem;
   max-width: 46rem;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .sectionTitle {
@@ -329,7 +307,7 @@
 }
 
 .approachBadge {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .approachBody {
@@ -409,11 +387,6 @@
     gap: 2rem;
   }
 
-  .heroMetaInner {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
   .headline {
     max-width: 12ch;
   }
@@ -441,7 +414,6 @@
   }
 
   .heroInner,
-  .heroMeta,
   .workSection,
   .approachSection {
     padding-left: 1rem;
@@ -474,14 +446,6 @@
   .heroActions {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .heroMeta {
-    margin-top: -1rem;
-  }
-
-  .heroMetaInner {
-    padding-top: 1.25rem;
   }
 
   .primaryAction,

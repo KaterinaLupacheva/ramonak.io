@@ -3,7 +3,370 @@
   flex-direction: column;
 }
 
-.heroSection {
-  background: var(--color-surface-dark);
-  padding-bottom: 2.5rem;
+/* ─── Dark intro ─── */
+.intro {
+  background: var(--color-primary);
+  padding: 5rem 1.5rem 4rem;
+  color: #ffffff;
+}
+
+.introInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: 4rem;
+  align-items: center;
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+.eyebrow {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.introHeading {
+  font-family: var(--font-serif), serif;
+  font-weight: 300;
+  font-size: clamp(1.9rem, 3.5vw, 3.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: #e2e8f0;
+  margin-bottom: 1.75rem;
+}
+
+.introHeadingLine {
+  display: block;
+}
+
+.accentMobile {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.accentWeb {
+  color: #7dd3fc;
+  font-style: italic;
+}
+
+.introBio {
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 38rem;
+  margin-bottom: 2rem;
+}
+
+.introSocials {
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.socialIcon:hover {
+  background: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.photoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.photo {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ─── Timeline ─── */
+.timelineSection {
+  padding: 5rem 1.5rem;
+  background: #ffffff;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.sectionInner {
+  width: min(100%, var(--content-width));
+  margin: 0 auto;
+}
+
+.timelineEyebrow {
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.timeline {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineRow {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.timelineStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.1rem;
+}
+
+.timelineStepNum {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #f7fafc;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: 800;
+  color: #a0aec0;
+  flex-shrink: 0;
+}
+
+.timelineStepNumActive {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #ffffff;
+}
+
+.timelineConnector {
+  width: 1px;
+  flex: 1;
+  background: #e2e8f0;
+  min-height: 2.5rem;
+}
+
+.timelineContent {
+  padding-bottom: 2rem;
+  padding-top: 0.25rem;
+}
+
+.timelineYear {
+  display: inline-block;
+  background: #fff5f5;
+  color: var(--color-accent);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  margin-bottom: 0.45rem;
+  border: 1px solid #fed7d7;
+}
+
+.timelineEvent {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--color-text);
+}
+
+/* ─── Story accordion ─── */
+.storySection {
+  padding: 3rem 1.5rem;
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+}
+
+.storyDetails {
+  width: 100%;
+}
+
+.storyDetails[open] .storyChevron {
+  transform: rotate(180deg);
+}
+
+.storySummary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  cursor: pointer;
+  list-style: none;
+  padding: 1.25rem 1.5rem;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.storySummary::-webkit-details-marker {
+  display: none;
+}
+
+.storySummary:hover {
+  background: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.storyChevron {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  transition: transform 0.2s ease;
+}
+
+.storyContent {
+  padding: 2rem 0.25rem 0.5rem;
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.storyContent p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--color-text);
+}
+
+.storyContent a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.storyHeading {
+  margin: 0.75rem 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.storyList {
+  margin: 0;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.storyList li {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* ─── Hobbies ─── */
+.hobbiesSection {
+  padding: 5rem 1.5rem;
+  background: #ffffff;
+  border-top: 1px solid var(--color-border);
+}
+
+.hobbiesInner {
+  display: grid;
+  grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+  gap: clamp(2.5rem, 6vw, 5rem);
+  align-items: start;
+  width: min(100%, 56rem);
+  margin: 0 auto;
+}
+
+.hobbiesEyebrow {
+  margin-bottom: 0.75rem;
+  color: var(--color-accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hobbiesHeading h2 {
+  color: var(--color-text);
+  font-family: var(--font-serif), serif;
+  font-size: clamp(1.75rem, 3vw, 2.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+}
+
+.hobbiesContent {
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+  border-left: 2px solid var(--color-accent);
+}
+
+.hobbiesLead {
+  max-width: 34rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-text);
+  font-size: clamp(1.15rem, 2vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.hobbiesText {
+  max-width: 38rem;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+@media (max-width: 800px) {
+  .introInner {
+    grid-template-columns: 1fr;
+  }
+
+  .photoWrap {
+    display: none;
+  }
+
+  .hobbiesInner {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .hobbiesContent {
+    padding-top: 1.5rem;
+    padding-left: 0;
+    border-top: 2px solid var(--color-accent);
+    border-left: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .intro {
+    padding: 3.5rem 1rem 3rem;
+  }
+
+  .timelineSection,
+  .storySection,
+  .hobbiesSection {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }

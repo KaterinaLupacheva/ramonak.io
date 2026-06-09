@@ -41,8 +41,8 @@ export const projectGroups: ProjectGroup[] = [
     ],
     highlights: [
       "I work inside a multi-tenant product architecture with store-based tenancy, agency relationships, RBAC, protected routes, and operational tooling.",
+      "I implemented and maintain an MCP server with 20+ tools that lets merchants query their StoreHero analytics from any AI client — Claude Desktop, ChatGPT, or any MCP-compatible tool.",
       "I contribute across an integration surface spanning Shopify, Meta Ads, Google Ads, TikTok Ads, Klaviyo, GA4, SendGrid, and multiple AWS services.",
-      "I support product capabilities such as ETL processing, async data sync flows, exports, whitelabeling, caching, and PWA support.",
     ],
     surfaces: [
       {
@@ -75,6 +75,28 @@ export const projectGroups: ProjectGroup[] = [
         ],
       },
       {
+        slug: "storehero-mcp",
+        title: "MCP server",
+        eyebrow: "AI integration surface",
+        summary:
+          "A Model Context Protocol server that lets merchants query their StoreHero analytics from any AI client — Claude Desktop, ChatGPT, or any MCP-compatible tool.",
+        context:
+          "Implemented and actively maintained as the product expands its AI surface. New tools are added continuously as merchants discover use cases.",
+        highlights: [
+          "I built and maintain 20+ MCP tools covering merchant analytics, profitability data, LTV metrics, and marketing performance — with more being added.",
+          "Merchants connect directly via Claude Desktop, ChatGPT, or other MCP-compatible AI clients to query and explore their own store data.",
+          "I work with the MCP SDK, TypeScript, and the Vercel AI SDK to keep the server consistent with the broader platform data model.",
+        ],
+        stack: [
+          "MCP SDK",
+          "TypeScript",
+          "Next.js",
+          "Vercel AI SDK",
+          "Prisma + PostgreSQL",
+          "DynamoDB",
+        ],
+      },
+      {
         slug: "storehero-admin-dashboard",
         title: "Admin dashboard and internal tooling",
         eyebrow: "Operational product surface",
@@ -88,13 +110,10 @@ export const projectGroups: ProjectGroup[] = [
           "I work with NextAuth v5, presigned file uploads, async sync queues, feature flags, and agency/store separation.",
         ],
         stack: [
-          "Next.js 16",
-          "React 19",
+          "Next.js",
+          "React",
           "TypeScript",
           "MUI",
-          "Styled Components",
-          "Emotion",
-          "CSS Modules",
           "TanStack React Query",
           "Prisma",
           "PostgreSQL",

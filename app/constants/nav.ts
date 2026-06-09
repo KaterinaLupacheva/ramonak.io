@@ -11,17 +11,13 @@ export const navItems: NavItems = {
   "/": {
     name: "Home",
   },
-  "/about": {
-    name: "About",
-    isDarkBg: true,
-  },
   "/projects": {
     name: "Projects",
   },
-  "/snippets": {
-    name: "Snippets",
+  "/about": {
+    name: "About",
   },
-  "/blog": {
-    name: "Blog",
+  "/contact": {
+    name: "Contact",
   },
 };

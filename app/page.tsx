@@ -1,39 +1,82 @@
-import Image from "next/image";
 import Link from "next/link";
 import Social from "./components/Social/Social";
-import ContactForm from "./components/ContactForm/ContactForm";
+import WorkCard from "./components/WorkCard/WorkCard";
 import styles from "./page.module.css";
 
 const selectedWork = [
   {
     title: "StoreHero",
-    href: "/projects#storehero",
+    externalHref: "https://storehero.ai",
     label: "Ecommerce analytics",
     summary:
       "Multi-tenant analytics for profitability, LTV, and marketing decisions.",
     detail:
-      "Customer-facing reporting and internal tooling shaped around integrations, exports, and complex merchant workflows.",
+      "Customer-facing analytics, AI-assisted insights, an MCP server for merchant AI clients, and internal tooling across integrations, exports, and complex workflows.",
     image: "/images/storehero.png",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "DynamoDB",
+      "AWS",
+      "MUI",
+    ],
+    highlights: [
+      "Multi-tenant architecture with RBAC and protected routes",
+      "Integrations: Shopify, Meta Ads, Google Ads, TikTok, Klaviyo, GA4, etc.",
+      "MCP server with 20+ tools — merchants query their analytics from Claude Desktop, ChatGPT, or any AI client",
+    ],
   },
   {
     title: "Matics",
-    href: "/projects#matics",
+    externalHref: "https://matics.live",
     label: "Manufacturing operations",
     summary:
-      "Real-time operational product design for planning, monitoring, and action.",
+      "Real-time platform for factory-floor planning, monitoring, and response.",
     detail:
       "High-density dashboards and workflow surfaces built to stay legible in fast-moving factory environments.",
     image: "/images/matics.png",
+    stack: [
+      "React",
+      "TypeScript",
+      "Redux Toolkit",
+      "Highcharts",
+      "React Flow",
+      "i18next",
+      "PWA",
+    ],
+    highlights: [
+      "Live factory-floor monitoring with bidirectional updates",
+      "10+ languages, Azure AD / Okta enterprise auth, PWA/offline support",
+      "Charts, Gantt, scheduling views, drag-and-drop, dense data tables",
+    ],
   },
   {
     title: "bekiPay / Sikoba",
-    href: "/projects#bekipay-sikoba",
+    externalHref:
+      "https://play.google.com/store/apps/details?id=com.sikoba.bekiPay",
     label: "Fintech mobile product",
     summary:
-      "Cross-platform payments experience with a strong trust and security model.",
+      "Local currency and IOU platform built for community-scale financial trust.",
     detail:
-      "Mobile and admin experiences spanning secure account setup, transaction flows, and multilingual customer journeys.",
+      "bekiPay enables local currency payments in Luxembourg; Sikoba handles peer IOU tracking with automated clearing — both built on a shared React Native foundation.",
     image: "/images/bekiPay.png",
+    stack: [
+      "React Native",
+      "TypeScript",
+      "Redux",
+      "React Navigation",
+      "bitcoinjs-lib",
+      "i18next",
+      "Jest",
+    ],
+    highlights: [
+      "59+ screens across iOS & Android with domain-based state management",
+      "BIP32/BIP39 dual-key ECDSA architecture, encrypted seed storage, SSL pinning",
+      "QR payments, IBAN integration, multi-currency flows, 10+ languages",
+    ],
   },
 ];
 
@@ -75,7 +118,8 @@ export default function Home() {
               <h1 className={styles.headline}>
                 <span className={styles.headlineIntro}>Hi, I&apos;m Kate.</span>
                 <span className={styles.headlineMain}>
-                  I build product interfaces for complex systems.
+                  I build full-stack products where the hard parts stay
+                  invisible.
                 </span>
               </h1>
               <p className={styles.subhead}>
@@ -83,29 +127,17 @@ export default function Home() {
                 products that still feel clear in use.
               </p>
               <div className={styles.heroActions}>
-                <a href="#selected-work" className={styles.primaryAction}>
+                <Link href="/projects" className={styles.primaryAction}>
                   View selected work
-                </a>
-                <a href="#contact-form" className={styles.tertiaryAction}>
-                  Start a conversation
-                </a>
+                </Link>
+                <Link href="/contact" className={styles.tertiaryAction}>
+                  Start a conversation →
+                </Link>
+              </div>
+              <div className={styles.heroSocial}>
+                <Social />
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        className={styles.heroMeta}
-        aria-label="Profile links and focus areas"
-      >
-        <div className={styles.heroMetaInner}>
-          <p className={styles.heroContext}>
-            Focused on product design and full-stack delivery across StoreHero,
-            Matics, and bekiPay / Sikoba.
-          </p>
-          <div className={styles.socialWrap}>
-            <Social />
           </div>
         </div>
       </section>
@@ -114,7 +146,7 @@ export default function Home() {
         <div className={styles.sectionIntro}>
           <p className={styles.sectionEyebrow}>Selected work</p>
           <h2 className={styles.sectionTitle}>
-            Product systems with distinct constraints, not interchangeable UI.
+            Real products built for real constraints.
           </h2>
           <p className={styles.sectionDescription}>
             A few projects that show how I work across analytics depth,
@@ -124,30 +156,11 @@ export default function Home() {
 
         <div className={styles.workList}>
           {selectedWork.map((project, index) => (
-            <article
+            <WorkCard
               key={project.title}
-              className={`${styles.workFeature} ${index % 2 === 1 ? styles.workFeatureReverse : ""}`}
-            >
-              <div className={styles.workVisual}>
-                <Image
-                  src={project.image}
-                  alt={`${project.title} preview`}
-                  fill
-                  className={styles.workImage}
-                  sizes="(max-width: 900px) 100vw, 50vw"
-                />
-              </div>
-
-              <div className={styles.workContent}>
-                <p className={styles.workLabel}>{project.label}</p>
-                <h3 className={styles.workTitle}>{project.title}</h3>
-                <p className={styles.workSummary}>{project.summary}</p>
-                <p className={styles.workDetail}>{project.detail}</p>
-                <Link href={project.href} className={styles.workLink}>
-                  Open project
-                </Link>
-              </div>
-            </article>
+              project={project}
+              reverse={index % 2 === 1}
+            />
           ))}
         </div>
       </section>
@@ -173,8 +186,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-      <ContactForm />
     </div>
   );
 }

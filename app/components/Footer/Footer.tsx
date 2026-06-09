@@ -2,7 +2,6 @@ import Link from "next/link";
 import { navItems } from "../../constants/nav";
 import { socials } from "../../constants/social";
 import Image from "next/image";
-import ScrollToTop from "../ScrollToTop/ScrollToTop";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -26,7 +25,6 @@ export default function Footer() {
               </ul>
             </nav>
           </div>
-          <ScrollToTop />
         </div>
         <div className={styles.bottom}>
           <p>© {new Date().getFullYear()} Ramonak. All rights reserved.</p>
