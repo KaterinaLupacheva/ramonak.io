@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Social from "./components/Social/Social";
+import SocialLinks from "./components/SocialLinks/SocialLinks";
 import WorkCard from "./components/WorkCard/WorkCard";
 import styles from "./page.module.css";
 
@@ -134,9 +134,10 @@ export default function Home() {
                   Start a conversation →
                 </Link>
               </div>
-              <div className={styles.heroSocial}>
-                <Social />
-              </div>
+              <SocialLinks
+                className={styles.heroSocial}
+                linkClassName={styles.heroSocialLink}
+              />
             </div>
           </div>
         </div>

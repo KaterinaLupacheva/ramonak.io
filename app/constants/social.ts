@@ -14,4 +14,6 @@ export const socials = [
     href: "https://www.linkedin.com/in/katsiaryna-lupachova/",
     alt: "LinkedIn Logo",
   },
-];
+] as const;
+
+export type SocialIconName = (typeof socials)[number]["icon"];

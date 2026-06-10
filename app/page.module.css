@@ -168,7 +168,30 @@
 }
 
 .heroSocial {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1.5rem;
   padding-top: 0.5rem;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.heroSocialLink {
+  display: inline-flex;
+  width: 3rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--color-overlay);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.heroSocialLink:hover {
+  background: var(--color-overlay-strong);
+  transform: translateY(-2px);
 }
 
 .workSection,

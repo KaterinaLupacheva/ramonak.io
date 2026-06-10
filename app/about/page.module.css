@@ -125,6 +125,8 @@
 .heroSocials {
   display: flex;
   gap: 0.75rem;
+  padding: 0;
+  list-style: none;
 }
 
 .socialIcon {
@@ -151,7 +153,6 @@
 
 .portraitWrap {
   position: relative;
-  align-self: stretch;
   min-height: min(43rem, calc(100svh - 9rem));
   animation: portraitIn 0.9s 0.12s ease both;
 }
