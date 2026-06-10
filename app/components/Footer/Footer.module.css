@@ -1,6 +1,6 @@
 .footer {
-  background: var(--color-surface-dark);
-  color: #ffffff;
+  background: var(--color-canvas-dark);
+  color: var(--color-on-dark);
   padding: 2rem 0;
 }
 
@@ -36,7 +36,7 @@
 
 .navLink,
 .bottom {
-  color: #98a2b3;
+  color: var(--color-on-dark-muted);
 }
 
 .navLink {
@@ -45,7 +45,7 @@
 }
 
 .navLink:hover {
-  color: #d0d5dd;
+  color: var(--color-surface-strong);
 }
 
 .bottom {
@@ -54,7 +54,7 @@
   justify-content: space-between;
   margin-top: 1rem;
   padding-top: 1rem;
-  border-top: 1px solid #475467;
+  border-top: 1px solid var(--color-on-dark-border);
   gap: 1rem;
 }
 

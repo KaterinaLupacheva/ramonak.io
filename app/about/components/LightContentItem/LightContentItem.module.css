@@ -22,7 +22,7 @@
 
 .content {
   width: 50%;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .content h2 {
@@ -33,7 +33,7 @@
 
 .content p,
 .content ul {
-  color: #344054;
+  color: var(--color-ink);
   font-size: var(--text-md);
   line-height: 1.75;
 }

@@ -2,7 +2,7 @@
   display: grid;
   gap: 1rem;
   padding-top: 0.5rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 1px solid var(--color-border-soft);
 }
 
 .header {
@@ -27,7 +27,7 @@
   margin-top: 0.35rem;
   font-size: var(--text-md);
   line-height: 1.2;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .content {
@@ -53,22 +53,22 @@
   min-height: 9rem;
   padding: 1rem 0 1rem;
   border: 0;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+  border-bottom: 1px solid var(--color-border-strong);
   background: transparent;
   text-align: left;
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
   cursor: pointer;
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 
 .surfaceCard:hover,
 .surfaceCardActive {
-  color: var(--color-text);
+  color: var(--color-ink);
   border-color: var(--color-accent);
 }
 
 .surfaceCard:focus-visible {
-  outline: 2px solid var(--color-primary);
+  outline: 2px solid var(--color-ink);
   outline-offset: 2px;
 }
 
@@ -81,7 +81,7 @@
 .cardSummary {
   font-size: var(--text-sm);
   line-height: 1.6;
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
 }
 
 .panel {
@@ -99,21 +99,21 @@
 .surfaceTitle {
   font-size: var(--text-2xl);
   line-height: 1.05;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .summary {
   max-width: 42rem;
   font-size: var(--text-base);
   line-height: 1.75;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .context {
   max-width: 46rem;
   font-size: var(--text-base);
   line-height: 1.75;
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
 }
 
 .details {
@@ -139,7 +139,7 @@
 .highlightItem {
   position: relative;
   padding-left: 1rem;
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
   font-size: var(--text-base);
   line-height: 1.65;
 }
@@ -166,8 +166,8 @@
   align-items: center;
   padding: 0.32rem 0.7rem;
   border-radius: 999px;
-  background: rgba(15, 23, 42, 0.05);
-  color: var(--color-text);
+  background: var(--color-overlay-soft);
+  color: var(--color-ink);
   font-size: var(--text-xs);
   font-weight: 600;
 }

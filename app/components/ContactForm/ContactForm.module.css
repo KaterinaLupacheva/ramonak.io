@@ -6,8 +6,8 @@
   padding: 4rem 1.5rem;
   background: linear-gradient(
     180deg,
-    rgba(241, 245, 249, 0.7),
-    rgba(248, 250, 252, 0.92)
+    var(--color-surface-alt-translucent),
+    var(--color-surface-translucent)
   );
 }
 
@@ -21,7 +21,7 @@
 }
 
 .eyebrow {
-  color: var(--color-primary);
+  color: var(--color-ink);
   font-size: var(--text-sm);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -30,14 +30,14 @@
 
 .title {
   padding: 1rem 0;
-  color: var(--color-text);
+  color: var(--color-ink);
   font-size: var(--text-4xl);
   font-weight: 600;
   line-height: 1;
 }
 
 .description {
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
   font-size: var(--text-md);
   line-height: 1.7;
 }
@@ -46,9 +46,9 @@
   width: 100%;
   max-width: 34.375rem;
   padding: 1.5rem;
-  border: 1px solid rgba(15, 23, 42, 0.08);
+  border: 1px solid var(--color-border-soft);
   border-radius: 1.5rem;
-  background: rgba(248, 250, 252, 0.82);
+  background: var(--color-glass-soft);
   box-shadow: var(--shadow-soft);
 }
 
@@ -59,7 +59,7 @@
 .label {
   display: block;
   margin-bottom: 0.75rem;
-  color: var(--color-text);
+  color: var(--color-ink);
   font-size: var(--text-base);
   font-weight: 600;
 }
@@ -68,31 +68,31 @@
   width: 100%;
   min-height: 8rem;
   resize: vertical;
-  border: 1px solid rgba(15, 23, 42, 0.1);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--color-canvas-translucent);
   padding: 0.75rem 1.5rem;
-  color: var(--color-text);
+  color: var(--color-ink);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .textarea:focus {
-  border-color: var(--color-primary);
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.1);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-focus);
 }
 
 .error {
-  border-color: #ef4444;
+  border-color: var(--color-danger);
 }
 
 .submit {
   width: 100%;
   border: 0;
   border-radius: var(--radius-md);
-  background: var(--color-primary);
+  background: var(--color-ink);
   padding: 0.75rem 2rem;
-  color: #ffffff;
+  color: var(--color-on-dark);
   font-size: var(--text-base);
   font-weight: 600;
   cursor: pointer;
@@ -101,7 +101,7 @@
 
 .submit:hover {
   transform: translateY(-1px);
-  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.15);
+  box-shadow: 0 12px 30px var(--color-overlay-strong);
 }
 
 .success {

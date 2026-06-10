@@ -3,8 +3,8 @@
   align-items: center;
   justify-content: center;
   padding: 6rem 1.5rem;
-  background: var(--color-surface-dark);
-  color: #ffffff;
+  background: var(--color-canvas-dark);
+  color: var(--color-on-dark);
 }
 
 .inner {

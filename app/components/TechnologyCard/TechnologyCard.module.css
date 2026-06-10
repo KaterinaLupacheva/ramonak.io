@@ -4,8 +4,8 @@
   gap: 1rem;
   padding: 1.5rem;
   border-radius: var(--radius-lg);
-  background: #f3f4f6;
-  box-shadow: inset 0 0 0 1px rgba(148, 163, 184, 0.12);
+  background: var(--color-surface-alt);
+  box-shadow: inset 0 0 0 1px var(--color-border-strong);
 }
 
 .content {
@@ -15,13 +15,13 @@
 }
 
 .title {
-  color: #0f172a;
+  color: var(--color-ink);
   font-size: var(--text-lg);
   font-weight: 600;
   line-height: 1.5;
 }
 
 .description {
-  color: var(--color-primary);
+  color: var(--color-ink);
   font-size: var(--text-base);
 }

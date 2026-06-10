@@ -5,9 +5,9 @@
 
 /* ─── Dark intro ─── */
 .intro {
-  background: var(--color-primary);
+  background: var(--color-ink);
   padding: 5rem 1.5rem 4rem;
-  color: #ffffff;
+  color: var(--color-on-dark);
 }
 
 .introInner {
@@ -34,7 +34,7 @@
   font-size: var(--text-4xl);
   line-height: 1.2;
   letter-spacing: -0.01em;
-  color: #e2e8f0;
+  color: var(--color-surface-strong);
   margin-bottom: 1.75rem;
 }
 
@@ -48,12 +48,12 @@
 }
 
 .accentWeb {
-  color: #7dd3fc;
+  color: var(--color-accent);
   font-style: italic;
 }
 
 .introBio {
-  color: #94a3b8;
+  color: var(--color-on-dark-muted);
   font-size: var(--text-base);
   line-height: 1.75;
   max-width: 38rem;
@@ -72,8 +72,8 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: var(--color-on-dark-border);
+  color: var(--color-on-dark);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
@@ -88,8 +88,8 @@
   aspect-ratio: 4 / 5;
   border-radius: 1.5rem;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--color-on-dark-surface);
+  border: 1px solid var(--color-on-dark-border);
 }
 
 .photo {
@@ -100,7 +100,7 @@
 /* ─── Timeline ─── */
 .timelineSection {
   padding: 5rem 1.5rem;
-  background: #ffffff;
+  background: var(--color-canvas);
   border-bottom: 1px solid var(--color-border);
 }
 
@@ -141,27 +141,27 @@
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background: #f7fafc;
-  border: 2px solid #e2e8f0;
+  background: var(--color-surface);
+  border: 2px solid var(--color-surface-strong);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--text-xs);
   font-weight: 800;
-  color: #a0aec0;
+  color: var(--color-ink-muted);
   flex-shrink: 0;
 }
 
 .timelineStepNumActive {
   background: var(--color-accent);
   border-color: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-on-dark);
 }
 
 .timelineConnector {
   width: 1px;
   flex: 1;
-  background: #e2e8f0;
+  background: var(--color-surface-strong);
   min-height: 2.5rem;
 }
 
@@ -172,7 +172,7 @@
 
 .timelineYear {
   display: inline-block;
-  background: #fff5f5;
+  background: var(--color-accent-soft);
   color: var(--color-accent);
   font-size: var(--text-xs);
   font-weight: 700;
@@ -181,14 +181,14 @@
   padding: 0.15rem 0.6rem;
   border-radius: 999px;
   margin-bottom: 0.45rem;
-  border: 1px solid #fed7d7;
+  border: 1px solid var(--color-accent-border);
 }
 
 .timelineEvent {
   margin: 0;
   font-size: var(--text-base);
   line-height: 1.65;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 /* ─── Story accordion ─── */
@@ -214,12 +214,12 @@
   cursor: pointer;
   list-style: none;
   padding: 1.25rem 1.5rem;
-  background: #ffffff;
+  background: var(--color-canvas);
   border: 1px solid var(--color-border);
   border-radius: 1rem;
   font-size: var(--text-base);
   font-weight: 600;
-  color: var(--color-text);
+  color: var(--color-ink);
   transition: background 0.15s ease, border-color 0.15s ease;
 }
 
@@ -251,7 +251,7 @@
   margin: 0;
   font-size: var(--text-base);
   line-height: 1.8;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .storyContent a {
@@ -264,7 +264,7 @@
   margin: 0.75rem 0 0;
   font-size: var(--text-base);
   font-weight: 700;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .storyList {
@@ -278,13 +278,13 @@
 .storyList li {
   font-size: var(--text-base);
   line-height: 1.7;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 /* ─── Hobbies ─── */
 .hobbiesSection {
   padding: 5rem 1.5rem;
-  background: #ffffff;
+  background: var(--color-canvas);
   border-top: 1px solid var(--color-border);
 }
 
@@ -307,7 +307,7 @@
 }
 
 .hobbiesHeading h2 {
-  color: var(--color-text);
+  color: var(--color-ink);
   font-family: var(--font-serif), serif;
   font-size: var(--text-2xl);
   font-weight: 400;
@@ -323,7 +323,7 @@
 .hobbiesLead {
   max-width: 34rem;
   margin-bottom: 0.75rem;
-  color: var(--color-text);
+  color: var(--color-ink);
   font-size: var(--text-lg);
   font-weight: 600;
   line-height: 1.5;
@@ -331,7 +331,7 @@
 
 .hobbiesText {
   max-width: 38rem;
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
   font-size: var(--text-base);
   line-height: 1.75;
 }

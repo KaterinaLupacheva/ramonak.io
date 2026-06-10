@@ -5,27 +5,27 @@
 .label {
   display: block;
   margin-bottom: 0.75rem;
-  color: #07074d;
+  color: var(--color-ink);
   font-size: var(--text-base);
   font-weight: 500;
 }
 
 .input {
   width: 100%;
-  border: 1px solid #e0e0e0;
+  border: 1px solid var(--color-surface-strong);
   border-radius: var(--radius-md);
-  background: #ffffff;
+  background: var(--color-canvas);
   padding: 0.75rem 1.5rem;
-  color: #6b7280;
+  color: var(--color-ink);
   outline: none;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .input:focus {
-  border-color: #6a64f1;
-  box-shadow: 0 10px 25px rgba(106, 100, 241, 0.15);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-focus);
 }
 
 .error {
-  border-color: #ef4444;
+  border-color: var(--color-danger);
 }

@@ -10,9 +10,9 @@
   min-height: calc(100svh - 5rem);
   overflow: clip;
   background:
-    radial-gradient(circle at 82% 16%, rgba(223, 42, 70, 0.12), transparent 24%),
-    radial-gradient(circle at 16% 24%, rgba(15, 23, 42, 0.045), transparent 28%),
-    linear-gradient(180deg, #f5f8fb 0%, #ffffff 74%);
+    radial-gradient(circle at 82% 16%, var(--color-accent-glow), transparent 24%),
+    radial-gradient(circle at 16% 24%, var(--color-overlay-soft), transparent 28%),
+    linear-gradient(180deg, var(--color-surface) 0%, var(--color-canvas) 74%);
 }
 
 .hero::before {
@@ -22,7 +22,7 @@
   width: 24rem;
   height: 24rem;
   border-radius: 50%;
-  background: rgba(15, 23, 42, 0.04);
+  background: var(--color-overlay-soft);
   filter: blur(20px);
 }
 
@@ -33,7 +33,7 @@
   width: 18rem;
   height: 18rem;
   border-radius: 50%;
-  background: rgba(223, 42, 70, 0.08);
+  background: var(--color-accent-soft);
   filter: blur(24px);
 }
 
@@ -85,7 +85,7 @@
   line-height: 0.97;
   font-weight: 600;
   letter-spacing: -0.035em;
-  color: var(--color-text);
+  color: var(--color-ink);
   text-wrap: balance;
 }
 
@@ -105,7 +105,7 @@
 .workSummary,
 .workDetail,
 .approachDescription {
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
 }
 
 .subhead {
@@ -141,13 +141,13 @@
 
 .primaryAction,
 .workLink {
-  background: var(--color-primary);
-  color: #ffffff;
+  background: var(--color-ink);
+  color: var(--color-on-dark);
 }
 
 .primaryAction:hover,
 .workLink:hover {
-  background: var(--color-primary-dark);
+  background: var(--color-canvas-dark-hover);
   transform: translateY(-1px);
 }
 
@@ -155,7 +155,7 @@
   display: inline-flex;
   align-items: center;
   min-height: 3.1rem;
-  color: var(--color-text);
+  color: var(--color-ink);
   font-size: var(--text-base);
   font-weight: 700;
   text-decoration: none;
@@ -163,7 +163,7 @@
 }
 
 .tertiaryAction:hover {
-  color: var(--color-primary);
+  color: var(--color-ink);
   transform: translateY(-1px);
 }
 
@@ -189,7 +189,7 @@
   font-family: var(--font-serif), serif;
   font-size: var(--text-4xl);
   line-height: 0.98;
-  color: var(--color-text);
+  color: var(--color-ink);
   text-wrap: balance;
 }
 
@@ -229,7 +229,7 @@
   overflow: hidden;
   border-radius: 2rem;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(226, 232, 240, 0.7));
+    linear-gradient(180deg, var(--color-canvas-muted), var(--color-surface-strong-muted));
   box-shadow: var(--shadow-card);
 }
 
@@ -238,7 +238,7 @@
   position: absolute;
   inset: auto 0 0;
   height: 35%;
-  background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.14));
+  background: linear-gradient(180deg, transparent, var(--color-overlay-strong));
   pointer-events: none;
 }
 
@@ -261,7 +261,7 @@
 .workTitle {
   font-size: var(--text-3xl);
   line-height: 0.98;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .workSummary {
@@ -273,7 +273,7 @@
 .workDetail {
   max-width: 30rem;
   padding-top: 1rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 1px solid var(--color-border-soft);
   font-size: var(--text-base);
   line-height: 1.7;
 }
@@ -291,7 +291,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem 2rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 1px solid var(--color-border-soft);
 }
 
 .approachItem {
@@ -299,7 +299,7 @@
   grid-template-columns: auto 1fr;
   gap: 1rem;
   padding-top: 1.35rem;
-  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  border-top: 1px solid var(--color-border-soft);
 }
 
 .approachItem:nth-child(-n + 2) {
@@ -318,7 +318,7 @@
 .approachTitle {
   font-size: var(--text-lg);
   line-height: 1.2;
-  color: var(--color-text);
+  color: var(--color-ink);
 }
 
 .approachDescription {
@@ -396,7 +396,7 @@
   }
 
   .approachItem:nth-child(-n + 2) {
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    border-top: 1px solid var(--color-border-soft);
   }
 
   .approachItem:first-child {

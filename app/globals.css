@@ -1,19 +1,40 @@
 :root {
-  --color-text: #0f172a;
-  --color-text-muted: #64748b;
+  --color-canvas: #ffffff;
+  --color-canvas-muted: rgba(255, 255, 255, 0.5);
+  --color-canvas-translucent: rgba(255, 255, 255, 0.9);
   --color-surface: #f8fafc;
   --color-surface-alt: #f1f5f9;
+  --color-surface-alt-translucent: rgba(241, 245, 249, 0.7);
   --color-surface-strong: #e2e8f0;
-  --color-surface-dark: #0f172a;
+  --color-surface-strong-muted: rgba(226, 232, 240, 0.7);
+  --color-ink: #0f172a;
+  --color-ink-muted: #64748b;
+  --color-on-dark: #ffffff;
+  --color-on-dark-muted: #94a3b8;
+  --color-on-dark-surface: rgba(255, 255, 255, 0.08);
+  --color-on-dark-border: rgba(255, 255, 255, 0.1);
+  --color-canvas-dark: #0f172a;
+  --color-canvas-dark-hover: #1e293b;
   --color-border: rgba(15, 23, 42, 0.1);
-  --color-primary: #0f172a;
-  --color-primary-dark: #1e293b;
+  --color-border-soft: rgba(15, 23, 42, 0.08);
+  --color-border-strong: rgba(15, 23, 42, 0.12);
   --color-accent: #df2a46;
+  --color-accent-soft: rgba(223, 42, 70, 0.08);
+  --color-accent-glow: rgba(223, 42, 70, 0.12);
+  --color-accent-border: #fed7d7;
+  --color-danger: #ef4444;
   --color-success: #22c55e;
-  --color-success-dark: #43d9ad;
-  --page-gradient: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+  --color-overlay-soft: rgba(15, 23, 42, 0.05);
+  --color-overlay: rgba(15, 23, 42, 0.1);
+  --color-overlay-strong: rgba(15, 23, 42, 0.16);
+  --color-glass: rgba(248, 250, 252, 0.88);
+  --color-glass-soft: rgba(248, 250, 252, 0.82);
+  --color-glass-strong: rgba(248, 250, 252, 0.98);
+  --color-surface-translucent: rgba(248, 250, 252, 0.92);
+
   --shadow-soft: 0 20px 40px rgba(15, 23, 42, 0.06);
   --shadow-card: 0 28px 50px rgba(15, 23, 42, 0.09);
+  --shadow-focus: 0 0 0 3px var(--color-accent-soft), 0 10px 25px var(--color-overlay);
   --radius-md: 0.75rem;
   --radius-lg: 1.5rem;
   --content-width: 1200px;
@@ -50,8 +71,8 @@ figure {
 }
 
 body {
-  color: var(--color-text);
-  background: #f8fafc;
+  color: var(--color-ink);
+  background: var(--color-surface);
   font-family: var(--font-sans), sans-serif;
   line-height: 1.5;
 }

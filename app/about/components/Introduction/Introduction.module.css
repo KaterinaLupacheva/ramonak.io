@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   padding: 10rem 1.5rem 0;
-  background: var(--color-surface-dark);
+  background: var(--color-canvas-dark);
 }
 
 .inner {
@@ -11,14 +11,14 @@
 }
 
 .line {
-  color: #ffffff;
+  color: var(--color-on-dark);
   font-size: var(--text-xl);
 }
 
 .mobile {
-  color: #4ade80;
+  color: var(--color-success);
 }
 
 .web {
-  color: #f472b6;
+  color: var(--color-accent);
 }

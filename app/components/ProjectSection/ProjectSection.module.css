@@ -29,7 +29,7 @@
 }
 
 .title {
-  color: #111827;
+  color: var(--color-ink);
   font-size: var(--text-xl);
   font-weight: 700;
 }
@@ -45,13 +45,13 @@
 
 .description {
   padding-top: 0.5rem;
-  color: var(--color-text-muted);
+  color: var(--color-ink-muted);
   font-size: var(--text-md);
 }
 
 .period {
   padding-top: 0.5rem;
-  color: var(--color-primary);
+  color: var(--color-ink);
   font-size: var(--text-md);
   font-weight: 600;
 }

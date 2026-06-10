@@ -3,7 +3,7 @@
   top: 0;
   z-index: 50;
   width: 100%;
-  background: rgba(248, 250, 252, 0.88);
+  background: var(--color-glass);
   backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -23,7 +23,7 @@
   font-weight: 800;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-text);
+  color: var(--color-ink);
   opacity: 0.75;
   flex-shrink: 0;
 }
@@ -39,7 +39,7 @@
 .link {
   font-size: var(--text-base);
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-ink);
   padding: 0.25rem 0;
   border-bottom: 2px solid transparent;
   transition: color 0.2s ease, border-color 0.2s ease;
@@ -62,7 +62,7 @@
   padding: 0.55rem 1.1rem;
   border-radius: 0.65rem;
   background: var(--color-accent);
-  color: #ffffff;
+  color: var(--color-on-dark);
   font-size: var(--text-sm);
   font-weight: 600;
   transition: transform 0.2s ease, opacity 0.2s ease;
@@ -80,12 +80,12 @@
   border: none;
   cursor: pointer;
   padding: 0.25rem;
-  color: var(--color-text);
+  color: var(--color-ink);
   flex-shrink: 0;
 }
 
 .mobileMenu {
-  background: rgba(248, 250, 252, 0.98);
+  background: var(--color-glass-strong);
   backdrop-filter: blur(14px);
   border-top: 1px solid var(--color-border);
   padding: 0.75rem 1.5rem 1.25rem;
@@ -98,7 +98,7 @@
   padding: 0.75rem 0;
   font-size: var(--text-md);
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-ink);
   border-bottom: 1px solid var(--color-border);
   transition: color 0.2s ease;
 }

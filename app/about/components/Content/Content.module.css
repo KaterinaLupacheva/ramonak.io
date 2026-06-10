@@ -18,7 +18,7 @@
 .imageBand {
   display: flex;
   justify-content: center;
-  background: var(--color-surface-dark);
+  background: var(--color-canvas-dark);
   padding: 0 1.5rem;
 }
 
@@ -33,7 +33,7 @@
 
 .accentTitle {
   margin-bottom: 1rem;
-  color: var(--color-success-dark);
+  color: var(--color-success);
   font-weight: 700;
 }
 
