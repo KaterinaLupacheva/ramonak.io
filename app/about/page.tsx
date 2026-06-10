@@ -318,17 +318,19 @@ export default function AboutPage() {
         <div className={styles.ctaInner}>
           <p className={styles.ctaEyebrow}>Work together</p>
           <h2>Building something complex?</h2>
-          <p>
-            I help turn difficult systems into products people can understand
-            and use with confidence.
-          </p>
-          <div className={styles.ctaActions}>
-            <Link href="/contact" className={styles.ctaPrimary}>
-              Start a conversation
-            </Link>
-            <Link href="/projects" className={styles.ctaSecondary}>
-              See selected work <span aria-hidden="true">→</span>
-            </Link>
+          <div className={styles.ctaDetails}>
+            <p>
+              I help turn difficult systems into products people can understand
+              and use with confidence.
+            </p>
+            <div className={styles.ctaActions}>
+              <Link href="/contact" className={styles.ctaPrimary}>
+                Start a conversation
+              </Link>
+              <Link href="/projects" className={styles.ctaSecondary}>
+                See selected work <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>

@@ -522,22 +522,36 @@
 .ctaSection {
   position: relative;
   overflow: hidden;
-  padding: clamp(5rem, 10vw, 9rem) 1.5rem;
-  background: var(--color-ink);
-  color: var(--color-on-dark);
+  padding: clamp(5rem, 9vw, 8rem) 1.5rem clamp(5.5rem, 10vw, 9rem);
+  border-top: 1px solid var(--color-accent-border);
+  background:
+    radial-gradient(circle at 88% 18%, var(--color-accent-soft), transparent 25%),
+    linear-gradient(145deg, #fff8f7 0%, var(--color-canvas) 58%);
+  color: var(--color-ink);
+}
+
+.ctaSection::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: max(1.5rem, calc((100% - var(--content-width)) / 2 + 1.5rem));
+  width: clamp(5rem, 10vw, 8rem);
+  height: 0.22rem;
+  background: var(--color-accent);
+  pointer-events: none;
 }
 
 .ctaSection::after {
-  content: "";
+  content: "↗";
   position: absolute;
-  top: -12rem;
-  right: -8rem;
-  width: 30rem;
-  height: 30rem;
-  border-radius: 50%;
-  background: var(--color-accent);
-  filter: blur(110px);
-  opacity: 0.22;
+  right: max(1.5rem, calc((100% - var(--content-width)) / 2 + 1.5rem));
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  color: var(--color-accent);
+  font-family: var(--font-serif), serif;
+  font-size: clamp(5rem, 12vw, 10rem);
+  font-weight: 300;
+  line-height: 0.7;
+  opacity: 0.07;
   pointer-events: none;
 }
 
@@ -545,43 +559,62 @@
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 1.3rem;
-  width: min(100%, 54rem);
+  grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.72fr);
+  grid-template-areas:
+    "eyebrow copy"
+    "heading copy";
+  gap: 1.25rem clamp(3rem, 9vw, 9rem);
+  align-items: end;
+  width: min(100%, var(--content-width));
   margin: 0 auto;
-  text-align: center;
-  justify-items: center;
+  text-align: left;
+}
+
+.ctaEyebrow {
+  grid-area: eyebrow;
+  align-self: start;
 }
 
 .ctaInner h2 {
-  color: var(--color-surface-strong);
+  grid-area: heading;
+  max-width: 10ch;
+  color: var(--color-ink);
   font-size: var(--text-5xl);
+  line-height: 0.95;
 }
 
-.ctaInner > p:not(.ctaEyebrow) {
-  max-width: 39rem;
-  color: var(--color-on-dark-muted);
+.ctaDetails {
+  grid-area: copy;
+  align-self: start;
+  display: grid;
+  gap: 1.65rem;
+}
+
+.ctaDetails > p {
+  max-width: 34rem;
+  padding-top: 0.35rem;
+  color: var(--color-ink-muted);
   font-size: var(--text-md);
   line-height: 1.7;
 }
 
 .ctaActions {
-  justify-content: center;
-  padding-top: 0.7rem;
+  justify-content: flex-start;
 }
 
 .ctaPrimary {
   padding: 0.8rem 1.35rem;
-  background: var(--color-on-dark);
-  color: var(--color-ink);
+  background: var(--color-accent);
+  color: var(--color-on-dark);
 }
 
 .ctaPrimary:hover {
-  background: var(--color-surface-strong);
+  background: #c9233d;
 }
 
 .ctaSecondary {
   padding: 0.8rem 0.4rem;
-  color: var(--color-on-dark);
+  color: var(--color-ink);
 }
 
 .primaryAction:focus-visible,
@@ -670,6 +703,11 @@
   .journeyIntro {
     position: static;
     max-width: 38rem;
+  }
+
+  .ctaInner {
+    grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 0.72fr);
+    gap: 1.25rem 3rem;
   }
 }
 
@@ -765,6 +803,36 @@
   .storyHeader h2,
   .beyondCopy h2 {
     max-width: 100%;
+  }
+
+  .ctaSection::before {
+    left: 1rem;
+  }
+
+  .ctaSection::after {
+    right: 0.5rem;
+    bottom: 1.5rem;
+  }
+
+  .ctaInner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "eyebrow"
+      "heading"
+      "copy";
+    gap: 1.15rem;
+  }
+
+  .ctaInner h2 {
+    max-width: 11ch;
+  }
+
+  .ctaDetails > p {
+    padding-top: 0.4rem;
+  }
+
+  .ctaActions {
+    padding-top: 0.25rem;
   }
 }
 
