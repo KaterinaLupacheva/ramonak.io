@@ -1,0 +1,25 @@
+.page { padding-bottom: 5rem; }
+.header { background: radial-gradient(circle at 80% 20%, var(--color-accent-soft), transparent 30%), linear-gradient(180deg, var(--color-surface) 0%, var(--color-canvas) 100%); padding: 4rem 1.5rem 3.5rem; }
+.headerInner, .archive { width: min(100%, var(--content-width)); margin: 0 auto; }
+.eyebrow { color: var(--color-accent); font-size: var(--text-sm); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 1rem; }
+.header h1 { font-family: var(--font-serif), serif; font-weight: 400; font-size: var(--text-5xl); line-height: .97; max-width: 15ch; margin-bottom: 1.25rem; }
+.headerInner > p:last-child { color: var(--color-ink-muted); font-size: var(--text-md); line-height: 1.7; max-width: 42rem; }
+.archive { padding: 2.5rem 1.5rem 0; }
+.filters { display: flex; align-items: flex-end; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); }
+.filter { display: grid; gap: .4rem; color: var(--color-ink-muted); font-size: var(--text-xs); font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.filter select { min-width: 12rem; border: 1px solid var(--color-border-strong); border-radius: .7rem; background: var(--color-canvas); color: var(--color-ink); padding: .65rem 2rem .65rem .75rem; font-size: var(--text-sm); text-transform: none; letter-spacing: 0; }
+.count { margin-left: auto; color: var(--color-ink-muted); font-size: var(--text-sm); }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
+.card { overflow: hidden; border-radius: var(--radius-lg); background: var(--color-canvas); box-shadow: var(--shadow-soft); }
+.imageLink { display: block; height: 15rem; overflow: hidden; background: var(--color-surface-alt); }
+.image { width: 100%; height: 100%; object-fit: cover; transition: transform .3s ease; }
+.imageLink:hover .image { transform: scale(1.02); }
+.cardBody { display: grid; gap: 1rem; padding: 1.6rem; }
+.meta { display: flex; gap: .75rem; color: var(--color-accent); font-size: var(--text-xs); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.meta time::after { content: "·"; margin-left: .75rem; }
+.card h2 { font-family: var(--font-serif), serif; font-size: var(--text-2xl); font-weight: 500; line-height: 1.15; }
+.card h2 a:hover { color: var(--color-accent); }
+.summary { color: var(--color-ink-muted); line-height: 1.7; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+.tags span { padding: .25rem .55rem; border-radius: 999px; background: var(--color-accent-soft); color: var(--color-accent); font-size: var(--text-xs); font-weight: 600; }
+@media (max-width: 760px) { .grid { grid-template-columns: 1fr; } .filters { align-items: stretch; flex-direction: column; } .filter select { width: 100%; } .count { margin-left: 0; } }

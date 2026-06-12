@@ -8,6 +8,8 @@ import styles from "./Navbar.module.css";
 export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const isActive = (path: string) =>
+    path === "/" ? pathname === path : pathname.startsWith(path);
 
   return (
     <nav className={styles.nav}>
@@ -25,7 +27,7 @@ export function Navbar() {
             <Link
               key={path}
               href={path}
-              className={`${styles.link} ${path === pathname ? styles.active : ""}`}
+              className={`${styles.link} ${isActive(path) ? styles.active : ""}`}
             >
               {name}
             </Link>
@@ -73,7 +75,7 @@ export function Navbar() {
             <Link
               key={path}
               href={path}
-              className={`${styles.mobileLink} ${path === pathname ? styles.mobileLinkActive : ""}`}
+              className={`${styles.mobileLink} ${isActive(path) ? styles.mobileLinkActive : ""}`}
               onClick={() => setMenuOpen(false)}
             >
               {name}

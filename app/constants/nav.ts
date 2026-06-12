@@ -14,6 +14,9 @@ export const navItems: NavItems = {
   "/projects": {
     name: "Projects",
   },
+  "/posts": {
+    name: "Blog",
+  },
   "/about": {
     name: "About",
   },

@@ -1,16 +1,18 @@
 import type { Metadata } from "next";
-import { Manrope, Newsreader } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
 
-const manrope = Manrope({
-  subsets: ["latin"],
+const manrope = localFont({
+  src: "./fonts/manrope-latin.woff2",
+  weight: "200 800",
   variable: "--font-sans",
 });
 
-const newsreader = Newsreader({
-  subsets: ["latin"],
+const newsreader = localFont({
+  src: "./fonts/newsreader-latin.woff2",
+  weight: "200 800",
   variable: "--font-serif",
 });
 
@@ -29,7 +31,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${manrope.variable} ${newsreader.variable}`}>
         <main>
           <Navbar />
