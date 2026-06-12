@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import { getAllPostMetadata } from "@/lib/posts";
+import { createPageMetadata } from "@/lib/site";
 import PostArchive from "./PostArchive";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Blog",
-  description: "Tutorials, technical notes, and stories from Kate Ramonak.",
-  alternates: { canonical: "/posts" },
-};
+  description: "Tutorials, technical notes, and stories from Kate",
+  path: "/posts",
+});
 
 export default function PostsPage() {
   const posts = getAllPostMetadata();

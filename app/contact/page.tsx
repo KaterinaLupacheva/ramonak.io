@@ -1,10 +1,12 @@
-import type { Metadata } from "next";
+import { createPageMetadata } from "@/lib/site";
 import ContactForm from "../components/ContactForm/ContactForm";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contact",
-  description: "Get in touch with Kate Ramonak — full-stack engineer.",
-};
+  description:
+    "Contact Kate about full-stack engineering roles, products, and collaborations.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return <ContactForm />;

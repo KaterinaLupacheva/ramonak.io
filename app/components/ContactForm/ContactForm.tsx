@@ -34,8 +34,8 @@ export default function ContactForm() {
   return (
     <section className={styles.section} id="contact-form">
       <div className={styles.header}>
-        <h3 className={styles.eyebrow}>Contact</h3>
-        <p className={styles.title}>Get in touch</p>
+        <p className={styles.eyebrow}>Contact</p>
+        <h1 className={styles.title}>Get in touch</h1>
         <p className={styles.description}>
           Have a role, product, or collaboration in mind? Send me a message.
         </p>

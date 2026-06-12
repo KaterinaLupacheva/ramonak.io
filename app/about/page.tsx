@@ -1,14 +1,16 @@
-import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { createPageMetadata } from "@/lib/site";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import styles from "./page.module.css";
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "About",
-  description: "About Kate Ramonak — full-stack engineer.",
-};
+  description:
+    "Meet Kate, a full-stack engineer building clear, trustworthy products for analytics, operations, and fintech.",
+  path: "/about",
+});
 
 const timeline = [
   {
@@ -84,11 +86,11 @@ export default function AboutPage() {
       <section className={styles.hero}>
         <div className={styles.heroInner}>
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>About Kate Ramonak</p>
+            <p className={styles.eyebrow}>About Kate</p>
             <div className={styles.mobilePortrait}>
               <Image
                 src="/kate.png"
-                alt="Kate Ramonak"
+                alt="Kate"
                 fill
                 className={styles.portraitImage}
                 sizes="7rem"
@@ -122,7 +124,7 @@ export default function AboutPage() {
             <div className={styles.portraitGlow} />
             <Image
               src="/kate.png"
-              alt="Kate Ramonak"
+              alt="Kate"
               fill
               className={styles.portraitImage}
               sizes="(max-width: 800px) 0px, 34vw"

@@ -6,6 +6,7 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { formatPostDate, getAllPostSlugs, getPostBySlug } from "@/lib/posts";
+import { siteConfig } from "@/lib/site";
 import styles from "./page.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -24,9 +25,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     alternates: { canonical: `/posts/${post.slug}` },
     openGraph: {
       type: "article",
+      url: `/posts/${post.slug}`,
       title: post.title,
       description: post.description,
       publishedTime: post.date,
+      authors: [siteConfig.name],
+      tags: post.tags,
+      images: [post.socialImage],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.description,
       images: [post.socialImage],
     },
   };
@@ -35,9 +45,33 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function PostPage({ params }: Props) {
   const post = getPostBySlug((await params).slug);
   if (!post) notFound();
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.description,
+    image: new URL(post.socialImage, siteConfig.url).toString(),
+    datePublished: post.date,
+    author: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    publisher: {
+      "@type": "Person",
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+    mainEntityOfPage: `${siteConfig.url}/posts/${post.slug}`,
+    keywords: post.tags.join(", "),
+  };
 
   return (
     <article className={styles.page}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <Link href="/posts" className={styles.back}>
