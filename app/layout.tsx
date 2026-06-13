@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Navbar } from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import { GoogleAnalytics } from "./components/GoogleAnalytics/GoogleAnalytics";
 import { siteConfig } from "@/lib/site";
 
 const manrope = localFont({
@@ -67,6 +68,8 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -97,6 +100,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </main>
+        {gaMeasurementId && <GoogleAnalytics measurementId={gaMeasurementId} />}
       </body>
     </html>
   );
