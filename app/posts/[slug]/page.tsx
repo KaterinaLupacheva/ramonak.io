@@ -11,12 +11,16 @@ import styles from "./page.module.css";
 
 type Props = { params: Promise<{ slug: string }> };
 
+function getPost(params: Props["params"]) {
+  return params.then(({ slug }) => getPostBySlug(decodeURIComponent(slug)));
+}
+
 export function generateStaticParams() {
   return getAllPostSlugs().map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getPostBySlug((await params).slug);
+  const post = await getPost(params);
   if (!post) return {};
 
   return {
@@ -43,7 +47,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function PostPage({ params }: Props) {
-  const post = getPostBySlug((await params).slug);
+  const post = await getPost(params);
   if (!post) notFound();
   const articleJsonLd = {
     "@context": "https://schema.org",
