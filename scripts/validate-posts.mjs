@@ -20,6 +20,13 @@ const posts = files.map((file) => {
   if (Number.isNaN(new Date(parsed.data.date).getTime())) {
     errors.push(`${file}: invalid date "${parsed.data.date}"`);
   }
+  if (parsed.data.updated !== undefined) {
+    if (typeof parsed.data.updated !== "string" || !parsed.data.updated.trim() || Number.isNaN(new Date(parsed.data.updated).getTime())) {
+      errors.push(`${file}: invalid updated "${parsed.data.updated}"`);
+    } else if (new Date(parsed.data.updated).getTime() < new Date(parsed.data.date).getTime()) {
+      errors.push(`${file}: updated "${parsed.data.updated}" is before date "${parsed.data.date}"`);
+    }
+  }
   if (slugs.has(parsed.data.slug)) errors.push(`${file}: duplicate slug "${parsed.data.slug}"`);
   slugs.add(parsed.data.slug);
   return { file, ...parsed };

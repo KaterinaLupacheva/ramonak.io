@@ -6,7 +6,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const pages = ["", "/about", "/projects", "/posts", "/contact"].map(
     (path) => ({
       url: `${siteConfig.url}${path}`,
-      lastModified: new Date(),
       changeFrequency:
         path === "/posts" ? ("weekly" as const) : ("monthly" as const),
       priority: path === "" ? 1 : path === "/contact" ? 0.5 : 0.8,
@@ -15,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const posts = getAllPostMetadata().map((post) => ({
     url: `${siteConfig.url}/posts/${post.slug}`,
-    lastModified: toPostDate(post.date),
+    lastModified: toPostDate(post.updated),
     changeFrequency: "yearly" as const,
     priority: 0.7,
   }));

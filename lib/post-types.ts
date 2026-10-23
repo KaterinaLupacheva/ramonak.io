@@ -1,6 +1,7 @@
 export type PostMeta = {
   title: string;
   date: string;
+  updated: string;
   slug: string;
   category: string;
   tags: string[];
