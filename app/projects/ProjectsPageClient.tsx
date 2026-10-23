@@ -6,7 +6,6 @@ import styles from "./page.module.css";
 
 export default function ProjectsPage() {
   const [activeSlug, setActiveSlug] = useState(projectGroups[0].slug);
-  const project = projectGroups.find((p) => p.slug === activeSlug)!;
 
   return (
     <div className={styles.page}>
@@ -29,6 +28,8 @@ export default function ProjectsPage() {
             {projectGroups.map((p) => (
               <button
                 key={p.slug}
+                id={`tab-${p.slug}`}
+                aria-controls={`panel-${p.slug}`}
                 role="tab"
                 aria-selected={p.slug === activeSlug}
                 onClick={() => setActiveSlug(p.slug)}
@@ -44,7 +45,17 @@ export default function ProjectsPage() {
       {/* Project detail */}
       <div className={styles.detailWrap}>
         <div className={styles.detailInner}>
-          <ProjectDetail project={project} />
+          {projectGroups.map((p) => (
+            <div
+              key={p.slug}
+              role="tabpanel"
+              id={`panel-${p.slug}`}
+              aria-labelledby={`tab-${p.slug}`}
+              hidden={p.slug !== activeSlug}
+            >
+              <ProjectDetail project={p} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -143,7 +154,12 @@ function SurfaceCard({
         ))}
       </div>
 
-      <button className={styles.toggleBtn} onClick={() => setOpen(!open)}>
+      <button
+        className={styles.toggleBtn}
+        onClick={() => setOpen(!open)}
+        aria-expanded={open}
+        aria-controls={`highlights-${surface.slug}`}
+      >
         {open ? "Hide highlights" : "Show highlights"}
         <svg
           width="15"
@@ -163,7 +179,7 @@ function SurfaceCard({
         </svg>
       </button>
 
-      {open && (
+      <div id={`highlights-${surface.slug}`} hidden={!open}>
         <ul className={styles.highlightList}>
           {surface.highlights.map((h, i) => (
             <li key={i} className={styles.surfaceHighlight}>
@@ -174,7 +190,7 @@ function SurfaceCard({
             </li>
           ))}
         </ul>
-      )}
+      </div>
     </div>
   );
 }
