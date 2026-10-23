@@ -1,27 +1,18 @@
 ---
 title: "Javascript: How to access the return value of a Promise object"
 date: "2020-08-22"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "javascript-return-promise"
 category: "Tutorial"
 tags:
   - "Javascript"
-description: "How to return a value from a Javascript's Promise object and then use it later in a code."
+description: "A Promise has no synchronous return value. Read the value inside a .then() callback, or await the Promise inside an async function. Logging the Promise right after fetch() prints Promise { <pending> }."
 socialImage: "/media/javascript-promise.png"
 ---
 
 ![javascript-promise-image](/media/javascript-promise.png)
-
-## Intro (completely off-topic)
-
-It's has been almost 3 months since my last blog post. There are reasons for that.
-
-First, despite all precautions, I got sick with coronavirus (COVID-19) in the second half of June 2020. For two weeks it was total hell. Very bad well-being, I could only lie in bed and hope that it will go away soon. After that, it was a recovery for the next 2-3 weeks. Now I'm finally got back to normal life and even resumed my fitness training. So, coronavirus is no joke. Please, stay safe.
-
-Second, there are lots of things happening right now in my home country - Belarus. Belarussians are fighting against dictatorship. Our (ex)-president lost last elections which were held on August 9th, 2020, but he continues to stay in power using brutal police and army forces against peaceful people and to threaten to anybody who disagrees with him. But we keep on fighting and to protest every day. I do take all these events very close to heart and hope to wake up one day in a free, democratic, and prosperous Belarus.
-
-Now back to the topic.
 
 ## What is a Promise in Javascript
 
@@ -69,7 +60,7 @@ The result is:
 }
 ```
 
-## 2 - Use returned value later in a code
+## 2 - How do I use the returned value later in my code?
 
 But what if we'd like to use the returned value somewhere later in code?
 
@@ -143,3 +134,11 @@ In both ways, we'll get:
 ## Conclusion
 
 A Promise object is widely used in Javascript async programming. And it's sometimes confusing for developers how to use it properly. In this blog post, I've attempted to describe a use case when a developer needs to use a returned value from a Promise object somewhere later in code.
+
+## A personal note
+
+It had been almost 3 months since my previous blog post when I wrote this one. There were reasons for that.
+
+First, despite all precautions, I got sick with coronavirus (COVID-19) in the second half of June 2020. For two weeks it was total hell. Very bad well-being, I could only lie in bed and hope that it will go away soon. After that, it was a recovery for the next 2-3 weeks. Now I'm finally got back to normal life and even resumed my fitness training. So, coronavirus is no joke. Please, stay safe.
+
+Second, there are lots of things happening right now in my home country - Belarus. Belarussians are fighting against dictatorship. Our (ex)-president lost last elections which were held on August 9th, 2020, but he continues to stay in power using brutal police and army forces against peaceful people and to threaten to anybody who disagrees with him. But we keep on fighting and to protest every day. I do take all these events very close to heart and hope to wake up one day in a free, democratic, and prosperous Belarus.

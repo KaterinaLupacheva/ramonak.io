@@ -1,6 +1,7 @@
 ---
 title: "React: how to dynamically sort an array of objects using the dropdown (with React Hooks)"
 date: "2020-03-05"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "react-how-to-sort-array-of-objects-with-dropdown-and-hooks"
@@ -8,11 +9,13 @@ category: "Tutorial"
 tags:
   - "React"
   - "Javascript"
-description: "How to dynamically sort an array of objects using dropdown and React Hooks and render it in React"
+description: "Keep the sorted array in state, copy it with [...bands] before calling sort(), and re-sort in a useEffect that depends on the selected dropdown value. Sorting the state array in place keeps the same reference, so React skips the re-render."
 socialImage: "/media/React-sort-with-dropdown.png"
 ---
 
 ![react-sort-array](/media/React-sort-with-dropdown.png)
+
+## The problem
 
 Assume we have the following problem:
 
@@ -21,6 +24,8 @@ Assume we have the following problem:
 - render this in browser using [react.js](https://reactjs.org/)
 
 OK, let’s get down to business!
+
+## Render the array
 
 The sample array of objects:
 
@@ -72,6 +77,8 @@ Check the view in browser:
 
 Looks good!
 
+## Add the sort dropdown
+
 Now let’s add the *select* element with options of sortable properties.
 
 ```jsx
@@ -85,6 +92,8 @@ Now let’s add the *select* element with options of sortable properties.
 That’s fantastic, but absolutely nothing happens when we change the dropdown options.
 
 ![dropdown](/posts/react-sort-dropdown/dropdown.JPG)
+
+## How do I re-render the list when the dropdown changes?
 
 To fix this problem we need to somehow connect the *select* element and the array which we want to sort and re-render sorted array values each time the different *select* option is chosen.
 
@@ -121,6 +130,8 @@ const sortArray = type => {
 ...
 ```
 
+## Why doesn't the sorted array re-render?
+
 But when we run the code, it's not working properly.
 
 ![members-sort](/posts/react-sort-dropdown/members.JPG)
@@ -144,6 +155,8 @@ The right way is first to do the copy of the bands array, sort it and then call 
 ```jsx
 const sorted = [...bands].sort((a, b) => b[sortProperty] - a[sortProperty]);
 ```
+
+## How do I sort the array on the first render?
 
 Let’s try to run the code. Well, it kinda works, but the bands data doesn’t render on the start, just after the select option is changed.
 

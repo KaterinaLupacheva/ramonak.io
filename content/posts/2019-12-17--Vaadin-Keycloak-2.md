@@ -1,6 +1,7 @@
 ---
 title: Setting up Vaadin Spring Boot Frontend App
 date: "2019-12-17T11:00:32.169Z"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "setting-up-vaadin-spring-boot-frontend-app"
@@ -10,7 +11,7 @@ tags:
   - "Spring Boot"
   - "Java"
   - "Keycloak"
-description: "The second part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
+description: "Generate a Vaadin 14 Spring Boot project at vaadin.com/start, add a RestTemplate client service that calls the backend REST API, and add MonthsView and AdminView routes that show its data. The frontend runs on its own port, 9998 in this tutorial."
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
@@ -19,6 +20,8 @@ socialImage: "/media/spring-vaadin-keycloak.png"
 
 
 [Vaadin](https://vaadin.com/) is an open-source web framework which helps Java developers to create UI for web applications.
+
+## How do I create a Vaadin Spring Boot project?
 
 The most simple and convenient way to start building Vaadin application is to use Vaadin Starter Project. For that, we go to https://vaadin.com/start, chose the latest Vaadin version (which is 14 as of December 2019), Spring Boot tech stack, enter Maven Group ID and the Project Name. Press the download button.
 
@@ -29,6 +32,8 @@ Once again, after the project downloaded, unzip the folder and open the project 
 Vaadin base project has the following structure:
 
 ![vaadin-structure](/posts/Vaadin-KeyCloak/vaadin-structure.JPG)
+
+## Add a REST client for the backend
 
 Due to the architecture of the whole (backend + frontend) app, the Vaadin app (frontend) should consume REST API of the backend. For that, we need to add a REST client layer, which will send GET request to the backend. We’ll use Spring’s convenient template class [RestTemplate](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/client/RestTemplate.html).
 
@@ -56,7 +61,11 @@ public class ClientService {
 }
 ```
 
-Annotation @Service on ClientService class is the Spring’s classpath scanning annotation.Methods getMonths() and getAdminPage() do GET HTTP requests to our backend app to fetch corresponding data.Now it’s time to add views (or pages) to our UI. 
+Annotation @Service on ClientService class is the Spring’s classpath scanning annotation. Methods getMonths() and getAdminPage() do GET HTTP requests to our backend app to fetch corresponding data.
+
+## Add the views
+
+Now it’s time to add views (or pages) to our UI. 
 * Add MonthsView class. Each month’s data we’ll show in separate Paragraph (```<p>``` HTML tag). All paragraphs we’ll include in Div element.
 
 ```java
@@ -86,7 +95,11 @@ public class AdminView extends Div {
 
 URL for this view is /admin. Again we use ClientService and it’s getAdminPage() method to fetch data from backend. The received text we’ll show in H1 component.
 
+## Set the port
+
 * Define the port on which the app will run. In the application.properties file change default 8080 port to 9998 (or whatever you chose, but different from port on which our backend app is running).
+
+## Run the app
 
 Now let’s look at what we’ve developed so far. Run the Vaadin app as a standard Spring Boot App. Navigate in browser to localhost:9998/months and see months’ data:
 

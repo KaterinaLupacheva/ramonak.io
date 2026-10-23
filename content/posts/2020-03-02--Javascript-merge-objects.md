@@ -1,17 +1,20 @@
 ---
 title: "Javascript: how to merge multiple objects with sum of values"
 date: "2020-03-02"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "javascript-how-to-merge-multiple-objects"
 category: "Tutorial"
 tags:
   - "Javascript"
-description: "Short blog post about how to merge multiple objects with the sum of property's values in Javascript."
+description: "Loop over the array with forEach, read each object's key-value pairs with Object.entries(), and add each value to a result object under the same key. A key seen for the first time starts at its value. The result is one object with the sum for every key."
 socialImage: "/media/js-merge-objects.png"
 ---
 
 ![js-merge-objects](/media/js-merge-objects.png)
+
+## Example data
 
 Assume we have an array of objects - baskets with fruits.
 
@@ -46,6 +49,8 @@ There are different types of fruits with different quantities in each basket (on
 
 How can we merge all these objects (baskets) into one and count total sum of each fruit?
 
+## How do I merge objects and sum their values in JavaScript?
+
 Let’s create helper method.
 
 ```javascript
@@ -72,6 +77,8 @@ const mergeFruits = data => {
 5. If yes (true), add to the previous value of the property the value of the key, e.g. if there is a property “apples” with value “4” in the result object, then add more apples from the next basket.
 6. If no (false), then it’s a new property (a new fruit) for a result object, so create this property and assign the corresponding value to it.
 7. Return merged object
+
+## Result
 
 If we run the code and print the result into console:
 

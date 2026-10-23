@@ -1,18 +1,21 @@
 ---
 title: "Keycloak: adding roles and users"
 date: "2019-12-17T13:00:32.169Z"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "keycloak-adding-roles-and-users"
 category: "Tutorial"
 tags:
   - "Keycloak"
-description: "The fourth part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
+description: "In the Keycloak admin console, open Roles and add the user and admin roles. Then open Users, add a user, set a password on the Credentials tab, and assign a role on the Role Mapping tab."
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a fourth part of the [series](https://ramonak.io/posts/springboot–vaadin-keycloak–springsecurity-integration).
 > The source code of the complete project is available in <a href="https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo" target="_blank">this GitHub repository</a>
+
+## How do I add roles in Keycloak?
 
 Now we can define Roles, which will be used in our apps for authorization.
 
@@ -25,6 +28,8 @@ Create two roles: user and admin.
 Here is the list of the roles of our Demo Realm.
 
 ![roles-list](/posts/Vaadin-KeyCloak/roles-list.JPG)
+
+## How do I add users and assign roles?
 
 Now we can add users. We’ll add two users: one – “standard” user and one – admin user.
 

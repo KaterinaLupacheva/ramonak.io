@@ -1,6 +1,7 @@
 ---
 title: "Spring Boot – Keycloak – Spring Security integration"
 date: "2019-12-17T15:00:32.169Z"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "spring-boot–keycloak-spring-security-integration"
@@ -10,12 +11,14 @@ tags:
   - "Spring Security"
   - "Keycloak"
   - "Java"
-description: "The sixth part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
+description: "Add the keycloak-spring-boot-starter and spring-boot-starter-security dependencies, put the Keycloak client settings in application.properties, and extend KeycloakWebSecurityConfigurerAdapter with role rules. A KeycloakSpringBootConfigResolver bean works around a startup error in Keycloak adapter 8.0.1."
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a sixth part of the [series](https://ramonak.io/posts/springboot–vaadin-keycloak–springsecurity-integration).
 > The source code of the complete project is available in <a href="https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo" target="_blank">this GitHub repository</a>
+
+## Add the Keycloak Spring Boot adapter
 
 To be able to secure Spring Boot apps we must add the Keycloak Spring Boot adapter JAR to the app.  For that we need to add Keycloak Spring Boot starter dependency and the adapter BOM dependency: 
 
@@ -38,6 +41,8 @@ To be able to secure Spring Boot apps we must add the Keycloak Spring Boot adapt
   </dependencies>
 </dependencyManagement>
 ```
+
+## Configure application.properties
 
 Then insert downloaded (saved) properties from Keycloak admin panel (when we were creating Clients) into application.properties file and transform them from JSON object into properties. So in case of our backend app full application.properties are as follows:
 
@@ -67,6 +72,8 @@ keycloak.security-constraints[0].securityCollections[0].patterns[0]=/months
 ```
 
 This means that all requests to /months will only be authorized for user with the role “user”. But I think it’ll be better (and prettier) to integrate Spring Security with Keycloak.
+
+## How do I integrate Spring Security with Keycloak?
 
 According to official [Keycloak documentation](https://www.keycloak.org/docs/latest/securing_apps/index.html), there is a Keycloak Spring Security adapter. But this dependency is already included in the Keycloak Spring Boot starter dependency. So we have to add only Spring Boot Starter Security dependency
 
@@ -126,6 +133,8 @@ To get access to /months endpoint the user must be authorized with either User o
 
 Endpoint /admin is only accessible for Admin.
 
+## Run the app
+
 Testing time! Let’s run our app:
 
 ```
@@ -149,6 +158,8 @@ Action:
 Consider defining a bean of type 'org.keycloak.adapters.springboot.KeycloakSpringBootConfigResolver' in your configuration.
 ```
 
+## How do I fix the missing KeycloakSpringBootConfigResolver bean?
+
 Currently, there is an [issue](https://issues.redhat.com/browse/KEYCLOAK-11282) with Spring Boot Keycloak adapter. But luckily, we have a workaround! Just create a new config class:
 
 ```java
@@ -168,6 +179,8 @@ Let’s run again the app🤞
 mvn spring-boot:run
 ```
 
+## Test access as a user
+
 Well, at least it’s started! Now navigate to localhost:9999/months.
 
 And we are being redirected to default Keycloak login page.
@@ -185,6 +198,8 @@ Now let’s try to navigate to /admin page.
 ![error-page](/posts/Vaadin-KeyCloak/error-page.JPG)
 
 And we get an error page… Which means that it’s working as it’s supposed to be! User must have Admin authority to get access to admin page.
+
+## Test access as an admin
 
 To be able to login as Admin,  first of all we need to logout as a “simple” user role. As we have just a backend service we won’t be adding fancy logout button (we’ll do it in our frontend app). We’ll logout using Keycloak admin console.
 
