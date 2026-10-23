@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.description,
       publishedTime: post.date,
+      modifiedTime: post.updated,
       authors: [siteConfig.name],
       tags: post.tags,
       images: [post.socialImage],
@@ -56,6 +57,9 @@ export default async function PostPage({ params }: Props) {
     description: post.description,
     image: new URL(post.socialImage, siteConfig.url).toString(),
     datePublished: post.date,
+    dateModified: post.updated,
+    articleSection: post.category,
+    inLanguage: "en",
     author: {
       "@type": "Person",
       name: siteConfig.name,

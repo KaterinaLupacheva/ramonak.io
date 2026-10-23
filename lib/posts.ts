@@ -29,11 +29,19 @@ function parsePostFile(fileName: string): { draft: boolean; post: Post } {
     }
   }
 
+  if (
+    data.updated !== undefined &&
+    (typeof data.updated !== "string" || !data.updated.trim())
+  ) {
+    throw new Error(`${fileName}: invalid frontmatter field "updated"`);
+  }
+
   return {
     draft: data.draft === true,
     post: {
       title: data.title,
       date: data.date,
+      updated: data.updated ?? data.date,
       slug: data.slug,
       category: data.category,
       tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
