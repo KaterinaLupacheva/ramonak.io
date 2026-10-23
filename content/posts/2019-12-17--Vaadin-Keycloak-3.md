@@ -1,13 +1,14 @@
 ---
 title: Keycloak server installation and Realm creation
 date: "2019-12-17T12:00:32.169Z"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "keycloak-server-installation-and-realm-creation"
 category: "Tutorial"
 tags:
   - "Keycloak"
-description: "The third part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
+description: "Download the Keycloak server, optionally change its HTTP port in standalone/configuration/standalone.xml, and start it with bin/standalone.sh (standalone.bat on Windows). Then create an admin user at localhost:<port>/auth and add a realm from the Master drop-down in the admin console."
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
@@ -16,11 +17,15 @@ socialImage: "/media/spring-vaadin-keycloak.png"
 
 [Keycloak](https://www.keycloak.org/) is an open-source Identity and Access Management solution. It runs as a separate service.
 
+## How do I install Keycloak?
+
 To start using Keycloak we need to download it’s latest server version from [here](https://www.keycloak.org/downloads.html).
 
 ![keycloak-download](/posts/Vaadin-KeyCloak/keycloak-download.JPG)
 
 Unzip downloaded folder.
+
+## Change the Keycloak port
 
 If you (like me) don’t like to use default port 8080, go to \standalone\configuration\standalone.xml and change the port in property
 
@@ -29,6 +34,8 @@ If you (like me) don’t like to use default port 8080, go to \standalone\config
 ```
 
 (it’s almost at the end of the file) to whatever port you like, but remember that it should differ from ports on which backend and frontend apps are running. I’ll use port 9991. Save it and close standalone.xml.
+
+## Start the Keycloak server
 
 To boot the Keycloak server, go to the bin directory of the downloaded distribution and run the standalone boot script. In command line enter:
 
@@ -41,6 +48,8 @@ $ ./standalone.sh
 on Windows
 > ...\bin\standalone.bat
 ```
+
+## Create the admin account
 
 To manage Keycloak server configurations, we should create the Admin Account. Go to 
 ```
@@ -62,6 +71,8 @@ localhost:<keycloak_port>/auth/admin
 enter credentials of just created admin user and finally, we are at the “operational center” of Keycloak server.
 
 ![keycloak-main](/posts/Vaadin-KeyCloak/keycloak-main.JPG)
+
+## How do I create a realm in Keycloak?
 
 Now we need to create Realm – it’s a Keycloak terminology for a group of apps that should be able to communicate with each other.
 

@@ -1,6 +1,7 @@
 ---
 title: "Tabata - Fitness App: my first personal project"
 date: "2020-02-19"
+updated: "2026-10-23"
 template: "post"
 draft: false
 slug: "tabata-fitness-app-first-project"
@@ -8,13 +9,15 @@ category: "Story"
 tags:
   - "Project"
   - "Development"
-description: "This blog post is a story about development of my first personal project: Tabata - Fitness App."
+description: "Tabata App is a web app for short home HIIT workouts. It runs a 20-second work and 10-second rest timer with a voice countdown, builds random or hand-picked workouts with exercise videos, and installs on phones as a PWA. I built it with React, Redux, Spring Boot, PostgreSQL, and Vaadin."
 socialImage: "/posts/tabata/tabata-landing.JPG"
 ---
 
 ![tabata-app](/posts/tabata/tabata-landing.JPG)
 
 This blog post is going to be about the process of developing my first significant personal project - [Tabata App](https://tabata.ramonak.io/).
+
+## Why I built it
 
 The idea of this app was born from personal needs. As a freelancer, I work mostly from home. Thus the movement is minimal. So to feel better and to be energized I need to work out.
 
@@ -30,9 +33,13 @@ And by the way, as I’ve started doing fitness using old good DVDs (yeah, it wa
 
 So, my thinking was “I need a fitness web app, with bare minimum of settings and options, which I can use every day and not be bored”. And started to develop the fitness app.
 
+## The Tabata timer
+
 I’m a big fan of efficiency. And I’m not a fitness expert. But I’ve been practicing a home fitness for about the past 10 years (with some timeouts). I’ve read a lot of articles about the most efficient way of workout. And came to the conclusion that the most suitable and the most effective workout for me is High Intensity Interval Training (HIIT). Specifically, the Tabata training: you do every exercise for 20 secs and then rest for 10 secs. That’s why the Tabata timer with voice countdown was the first feature I’ve developed in the app.
 
 ![tabata-timer](/posts/tabata/tabata-timer.JPG)
+
+## Random workouts
 
 The “not be bored” part I’ve decided to solve by creating [Random Workouts!](https://tabata.ramonak.io/parameters) The app randomly picks the exercises from the list of all exercises, that I’ve added to the database.
 
@@ -60,9 +67,13 @@ So, in 5 seconds I’m ready to workout! A 16-minute high-intensity workout is e
 
 Also, I’ve implemented the algorithm by which there will be at least 20% of cardio exercises in every random workout. I’ve done it to keep the heart rate up which is very important for an effective workout.  
 
+## Custom workouts
+
 If you are not willing to completely put your fitness fate into the app’s arms, you can [choose the exercises](https://tabata.ramonak.io/create-workout) for workout by yourself from the list of all exercises. Then just pick the number of circuits and you are ready to go!
 
 ![tabata-create-workout](/posts/tabata/tabata4.JPG)
+
+## Exercise videos
 
 Well, the next problem was with the visuals of the exercises. Images? Not very informative, hard to show the exercise in the dynamics. GIFS? Doesn’t look good. So I’ve decided to add the videos! Not to worry about copyrights and other possible legal issues, I was left with the only option - to shoot videos of myself doing exercises.
 
@@ -73,6 +84,8 @@ So, I moved all the shyness and self-consciousness away and stood in front of th
 Then I had to edit them all. I cut the 1-2 repetitions of the exercises and looped the playback. The results were uploaded to AWS S3 and corresponding links were provided in the app.
 
 ![tabata-workout](/posts/tabata/tabata3.JPG)
+
+## Installing it as a PWA
 
 The last thing I did for the first release was implementing the [Progressive Web App](/posts/what-is-progressive-web-app) feature. Thus the app is fully functioning on mobile devices. When you open the app in the browser for the first time, just add it’s icon on the home screen.
 
@@ -86,11 +99,15 @@ On Apple’s devices it’s a little bit harder: first, you need to press the sh
 
 So after about 2 months of hard work, the first version of the Tabata App was ready!!!
 
+## Tech stack
+
 Couple words about the tech part. I’ve developed the app using the following main technologies:
 
 - front-end (Javascript): [React.js](https://reactjs.org/), [Redux](https://redux.js.org/), [Sass](https://sass-lang.com/)
 - back-end (Java): [Spring Boot](https://spring.io/projects/spring-boot), [Spring Data](https://spring.io/projects/spring-data), [Spring Security](https://spring.io/projects/spring-security), [PostgreSQL](https://www.postgresql.org/) database
 - admin panel: [Vaadin](https://vaadin.com/) framework (Java)
+
+## What's next
 
 I’m planning to write some technical blog posts about new things that I’ve learned and about some problems that I’ve solved while developing the app.  
 
