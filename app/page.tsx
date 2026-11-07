@@ -55,6 +55,30 @@ const selectedWork = [
     ],
   },
   {
+    title: "teach",
+    externalHref: "https://teach.ramonak.io",
+    label: "AI math tutoring · side project",
+    summary:
+      "Turns one homework problem into a short lesson a child solves on their own.",
+    detail:
+      "A parent photographs or types a math exercise. The app recognizes it, generates a worksheet, has a second model review it, and sends the child a link once the parent approves.",
+    image: "/images/teach.png",
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Supabase",
+      "Kysely",
+      "Vercel AI Gateway",
+    ],
+    highlights: [
+      "Recognizes exercises from a textbook photo, a chat screenshot, or typed text, then validates them before generating",
+      "A separate model reviews every lesson and a fix model repairs what it flags, before the parent sees it",
+      "Eval suites for recognition, generation, and review run against a curated corpus",
+      "Built almost entirely through Claude Code, with a project verification skill that drives the real app",
+    ],
+  },
+  {
     title: "bekiPay / Sikoba",
     externalHref:
       "https://play.google.com/store/apps/details?id=com.sikoba.bekiPay",

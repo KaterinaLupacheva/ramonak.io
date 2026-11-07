@@ -196,6 +196,67 @@ export const projectGroups: ProjectGroup[] = [
     ],
   },
   {
+    slug: "teach",
+    title: "teach",
+    eyebrow: "AI math tutoring, side project",
+    summary:
+      "An adaptive math app that turns one homework exercise into a short lesson: a worked warm-up, a similar problem about something the child likes, then the original problem without hints.",
+    context:
+      "My own product, in pilot with Russian-speaking families on the Belarusian curriculum. I built it almost entirely through Claude Code sessions, with a verification skill that drives the real app.",
+    image: "/images/teach.png",
+    links: [
+      {
+        label: "Visit app",
+        href: "https://teach.ramonak.io",
+      },
+    ],
+    highlights: [
+      "The LLM pipeline recognizes an exercise from a photo, screenshot, or text, generates a lesson, and has a separate model review and repair it before a parent approves it.",
+      "Eval suites cover recognition, exercise validation, generation, and review, each scored against a curated corpus.",
+      "Changes ship through Claude Code with a project verification skill that drives the Parent and Student flows in Playwright against local Supabase.",
+    ],
+    surfaces: [
+      {
+        slug: "teach-pipeline",
+        title: "Recognition and lesson generation pipeline",
+        eyebrow: "AI surface",
+        summary:
+          "Model calls that read a submitted exercise, analyse it, generate a lesson bundle, and review it before anyone sees it.",
+        context:
+          "Each role (recognition, generation, review, fix) has its own pinned model behind Vercel AI Gateway, and the config refuses a setup where a model reviews its own output.",
+        highlights: [
+          "I built recognition for textbook photos, chat screenshots, and typed text, with the photo used once and never stored.",
+          "I built a review step where a second model flags problems in a generated lesson and a fix model repairs only the flagged fields.",
+          "I check student answers deterministically with symbolic, inequality, ratio, and multi-part checkers instead of asking a model.",
+          "I run eval suites for recognition, exercise validation, generation, and review against a curated corpus, and record prompt versions so stale analyses are not reused.",
+        ],
+        stack: ["Vercel AI Gateway", "Zod", "TypeScript", "Vitest"],
+      },
+      {
+        slug: "teach-app",
+        title: "Parent and Student app",
+        eyebrow: "Product surface",
+        summary:
+          "A Parent dashboard to submit exercises and approve lessons, and a Student surface a child opens from a one-time link without an account.",
+        context:
+          "A layered Next.js app on Supabase Postgres and Auth, with server-side data access through Kysely.",
+        highlights: [
+          "I built the Parent flow from submission through review and approval, and the account-free Student lesson flow.",
+          "I keep the codebase layered by a documented architecture and checked by typecheck, lint, knip, unit, database, and Playwright tests.",
+          "I work through Claude Code, with a verification skill that proves user-facing behaviour in the real app.",
+        ],
+        stack: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Supabase",
+          "Kysely",
+          "Playwright",
+        ],
+      },
+    ],
+  },
+  {
     slug: "bekipay-sikoba",
     title: "bekiPay / Sikoba",
     eyebrow: "Fintech product",
