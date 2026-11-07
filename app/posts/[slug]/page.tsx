@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ArrowIcon from "../../components/ArrowIcon/ArrowIcon";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
@@ -83,7 +84,8 @@ export default async function PostPage({ params }: Props) {
       <header className={styles.header}>
         <div className={styles.headerInner}>
           <Link href="/posts" className={styles.back}>
-            ← All posts
+            <ArrowIcon direction="left" />
+            All posts
           </Link>
           <div className={styles.meta}>
             <time dateTime={post.date}>{formatPostDate(post.date)}</time>

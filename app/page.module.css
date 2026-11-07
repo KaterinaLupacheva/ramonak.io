@@ -109,9 +109,34 @@
 }
 
 .subhead {
-  max-width: 32rem;
-  font-size: var(--text-base);
-  line-height: 1.7;
+  max-width: 38rem;
+  font-size: var(--text-md);
+  line-height: 1.75;
+}
+
+.subheadLink {
+  color: var(--color-ink);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.subheadLinkText {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+}
+
+.subheadLink:hover {
+  color: var(--color-accent);
+}
+
+.subheadLink > .subheadIcon {
+  width: 1em;
+  height: 1em;
+  margin-left: 0.1em;
+  vertical-align: -0.12em;
 }
 
 .heroActions {
@@ -154,6 +179,7 @@
 .tertiaryAction {
   display: inline-flex;
   align-items: center;
+  gap: 0.5rem;
   min-height: 3.1rem;
   color: var(--color-ink);
   font-size: var(--text-base);

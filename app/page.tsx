@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ArrowIcon from "./components/ArrowIcon/ArrowIcon";
 import SocialLinks from "./components/SocialLinks/SocialLinks";
 import WorkCard from "./components/WorkCard/WorkCard";
 import styles from "./page.module.css";
@@ -118,20 +119,35 @@ export default function Home() {
               <h1 className={styles.headline}>
                 <span className={styles.headlineIntro}>Hi, I&apos;m Kate.</span>
                 <span className={styles.headlineMain}>
-                  I build full-stack products where the hard parts stay
-                  invisible.
+                  I build AI products, and the workflows my agents run on.
                 </span>
               </h1>
               <p className={styles.subhead}>
-                Full-stack work for analytics, operations, and integration-heavy
-                products that still feel clear in use.
+                Most of my work is analytics and operations software in Next.js,
+                React, and TypeScript. These days that includes AI features like
+                LLM pipelines and MCP servers. I write code through Claude Code,
+                with my own{" "}
+                <a
+                  href="https://github.com/KaterinaLupacheva/skills"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.subheadLink}
+                >
+                  <span className={styles.subheadLinkText}>skills</span>
+                  <ArrowIcon
+                    direction="up-right"
+                    className={styles.subheadIcon}
+                  />
+                </a>
+                , evals, and verification checks.
               </p>
               <div className={styles.heroActions}>
                 <Link href="/projects" className={styles.primaryAction}>
                   View selected work
                 </Link>
                 <Link href="/contact" className={styles.tertiaryAction}>
-                  Start a conversation →
+                  Start a conversation
+                  <ArrowIcon direction="right" />
                 </Link>
               </div>
               <SocialLinks

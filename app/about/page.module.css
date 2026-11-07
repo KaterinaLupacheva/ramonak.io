@@ -542,15 +542,14 @@
 }
 
 .ctaSection::after {
-  content: "↗";
+  content: "";
   position: absolute;
   right: max(1.5rem, calc((100% - var(--content-width)) / 2 + 1.5rem));
   bottom: clamp(1.5rem, 4vw, 3rem);
-  color: var(--color-accent);
-  font-family: var(--font-serif), serif;
-  font-size: clamp(5rem, 12vw, 10rem);
-  font-weight: 300;
-  line-height: 0.7;
+  width: clamp(4rem, 9vw, 7.5rem);
+  aspect-ratio: 1;
+  background: var(--color-accent);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 17 17 7M8 7h9v9'/%3E%3C/svg%3E") center / contain no-repeat;
   opacity: 0.07;
   pointer-events: none;
 }

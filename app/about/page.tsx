@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { createPageMetadata } from "@/lib/site";
+import ArrowIcon from "../components/ArrowIcon/ArrowIcon";
 import SocialLinks from "../components/SocialLinks/SocialLinks";
 import styles from "./page.module.css";
 
@@ -110,7 +111,7 @@ export default function AboutPage() {
                 See my work
               </Link>
               <Link href="/contact" className={styles.secondaryAction}>
-                Contact me <span aria-hidden="true">→</span>
+                Contact me <ArrowIcon direction="right" />
               </Link>
             </div>
             <SocialLinks
@@ -330,7 +331,7 @@ export default function AboutPage() {
                 Start a conversation
               </Link>
               <Link href="/projects" className={styles.ctaSecondary}>
-                See selected work <span aria-hidden="true">→</span>
+                See selected work <ArrowIcon direction="right" />
               </Link>
             </div>
           </div>
