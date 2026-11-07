@@ -250,7 +250,7 @@
 
 .workList {
   display: grid;
-  gap: 2rem;
+  gap: 5rem;
 }
 
 .workFeature {
@@ -516,7 +516,7 @@
   }
 
   .workList {
-    gap: 1.5rem;
+    gap: 4rem;
   }
 
   .workFeature {
