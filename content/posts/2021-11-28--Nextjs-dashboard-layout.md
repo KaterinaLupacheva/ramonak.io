@@ -1,6 +1,7 @@
 ---
 title: "Next.js Dashboard layout with TypeScript and Styled components"
 date: "2021-11-28"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "nextjs-dashboard-layout"
@@ -9,7 +10,7 @@ tags:
   - "React"
   - "Next.js"
   - "Dashboard"
-description: "How to create a classic Dashboard layout that includes a header, footer, menu drawer (sidebar) with toggle, multilevel nested menu and content using Next.js, TypeScript and Styled component."
+description: "Wrap pages in a DashboardLayout component with a header, sidebar, content and footer styled with styled-components, and add a custom _document so styles render on the server. A useState flag toggles the sidebar width, and the multilevel menu is built from a typed menu-items constant with nested subItems."
 socialImage: "/media/nextjs-dashboard.png"
 ---
 

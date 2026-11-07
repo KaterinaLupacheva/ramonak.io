@@ -1,6 +1,7 @@
 ---
 title: "Vaadin – Keycloak – Spring Security integration"
 date: "2019-12-17T16:00:32.169Z"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "vaadin–keycloak–spring-security-integration"
@@ -11,12 +12,14 @@ tags:
   - "Spring Security"
   - "Keycloak"
   - "Java"
-description: "The seventh (last) part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration."
+description: "Add the Keycloak Spring Boot starter and Spring Security to the Vaadin app, set the vaadin-ui client properties, and extend KeycloakWebSecurityConfigurerAdapter. Replace RestTemplate with KeycloakRestTemplate so backend calls carry the user's bearer token, and add a logout link to Keycloak's OpenID Connect logout endpoint."
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
 > This blog post is a seventh part of the [series](https://ramonak.io/posts/springboot–vaadin-keycloak–springsecurity-integration).
 > The source code of the complete project is available in <a href="https://github.com/KaterinaLupacheva/spring-boot-vaadin-keycloak-demo" target="_blank">this GitHub repository</a>
+
+## How do I add Keycloak to the Vaadin app?
 
 So, we also have the Vaadin frontend app.
 
@@ -106,6 +109,8 @@ public class KeycloakConfig {
 }
 ```
 
+## How do I send the access token to the backend?
+
 If we try to navigate to the frontend’s view, for example, localhost:9998/months, we’ll be redirected to Keycloak’s default login page. But after providing credentials of any of our users,  we’ll get an error:
 
 ```
@@ -169,6 +174,8 @@ And also don’t forget to run the backend app (in case it’s stopped). Navigat
 
 ![months-view](/posts/Vaadin-KeyCloak/months-view.JPG)
 Go to localhost:9998/admin. And we get an error, which is totally fine, as our user doesn’t have access to the Admin page.
+
+## How do I add a logout link and show the user's name?
 
 To log in as an admin, first, we have to logout as a user. Now let’s implement it in the Vaadin app UI.
 
@@ -244,6 +251,8 @@ AdminView
 
 @Route(value = “admin”, layout = MainView.class)
 ```
+
+## Test the whole flow
 
 Testing: run the app
 

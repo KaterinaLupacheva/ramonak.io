@@ -1,6 +1,7 @@
 ---
 title: "How to upload a file to Amazon S3 in Java (using Vaadin framework)"
 date: "2020-03-14"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "vaadin-upload-file-to-amazon-s3-java"
@@ -9,7 +10,7 @@ tags:
   - "Vaadin"
   - "Java"
   - "AWS"
-description: "How to upload file to Amazon S3 in Java, but with UI build with Vaadin framework"
+description: "Create an S3 bucket and an IAM user with programmatic access to that bucket only, then add aws-java-sdk to the Spring Boot project. Build the client with AmazonS3ClientBuilder and the user's keys, and in the Vaadin Upload component's succeeded listener send the buffered file with putObject."
 socialImage: "/media/vaadin-upload-to-aws.png"
 ---
 

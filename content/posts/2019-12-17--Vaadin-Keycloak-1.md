@@ -1,6 +1,7 @@
 ---
 title: Spring Boot – Vaadin – Keycloak – Spring Security Integration
 date: "2019-12-17T10:00:32.169Z"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "springboot–vaadin-keycloak–springsecurity-integration"
@@ -10,7 +11,7 @@ tags:
   - "Spring Boot"
   - "Java"
   - "Keycloak"
-description: "The first part of tutorial series Spring Boot – Vaadin – Keycloak – Spring Security Integration"
+description: "This seven-part series protects a Spring Boot REST backend and a Vaadin frontend with Keycloak and Spring Security. Part 1 builds the backend, a Spring Boot app on port 9999 with two GET endpoints, /months and /admin."
 socialImage: "/media/spring-vaadin-keycloak.png"
 ---
 
@@ -23,6 +24,8 @@ Recently on one of my Java projects, I was faced with the challenge to implement
 – Vaadin frontend client, which consumes that REST endpoints
 
 – KeyCloak server for authorization and authentication management 
+
+## What does this series build?
 
 In this blog post series, I’ll go through the process of developing a basic application with the above-mentioned structure. The series consist of the next parts:
 
@@ -57,6 +60,8 @@ Press “Generate” button to download zip file with the project, unzip the fol
 The project has the following structure:
 
 ![backend-structure](/posts/Vaadin-KeyCloak/Backend-structure.JPG)
+
+### How do I add the REST endpoints?
 
 Now let’s create Controller class and add two REST endpoints: the first one will return the names of winter months, the second will be admin page.
 

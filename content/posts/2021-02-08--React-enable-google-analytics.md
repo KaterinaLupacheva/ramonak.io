@@ -1,6 +1,7 @@
 ---
 title: "React: enable Google Analytics after a user grants consent"
 date: "2021-02-08"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-google-analytics-consent"
@@ -8,7 +9,7 @@ category: "Tutorial"
 tags:
   - "React"
   - "Google Analytics"
-description: "How to conditionally enable Google Analytics tracker depending on a user's prior consent."
+description: "Initialize react-ga only in the onAccept handler of the react-cookie-consent banner. On later visits, call getCookieConsentValue in useEffect and initialize Google Analytics if consent was given. On decline, remove the _ga, _gat and _gid cookies."
 socialImage: "/media/react-ga-consent.png"
 ---
 

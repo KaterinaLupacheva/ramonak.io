@@ -1,6 +1,7 @@
 ---
 title: "React Native Internationalization with i18next"
 date: "2021-07-21"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-native-internationalization"
@@ -8,7 +9,7 @@ category: "Tutorial"
 tags:
   - "React Native"
   - "Internationalization"
-description: "How to add internationalization functionality to a React Native app using i18next library."
+description: "Install i18next and react-i18next, initialize them with your translations, and render text with the t function from useTranslation. A Node script with google-spreadsheet writes translations from a Google Sheet into the app, and a custom languageDetector plugin saves the chosen language in AsyncStorage and falls back to the device locale."
 socialImage: "/media/rn-i18n.png"
 ---
 

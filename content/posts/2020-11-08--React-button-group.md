@@ -1,6 +1,7 @@
 ---
 title: "React: How to create a custom Button Group component in 5 minutes"
 date: "2020-11-08"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-button-group"
@@ -8,7 +9,7 @@ category: "Tutorial"
 tags:
   - "React"
   - "component"
-description: "How to create a custom Button Group component in 5 minutes from scratch with selection (active button) functionality using React.js."
+description: "Map an array of labels to buttons, keep the index of the clicked button in useState (starting at -1 so none is selected), and give that button an active CSS class. Wrap it in a ButtonGroup component that takes the labels and a doSomethingAfterClick callback."
 socialImage: "/media/react-button-group.png"
 ---
 

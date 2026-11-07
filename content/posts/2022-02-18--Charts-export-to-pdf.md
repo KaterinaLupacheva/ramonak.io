@@ -1,6 +1,7 @@
 ---
 title: "Export multiple charts to PDF with React and jsPDF"
 date: "2022-02-18"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "highcharts-react-pdf"
@@ -9,7 +10,7 @@ tags:
   - "React"
   - "Highcharts"
   - "TypeScript"
-description: "How to export multiple charts into multipage pdf document with React.js, Highcharts and jsPDF."
+description: "Highcharts renders SVG, which jsPDF can't add directly, so convert each chart element to a PNG with html-to-image and add it with jsPDF's addImage. When the next chart doesn't fit on the page, call addPage, then download the file with save()."
 socialImage: "/media/charts-export-pdf.png"
 ---
 
