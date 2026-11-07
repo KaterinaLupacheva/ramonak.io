@@ -61,16 +61,8 @@ export default async function PostPage({ params }: Props) {
     dateModified: post.updated,
     articleSection: post.category,
     inLanguage: "en",
-    author: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
-    publisher: {
-      "@type": "Person",
-      name: siteConfig.name,
-      url: siteConfig.url,
-    },
+    author: { "@id": siteConfig.personId },
+    publisher: { "@id": siteConfig.personId },
     mainEntityOfPage: `${siteConfig.url}/posts/${post.slug}`,
     keywords: post.tags.join(", "),
   };
@@ -88,6 +80,9 @@ export default async function PostPage({ params }: Props) {
             All posts
           </Link>
           <div className={styles.meta}>
+            <Link href="/about" className={styles.author}>
+              By {siteConfig.name}
+            </Link>
             <time dateTime={post.date}>{formatPostDate(post.date)}</time>
             <span>{post.category}</span>
           </div>
