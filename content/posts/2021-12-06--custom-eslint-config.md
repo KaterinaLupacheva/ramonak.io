@@ -1,6 +1,7 @@
 ---
 title: "How to create custom reusable ESLint, TypeScript, Prettier config for React apps"
 date: "2021-12-05"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "custom-eslint-config"
@@ -9,7 +10,7 @@ tags:
   - "React"
   - "TypeScript"
   - "ESLint"
-description: "How to create a custom reusable ESLint (for TypeScript) and Prettier config and publish it as npm package. And how to add Husky and lint-staged packages to React project."
+description: "Create an npm package named eslint-config-<name>, configure ESLint for TypeScript and React plus Prettier, export the config from index.js, and declare the plugins as peerDependencies. Publish it and extend it from any project's .eslintrc. Husky and lint-staged then lint staged files before each commit."
 socialImage: "/media/custom-eslint-config.png"
 ---
 

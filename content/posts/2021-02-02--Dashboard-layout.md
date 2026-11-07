@@ -1,6 +1,7 @@
 ---
 title: "Dashboard layout with React.js and Material-UI"
 date: "2021-02-02"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "dashboard-layout-react-material-ui"
@@ -9,7 +10,7 @@ tags:
   - "React"
   - "Material UI"
   - "Dashboard"
-description: "How to create a classic Dashboard layout that includes a header, footer, menu drawer (sidebar) with toggle and content using React.js and Material UI."
+description: "Stack a header, a flex container and a footer in a column, and inside the container put the drawer next to the content, which takes the rest of the space with flex: 1. A useState boolean toggles the drawer. The second part builds the same layout with Material UI's AppBar, Toolbar and Drawer."
 socialImage: "/media/dashboard-layout.png"
 ---
 

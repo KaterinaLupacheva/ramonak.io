@@ -1,6 +1,7 @@
 ---
 title: "Render, update, and transform Excel spreadsheet data into an array of objects using React.js"
 date: "2020-06-01"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-excel-render-update"
@@ -9,7 +10,7 @@ tags:
   - "React"
   - "Excel"
   - "NPM"
-description: "@ramonak/react-excel library to render, update, and transform Excel spreadsheet data into an array of objects using React.js"
+description: "Install @ramonak/react-excel, read the uploaded file with readFile, show and edit the sheet with the ReactExcel component, then call generateObjects to get an array of objects. The first row supplies the keys, so columns id, name and age become objects with id, name and age fields."
 socialImage: "/media/react-excel.JPG"
 ---
 

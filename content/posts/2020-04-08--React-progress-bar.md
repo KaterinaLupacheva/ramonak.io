@@ -1,6 +1,7 @@
 ---
 title: "React: How to create a custom progress bar component in 5 minutes"
 date: "2020-04-08"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-progress-bar"
@@ -8,7 +9,7 @@ category: "Tutorial"
 tags:
   - "React"
   - "JavaScript"
-description: "How to create a custom progress bar component in 5 minutes from scratch with animation"
+description: "Render a full-width container div with a filler div inside whose width is the completed percentage, and show the number in a label. The component takes two props, bgcolor and completed (0 to 100). Add transition: width 1s ease-in-out to the filler to animate changes."
 socialImage: "/media/react-progress-bar.JPG"
 ---
 

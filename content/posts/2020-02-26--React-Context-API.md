@@ -1,6 +1,7 @@
 ---
 title: "React Context API: updating Context from a nested component (in functional components with Hooks and class components)"
 date: "2020-02-26"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-context-api-update-from-nested-component"
@@ -8,7 +9,7 @@ category: "Tutorial"
 tags:
   - "React"
   - "Context API"
-description: "How to update React's Context from a nested component in two ways: using functional components with React Hooks and using class components."
+description: "Put the state and a function that changes it into the Provider's value, then call that function from any nested component. With function components, hold the state in useState and read the context with useContext. With class components, keep the state in a provider class and read it through the Consumer component."
 socialImage: "/posts/react-context/react-context-api.jpg"
 ---
 

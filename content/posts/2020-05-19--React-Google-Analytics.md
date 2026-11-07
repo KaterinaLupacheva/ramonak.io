@@ -1,6 +1,7 @@
 ---
 title: "How to develop a custom Google Analytics Dashboard using Google Analytics Reporting API v4 and React.js"
 date: "2020-05-19"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-google-analytics-dashboard"
@@ -8,7 +9,7 @@ category: "Tutorial"
 tags:
   - "React"
   - "Google API"
-description: "The blog post about how to enable Google Analytics Reporting API in Google developers console, create OAuth 2.0 client ID and develop a custom Google Analytics Dashboard using React.js."
+description: "Enable the Google Analytics Reporting API v4 in the Google Developers console and create an OAuth 2.0 client ID. In React, load gapi, sign the user in with gapi.auth2, then query /v4/reports:batchGet for metrics such as ga:users by ga:date and chart the rows."
 socialImage: "/media/react-ga.png"
 ---
 

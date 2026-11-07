@@ -1,13 +1,14 @@
 ---
 title: "How to write and use custom hooks in React.js"
 date: "2020-11-01"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-custom-hooks"
 category: "Tutorial"
 tags:
   - "React"
-description: "Tutorial about how to write custom hooks in React.js. In this tutorial, we will write hooks for smooth scrolling, document title update, and browser URL change."
+description: "A custom hook is a function whose name starts with use and that calls other hooks, so components can share stateful logic. This tutorial writes three: useSmoothScroll wraps useRef and scrollIntoView, useDocTitle sets document.title in useEffect, and useRoute changes the URL with history.pushState without a reload."
 socialImage: "/media/react-custom-hooks.png"
 ---
 

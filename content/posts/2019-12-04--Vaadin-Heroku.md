@@ -1,6 +1,7 @@
 ---
 title: How to Deploy Vaadin 14 App To Heroku
 date: "2019-12-04"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "how-to-deploy-vaadin-14-app-to-heroku"
@@ -11,7 +12,7 @@ tags:
   - "Java"
   - "Web Development"
   - "PWA"
-description: "Blog post about how to deploy Vaadin 14 application to Heroku Cloud."
+description: "Add frontend-maven-plugin and heroku-maven-plugin to the Vaadin 14 project's pom.xml and add the prepare-frontend goal to the production profile. Create the app with heroku create, then deploy with mvn clean package -Pproduction heroku:deploy."
 socialImage: "/media/vaadin-heroku.png"
 ---
 ![vaadin-heroku](/media/vaadin-heroku.png)

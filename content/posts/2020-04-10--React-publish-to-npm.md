@@ -1,6 +1,7 @@
 ---
 title: "How to publish a custom React component to NPM using Create React Library"
 date: "2020-04-10"
+updated: "2026-11-08"
 template: "post"
 draft: false
 slug: "react-publish-to-npm"
@@ -8,7 +9,7 @@ category: "Tutorial"
 tags:
   - "React"
   - "NPM"
-description: "How to create a custom React component and publish it to NPM using create-react-library."
+description: "Run npx create-react-library to get a package already set up for npm, replace the sample component in src/index.js with yours, and test it in the linked example app. Then run npm publish, or npm publish --access=public for a public scoped package."
 socialImage: "/media/react-to-npm.png"
 ---
 
