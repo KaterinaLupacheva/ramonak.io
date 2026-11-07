@@ -73,6 +73,7 @@ export default function RootLayout({
   const personJsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
+    "@id": siteConfig.personId,
     name: siteConfig.name,
     url: siteConfig.url,
     image: `${siteConfig.url}/kate.png`,
