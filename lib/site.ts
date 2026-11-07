@@ -5,7 +5,7 @@ export const siteConfig = {
   siteName: "ramonak.io",
   url: "https://ramonak.io",
   description:
-    "Full-stack engineer who builds AI products, like LLM pipelines and MCP servers, and the Claude Code workflows, skills, and evals behind them.",
+    "Full-stack engineer building analytics and operations software, AI features like LLM pipelines and MCP servers, and the Claude Code workflows behind them.",
   socialImage: "/images/storehero.png",
   socialLinks: [
     "https://github.com/KaterinaLupacheva",

@@ -119,7 +119,7 @@ export default function Home() {
               <h1 className={styles.headline}>
                 <span className={styles.headlineIntro}>Hi, I&apos;m Kate.</span>
                 <span className={styles.headlineMain}>
-                  I build AI products, and the workflows my agents run on.
+                  I build AI features, and the workflows my agents run on.
                 </span>
               </h1>
               <p className={styles.subhead}>
